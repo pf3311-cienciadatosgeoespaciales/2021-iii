@@ -3,3 +3,7 @@
 
 format: jb-book
 root: index
+parts:
+  - caption: Información general
+    chapters:
+    - file: contenido/descripcion-curso
