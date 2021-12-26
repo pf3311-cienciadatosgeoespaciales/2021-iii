@@ -6,4 +6,4 @@ root: index
 parts:
   - caption: Información general
     chapters:
-    - file: contenido/descripcion-curso
+    - file: contenido/programa-curso
