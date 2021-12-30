@@ -4,9 +4,9 @@
 format: jb-book
 root: index
 parts:
-  - caption: Información general
+  - caption: Información sobre el curso
     chapters:
-    - file: contenido/programa-curso
+    - file: contenido/informacion-general/descripcion-curso
   - caption: Introducción
     chapters:
     - file: contenido/a/datos-informacion-geoespaciales
