@@ -10,6 +10,6 @@ parts:
   - caption: Introducción
     chapters:
     - file: contenido/a/datos-informacion-geoespaciales
-  - caption: Biliografía
+  - caption: Bibliografía
     chapters:
     - file: contenido/bibliografia

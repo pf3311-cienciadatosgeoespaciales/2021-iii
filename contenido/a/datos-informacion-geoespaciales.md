@@ -14,7 +14,7 @@ Mapa de Nepal que muestra la ubicación del Monte Everest en el sistema de coord
 
 Las coordenadas correspondientes a lugares y direcciones pueden obtenerse a través de un proceso denominado [*georreferenciación*](https://es.wikipedia.org/wiki/Georreferenciaci%C3%B3n), mediante el cual, en general, se determina la posición espacial de alguna entidad en un sistema de coordenadas. La georreferenciación puede emplearse también para obtener las coordenadas de, por ejemplo, fotografías aéreas o mapas antiguos. Es un proceso que puede resultar complejo y costoso y para el que se han desarrollado metodologías y plataformas especializadas (ej. [Chapman AD & Wieczorek JR (2020) Georeferencing Best Practices](https://doi.org/10.15468/doc-gg7h-s853), [GEOLocate](https://www.geo-locate.org/)).
 
-En la actualidad, hay una gran cantidad de fuentes que generan datos georreferenciados. Entre estas pueden mencionarse las tecnologías de [observación de la Tierra (*Earth Observation*)](https://ec.europa.eu/jrc/en/research-topic/earth-observation) (ej. [imágenes satelitales](https://es.wikipedia.org/wiki/Imagen_satelital)), los dispositivos móviles y los sensores remotos, entre muchas otras.
+En la actualidad, hay una gran cantidad de fuentes que generan datos georreferenciados. Entre estas pueden mencionarse las tecnologías de [observación de la Tierra (*Earth Observation*)](https://ec.europa.eu/jrc/en/research-topic/earth-observation) (ej. [imágenes satelitales](https://es.wikipedia.org/wiki/Imagen_satelital)), los dispositivos móviles y los sensores remotos, entre muchas otras {cite}`longley_geographic_2005`.
 
 
 
