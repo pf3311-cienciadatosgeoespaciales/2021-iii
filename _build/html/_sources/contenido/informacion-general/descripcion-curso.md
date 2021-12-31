@@ -1,4 +1,4 @@
-# Descripción general y objetivos
+# Descripción general, objetivos y metodología
 
 ## Descripción general
 
@@ -10,8 +10,14 @@ El curso forma parte del [Programa de Posgrado en Computación e Informática](h
 
 Al finalizar el curso, los estudiantes serán capaces de:
 
-- Leer mapas y comprender conceptos cartográficos básicos como sistemas de coordenadas, proyecciones, escala y resolución, entre otros.
+- Leer mapas y comprender conceptos cartográficos básicos, tales como sistemas de coordenadas, proyecciones, escala y resolución, entre otros.
 - Aplicar el modelo vectorial y el modelo raster, con sus respectivos estándares, para la representación de datos geoespaciales en sistemas computacionales.
 - Importar, visualizar y analizar datos geoespaciales mediante sistemas de información geográfica de escritorio.
 - Importar, visualizar y analizar datos geoespaciales mediante el lenguaje de programación Python.
 - Aplicar metodologías y técnicas de ciencia de datos y aprendizaje automatizado en el componente geoespacial de problemáticas relacionadas con clima, biodiversidad y transporte, entre otras áreas.
+
+## Metodología
+
+Los contenidos del curso serán explicados por el profesor durante las lecciones. En estas, se destinará tiempo para que los estudiantes puedan resolver diferentes ejercicios de programación y discutir los resultados con el profesor y sus compañeros. Adicionalmente, se asignarán tareas programadas que serán desarrolladas fuera del tiempo de clase.
+
+Es de vital importancia que los estudiantes estudien las fuentes bibliográficas y otros recursos asignados previamente a cada lección, para así identificar dudas que deseen resolver con el profesor.
