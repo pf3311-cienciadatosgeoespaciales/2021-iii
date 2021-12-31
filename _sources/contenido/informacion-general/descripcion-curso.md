@@ -11,7 +11,7 @@ El curso está orientado a estudiantes de posgrado en computación interesados e
 Al finalizar el curso, los estudiantes serán capaces de:
 
 - Leer mapas y comprender conceptos cartográficos básicos como sistemas de coordenadas, proyecciones, escala y resolución, entre otros.
-- Entender y aplicar los principales modelos y estándares para la representación de datos geoespaciales en sistemas computacionales.
+- Aplicar el modelo vectorial y el modelo raster, con sus respectivos estándares, para la representación de datos geoespaciales en sistemas computacionales.
 - Utilizar sistemas de información geográfica para importar, visualizar y analizar datos geoespaciales.
 - Importar, manipular y analizar datos geoespaciales mediante el lenguaje de programación Python.
 - Aplicar metodologías y técnicas de ciencia de datos y aprendizaje automatizado en el componente geoespacial de problemáticas relacionadas con clima, biodiversidad y transporte, entre otras áreas.
