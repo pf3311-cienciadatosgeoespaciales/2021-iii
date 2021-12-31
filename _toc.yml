@@ -8,6 +8,7 @@ parts:
     chapters:
     - file: contenido/informacion-general/descripcion-curso
     - file: contenido/informacion-general/requisitos-curso
+    - file: contenido/informacion-general/cronograma-curso
   - caption: Introducción
     chapters:
     - file: contenido/a/datos-informacion-geoespaciales
