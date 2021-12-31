@@ -7,6 +7,7 @@ parts:
   - caption: Información sobre el curso
     chapters:
     - file: contenido/informacion-general/descripcion-curso
+    - file: contenido/informacion-general/requisitos-curso
   - caption: Introducción
     chapters:
     - file: contenido/a/datos-informacion-geoespaciales
