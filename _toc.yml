@@ -9,9 +9,7 @@ parts:
     - file: contenido/informacion-general/descripcion-curso
     - file: contenido/informacion-general/requisitos-curso
     - file: contenido/informacion-general/cronograma-curso
+    - file: contenido/informacion-general/bibliografia-curso    
   - caption: Introducción
     chapters:
     - file: contenido/a/datos-informacion-geoespaciales
-  - caption: Bibliografía
-    chapters:
-    - file: contenido/bibliografia
