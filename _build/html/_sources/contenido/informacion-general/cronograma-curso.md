@@ -6,6 +6,9 @@
 |                     | Fundamentos de geodesía y cartografía | {cite:p}`olaya_sistemas_2020` (parte 2) |
 |                     | Sistemas de información geográfica de escritorio | {cite:p}`olaya_sistemas_2020` (parte 3) |
 | II (10-16 de enero) | El sistema de información geográfica de escritorio QGIS | {cite:p}`gandhi_spatial_2020`, {cite:p}`graser_qgis_2021` |
+|                     | Datos geoespaciales | {cite:p}`olaya_sistemas_2020` (parte 2) |
+|                     |   Modelos de datos | |
+|                     |   Estándares de datos | |
 
 ## Referencias bibliográficas
 ```{bibliography}
