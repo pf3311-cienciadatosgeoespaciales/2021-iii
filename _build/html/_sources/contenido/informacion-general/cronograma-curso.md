@@ -7,7 +7,11 @@
 |                     | Sistemas de información geográfica de escritorio | {cite:p}`olaya_sistemas_2020` (parte 3) |
 | II (10-16 de enero) | El sistema de información geográfica de escritorio QGIS | {cite:p}`gandhi_spatial_2020`, {cite:p}`graser_qgis_2021` |
 |                     | Datos geoespaciales<br>- Modelos de datos<br>- Estándares de datos | {cite:p}`olaya_sistemas_2020` (parte 2) |
-|                     | Software para datos geoespaciales<br>- Lenguajes de programación<br>- Bibliotecas<br>- Aplicaciones de escritorio<br>- Sistemas administradores de bases de datos<br>- Servidores de mapas<br>- Catálogos de metadatos<br>- Sistemas de gestión de contenidos | {cite:p}`open_source_geospatial_foundation_osgeo_nodate` |
+|                     | Software para datos geoespaciales<br>- Lenguajes de programación<br>- Bibliotecas<br>- Servidores<br>- Aplicaciones | {cite:p}`open_source_geospatial_foundation_osgeo_nodate` |
+| III (17-23 de enero) | La biblioteca GDAL/OGR | {cite:p}`gdalogr_contributors_gdalogr_2021`, {cite:p}`pebesma_openeo_2016`, {cite:p}`osgeolive_gdalogr_nodate`, {cite:p}`gandhi_spatial_2020` |
+|                     | El ecosistema geoespacial de Python<br>- Módulos y paquetes<br>- Ambientes de desarrollo y ejecución (Jupyter, Google Colab, Binder, Kaggle, etc.) | {cite:p}`severance_py4e_nodate`, {cite:p}`wu_geographic_nodate` |
+| IV (24-30 de enero) | El paquete Fiona | {cite:p}`gillies_fiona_nodate` |
+|                     | El paquete Shapely | {cite:p}`gillies_shapely_nodate` |
 
 ## Referencias bibliográficas
 ```{bibliography}
