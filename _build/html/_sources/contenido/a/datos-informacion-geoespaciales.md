@@ -17,6 +17,8 @@ Las coordenadas correspondientes a lugares y direcciones pueden obtenerse a trav
 En la actualidad, hay una gran cantidad de fuentes que generan datos georreferenciados. Entre estas pueden mencionarse las tecnologías de [observación de la Tierra (*Earth Observation*)](https://ec.europa.eu/jrc/en/research-topic/earth-observation) (ej. [imágenes satelitales](https://es.wikipedia.org/wiki/Imagen_satelital)), los dispositivos móviles y los sensores remotos, entre muchas otras {cite}`longley_geographic_2005`.
 
 
-
+## Referencias bibliográficas
+```{bibliography}
+```
 
 [^footnote-geografico-espacial]: El adjetivo *geográfico* se refiere a la superficie de la Tierra. Así, por ejemplo, las *coordenadas geográficas* se utilizan para ubicar cualquier punto en la superficie terrestre. El término *espacial* se emplea para referirse a cualquier espacio, no siempre localizable en el planeta Tierra. En muchas ocasiones, ambas palabras son intercambiables. Por ejemplo, muchos de los métodos utilizados para analizar datos geográficos pueden aplicarse también en espacios no geográficos como, por ejemplo, otros planetas, el cosmos, el cuerpo humano (ej. con radiografías) o secuencias genómicas. En los últimos años, se ha incrementado el uso del término *geoespacial*, el cual se eligió para el nombre de este curso, como una forma de referirse al subconjunto del espacio correspondiente a la superficie de la Tierra {cite}`longley_geographic_2005`.
