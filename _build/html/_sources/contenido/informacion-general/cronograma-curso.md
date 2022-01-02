@@ -7,8 +7,7 @@
 |                     | Sistemas de información geográfica de escritorio | {cite:p}`olaya_sistemas_2020` (parte 3) |
 | II (10-16 de enero) | El sistema de información geográfica de escritorio QGIS | {cite:p}`gandhi_spatial_2020`, {cite:p}`graser_qgis_2021` |
 |                     | Datos geoespaciales<br>- Modelos de datos<br>- Estándares de datos | {cite:p}`olaya_sistemas_2020` (parte 2) |
-|                     | - Modelos de datos | |
-|                     | - Estándares de datos | |
+|                     | Software para datos geoespaciales<br>- Lenguajes de programación<br>- Bibliotecas<br>- Aplicaciones de escritorio<br>- Sistemas administradores de bases de datos<br>- Servidores de mapas<br>- Catálogos de metadatos<br>- Sistemas de gestión de contenidos | {cite:p}`open_source_geospatial_foundation_osgeo_nodate` |
 
 ## Referencias bibliográficas
 ```{bibliography}
