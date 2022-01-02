@@ -20,9 +20,9 @@ latex:
 bibtex_bibfiles:
   - referencias.bib
 
-# sphinx:
-#   config:
-#     bibtex_reference_style: label
+sphinx:
+  config:
+    bibtex_reference_style: label
 
 # Information about where the book exists on the web
 repository:
