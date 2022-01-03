@@ -10,6 +10,6 @@ parts:
     - file: contenido/informacion-general/requisitos-curso
     - file: contenido/informacion-general/cronograma-curso
     - file: contenido/informacion-general/bibliografia-curso    
-  - caption: Introducción
+  - caption: A - Conceptos básicos de software y datos geoespaciales
     chapters:
     - file: contenido/a/datos-informacion-geoespaciales
