@@ -12,4 +12,4 @@ parts:
     - file: contenido/informacion-general/bibliografia-curso    
   - caption: A - Conceptos básicos de software y datos geoespaciales
     chapters:
-    - file: contenido/a/datos-informacion-geoespaciales
+    - file: contenido/a/introduccion-procesamiento-datos-geoespaciales

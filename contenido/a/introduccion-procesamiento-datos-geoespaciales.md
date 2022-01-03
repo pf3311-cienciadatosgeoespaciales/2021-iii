@@ -1,4 +1,4 @@
-# Datos geoespaciales
+# Introducción al procesamiento de datos geoespaciales
 
 Una gran parte de los datos disponibles contiene algún tipo de componente geográfico o espacial[^footnote-geografico-espacial]. Este componente puede expresarse de varias formas. Por ejemplo:
 
@@ -19,6 +19,7 @@ En la actualidad, hay una gran cantidad de fuentes que generan datos georreferen
 
 ## Referencias bibliográficas
 ```{bibliography}
+:filter: docname in docnames
 ```
 
 [^footnote-geografico-espacial]: El adjetivo *geográfico* se refiere a la superficie de la Tierra. Así, por ejemplo, las *coordenadas geográficas* se utilizan para ubicar cualquier punto en la superficie terrestre. El término *espacial* se emplea para referirse a cualquier espacio, no siempre localizable en el planeta Tierra. En muchas ocasiones, ambas palabras son intercambiables. Por ejemplo, muchos de los métodos utilizados para analizar datos geográficos pueden aplicarse también en espacios no geográficos como, por ejemplo, otros planetas, el cosmos, el cuerpo humano (ej. con radiografías) o secuencias genómicas. En los últimos años, se ha incrementado el uso del término *geoespacial*, el cual se eligió para el nombre de este curso, como una forma de referirse al subconjunto del espacio correspondiente a la superficie de la Tierra {cite}`longley_geographic_2005`.
