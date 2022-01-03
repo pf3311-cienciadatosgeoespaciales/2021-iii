@@ -15,6 +15,7 @@
 
 ### B - PROCESAMIENTO Y ANÁLISIS GEOESPACIAL MEDIANTE PYTHON
 | Semana | Temas | Lecturas |
+| :- | :- | :- |
 | III-ii (17-23 de enero) | El ecosistema geoespacial de Python<br>- Módulos y paquetes<br>- Ambientes de desarrollo y ejecución (Anaconda/Miniconda, Conda, Jupyter Notebooks, Google Colab, etc.) | {cite:p}`severance_py4e_nodate`, {cite:p}`wu_geographic_nodate` |
 | IV (24-30 de enero) | Fiona: paquete para lectura y escritura de datos vectoriales | {cite:p}`gillies_fiona_nodate` |
 |                     | Shapely: paquete para manipulación y análisis de datos geométricos | {cite:p}`gillies_shapely_nodate` |
@@ -24,8 +25,10 @@
 | VI (7-13 de febrero) | rasterio: paquete para lectura y escritura de datos raster | {cite:p}`gillies_rasterio_nodate` |
 |                      | folium: paquete para elaboración de mapas web | {cite:p}`story_folium_nodate` |
 
+
 ### C - VISUALIZACIÓN Y ANÁLISIS AVANZADOS
 | Semana | Temas | Lecturas |
+| :- | :- | :- |
 | VII (14-20 de febrero) | Visualización<br>- dash: paquete para la elaboración de aplicaciones web interactivas de análisis y visualización de datos<br>- streamlite: paquete para aplicaciones web de ciencia de datos y aprendizaje automatizado | {cite:p}`parmer_dash_nodate`, {cite:p}`dabbas_interactive_2021`, {cite:p}`streamlit_inc_streamlit_nodate`, {cite:p}`richards_getting_2021` |
 | VIII (21-28 de febrero) | Análisis espacial de grupos (*spatial clustering*) | {cite:p}`rey_geographic_2020` (*Part III - Clustering and regionalization*) |
 |                     | Regresión espacial | {cite:p}`rey_geographic_2020` (*Part III - Spatial Regression*) |
