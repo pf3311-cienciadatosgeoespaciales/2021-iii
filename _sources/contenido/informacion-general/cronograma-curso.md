@@ -16,7 +16,7 @@
 ### B - PROCESAMIENTO Y ANÁLISIS GEOESPACIAL MEDIANTE PYTHON
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
-| III-ii (17-23 de enero) | El ecosistema geoespacial de Python<br>- Módulos y paquetes<br>- Ambientes de desarrollo y ejecución<br>-- Conda, Anaconda/Miniconda<br>-- Jupyter Noteboks<br>-- Google Colab, Binder, Kaggle | {cite:p}`severance_py4e_nodate`, {cite:p}`wu_geographic_nodate` |
+| III-ii (17-23 de enero) | El ecosistema geoespacial de Python<br>- Módulos y paquetes<br>- Ambientes de desarrollo y ejecución<br>&nbsp;&nbsp;- Conda, Anaconda/Miniconda<br>&nbsp;&nbsp;- Jupyter Noteboks<br>&nbsp;&nbsp;- Google Colab, Binder, Kaggle | {cite:p}`severance_py4e_nodate`, {cite:p}`wu_geographic_nodate` |
 | IV (24-30 de enero) | Fiona: paquete para lectura y escritura de datos vectoriales | {cite:p}`gillies_fiona_nodate` |
 |                     | Shapely: paquete para manipulación y análisis de datos geométricos | {cite:p}`gillies_shapely_nodate` |
 | V (31 de enero-6 de febrero) | numpy: paquete para álgebra lineal | {cite:p}`oliphant_numpy_nodate` |
