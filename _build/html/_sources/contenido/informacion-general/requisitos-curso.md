@@ -14,3 +14,5 @@ Además, es recomendable tener nociones de:
 - Ambientes de computación en la nube: [Google Colab](https://colab.research.google.com/), [Binder](https://jupyter.org/binder), [Kaggle](https://www.kaggle.com/) y otros.
 - Plataformas de alojamiento de sitios web: [GitHub Pages](https://pages.github.com/), [Netlify](https://www.netlify.com/) u otra.
 - Estadística y análisis de datos.
+- Ciencia de datos.
+- Aprendizaje automatizado.
