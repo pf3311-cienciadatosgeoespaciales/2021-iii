@@ -9,6 +9,7 @@ parts:
     - file: contenido/informacion-general/descripcion-curso
     - file: contenido/informacion-general/requisitos-curso
     - file: contenido/informacion-general/cronograma-curso
+    - file: contenido/informacion-general/evaluacion-curso
     - file: contenido/informacion-general/bibliografia-curso    
   - caption: A - Introducción
     chapters:
