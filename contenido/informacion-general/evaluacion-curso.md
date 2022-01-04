@@ -1,5 +1,5 @@
 # Evaluación
-La evaluación está compuesta por un conjunto de tareas programadas, las cuales se describen seguidamente.
+La evaluación está compuesta por un conjunto de tareas programadas, las cuales se describen seguidamente:
 
 | Descripción | Tiempo de elaboración | Semana estimada de entrega | Porcentaje de la nota final |
 | :- | :- | :- | :- |
