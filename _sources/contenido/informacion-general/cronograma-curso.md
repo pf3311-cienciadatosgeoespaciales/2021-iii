@@ -2,18 +2,19 @@
 
 ## Distribución de temas y lecturas por semana
 
-### A - CONCEPTOS BÁSICOS DE SOFTWARE Y DATOS GEOESPACIALES
+### A - INTRODUCCIÓN
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
-| I (3-9 de enero)    | Introducción al procesamiento de datos geoespaciales | {cite:p}`hwang_building_2021`, {cite:p}`wu_streamlit_2021`, {cite:p}`olaya_sistemas_2020` (Partes 1 y 2), {cite:p}`rey_geographic_2020` (*Part I*) |
+| I (3-9 de enero)    | Introducción a la ciencia de datos geoespaciales | {cite:p}`hwang_building_2021`, {cite:p}`wu_streamlit_2021`, {cite:p}`olaya_sistemas_2020` (Partes 1 y 2), {cite:p}`rey_geographic_2020` (*Part I*) |
 |                     | Fundamentos de geodesía y cartografía | {cite:p}`olaya_sistemas_2020` (Parte 2) |
 |                     | Sistemas de información geográfica | {cite:p}`olaya_sistemas_2020` (Parte 3) |
 | II (10-16 de enero) | QGIS: sistema de información geográfica de escritorio | {cite:p}`gandhi_spatial_2020`, {cite:p}`graser_qgis_2021` |
-|                     | Datos geoespaciales<br>- Modelos vectorial y raster<br>- Estándares<br>- Principales iniciativas y actores | {cite:p}`olaya_sistemas_2020` (Parte 2), {cite:p}`rey_geographic_2020` (*Part I*), {cite:p}`pebesma_openeo_2016` |
-|                     | Software para datos geoespaciales<br>- Lenguajes de programación<br>- Bibliotecas<br>- Servidores<br>- Aplicaciones | {cite:p}`open_source_geospatial_foundation_osgeo_nodate` |
+|                     | Modelos de datos | {cite:p}`olaya_sistemas_2020` (Parte 2) |
+|                     | Estándares de datos | {cite:p}`ogc_open_nodate` |
+|                     | Software para manejo de datos geoespaciales | {cite:p}`open_source_geospatial_foundation_osgeo_nodate` |
 | III-i (17-23 de enero) | La biblioteca GDAL/OGR | {cite:p}`gdalogr_contributors_gdalogr_2021`, {cite:p}`pebesma_openeo_2016`, {cite:p}`osgeolive_gdalogr_nodate`, {cite:p}`gandhi_spatial_2020` |
 
-### B - PROCESAMIENTO Y ANÁLISIS GEOESPACIAL MEDIANTE PYTHON
+### B - PROCESAMIENTO DE DATOS GEOESPACIALES
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
 | III-ii (17-23 de enero) | El ecosistema geoespacial de Python<br>- Módulos y paquetes<br>- Ambientes de desarrollo y ejecución<br>&nbsp;&nbsp;- Conda, Anaconda/Miniconda<br>&nbsp;&nbsp;- Jupyter Noteboks<br>&nbsp;&nbsp;- Google Colab, Binder, Kaggle | {cite:p}`severance_py4e_nodate`, {cite:p}`wu_geographic_nodate`, {cite:p}`gandhi_python_2020`, , {cite:p}`tenkanen_automating_2021`, {cite:p}`dorman_spatial_2021` |
@@ -26,7 +27,7 @@
 |                      | folium: paquete para desarrollo de mapas web | {cite:p}`story_folium_nodate` |
 
 
-### C - VISUALIZACIÓN Y ANÁLISIS AVANZADOS
+### C - VISUALIZACIÓN Y ANÁLISIS AVANZADOS DE DATOS GEOESPACIALES
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
 | VII (14-20 de febrero) | dash: paquete para desarrollo de aplicaciones web interactivas de análisis y visualización de datos | {cite:p}`parmer_dash_nodate`, {cite:p}`dabbas_interactive_2021` |
