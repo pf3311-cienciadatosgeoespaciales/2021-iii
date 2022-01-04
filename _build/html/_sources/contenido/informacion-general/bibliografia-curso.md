@@ -33,10 +33,12 @@ Longley, P. A., Goodchild, M. F., Maguire, D. J., & Rhind, D. W. (2005). Geograp
 
 Lovelace, R., Nowosad, J., & Münchow, J. (2019). Geocomputation with R. CRC Press, Taylor and Francis Group, CRC Press is an imprint of theTaylor and Francis Group, an informa Buisness, A Chapman & Hall Book. https://geocompr.robinlovelace.net/
 
+Open Geospatial Consortium. (s. f.). Open Geospatial Consortium (OGC). Recuperado 3 de enero de 2022, de https://www.ogc.org/
+
 Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
 Oliphant, T. E. (s. f.). numpy: NumPy is the fundamental package for array computing with Python. (1.22.0) [C, Python; MacOS, Microsoft :: Windows, POSIX, Unix]. Recuperado 1 de enero de 2022, de https://www.numpy.org
 
-Open Source Geospatial Foundation. (s. f.). OSGeo. OSGeo. Recuperado 1 de enero de 2022, de https://www.osgeo.org/
+Open Source Geospatial Foundation. (s. f.). Open Source Geospatial Foundation (OSGeo). Recuperado 1 de enero de 2022, de https://www.osgeo.org/
 
 OSGeoLive. (s. f.). GDAL/OGR Quickstart. Recuperado 31 de diciembre de 2021, de https://live.osgeo.org/en/quickstart/gdal_quickstart.html
 
