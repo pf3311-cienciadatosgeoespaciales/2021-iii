@@ -1,4 +1,4 @@
-# Introducción al procesamiento de datos geoespaciales
+# Introducción a la ciencia de datos geoespaciales
 
 Una gran parte de los datos disponibles contiene algún tipo de componente geográfico o espacial[^footnote-geografico-espacial]. Este componente puede expresarse de varias formas. Por ejemplo:
 
