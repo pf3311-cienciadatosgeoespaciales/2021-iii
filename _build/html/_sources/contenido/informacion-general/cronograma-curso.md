@@ -27,7 +27,7 @@
 |                      | folium: paquete para desarrollo de mapas web | {cite:p}`story_folium_nodate` |
 
 
-### C - VISUALIZACIÓN Y ANÁLISIS AVANZADOS DE DATOS GEOESPACIALES
+### C - VISUALIZACIÓN Y ANÁLISIS AVANZADOS
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
 | VII (14-20 de febrero) | dash: paquete para desarrollo de aplicaciones web interactivas de análisis y visualización de datos | {cite:p}`parmer_dash_nodate`, {cite:p}`dabbas_interactive_2021` |
