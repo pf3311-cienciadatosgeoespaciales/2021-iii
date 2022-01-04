@@ -1,5 +1,22 @@
 # Introducción a la ciencia de datos geoespaciales
 
+
+## Trabajo previo
+
+### Lecturas
+
+Hwang, J. P. (2021, septiembre 3). Building a Big Data Geographical Dashboard with Open-Source Tools. Plotly. https://medium.com/plotly/building-a-big-data-geographical-dashboard-with-open-source-tools-c5108d7d5683
+
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+Oliphant, T. E. (s. f.). numpy: NumPy is the fundamental package for array computing with Python. (1.22.0) [C, Python; MacOS, Microsoft :: Windows, POSIX, Unix]. Recuperado 1 de enero de 2022, de https://www.numpy.org
+
+Rey, S. J., Arribas-Bel, D., & Wolf, L. J. (2020). Geographic Data Science with Python. https://geographicdata.science/book/
+
+Wu, Q. (2021, octubre 25). A streamlit app for creating timelapse of annual Landsat imagery (1984–2021). Medium. https://giswqs.medium.com/a-streamlit-app-for-creating-timelapse-of-annual-landsat-imagery-1984-2021-3db407a8ac32
+
+
+## El componente geoespacial de los datos
+
 Una gran parte de los datos disponibles contiene algún tipo de componente geográfico o espacial[^footnote-geografico-espacial]. Este componente puede expresarse de varias formas. Por ejemplo:
 
 - **Con nombres de lugares**: *El [sapo dorado (*Incilius periglenes*)](https://es.wikipedia.org/wiki/Incilius_periglenes) era una especie de anfibio, endémica de los bosques nubosos de altitud de Monteverde, Costa Rica.*
