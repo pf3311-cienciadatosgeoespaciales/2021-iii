@@ -6,7 +6,7 @@
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
 | I (3-9 de enero)    | Introducción a la ciencia de datos geoespaciales | {cite:p}`hwang_building_2021`, {cite:p}`wu_streamlit_2021`, {cite:p}`olaya_sistemas_2020` (Partes 1 y 2), {cite:p}`rey_geographic_2020` (*Part I*) |
-|                     | Fundamentos de geodesía y cartografía | {cite:p}`olaya_sistemas_2020` (Parte 2) |
+|                     | Fundamentos de geodesía y cartografía | {cite:p}`olaya_sistemas_2020` (Parte 1) |
 |                     | Sistemas de información geográfica | {cite:p}`olaya_sistemas_2020` (Parte 3) |
 | II (10-16 de enero) | QGIS: sistema de información geográfica de escritorio | {cite:p}`gandhi_spatial_2020`, {cite:p}`graser_qgis_2021` |
 |                     | Modelos de datos | {cite:p}`olaya_sistemas_2020` (Parte 2) |
@@ -31,7 +31,7 @@
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
 | VII (14-20 de febrero) | dash: paquete para desarrollo de aplicaciones web interactivas de análisis y visualización de datos | {cite:p}`parmer_dash_nodate`, {cite:p}`dabbas_interactive_2021` |
-|                        | streamlite: paquete para desarrollo de aplicaciones web de ciencia de datos y aprendizaje automatizado | {cite:p}`streamlit_inc_streamlit_nodate`, {cite:p}`richards_getting_2021` |
+|                        | streamlit: paquete para desarrollo de aplicaciones web de ciencia de datos y aprendizaje automatizado | {cite:p}`streamlit_inc_streamlit_nodate`, {cite:p}`richards_getting_2021` |
 | VIII (21-28 de febrero) | Análisis espacial de grupos (*spatial clustering*) | {cite:p}`rey_geographic_2020` (*Part III - Clustering and regionalization*) |
 |                     | Regresión espacial | {cite:p}`rey_geographic_2020` (*Part III - Spatial Regression*) |
 
