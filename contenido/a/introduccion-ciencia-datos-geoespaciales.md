@@ -21,7 +21,7 @@ Una gran parte de los datos disponibles contiene algún tipo de componente geogr
 
 - **Con nombres de lugares**: *El [sapo dorado (*Incilius periglenes*)](https://es.wikipedia.org/wiki/Incilius_periglenes) era una especie de anfibio, endémica de los bosques nubosos de altitud de Monteverde, Costa Rica.*
 - **Con direcciones**: *La [sede de la Organización de las Naciones Unidas (ONU)](https://es.wikipedia.org/wiki/Sede_de_la_Organizaci%C3%B3n_de_las_Naciones_Unidas) está ubicada en la ciudad de Nueva York, Estados Unidos, en la Primera Avenida, 750.*
-- **Con coordenadas**: *La cima del [Monte Everest](https://es.wikipedia.org/wiki/Monte_Everest) se localiza en las coordenadas geográficas 86°55′31″ E y 27°59′17″ N, como se muestra en la {numref}`figure-mapa-nepal-everest`.*
+- **Con coordenadas**: *La cima del [Monte Everest](https://es.wikipedia.org/wiki/Monte_Everest) se localiza en las coordenadas geográficas 86°55′31″ E y 27°59′17″ N, como se muestra en la {numref}`figure-mapa-nepal-everest`.
 
 ```{figure} img/nepal-map.jpg
 :name: figure-mapa-nepal-everest
@@ -33,6 +33,18 @@ Las coordenadas correspondientes a lugares y direcciones pueden obtenerse a trav
 
 En la actualidad, hay una gran cantidad de fuentes que generan datos georreferenciados. Entre estas pueden mencionarse las tecnologías de [observación de la Tierra (*Earth Observation*)](https://ec.europa.eu/jrc/en/research-topic/earth-observation) (ej. [imágenes satelitales](https://es.wikipedia.org/wiki/Imagen_satelital)), los dispositivos móviles y los sensores remotos, entre muchas otras {cite}`longley_geographic_2005`.
 
+## Procesamiento de datos geoespaciales mediante sistemas de información geográficos
+A principios de la década de 1960, el geógrafo inglés [Roger Tomlinson](https://es.wikipedia.org/wiki/Roger_Tomlinson) desarrolló en Canadá el que se considera el primer sistema de información geográfico. Se trataba del [Canada Geographic Information System (CGIS)](https://en.wikipedia.org/wiki/Canada_Geographic_Information_System) y su objetivo fue manejar los datos del inventario geográfico canadiense y su análisis para la gestión del territorio rural. De manera casi simultánea al trabajo de Tomlinson, surgieron desarrollos similares en Estados Unidos y en el Reino Unido. El surgimiento de los sistemas de información geográfica no implicó solo el surgimiento de nuevas herramientas de software, sino también el desarrollo de técnicas que hasta entonces no habían sido necesarias {cite}`olaya_sistemas_2020` como, por ejemplo, la manipulación de nuevos tipos de datos geométricos (ej. puntos, líneas, polígonos).
+
+En general, un sistema de información geográfica (SIG) maneja datos georreferenciados (i.e. ubicados en un sistema de coordenadas) y los asocia con datos convencionales, como se muestra en la {numref}`figure-mapa-qgis`.
+
+```{figure} img/mapa-qgis.png
+:name: figure-mapa-qgis
+
+Mapa elaborado en QGIS que muestra la ubicación de los aeródromos de Costa Rica.
+```
+
+En la actualidad, los SIG son herramientas gráficas que presentan la información en capas (*layers*). Por ejemplo, el mapa de la {numref}`figure-mapa-qgis` contiene una capa base raster, una capa de polígonos correspondiente a las provincias de Costa Rica y una capa de puntos correspondiente a los aeródromos.
 
 ## Referencias bibliográficas
 ```{bibliography}
