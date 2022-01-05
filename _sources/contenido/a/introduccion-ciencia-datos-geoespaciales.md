@@ -8,7 +8,7 @@
 Hwang, J. P. (2021, septiembre 3). Building a Big Data Geographical Dashboard with Open-Source Tools. Plotly. https://medium.com/plotly/building-a-big-data-geographical-dashboard-with-open-source-tools-c5108d7d5683
 
 Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
-Oliphant, T. E. (s. f.). numpy: NumPy is the fundamental package for array computing with Python. (1.22.0) [C, Python; MacOS, Microsoft :: Windows, POSIX, Unix]. Recuperado 1 de enero de 2022, de https://www.numpy.org
+Oliphant, T. E. (s. f.).
 
 Rey, S. J., Arribas-Bel, D., & Wolf, L. J. (2020). Geographic Data Science with Python. https://geographicdata.science/book/
 
