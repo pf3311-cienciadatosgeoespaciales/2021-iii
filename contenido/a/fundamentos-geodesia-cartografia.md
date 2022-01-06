@@ -22,7 +22,7 @@ El [elipsoide de referencia](https://es.wikipedia.org/wiki/Elipsoide_de_referenc
 ```{figure} img/elipsoide-wgs84.png
 :name: figure-elipsoide-wgs84
 
-Radio ecuatorial y radio polar del elipsoide de referencia del sistema geodésico [WGS84](https://es.wikipedia.org/wiki/WGS84). Imagen de <a href="https://commons.wikimedia.org/wiki/File:WGS84_mean_Earth_radius.svg">Wikimedia Commons</a>.
+Radio ecuatorial y radio polar del elipsoide de referencia del sistema geodésico [WGS84](https://es.wikipedia.org/wiki/WGS84). Imagen de [Cmglee](https://commons.wikimedia.org/wiki/User:Cmglee) compartida a través de <a href="https://commons.wikimedia.org/wiki/File:WGS84_mean_Earth_radius.svg">Wikimedia Commons</a>.
 ```
 
 A través de la historia, se han utilizado diferentes elipsoides cuyas medidas varían de acuerdo con los instrumentos y conocimientos disponibles en cada época y lugar. La lista de la {numref}`figure-tabla-elipsoides` muestra algunos de estos elipsoides de referencia y sus parámetros.
@@ -41,7 +41,7 @@ El elipsoide tiene una superficie lisa y no puede representar las protuberancias
 ```{figure} img/geoide.jpg
 :name: figure-geoide
 
-Geoide. Imagen de ICGEM compartida a través de <a href="https://commons.wikimedia.org/wiki/File:Geoid_undulation_10k_scale.jpg">Wikimedia Commons</a>.
+Geoide. Imagen de [ICGEM](http://icgem.gfz-potsdam.de/home) compartida a través de <a href="https://commons.wikimedia.org/wiki/File:Geoid_undulation_10k_scale.jpg">Wikimedia Commons</a>.
 ```
 
 De manera similar al caso de los elipsoides, existen varios geoides de referencia que han sido desarrollados a través del tiempo y han evolucionado para adaptarse a las modificaciones de la superficie terrestre.
@@ -58,7 +58,33 @@ Para un mismo elipsoide pueden utilizarse distintos puntos fundamentales, que da
 - ETRS89 (*European Terrestrial Reference System* 1989): para Europa.
 - ED50 (*European Datum* 1950) y ED79 (*European Datum* 1979): para España.
 - SAD69 (*South American Datum* 1969): para Brasil.
-- [CR05](https://epsg.io/1065-datum) (Costa Rica 2005): para Costa Rica, establecido mediante [Decreto Ejecutivo No. 33797-MJ-MOPT - PGR](http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=60238&nValor3=67698&strTipM=TC).
+- [CR05](https://epsg.io/1065-datum) (Costa Rica 2005): para Costa Rica, declarado como datum oficial mediante [Decreto Ejecutivo No. 33797-MJ-MOPT - PGR](http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=60238&nValor3=67698&strTipM=TC).
+
+## Sistemas de coordenadas
+Una vez que se dispone de modelos precisos para representar la forma de la Tierra, es posible establecer un sistema para codificar cada una de las posiciones sobre su superficie y asignar a estas las coordenadas correspondientes. Así, podemos definir un sistema de coordenadas esféricas para un elipsoide. A este tipo de coordenadas se les llama **coordenadas geográficas**.
+
+Por otra parte, muchas veces es útil situar los elementos de la superficie del elipsoide sobre una superficie plana, dando lugar a las **proyecciones cartográficas**, las cuales utilizan coordenadas cartesianas, también llamadas coordenadas planas, debido a que resultan de proyectar la superficie del elipsoide sobre un plano.
+
+### Coordenadas geográficas
+El sistema de [coordenadas geográficas](https://es.wikipedia.org/wiki/Coordenadas_geogr%C3%A1ficas) es un sistema de coordenadas esféricas mediante el cual un punto se localiza con dos valores angulares denominados latitud y longitud, los cuales se muestran en la {numref}`figure-latitud-longitud`.
+
+```{figure} img/latitud-longitud.png
+:name: figure-latitud-longitud
+
+Latitud y longitud en una esfera con una gratícula con intervalos de 10°. Imagen de [Peter Mercator](https://commons.wikimedia.org/wiki/User:Peter_Mercator) compartida a través de <a href="https://commons.wikimedia.org/wiki/File:Latitude_and_longitude_graticule_on_a_sphere.svg">Wikimedia Commons</a>.
+```
+
+- La **latitud** (φ, o *phi*) de un punto en la superficie de la Tierra es el ángulo entre el plano ecuatorial y la línea que pasa por este punto y el centro de la Tierra. Todos los puntos con la misma latitud forman un plano paralelo al plano del ecuador. El [ecuador](https://es.wikipedia.org/wiki/Ecuador_terrestre) es el paralelo 0° y divide el globo en hemisferios norte y sur; así el polo norte es 90° N y el polo sur es 90° S. A medida que la latitud aumenta, hacia el Norte o hacia el Sur, disminuyen los kilómetros por grado. Para el paralelo del Ecuador, sabiendo que la circunferencia que corresponde al Ecuador mide 40 075,017 km, 1° equivale a 111,319 km (resultado de dividir el perímetro del ecuador entre los 360° de longitud).
+
+- La **longitud** (λ, o *lambda*) de un punto en la superficie de la Tierra es el ángulo entre el meridiano de referencia y el meridiano que pasa por este punto. El meridiano de referencia mayormente aceptado es el meridiano que pasa por el Real Observatorio de Greenwich, situado al sureste de Londres, Inglaterra. Este primer meridiano determina los hemisferios este y oeste. Las líneas de longitud forman semicírculos máximos que pasan por los polos y se llaman meridianos. La distancia en km a la que equivale un grado de longitud depende de la latitud.
+
+Las líneas de los paralelos y meridianos se ilustran en la {numref}`figure-paralelos-meridianos`.
+
+```{figure} img/paralelos-meridianos.png
+:name: figure-paralelos-meridianos
+
+Paralelos y meridianos. Imagen de Djexplo compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Latitud_y_Longitud_en_la_Tierra.svg).
+```
 
 ## Referencias bibliográficas
 ```{bibliography}
