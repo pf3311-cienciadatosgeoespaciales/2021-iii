@@ -139,8 +139,25 @@ No es posible conservar todas las propiedades a la vez, por lo que es necesario 
 ### Ejemplos de proyecciones
 
 #### Mercator
-#### UTM
-#### Pseudo-Mercator
+La [proyección de Mercator](https://es.wikipedia.org/wiki/Proyecci%C3%B3n_de_Mercator) fue creada por el cartógrafo flamenco [Gerardus Mercator](https://es.wikipedia.org/wiki/Gerardus_Mercator) en 1569. Ha sido muy utilizada desde el siglo XVIII para cartas náuticas porque permitía trazar las rutas de rumbo constante como líneas rectas e ininterrumpidas, a diferencia de otras proyecciones más precisas. La proyección de Mercator se muestra en la {numref}`figure-proyeccion-mercator`.
+
+```{figure} img/proyeccion-mercator.jpg
+:name: figure-proyeccion-mercator
+
+Proyección de Mercator. Imagen de [Strebe](https://commons.wikimedia.org/wiki/User:Strebe) compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mercator_projection_Square.JPG).
+```
+
+Es un tipo de proyección cilíndrica tangente al ecuador. Como tal, deforma las distancias entre los meridianos en líneas paralelas, aumentando su ancho real cada vez más a medida que se acerca a los polos. Esta proyección tampoco respeta las formas reales entre los paralelos, la amplía en largo, cada vez más a medida que se acerca a los polos, distorsionando las áreas cercanas a los polos aún más.
+
+La proyección de Mercator va exagerando el tamaño de las tierras a medida que nos alejamos de la línea del ecuador. Algunas de las distorsiones más conocidas que presenta son:
+
+- Groenlandia aparece aproximadamente del tamaño de África, cuando en realidad la superficie de África es aproximadamente 14 veces la de Groenlandia.
+- Alaska aparece similar en tamaño a Brasil, cuando el área de Brasil es casi cinco veces más grande que Alaska.
+- La Antártida parece ser extremadamente grande. Si se cartografiara todo el globo, la Antártida se inflaría infinitamente. En realidad, es el tercer continente más pequeño.
+- África parece tener aproximadamente el mismo tamaño que América del Sur, cuando en realidad África es más de una vez y media más grande.
+- El aumento de tamaño del norte también distorsiona mucho la forma de Rusia, haciéndola parecer mucho más alta de norte a sur y estirando mucho sus regiones árticas en comparación con sus latitudes medias.
+
+Las diferencias entre el tamaño real de los países y territorios y su representación en la proyección de Mercator se muestra en varios sitios en la Web, entre ellos [https://brilliantmaps.com/mercator-vs-true-size/](https://brilliantmaps.com/mercator-vs-true-size/) y [https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps](https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps).
 
 ## Codificación de sistemas de referencia
 Existe una gran cantidad de sistemas de referencia, por lo que se hace necesaria una forma de organizarlos.
@@ -159,9 +176,16 @@ Cada sistema de referencia de coordenadas cuenta con un código, llamado código
 | [5456](http://epsg.io/5456) | Ocotepeque 1935 / Costa Rica Norte | Proyección Lambert para Costa Rica norte |
 | [5457](http://epsg.io/5457) | Ocotepeque 1935 / Costa Rica Sur | Proyección Lambert para Costa Rica sur |
 
-
-
 La base de datos EPSG puede consultarse en [http://epsg.io/](http://epsg.io/).
+
+## Ejemplos de mapas
+El uso de los conceptos cartográficos y geodésicos estudiados en este capítulo se ilustra en la {numref}`figure-mapa-lluvia`.
+
+```{figure} img/mapa-lluvia.jpeg
+:name: figure-mapa-lluvia
+
+Mapa de lluvia en Costa Rica. Fuente: [Instituto Meteorológico Nacional (IMN)](https://www.imn.ac.cr/).
+```
 
 ## Referencias bibliográficas
 ```{bibliography}
