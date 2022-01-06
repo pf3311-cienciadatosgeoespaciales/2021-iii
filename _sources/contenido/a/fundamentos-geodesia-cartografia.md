@@ -96,18 +96,29 @@ El resultado de asignar una coordenada plana a cada punto de la superficie de la
 #### Tipos de proyecciones
 Las proyecciones pueden clasificarse, según la superficie sobre la que se proyectan los objetos, en cilíndricas, cónicas y azimutales.
 
-- **Cilíndricas**: el globo terrestre se proyecta en una superficie cilíndrica. Son muy utilizadas, pero con frecuencia se modifican debido a las grandes distorsiones que muestran en las zonas de latitud elevada, lo que impide apreciar a las regiones polares en su verdadera proporción. Son muy útiles para apreciar la superficie de la Tierra completa, por lo que se utiliza en [mapamundis](https://es.wikipedia.org/wiki/Mapamundi).
+- **Cilíndricas**: El globo terrestre se proyecta en una superficie cilíndrica. Son muy utilizadas, pero con frecuencia se modifican debido a las grandes distorsiones que muestran en las zonas de latitud elevada, lo que impide apreciar a las regiones polares en su verdadera proporción. Son muy útiles para apreciar la superficie de la Tierra completa, por lo que se utiliza en [mapamundis](https://es.wikipedia.org/wiki/Mapamundi). La {numref}`figure-proyeccion-cilindrica` muestra un esquema de una proyección cilíndrica.
 
-```{figure} img/proyeccion-cilindrica
+```{figure} img/proyeccion-cilindrica.jpg
 :name: figure-proyeccion-cilindrica
 
-Proyección cilíndrica. Imagen compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Projection_cylindrique.jpg).
+Esquema de proyección cilíndrica. Imagen de [Traroth](https://commons.wikimedia.org/wiki/User:Traroth) compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Projection_cylindrique.jpg).
 ```
 
-- Cónicas:
+- **Cónicas**: El globo terrestre se proyecta en una superficie cónica tangente, situando el vértice en el eje que une los dos polos. Aunque las formas presentadas son de los polos, los cartógrafos utilizan este tipo de proyección para ver los países y continentes. La {numref}`figure-proyeccion-conica` muestra un esquema de una proyección cilíndrica.
 
-- Azimutales:
+```{figure} img/proyeccion-conica.jpg
+:name: figure-proyeccion-conica
 
+Esquema de proyección cónica. Imagen de [Traroth](https://commons.wikimedia.org/wiki/User:Traroth) compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Projection_conique.jpg).
+```
+
+- **Azimutales**: También son llamadas proyecciones polares. Se proyecta una porción de la Tierra sobre un plano tangente al globo en un punto seleccionado, obteniéndose una imagen similar a la visión de la Tierra desde un punto interior o exterior. Se utilizan principalmente para los polos y los hemisferios. La {numref}`figure-proyeccion-azimutal` muestra un esquema de una proyección azimutal.
+
+```{figure} img/proyeccion-azimutal.jpg
+:name: figure-proyeccion-azimutal
+
+Esquema de proyección azimutal. Imagen de [Traroth](https://commons.wikimedia.org/wiki/User:Traroth) compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Projection_azimutale_gnomonique.jpg).
+```
 
 
 ## Referencias bibliográficas
