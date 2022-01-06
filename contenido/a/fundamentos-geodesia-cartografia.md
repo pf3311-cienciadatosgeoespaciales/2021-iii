@@ -35,8 +35,8 @@ Lista de elipsoides de referencia. Fuente <a href="https://en.wikipedia.org/wiki
 
 Los primeros elipsoides de referencia fueron diseñados para usos locales (ej. Europa, India, América del Norte). Más recientemente, se identificó la necesidad de contar con modelos para todo el planeta, como el del elipsoide WGS84, uno de los más utilizados en la actualidad, por ser el empleado por el [Sistema de Posicionamiento Global (GPS; en inglés, Global Positioning System)](https://es.wikipedia.org/wiki/GPS). El WGS84 (*World Geodetic System 1984*) es la revisión más reciente del [World Geodetic System (WGS)](https://en.wikipedia.org/wiki/World_Geodetic_System), un estándar mundial usado en geodesia, cartografía y navegación.
 
-## Geoide
-El elipsoide tiene una superficie lisa y no puede representar las protuberancias y depresiones de la Tierra. El geoide es un modelo mucho más acertado de la superficie del planeta que sí contempla estas características. La {numref}`figure-geoide` muestra una imagen de un geoide.
+### Geoide
+El elipsoide tiene una superficie lisa y no puede representar las protuberancias y depresiones de la Tierra. El [geoide](https://es.wikipedia.org/wiki/Geoide) es un modelo mucho más acertado de la superficie del planeta que sí contempla estas características. La {numref}`figure-geoide` muestra una imagen de un geoide.
 
 ```{figure} img/geoide.jpg
 :name: figure-geoide
@@ -46,6 +46,19 @@ Geoide. Imagen de ICGEM compartida a través de <a href="https://commons.wikimed
 
 De manera similar al caso de los elipsoides, existen varios geoides de referencia que han sido desarrollados a través del tiempo y han evolucionado para adaptarse a las modificaciones de la superficie terrestre.
 
+### Datum geodésico
+Cuando se trabaja con un elipsoide global (ej. WGS84), se sitúa de tal modo que tanto la posición de su centro de gravedad como su plano ecuatorial coincidan con los terrestres. Por el contrario, cuando el elipsoide es local, estas propiedades no se cumplen necesariamente, y el elipsoide resulta insuficiente, ya que no se cuenta con información sobre su posicionamiento con respecto a la superficie terrestre {cite}`olaya_sistemas_2020`.
+
+Surge así el concepto de [datum](https://es.wikipedia.org/wiki/Datum), que es el conjunto formado por una superficie de referencia (el elipsoide) y un punto en el que este se une al geoide. Este punto se denomina punto astronómico fundamental (para su cálculo se emplean métodos astronómicos), o simplemente punto fundamental, y en él el elipsoide es tangente al geoide {cite}`olaya_sistemas_2020`.
+
+Para un mismo elipsoide pueden utilizarse distintos puntos fundamentales, que darán lugar a distintos datum y a distintas coordenadas para un mismo punto {cite}`olaya_sistemas_2020`. Además de los datum globales o continentales, varios países han creado sus propios datum para hacer su cartografía lo más precisa posible. Algunos de los datum usados en la actualidad son:
+
+- WGS84: para todo el mundo.
+- NAD27 (*North American Datum* 1927) y NAD83 (*North American Datum* 1983): para América del Norte.
+- ETRS89 (*European Terrestrial Reference System* 1989): para Europa.
+- ED50 (*European Datum* 1950) y ED79 (*European Datum* 1979): para España.
+- SAD69 (*South American Datum* 1969): para Brasil.
+- [CR05](https://epsg.io/1065-datum) (Costa Rica 2005): para Costa Rica, establecido mediante [Decreto Ejecutivo No. 33797-MJ-MOPT - PGR](http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=60238&nValor3=67698&strTipM=TC).
 
 ## Referencias bibliográficas
 ```{bibliography}
