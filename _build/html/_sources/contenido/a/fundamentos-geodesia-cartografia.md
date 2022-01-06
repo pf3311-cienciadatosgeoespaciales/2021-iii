@@ -1,4 +1,4 @@
-# Fundamentos de geodesia y cartografía
+# Fundamentos de cartografía y geodesia
 
 ## Trabajo previo
 
@@ -7,7 +7,7 @@
 Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
 
 ## Resumen
-
+La cartografía es ...
 
 ## Conceptos geodésicos básicos
 La [geodesia](https://oceanservice.noaa.gov/facts/geodesy.html) es la ciencia que trata de la medición de la forma de la Tierra, su orientación en el espacio y su campo gravitacional. Entre las tareas típicas de un geodesta están, por ejemplo, la delineación de costas, el establecimiento de límites de entidades territoriales administrativas (ej. países, provincias) y la medición de áreas de territorios.
@@ -85,6 +85,30 @@ Las líneas de los paralelos y meridianos se ilustran en la {numref}`figure-para
 
 Paralelos y meridianos. Imagen de Djexplo compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Latitud_y_Longitud_en_la_Tierra.svg).
 ```
+
+Las coordenadas geográficas resultan de gran utilidad, especialmente cuando se trabaja con grandes regiones o con sitios distribuidos por todo el planeta. Sin embargo, no se trata de un sistema cartesiano, y tareas como la medición de áreas o distancias es mucho más complicadas. Si bien la distancia entre dos paralelos es prácticamente constante (es decir, un grado de latitud equivale más o menos a una misma distancia en todos los puntos), la distancia entre dos meridianos no lo es, y varía entre unos 11,3 kilómetros en el Ecuador hasta los cero kilómetros en los polos, donde los meridianos convergen {cite}`olaya_sistemas_2020`.
+
+### Proyecciones cartográficas
+En muchas situaciones, los sistemas cartesianos resultan más convenientes que los esféricos. En un sistema cartesiano, la posición de un punto se define mediante un par de medidas de distancia: x e y. Además, las representaciones visuales de la información cartográfica son más cómodas de manejar en una superficie plana (ej. una lámina de papel o la pantalla de una computadora) que en una esférica (ej. un globo terráqueo).
+
+El resultado de asignar una coordenada plana a cada punto de la superficie de la Tierra (que no es plana) se conoce como [proyección cartográfica](https://es.wikipedia.org/wiki/Proyecci%C3%B3n_cartogr%C3%A1fica). Matemáticamente, se trata de asignar a cada par de coordenadas geográficas (longitud, latitud) un par de coordenadas cartesianas (x, y). 
+
+#### Tipos de proyecciones
+Las proyecciones pueden clasificarse, según la superficie sobre la que se proyectan los objetos, en cilíndricas, cónicas y azimutales.
+
+- **Cilíndricas**: el globo terrestre se proyecta en una superficie cilíndrica. Son muy utilizadas, pero con frecuencia se modifican debido a las grandes distorsiones que muestran en las zonas de latitud elevada, lo que impide apreciar a las regiones polares en su verdadera proporción. Son muy útiles para apreciar la superficie de la Tierra completa, por lo que se utiliza en [mapamundis](https://es.wikipedia.org/wiki/Mapamundi).
+
+```{figure} img/proyeccion-cilindrica
+:name: figure-proyeccion-cilindrica
+
+Proyección cilíndrica. Imagen compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Projection_cylindrique.jpg).
+```
+
+- Cónicas:
+
+- Azimutales:
+
+
 
 ## Referencias bibliográficas
 ```{bibliography}
