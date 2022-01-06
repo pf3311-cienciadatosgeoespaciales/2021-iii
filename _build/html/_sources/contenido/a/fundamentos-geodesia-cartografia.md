@@ -10,11 +10,11 @@ Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io
 La cartografía es el estudio y la práctica de hacer y estudiar mapas. En este capítulo se detallan los principales conceptos cartográficos y geodésicos requeridos para el trabajo con datos geoespaciales.
 
 ## Conceptos geodésicos básicos
-La [geodesia](https://oceanservice.noaa.gov/facts/geodesy.html) es la ciencia que trata de la medición de la forma de la Tierra, su orientación en el espacio y su campo gravitacional. Entre las tareas típicas de un geodesta están, por ejemplo, la delineación de costas, el establecimiento de límites de entidades territoriales administrativas (ej. países, provincias) y la medición de áreas de territorios.
+La [geodesia](https://oceanservice.noaa.gov/facts/geodesy.html) es la ciencia que trata de la medición de la forma de la Tierra, su orientación en el espacio y su campo gravitacional. Entre las tareas típicas de un geodesta están, por ejemplo, la delineación de costas, el establecimiento de límites de entidades territoriales administrativas (ej. países, provincias) y la medición de áreas de territorios. 
 
 El planeta Tierra tiene forma esférica, sin embargo, no es una esfera perfecta: es achatada en los polos y abultada en el Ecuador. Además, su superficie es irregular debido a accidentes geográficos como valles, montañas o depresiones tectónicas, entre muchos otros.
 
-Para realizar sus cálculos y mediciones, los geodestas deben utilizar varios modelos matemáticos, los cuales aproximan la forma real de la Tierra. Entre estos modelos están el elipsoide de referencia y el geoide. Las características de estos modelos pueden variar para satisfacer requerimientos particulares de navegación, agrimensura, catastro, uso del suelo y otras cuestiones de interés.
+Para realizar sus cálculos y mediciones, los geodestas deben utilizar varios modelos matemáticos, los cuales aproximan la forma real de la Tierra. Entre estos modelos están el elipsoide de referencia y el geoide. Las características de estos modelos pueden variar para satisfacer requerimientos particulares de navegación, agrimensura, catastro, uso del suelo y otras cuestiones de interés. Con estos modelos, uno de los objetivos principales de la geodesia es establecer un sistema de referencia y definir un conjunto de puntos (conocidos como vértices geodésicos ) cuyas coordenadas en dicho sistema sean conocidas con una precisión elevada. Posteriormente, y en base a esos puntos, los cuales forman una red geodésica, se pueden calcular las coordenadas de cualquier punto en el sistema de referencia definido {cite}`olaya_sistemas_2020`. 
 
 ### Elipsoide de referencia
 El [elipsoide de referencia](https://es.wikipedia.org/wiki/Elipsoide_de_referencia) es el modelo más sencillo de la forma de la Tierra. Se define por dos parámetros: el radio ecuatorial (semieje mayor) y el radio polar (semieje menor), los cuales se ejemplifican en la {numref}`figure-elipsoide-wgs84`.
@@ -127,6 +127,41 @@ Otra forma de clasificar las proyecciones es según las propiedades métricas qu
 
 Distorsiones en proyecciones cartográficas. Imagen de [Jim Vallandingham](https://bl.ocks.org/vlandham) compartida a través de [bl.ocks.org](http://bl.ocks.org/vlandham/raw/9216751/) (clic para ver la imagen completa).
 ```
+
+De acuerdo con el criterio de la conservación de propiedades métricas, las proyecciones cartográficas pueden clasificarse en:
+
+- **Equidistantes**: si conservan las distancias.
+- **Equivalentes** (o equiáreas): si conservan las áreas.
+- **Conformes**: si conservan las formas (o, lo que es lo mismo, los ángulos).
+
+No es posible conservar todas las propiedades a la vez, por lo que es necesario decidir cuales pueden perderse, de acuerdo con el uso que quiera dársele al mapa.
+
+### Ejemplos de proyecciones
+
+#### Mercator
+#### UTM
+#### Pseudo-Mercator
+
+## Codificación de sistemas de referencia
+Existe una gran cantidad de sistemas de referencia, por lo que se hace necesaria una forma de organizarlos.
+
+El *European Petroleum Survey Group* recopiló una base de datos, ahora llamada [EPSG Geodetic Parameter Dataset](https://epsg.org/), con una colección de definiciones de sistemas de referencia de coordenadas y de transformaciones entre sistemas globales, regionales, nacionales y locales. En la actualidad, esta base de datos es mantenida por el [Comité de Geomática de la International Association of Oil & Gas Producers](https://www.iogp.org/geomatics/).
+
+Cada sistema de referencia de coordenadas cuenta con un código, llamado código EPSG. Algunos código EPSG son:
+
+| Código EPSG | Sistema de referencia | Observaciones |
+| :- | :- | :- |
+| [4326](http://epsg.io/4326) | WGS 84 -- WGS84 - World Geodetic System 1984 | Utilizado en dispositivos GPS |
+| [3857](http://epsg.io/3857) | WGS 84 / Pseudo-Mercator -- Spherical Mercator | Creado por Google a principios 2005 para [Google Maps](https://maps.google.com/), es utilizado también por otros principales servicios de cartografía por Internet: [OpenStreetMap](https://www.openstreetmap.org/), [Bing Maps](https://www.bing.com/maps) y otros. A veces es referenciado como 900913 (denominado así inicialmente y de manera no oficial por el proyecto [OpenLayers](https://openlayers.org/)) |
+| [5367](http://epsg.io/5367) | CR05 / CRTM05 | Sistema oficial de Costa Rica |
+| [32616](http://epsg.io/32616) | WGS 84 / UTM zone 16N | UTM para Costa Rica |
+| [32617](http://epsg.io/32617) | WGS 84 / UTM zone 17N | UTM para Costa Rica |
+| [5456](http://epsg.io/5456) | Ocotepeque 1935 / Costa Rica Norte | Proyección Lambert para Costa Rica norte |
+| [5457](http://epsg.io/5457) | Ocotepeque 1935 / Costa Rica Sur | Proyección Lambert para Costa Rica sur |
+
+
+
+La base de datos EPSG puede consultarse en [http://epsg.io/](http://epsg.io/).
 
 ## Referencias bibliográficas
 ```{bibliography}

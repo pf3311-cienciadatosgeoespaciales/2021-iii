@@ -291,7 +291,34 @@
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejemplos-de-proyecciones">
+     Ejemplos de proyecciones
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mercator">
+       Mercator
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#utm">
+       UTM
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pseudo-mercator">
+       Pseudo-Mercator
+      </a>
+     </li>
+    </ul>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#codificacion-de-sistemas-de-referencia">
+   Codificación de sistemas de referencia
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias-bibliograficas">
@@ -326,7 +353,7 @@
 <h2>Conceptos geodésicos básicos<a class="headerlink" href="#conceptos-geodesicos-basicos" title="Permalink to this headline">¶</a></h2>
 <p>La <a class="reference external" href="https://oceanservice.noaa.gov/facts/geodesy.html">geodesia</a> es la ciencia que trata de la medición de la forma de la Tierra, su orientación en el espacio y su campo gravitacional. Entre las tareas típicas de un geodesta están, por ejemplo, la delineación de costas, el establecimiento de límites de entidades territoriales administrativas (ej. países, provincias) y la medición de áreas de territorios.</p>
 <p>El planeta Tierra tiene forma esférica, sin embargo, no es una esfera perfecta: es achatada en los polos y abultada en el Ecuador. Además, su superficie es irregular debido a accidentes geográficos como valles, montañas o depresiones tectónicas, entre muchos otros.</p>
-<p>Para realizar sus cálculos y mediciones, los geodestas deben utilizar varios modelos matemáticos, los cuales aproximan la forma real de la Tierra. Entre estos modelos están el elipsoide de referencia y el geoide. Las características de estos modelos pueden variar para satisfacer requerimientos particulares de navegación, agrimensura, catastro, uso del suelo y otras cuestiones de interés.</p>
+<p>Para realizar sus cálculos y mediciones, los geodestas deben utilizar varios modelos matemáticos, los cuales aproximan la forma real de la Tierra. Entre estos modelos están el elipsoide de referencia y el geoide. Las características de estos modelos pueden variar para satisfacer requerimientos particulares de navegación, agrimensura, catastro, uso del suelo y otras cuestiones de interés. Con estos modelos, uno de los objetivos principales de la geodesia es establecer un sistema de referencia y definir un conjunto de puntos (conocidos como vértices geodésicos ) cuyas coordenadas en dicho sistema sean conocidas con una precisión elevada. Posteriormente, y en base a esos puntos, los cuales forman una red geodésica, se pueden calcular las coordenadas de cualquier punto en el sistema de referencia definido <span id="id1">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>.</p>
 <div class="section" id="elipsoide-de-referencia">
 <h3>Elipsoide de referencia<a class="headerlink" href="#elipsoide-de-referencia" title="Permalink to this headline">¶</a></h3>
 <p>El <a class="reference external" href="https://es.wikipedia.org/wiki/Elipsoide_de_referencia">elipsoide de referencia</a> es el modelo más sencillo de la forma de la Tierra. Se define por dos parámetros: el radio ecuatorial (semieje mayor) y el radio polar (semieje menor), los cuales se ejemplifican en la <a class="reference internal" href="#figure-elipsoide-wgs84"><span class="std std-numref">Fig. 3</span></a>.</p>
@@ -352,9 +379,9 @@
 </div>
 <div class="section" id="datum-geodesico">
 <h3>Datum geodésico<a class="headerlink" href="#datum-geodesico" title="Permalink to this headline">¶</a></h3>
-<p>Cuando se trabaja con un elipsoide global (ej. WGS84), se sitúa de tal modo que tanto la posición de su centro de gravedad como su plano ecuatorial coincidan con los terrestres. Por el contrario, cuando el elipsoide es local, estas propiedades no se cumplen necesariamente, y el elipsoide resulta insuficiente, ya que no se cuenta con información sobre su posicionamiento con respecto a la superficie terrestre <span id="id1">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>.</p>
-<p>Surge así el concepto de <a class="reference external" href="https://es.wikipedia.org/wiki/Datum">datum</a>, que es el conjunto formado por una superficie de referencia (el elipsoide) y un punto en el que este se une al geoide. Este punto se denomina punto astronómico fundamental (para su cálculo se emplean métodos astronómicos), o simplemente punto fundamental, y en él el elipsoide es tangente al geoide <span id="id2">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>.</p>
-<p>Para un mismo elipsoide pueden utilizarse distintos puntos fundamentales, que darán lugar a distintos datum y a distintas coordenadas para un mismo punto <span id="id3">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>. Además de los datum globales o continentales, varios países han creado sus propios datum para hacer su cartografía lo más precisa posible. Algunos de los datum usados en la actualidad son:</p>
+<p>Cuando se trabaja con un elipsoide global (ej. WGS84), se sitúa de tal modo que tanto la posición de su centro de gravedad como su plano ecuatorial coincidan con los terrestres. Por el contrario, cuando el elipsoide es local, estas propiedades no se cumplen necesariamente, y el elipsoide resulta insuficiente, ya que no se cuenta con información sobre su posicionamiento con respecto a la superficie terrestre <span id="id2">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>.</p>
+<p>Surge así el concepto de <a class="reference external" href="https://es.wikipedia.org/wiki/Datum">datum</a>, que es el conjunto formado por una superficie de referencia (el elipsoide) y un punto en el que este se une al geoide. Este punto se denomina punto astronómico fundamental (para su cálculo se emplean métodos astronómicos), o simplemente punto fundamental, y en él el elipsoide es tangente al geoide <span id="id3">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>.</p>
+<p>Para un mismo elipsoide pueden utilizarse distintos puntos fundamentales, que darán lugar a distintos datum y a distintas coordenadas para un mismo punto <span id="id4">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>. Además de los datum globales o continentales, varios países han creado sus propios datum para hacer su cartografía lo más precisa posible. Algunos de los datum usados en la actualidad son:</p>
 <ul class="simple">
 <li><p>WGS84: para todo el mundo.</p></li>
 <li><p>NAD27 (<em>North American Datum</em> 1927) y NAD83 (<em>North American Datum</em> 1983): para América del Norte.</p></li>
@@ -385,7 +412,7 @@
 <img alt="../../_images/paralelos-meridianos.png" src="../../_images/paralelos-meridianos.png" />
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Paralelos y meridianos. Imagen de Djexplo compartida a través de <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Latitud_y_Longitud_en_la_Tierra.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-paralelos-meridianos" title="Permalink to this image">¶</a></p>
 </div>
-<p>Las coordenadas geográficas resultan de gran utilidad, especialmente cuando se trabaja con grandes regiones o con sitios distribuidos por todo el planeta. Sin embargo, no se trata de un sistema cartesiano, y tareas como la medición de áreas o distancias es mucho más complicadas. Si bien la distancia entre dos paralelos es prácticamente constante (es decir, un grado de latitud equivale más o menos a una misma distancia en todos los puntos), la distancia entre dos meridianos no lo es, y varía entre unos 11,3 kilómetros en el Ecuador hasta los cero kilómetros en los polos, donde los meridianos convergen <span id="id4">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>.</p>
+<p>Las coordenadas geográficas resultan de gran utilidad, especialmente cuando se trabaja con grandes regiones o con sitios distribuidos por todo el planeta. Sin embargo, no se trata de un sistema cartesiano, y tareas como la medición de áreas o distancias es mucho más complicadas. Si bien la distancia entre dos paralelos es prácticamente constante (es decir, un grado de latitud equivale más o menos a una misma distancia en todos los puntos), la distancia entre dos meridianos no lo es, y varía entre unos 11,3 kilómetros en el Ecuador hasta los cero kilómetros en los polos, donde los meridianos convergen <span id="id5">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id45">Ola20</a>]</span>.</p>
 </div>
 <div class="section" id="proyecciones-cartograficas">
 <h3>Proyecciones cartográficas<a class="headerlink" href="#proyecciones-cartograficas" title="Permalink to this headline">¶</a></h3>
@@ -420,13 +447,77 @@
 <img alt="../../_images/proyecciones-distorsion-a.gif" src="../../_images/proyecciones-distorsion-a.gif" />
 <p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Distorsiones en proyecciones cartográficas. Imagen de <a class="reference external" href="https://bl.ocks.org/vlandham">Jim Vallandingham</a> compartida a través de <a class="reference external" href="http://bl.ocks.org/vlandham/raw/9216751/">bl.ocks.org</a> (clic para ver la imagen completa).</span><a class="headerlink" href="#figure-proyecciones-distorsion" title="Permalink to this image">¶</a></p>
 </div>
+<p>De acuerdo con el criterio de la conservación de propiedades métricas, las proyecciones cartográficas pueden clasificarse en:</p>
+<ul class="simple">
+<li><p><strong>Equidistantes</strong>: si conservan las distancias.</p></li>
+<li><p><strong>Equivalentes</strong> (o equiáreas): si conservan las áreas.</p></li>
+<li><p><strong>Conformes</strong>: si conservan las formas (o, lo que es lo mismo, los ángulos).</p></li>
+</ul>
+<p>No es posible conservar todas las propiedades a la vez, por lo que es necesario decidir cuales pueden perderse, de acuerdo con el uso que quiera dársele al mapa.</p>
 </div>
 </div>
+<div class="section" id="ejemplos-de-proyecciones">
+<h3>Ejemplos de proyecciones<a class="headerlink" href="#ejemplos-de-proyecciones" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="mercator">
+<h4>Mercator<a class="headerlink" href="#mercator" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="utm">
+<h4>UTM<a class="headerlink" href="#utm" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="pseudo-mercator">
+<h4>Pseudo-Mercator<a class="headerlink" href="#pseudo-mercator" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
+<div class="section" id="codificacion-de-sistemas-de-referencia">
+<h2>Codificación de sistemas de referencia<a class="headerlink" href="#codificacion-de-sistemas-de-referencia" title="Permalink to this headline">¶</a></h2>
+<p>Existe una gran cantidad de sistemas de referencia, por lo que se hace necesaria una forma de organizarlos.</p>
+<p>El <em>European Petroleum Survey Group</em> recopiló una base de datos, ahora llamada <a class="reference external" href="https://epsg.org/">EPSG Geodetic Parameter Dataset</a>, con una colección de definiciones de sistemas de referencia de coordenadas y de transformaciones entre sistemas globales, regionales, nacionales y locales. En la actualidad, esta base de datos es mantenida por el <a class="reference external" href="https://www.iogp.org/geomatics/">Comité de Geomática de la International Association of Oil &amp; Gas Producers</a>.</p>
+<p>Cada sistema de referencia de coordenadas cuenta con un código, llamado código EPSG. Algunos código EPSG son:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Código EPSG</p></th>
+<th class="text-align:left head"><p>Sistema de referencia</p></th>
+<th class="text-align:left head"><p>Observaciones</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="http://epsg.io/4326">4326</a></p></td>
+<td class="text-align:left"><p>WGS 84 – WGS84 - World Geodetic System 1984</p></td>
+<td class="text-align:left"><p>Utilizado en dispositivos GPS</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="http://epsg.io/3857">3857</a></p></td>
+<td class="text-align:left"><p>WGS 84 / Pseudo-Mercator – Spherical Mercator</p></td>
+<td class="text-align:left"><p>Creado por Google a principios 2005 para <a class="reference external" href="https://maps.google.com/">Google Maps</a>, es utilizado también por otros principales servicios de cartografía por Internet: <a class="reference external" href="https://www.openstreetmap.org/">OpenStreetMap</a>, <a class="reference external" href="https://www.bing.com/maps">Bing Maps</a> y otros. A veces es referenciado como 900913 (denominado así inicialmente y de manera no oficial por el proyecto <a class="reference external" href="https://openlayers.org/">OpenLayers</a>)</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="http://epsg.io/5367">5367</a></p></td>
+<td class="text-align:left"><p>CR05 / CRTM05</p></td>
+<td class="text-align:left"><p>Sistema oficial de Costa Rica</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="http://epsg.io/32616">32616</a></p></td>
+<td class="text-align:left"><p>WGS 84 / UTM zone 16N</p></td>
+<td class="text-align:left"><p>UTM para Costa Rica</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="http://epsg.io/32617">32617</a></p></td>
+<td class="text-align:left"><p>WGS 84 / UTM zone 17N</p></td>
+<td class="text-align:left"><p>UTM para Costa Rica</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="http://epsg.io/5456">5456</a></p></td>
+<td class="text-align:left"><p>Ocotepeque 1935 / Costa Rica Norte</p></td>
+<td class="text-align:left"><p>Proyección Lambert para Costa Rica norte</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="http://epsg.io/5457">5457</a></p></td>
+<td class="text-align:left"><p>Ocotepeque 1935 / Costa Rica Sur</p></td>
+<td class="text-align:left"><p>Proyección Lambert para Costa Rica sur</p></td>
+</tr>
+</tbody>
+</table>
+<p>La base de datos EPSG puede consultarse en <a class="reference external" href="http://epsg.io/">http://epsg.io/</a>.</p>
 </div>
 <div class="section" id="referencias-bibliograficas">
 <h2>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">¶</a></h2>
-<p id="id5"><dl class="citation">
-<dt class="label" id="id15"><span class="brackets">Ola20</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>)</span></dt>
+<p id="id6"><dl class="citation">
+<dt class="label" id="id16"><span class="brackets">Ola20</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>,<a href="#id5">5</a>)</span></dt>
 <dd><p>Víctor Olaya. Sistemas de Información Geográfica. 2020. URL: <a class="reference external" href="https://volaya.github.io/libro-sig/">https://volaya.github.io/libro-sig/</a> (visited on 2021-12-31).</p>
 </dd>
 </dl>
