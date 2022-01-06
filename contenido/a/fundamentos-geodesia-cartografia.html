@@ -270,6 +270,18 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sistemas-de-coordenadas">
+   Sistemas de coordenadas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coordenadas-geograficas">
+     Coordenadas geográficas
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias-bibliograficas">
    Referencias bibliográficas
   </a>
@@ -307,7 +319,7 @@
 <p>El <a class="reference external" href="https://es.wikipedia.org/wiki/Elipsoide_de_referencia">elipsoide de referencia</a> es el modelo más sencillo de la forma de la Tierra. Se define por dos parámetros: el radio ecuatorial (semieje mayor) y el radio polar (semieje menor), los cuales se ejemplifican en la <a class="reference internal" href="#figure-elipsoide-wgs84"><span class="std std-numref">Fig. 3</span></a>.</p>
 <div class="figure align-default" id="figure-elipsoide-wgs84">
 <img alt="../../_images/elipsoide-wgs84.png" src="../../_images/elipsoide-wgs84.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Radio ecuatorial y radio polar del elipsoide de referencia del sistema geodésico <a class="reference external" href="https://es.wikipedia.org/wiki/WGS84">WGS84</a>. Imagen de <a href="https://commons.wikimedia.org/wiki/File:WGS84_mean_Earth_radius.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-elipsoide-wgs84" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Radio ecuatorial y radio polar del elipsoide de referencia del sistema geodésico <a class="reference external" href="https://es.wikipedia.org/wiki/WGS84">WGS84</a>. Imagen de <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Cmglee">Cmglee</a> compartida a través de <a href="https://commons.wikimedia.org/wiki/File:WGS84_mean_Earth_radius.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-elipsoide-wgs84" title="Permalink to this image">¶</a></p>
 </div>
 <p>A través de la historia, se han utilizado diferentes elipsoides cuyas medidas varían de acuerdo con los instrumentos y conocimientos disponibles en cada época y lugar. La lista de la <a class="reference internal" href="#figure-tabla-elipsoides"><span class="std std-numref">Fig. 4</span></a> muestra algunos de estos elipsoides de referencia y sus parámetros.</p>
 <div class="figure align-default" id="figure-tabla-elipsoides">
@@ -321,7 +333,7 @@
 <p>El elipsoide tiene una superficie lisa y no puede representar las protuberancias y depresiones de la Tierra. El <a class="reference external" href="https://es.wikipedia.org/wiki/Geoide">geoide</a> es un modelo mucho más acertado de la superficie del planeta que sí contempla estas características. La <a class="reference internal" href="#figure-geoide"><span class="std std-numref">Fig. 5</span></a> muestra una imagen de un geoide.</p>
 <div class="figure align-default" id="figure-geoide">
 <img alt="../../_images/geoide.jpg" src="../../_images/geoide.jpg" />
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Geoide. Imagen de ICGEM compartida a través de <a href="https://commons.wikimedia.org/wiki/File:Geoid_undulation_10k_scale.jpg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-geoide" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">Geoide. Imagen de <a class="reference external" href="http://icgem.gfz-potsdam.de/home">ICGEM</a> compartida a través de <a href="https://commons.wikimedia.org/wiki/File:Geoid_undulation_10k_scale.jpg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-geoide" title="Permalink to this image">¶</a></p>
 </div>
 <p>De manera similar al caso de los elipsoides, existen varios geoides de referencia que han sido desarrollados a través del tiempo y han evolucionado para adaptarse a las modificaciones de la superficie terrestre.</p>
 </div>
@@ -336,8 +348,30 @@
 <li><p>ETRS89 (<em>European Terrestrial Reference System</em> 1989): para Europa.</p></li>
 <li><p>ED50 (<em>European Datum</em> 1950) y ED79 (<em>European Datum</em> 1979): para España.</p></li>
 <li><p>SAD69 (<em>South American Datum</em> 1969): para Brasil.</p></li>
-<li><p><a class="reference external" href="https://epsg.io/1065-datum">CR05</a> (Costa Rica 2005): para Costa Rica, establecido mediante <a class="reference external" href="http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&amp;nValor1=1&amp;nValor2=60238&amp;nValor3=67698&amp;strTipM=TC">Decreto Ejecutivo No. 33797-MJ-MOPT - PGR</a>.</p></li>
+<li><p><a class="reference external" href="https://epsg.io/1065-datum">CR05</a> (Costa Rica 2005): para Costa Rica, declarado como datum oficial mediante <a class="reference external" href="http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&amp;nValor1=1&amp;nValor2=60238&amp;nValor3=67698&amp;strTipM=TC">Decreto Ejecutivo No. 33797-MJ-MOPT - PGR</a>.</p></li>
 </ul>
+</div>
+</div>
+<div class="section" id="sistemas-de-coordenadas">
+<h2>Sistemas de coordenadas<a class="headerlink" href="#sistemas-de-coordenadas" title="Permalink to this headline">¶</a></h2>
+<p>Una vez que se dispone de modelos precisos para representar la forma de la Tierra, es posible establecer un sistema para codificar cada una de las posiciones sobre su superficie y asignar a estas las coordenadas correspondientes. Así, podemos definir un sistema de coordenadas esféricas para un elipsoide. A este tipo de coordenadas se les llama <strong>coordenadas geográficas</strong>.</p>
+<p>Por otra parte, muchas veces es útil situar los elementos de la superficie del elipsoide sobre una superficie plana, dando lugar a las <strong>proyecciones cartográficas</strong>, las cuales utilizan coordenadas cartesianas, también llamadas coordenadas planas, debido a que resultan de proyectar la superficie del elipsoide sobre un plano.</p>
+<div class="section" id="coordenadas-geograficas">
+<h3>Coordenadas geográficas<a class="headerlink" href="#coordenadas-geograficas" title="Permalink to this headline">¶</a></h3>
+<p>El sistema de <a class="reference external" href="https://es.wikipedia.org/wiki/Coordenadas_geogr%C3%A1ficas">coordenadas geográficas</a> es un sistema de coordenadas esféricas mediante el cual un punto se localiza con dos valores angulares denominados latitud y longitud, los cuales se muestran en la <a class="reference internal" href="#figure-latitud-longitud"><span class="std std-numref">Fig. 6</span></a>.</p>
+<div class="figure align-default" id="figure-latitud-longitud">
+<img alt="../../_images/latitud-longitud.png" src="../../_images/latitud-longitud.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Latitud y longitud en una esfera con una gratícula con intervalos de 10°. Imagen de <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Peter_Mercator">Peter Mercator</a> compartida a través de <a href="https://commons.wikimedia.org/wiki/File:Latitude_and_longitude_graticule_on_a_sphere.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-latitud-longitud" title="Permalink to this image">¶</a></p>
+</div>
+<ul class="simple">
+<li><p>La <strong>latitud</strong> (φ, o <em>phi</em>) de un punto en la superficie de la Tierra es el ángulo entre el plano ecuatorial y la línea que pasa por este punto y el centro de la Tierra. Todos los puntos con la misma latitud forman un plano paralelo al plano del ecuador. El <a class="reference external" href="https://es.wikipedia.org/wiki/Ecuador_terrestre">ecuador</a> es el paralelo 0° y divide el globo en hemisferios norte y sur; así el polo norte es 90° N y el polo sur es 90° S. A medida que la latitud aumenta, hacia el Norte o hacia el Sur, disminuyen los kilómetros por grado. Para el paralelo del Ecuador, sabiendo que la circunferencia que corresponde al Ecuador mide 40 075,017 km, 1° equivale a 111,319 km (resultado de dividir el perímetro del ecuador entre los 360° de longitud).</p></li>
+<li><p>La <strong>longitud</strong> (λ, o <em>lambda</em>) de un punto en la superficie de la Tierra es el ángulo entre el meridiano de referencia y el meridiano que pasa por este punto. El meridiano de referencia mayormente aceptado es el meridiano que pasa por el Real Observatorio de Greenwich, situado al sureste de Londres, Inglaterra. Este primer meridiano determina los hemisferios este y oeste. Las líneas de longitud forman semicírculos máximos que pasan por los polos y se llaman meridianos. La distancia en km a la que equivale un grado de longitud depende de la latitud.</p></li>
+</ul>
+<p>Las líneas de los paralelos y meridianos se ilustran en la <a class="reference internal" href="#figure-paralelos-meridianos"><span class="std std-numref">Fig. 7</span></a>.</p>
+<div class="figure align-default" id="figure-paralelos-meridianos">
+<img alt="../../_images/paralelos-meridianos.png" src="../../_images/paralelos-meridianos.png" />
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Paralelos y meridianos. Imagen de Djexplo compartida a través de <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Latitud_y_Longitud_en_la_Tierra.svg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-paralelos-meridianos" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="referencias-bibliograficas">
