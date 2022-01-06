@@ -7,7 +7,7 @@
 Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
 
 ## Resumen
-La cartografía es ...
+La cartografía es el estudio y la práctica de hacer y estudiar mapas. En este capítulo se detallan los principales conceptos cartográficos y geodésicos requeridos para el trabajo con datos geoespaciales.
 
 ## Conceptos geodésicos básicos
 La [geodesia](https://oceanservice.noaa.gov/facts/geodesy.html) es la ciencia que trata de la medición de la forma de la Tierra, su orientación en el espacio y su campo gravitacional. Entre las tareas típicas de un geodesta están, por ejemplo, la delineación de costas, el establecimiento de límites de entidades territoriales administrativas (ej. países, provincias) y la medición de áreas de territorios.
@@ -120,6 +120,13 @@ Esquema de proyección cónica. Imagen de [Traroth](https://commons.wikimedia.or
 Esquema de proyección azimutal. Imagen de [Traroth](https://commons.wikimedia.org/wiki/User:Traroth) compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Projection_azimutale_gnomonique.jpg).
 ```
 
+Otra forma de clasificar las proyecciones es según las propiedades métricas que conserven. Toda proyección implica alguna distorsión en las áreas, formas o distancias, como se muestra en la {numref}`figure-proyecciones-distorsion`.
+
+```{figure} img/proyecciones-distorsion-a.gif
+:name: figure-proyecciones-distorsion
+
+Distorsiones en proyecciones cartográficas. Imagen de [Jim Vallandingham](https://bl.ocks.org/vlandham) compartida a través de [bl.ocks.org](http://bl.ocks.org/vlandham/raw/9216751/) (clic para ver la imagen completa).
+```
 
 ## Referencias bibliográficas
 ```{bibliography}
