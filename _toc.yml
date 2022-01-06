@@ -14,3 +14,4 @@ parts:
   - caption: A - Introducción
     chapters:
     - file: contenido/a/introduccion-ciencia-datos-geoespaciales
+    - file: contenido/a/fundamentos-geodesia-cartografia
