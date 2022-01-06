@@ -159,7 +159,7 @@ La proyección de Mercator va exagerando el tamaño de las tierras a medida que 
 
 Las diferencias entre el tamaño real de los países y territorios y su representación en la proyección de Mercator se muestra en varios sitios en la Web, entre ellos [https://brilliantmaps.com/mercator-vs-true-size/](https://brilliantmaps.com/mercator-vs-true-size/) y [https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps](https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps).
 
-## Codificación de sistemas de referencia
+### Codificación de sistemas de referencia
 Existe una gran cantidad de sistemas de referencia, por lo que se hace necesaria una forma de organizarlos.
 
 El *European Petroleum Survey Group* recopiló una base de datos, ahora llamada [EPSG Geodetic Parameter Dataset](https://epsg.org/), con una colección de definiciones de sistemas de referencia de coordenadas y de transformaciones entre sistemas globales, regionales, nacionales y locales. En la actualidad, esta base de datos es mantenida por el [Comité de Geomática de la International Association of Oil & Gas Producers](https://www.iogp.org/geomatics/).
