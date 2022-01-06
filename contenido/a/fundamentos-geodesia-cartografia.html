@@ -301,16 +301,6 @@
        Mercator
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#utm">
-       UTM
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pseudo-mercator">
-       Pseudo-Mercator
-      </a>
-     </li>
     </ul>
    </li>
   </ul>
@@ -318,6 +308,11 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#codificacion-de-sistemas-de-referencia">
    Codificación de sistemas de referencia
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos-de-mapas">
+   Ejemplos de mapas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -460,12 +455,21 @@
 <h3>Ejemplos de proyecciones<a class="headerlink" href="#ejemplos-de-proyecciones" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="mercator">
 <h4>Mercator<a class="headerlink" href="#mercator" title="Permalink to this headline">¶</a></h4>
+<p>La <a class="reference external" href="https://es.wikipedia.org/wiki/Proyecci%C3%B3n_de_Mercator">proyección de Mercator</a> fue creada por el cartógrafo flamenco <a class="reference external" href="https://es.wikipedia.org/wiki/Gerardus_Mercator">Gerardus Mercator</a> en 1569. Ha sido muy utilizada desde el siglo XVIII para cartas náuticas porque permitía trazar las rutas de rumbo constante como líneas rectas e ininterrumpidas, a diferencia de otras proyecciones más precisas. La proyección de Mercator se muestra en la <a class="reference internal" href="#figure-proyeccion-mercator"><span class="std std-numref">Fig. 12</span></a>.</p>
+<div class="figure align-default" id="figure-proyeccion-mercator">
+<img alt="../../_images/proyeccion-mercator.jpg" src="../../_images/proyeccion-mercator.jpg" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Proyección de Mercator. Imagen de <a class="reference external" href="https://commons.wikimedia.org/wiki/User:Strebe">Strebe</a> compartida a través de <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Mercator_projection_Square.JPG">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-proyeccion-mercator" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="utm">
-<h4>UTM<a class="headerlink" href="#utm" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="pseudo-mercator">
-<h4>Pseudo-Mercator<a class="headerlink" href="#pseudo-mercator" title="Permalink to this headline">¶</a></h4>
+<p>Es un tipo de proyección cilíndrica tangente al ecuador. Como tal, deforma las distancias entre los meridianos en líneas paralelas, aumentando su ancho real cada vez más a medida que se acerca a los polos. Esta proyección tampoco respeta las formas reales entre los paralelos, la amplía en largo, cada vez más a medida que se acerca a los polos, distorsionando las áreas cercanas a los polos aún más.</p>
+<p>La proyección de Mercator va exagerando el tamaño de las tierras a medida que nos alejamos de la línea del ecuador. Algunas de las distorsiones más conocidas que presenta son:</p>
+<ul class="simple">
+<li><p>Groenlandia aparece aproximadamente del tamaño de África, cuando en realidad la superficie de África es aproximadamente 14 veces la de Groenlandia.</p></li>
+<li><p>Alaska aparece similar en tamaño a Brasil, cuando el área de Brasil es casi cinco veces más grande que Alaska.</p></li>
+<li><p>La Antártida parece ser extremadamente grande. Si se cartografiara todo el globo, la Antártida se inflaría infinitamente. En realidad, es el tercer continente más pequeño.</p></li>
+<li><p>África parece tener aproximadamente el mismo tamaño que América del Sur, cuando en realidad África es más de una vez y media más grande.</p></li>
+<li><p>El aumento de tamaño del norte también distorsiona mucho la forma de Rusia, haciéndola parecer mucho más alta de norte a sur y estirando mucho sus regiones árticas en comparación con sus latitudes medias.</p></li>
+</ul>
+<p>Las diferencias entre el tamaño real de los países y territorios y su representación en la proyección de Mercator se muestra en varios sitios en la Web, entre ellos <a class="reference external" href="https://brilliantmaps.com/mercator-vs-true-size/">https://brilliantmaps.com/mercator-vs-true-size/</a> y <a class="reference external" href="https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps">https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps</a>.</p>
 </div>
 </div>
 </div>
@@ -513,6 +517,14 @@
 </tbody>
 </table>
 <p>La base de datos EPSG puede consultarse en <a class="reference external" href="http://epsg.io/">http://epsg.io/</a>.</p>
+</div>
+<div class="section" id="ejemplos-de-mapas">
+<h2>Ejemplos de mapas<a class="headerlink" href="#ejemplos-de-mapas" title="Permalink to this headline">¶</a></h2>
+<p>El uso de los conceptos cartográficos y geodésicos estudiados en este capítulo se ilustra en la <a class="reference internal" href="#figure-mapa-lluvia"><span class="std std-numref">Fig. 13</span></a>.</p>
+<div class="figure align-default" id="figure-mapa-lluvia">
+<img alt="../../_images/mapa-lluvia.jpeg" src="../../_images/mapa-lluvia.jpeg" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Mapa de lluvia en Costa Rica. Fuente: <a class="reference external" href="https://www.imn.ac.cr/">Instituto Meteorológico Nacional (IMN)</a>.</span><a class="headerlink" href="#figure-mapa-lluvia" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="referencias-bibliograficas">
 <h2>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">¶</a></h2>
