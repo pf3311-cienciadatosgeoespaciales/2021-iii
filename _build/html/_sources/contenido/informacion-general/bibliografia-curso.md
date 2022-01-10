@@ -33,6 +33,8 @@ Longley, P. A., Goodchild, M. F., Maguire, D. J., & Rhind, D. W. (2005). Geograp
 
 Lovelace, R., Nowosad, J., & Münchow, J. (2019). Geocomputation with R. CRC Press, Taylor and Francis Group, CRC Press is an imprint of theTaylor and Francis Group, an informa Buisness, A Chapman & Hall Book. https://geocompr.robinlovelace.net/
 
+Matsuoka, K., Skoglund, A., Roth, G., de Pomereu, J., Griffiths, H., Headland, R., Herried, B., Katsumata, K., Le Brocq, A., Licht, K., Morgan, F., Neff, P. D., Ritz, C., Scheinert, M., Tamura, T., Van de Putte, A., van den Broeke, M., von Deschwanden, A., Deschamps-Berger, C., … Melvær, Y. (2021). Quantarctica, an integrated mapping environment for Antarctica, the Southern Ocean, and sub-Antarctic islands. Environmental Modelling & Software, 140, 105015. https://doi.org/10.1016/j.envsoft.2021.105015
+
 Open Geospatial Consortium. (s. f.). Open Geospatial Consortium (OGC). Recuperado 3 de enero de 2022, de https://www.ogc.org/
 
 Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
