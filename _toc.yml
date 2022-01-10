@@ -15,3 +15,4 @@ parts:
     chapters:
     - file: contenido/a/introduccion-ciencia-datos-geoespaciales
     - file: contenido/a/fundamentos-geodesia-cartografia
+    - file: contenido/a/practica-qgis-diseno-mapas
