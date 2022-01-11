@@ -24,10 +24,10 @@ Se sugieren las siguientes propiedades para las capas geoespaciales:
 
 | Capa | Color | Opacidad | Etiquetas
 | :- | :- | :- | :- |
-| ADD Simple basemap | Campo **category**:<br>*Ice shelf*: rgb( 170, 204, 204 )<br>*Ice tongue*: rgb( 170, 204, 204 )<br>*Land*: rgb( 235, 255, 255 )<br>*Ocean*: rgb( 197, 199, 199 )<br>*Rumple*: rgb( 235, 255, 255 )<br>*Sub-antarctic_G*: rgb( 174, 174, 174 )<br>*Sub-antarctic_L*: rgb( 174, 174, 174 )|||
-| Quantarctica Antarctic Circle | rgb( 0, 0, 0 ) |||
-| Overview place names |  | 0 | **Reglas**<br>Descripción: Region, Filtro: "labelclass"  =  'Region', Valor: place_name, Tamaño: 19, Color: rgb( 133, 174, 174 )<br><br>Descripción: Sea, Filtro: "labelclass"  =  'Sea', Valor: place_name, Tamaño: 21, rgb( 164, 164, 164 )  |
-| South Pole | rgb( 255, 0, 0 ) |||
+| ADD Simple basemap | Campo **category**:<br>*Ice shelf*: rgb(170,204,204)<br>*Ice tongue*: rgb(170,204,204)<br>*Land*: rgb(235,255,255)<br>*Ocean*: rgb(197,199,199)<br>*Rumple*: rgb(235,255, 255)<br>*Sub-antarctic_G*: rgb(174,174,174)<br>*Sub-antarctic_L*: rgb(174,174,174)|||
+| Quantarctica Antarctic Circle | rgb(0,0,0 ) |||
+| Overview place names |  | 0 | **Reglas**<br>Descripción: Region, Filtro: "labelclass"  =  'Region', Valor: place_name, Tamaño: 19, Color: rgb(133,174,174)<br><br>Descripción: Sea, Filtro: "labelclass"  =  'Sea', Valor: place_name, Tamaño: 21, Color: rgb(164,164,164)  |
+| South Pole | rgb(255,0,0) |||
 
 ## Referencias bibliográficas
 ```{bibliography}

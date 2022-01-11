@@ -6,6 +6,10 @@ Dabbas, E. (2021). Interactive Dashboards and Data Apps with Plotly and Dash. Pa
 
 Dorman, M. (2021). Spatial Data Programming with Python. https://geobgu.xyz/py/
 
+Gandhi, U. (s. f.). Automating Map Creation with Print Layout Atlas (QGIS3)—QGIS Tutorials and Tips. Recuperado 11 de enero de 2022, de https://www.qgistutorials.com/en/docs/3/automating_map_creation.html
+
+Gandhi, U. (s. f.). Making a Map (QGIS3)—QGIS Tutorials and Tips. Recuperado 11 de enero de 2022, de https://www.qgistutorials.com/en/docs/3/making_a_map.html
+
 Gandhi, U. (2020a, febrero 1). Mastering GDAL Tools. Spatial Thoughts. https://spatialthoughts.com/courses/mastering-gdal-tools/
 
 Gandhi, U. (2020b, febrero 1). Spatial Data Visualization and Analytics. Spatial Thoughts. https://spatialthoughts.com/courses/spatial-data-viz/
