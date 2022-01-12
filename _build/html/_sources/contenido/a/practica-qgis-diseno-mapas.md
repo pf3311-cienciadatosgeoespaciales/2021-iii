@@ -9,9 +9,6 @@ Gandhi, U. (s. f.). Making a Map (QGIS3)—QGIS Tutorials and Tips. Recuperado 
 
 Gandhi, U. (2020b, febrero 1). Spatial Data Visualization and Analytics. Spatial Thoughts. https://spatialthoughts.com/courses/spatial-data-viz/
 
-Gandhi, U. (2021). QGIS Tutorials and Tips. https://www.qgistutorials.com/
-GDAL/OGR contributors. (2021). GDAL/OGR Geospatial Data Abstraction software Library. Open Source Geospatial Foundation. https://gdal.org/
-
 Graser, A. (2021, diciembre 20). QGIS Map Design – Free Christmas DLC. Locate Press Blog. https://blog.locatepress.com/qgis-map-design-free-christmas-dlc/
 
 ## Resumen
@@ -28,16 +25,16 @@ Mapa de registros de presencia de tolomucos (*Eira barbara*) en Costa Rica.
 
 Utilice las siguientes fuentes:
 
-Datos de presencia de tolomucos:
-https://doi.org/10.15468/dl.nfurnv
+Datos de presencia de tolomucos:  
+https://doi.org/10.15468/dl.nfurnv  
 Archivo CSV consultado a la [Infraestructura Mundial de Información en Biodiversidad (GBIF)](https://www.gbif.org/), con datos de diferentes publicadores.
 
-Capa geoespacial de provincias de Costa Rica:
-https://geos.snitcr.go.cr/be/IGN_5/wfs?
+Capa geoespacial de provincias de Costa Rica:  
+https://geos.snitcr.go.cr/be/IGN_5/wfs?  
 Capa WFS publicada por el Instituto Geográfico Nacional (IGN) en el [Sistema Nacional de Información Territorial (SNIT)](https://www.snitcr.go.cr/).
 
-Capas geoespaciales de territorios de Nicaragua y Panamá:
-https://gadm.org/download_country.html
+Capas geoespaciales de territorios de Nicaragua y Panamá:  
+https://gadm.org/download_country.html  
 Archivos SHP o GPKG compartidos por [GADM](https://gadm.org/).
 
 ## Mapas de expediciones históricas a la Antárdida
