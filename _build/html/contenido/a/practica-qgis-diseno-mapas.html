@@ -267,6 +267,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mapas-de-la-situacion-de-la-covid-19-en-costa-rica">
+   Mapas de la situación de la covid-19 en Costa Rica
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias-bibliograficas">
    Referencias bibliográficas
   </a>
@@ -296,7 +301,7 @@
 </div>
 <div class="section" id="resumen">
 <h2>Resumen<a class="headerlink" href="#resumen" title="Permalink to this headline">¶</a></h2>
-<p>Se elaboran diferentes mapas con el sistema de información geográfica de escritorio QGIS.</p>
+<p>Se propone la elaboración de diferentes mapas con el sistema de información geográfica de escritorio QGIS.</p>
 </div>
 <div class="section" id="mapa-de-registros-de-presencia-de-tolomucos-eira-barbara-en-costa-rica">
 <h2>Mapa de registros de presencia de tolomucos (<em>Eira barbara</em>) en Costa Rica<a class="headerlink" href="#mapa-de-registros-de-presencia-de-tolomucos-eira-barbara-en-costa-rica" title="Permalink to this headline">¶</a></h2>
@@ -310,7 +315,7 @@
 <a class="reference external" href="https://doi.org/10.15468/dl.nfurnv">https://doi.org/10.15468/dl.nfurnv</a><br />
 Archivo CSV consultado a la <a class="reference external" href="https://www.gbif.org/">Infraestructura Mundial de Información en Biodiversidad (GBIF)</a>, con datos de diferentes publicadores.</p>
 <p>Capa geoespacial de provincias de Costa Rica:<br />
-<a class="reference external" href="https://geos.snitcr.go.cr/be/IGN_5/wfs">https://geos.snitcr.go.cr/be/IGN_5/wfs</a>?<br />
+<a class="reference external" href="https://geos.snitcr.go.cr/be/IGN_5/wfs">https://geos.snitcr.go.cr/be/IGN_5/wfs</a>? (Límite Provincial 1:5mil - IGN_5:limiteprovincial_5k)
 Capa WFS publicada por el Instituto Geográfico Nacional (IGN) en el <a class="reference external" href="https://www.snitcr.go.cr/">Sistema Nacional de Información Territorial (SNIT)</a>.</p>
 <p>Capas geoespaciales de territorios de Nicaragua y Panamá:<br />
 <a class="reference external" href="https://gadm.org/download_country.html">https://gadm.org/download_country.html</a><br />
@@ -318,7 +323,7 @@ Archivos SHP o GPKG compartidos por <a class="reference external" href="https://
 </div>
 <div class="section" id="mapas-de-expediciones-historicas-a-la-antardida">
 <h2>Mapas de expediciones históricas a la Antárdida<a class="headerlink" href="#mapas-de-expediciones-historicas-a-la-antardida" title="Permalink to this headline">¶</a></h2>
-<p>Siga el tutorial <a class="reference external" href="https://blog.locatepress.com/qgis-map-design-free-christmas-dlc/">QGIS Map Design – Free Christmas DLC</a> de <a class="reference external" href="https://anitagraser.com/">Anita Graser</a>, sobre elaboración de mapas de la <a class="reference external" href="https://es.wikipedia.org/wiki/Edad_heroica_de_la_exploraci%C3%B3n_de_la_Ant%C3%A1rtida">edad heroica de la exploración de la Antártida</a>. El tutoria utiliza el paquete de datos <a class="reference external" href="https://www.npolar.no/quantarctica/">Quantarctica</a> <span id="id1">[<a class="reference internal" href="#id41">MSR+21</a>]</span>.</p>
+<p>Siga el tutorial <a class="reference external" href="https://blog.locatepress.com/qgis-map-design-free-christmas-dlc/">QGIS Map Design – Free Christmas DLC</a> de <a class="reference external" href="https://anitagraser.com/">Anita Graser</a>, sobre elaboración de mapas de la <a class="reference external" href="https://es.wikipedia.org/wiki/Edad_heroica_de_la_exploraci%C3%B3n_de_la_Ant%C3%A1rtida">edad heroica de la exploración de la Antártida</a>. El tutorial utiliza el paquete de datos <a class="reference external" href="https://www.npolar.no/quantarctica/">Quantarctica</a> <span id="id1">[<a class="reference internal" href="#id41">MSR+21</a>]</span>.</p>
 <p>Se recomienda descargar los datos de <a class="reference external" href="https://github.com/timlinux/QGIS-Freestyle/issues/2">QGIS Freestyle - 17 Dec 2021 #2</a>.</p>
 <p>Puede comparar sus mapas con el <a class="reference external" href="https://locatepress.com/files/qmd2/QMD2021DLC.zip">proyecto QGIS con el resultado final del tutorial</a>.</p>
 <p>Se sugieren las siguientes propiedades para las capas geoespaciales:</p>
@@ -353,6 +358,22 @@ Archivos SHP o GPKG compartidos por <a class="reference external" href="https://
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="mapas-de-la-situacion-de-la-covid-19-en-costa-rica">
+<h2>Mapas de la situación de la covid-19 en Costa Rica<a class="headerlink" href="#mapas-de-la-situacion-de-la-covid-19-en-costa-rica" title="Permalink to this headline">¶</a></h2>
+<p>Elabore con QGIS un mapa que muestre la cantidad de casos activos de covid-19 en los cantones de Costa Rica, como el que se muestra en la <a class="reference internal" href="#figure-mapa-covid-casos-activos"><span class="std std-numref">Fig. 15</span></a>.</p>
+<div class="figure align-default" id="figure-mapa-covid-casos-activos">
+<img alt="../../_images/mapa-covid-casos-activos.png" src="../../_images/mapa-covid-casos-activos.png" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Mapa de casos activos de covid-19 en cantones de Costa Rica al 2022-01-11.</span><a class="headerlink" href="#figure-mapa-covid-casos-activos" title="Permalink to this image">¶</a></p>
+</div>
+<p>Elabore mapas similares para casos positivos, fallecidos y recuperados por cantón.</p>
+<p>Utilice las siguientes fuentes:</p>
+<p>Datos de covid-19 en Costa Rica:<br />
+<a class="reference external" href="https://geovision.uned.ac.cr/oges/">https://geovision.uned.ac.cr/oges/</a><br />
+Archivos CSV compartidos por el <a class="reference external" href="http://www.ministeriodesalud.go.cr/">Ministerio de Salud de Costa Rica</a>.</p>
+<p>Capa geoespacial de cantones de Costa Rica:<br />
+<a class="reference external" href="https://geos.snitcr.go.cr/be/IGN_5/wfs">https://geos.snitcr.go.cr/be/IGN_5/wfs</a>? (Límite Cantonal 1:5mil - IGN_5:limitecantonal_5k)
+Capa WFS publicada por el Instituto Geográfico Nacional (IGN) en el <a class="reference external" href="https://www.snitcr.go.cr/">Sistema Nacional de Información Territorial (SNIT)</a>.</p>
 </div>
 <div class="section" id="referencias-bibliograficas">
 <h2>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">¶</a></h2>
