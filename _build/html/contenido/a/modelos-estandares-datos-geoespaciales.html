@@ -257,6 +257,25 @@
    Resumen
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modelos-de-datos">
+   Modelos de datos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-modelo-vectorial">
+     El modelo vectorial
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#el-estandar-simple-features">
+       El estándar Simple Features
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -274,11 +293,30 @@
 <h2>Trabajo previo<a class="headerlink" href="#trabajo-previo" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="lecturas">
 <h3>Lecturas<a class="headerlink" href="#lecturas" title="Permalink to this headline">¶</a></h3>
+<p>Lovelace, R., Nowosad, J., &amp; Münchow, J. (2019). Geocomputation with R. CRC Press, Taylor and Francis Group, CRC Press is an imprint of theTaylor and Francis Group, an informa Buisness, A Chapman &amp; Hall Book. <a class="reference external" href="https://geocompr.robinlovelace.net/">https://geocompr.robinlovelace.net/</a></p>
 <p>Olaya, V. (2020). Sistemas de Información Geográfica. <a class="reference external" href="https://volaya.github.io/libro-sig/">https://volaya.github.io/libro-sig/</a></p>
 </div>
 </div>
 <div class="section" id="resumen">
 <h2>Resumen<a class="headerlink" href="#resumen" title="Permalink to this headline">¶</a></h2>
+<p>Se introducen los modelos vectorial y raster, así como el estándar Simple Features. También se presentan las principales bibliotecas de software geoespacial.</p>
+</div>
+<div class="section" id="modelos-de-datos">
+<h2>Modelos de datos<a class="headerlink" href="#modelos-de-datos" title="Permalink to this headline">¶</a></h2>
+<p>Se utilizan dos modelos para la representación de datos geoespaciales: el vectorial y el raster.</p>
+<div class="section" id="el-modelo-vectorial">
+<h3>El modelo vectorial<a class="headerlink" href="#el-modelo-vectorial" title="Permalink to this headline">¶</a></h3>
+<p>El modelo vectorial de datos está basado en puntos localizados en un sistema de referencia de coordenadas (CRS; en inglés, <em>Coordinate Reference System</em>). Los puntos individuales pueden representar objetos independientes (ej. un poste eléctrico, una cabina telefónica) o pueden también agruparse para formar geometrías más complejas como líneas o polígonos. Por lo general, los puntos tienen solo dos dimensiones (x, y), a las que se les puede agregar una tercera dimensión <em>z</em>, usualmente correspondiente a la altitud sobre el nivel del mar.</p>
+<div class="section" id="el-estandar-simple-features">
+<h4>El estándar Simple Features<a class="headerlink" href="#el-estandar-simple-features" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="https://www.ogc.org/standards/sfa"><em>Simple Features</em></a> (o <em>Simple Feature Access</em>) es un estándar abierto de la <a class="reference external" href="https://iso.org/">Organización Internacional de Estandarización (ISO)</a> y del <a class="reference external" href="https://www.ogc.org/"><em>Open Geospatial Consortium</em> (OGC)</a> que especifica un modelo común de almacenamiento y acceso para geometrías de dos dimensiones (líneas, polígonos, multilíneas, multipolígonos, etc.). El estándar es implementado por muchas bibliotecas y bases de datos geoespaciales como <a class="reference external" href="https://gdal.org/">GDAL</a>, <a class="reference external" href="http://github.com/Toblerity/Fiona">Fiona (Python)</a>, <a class="reference external" href="http://github.com/Toblerity/Shapely">Shapely (Python)</a>, <a class="reference external" href="https://cran.r-project.org/web/packages/sf/index.html">sf (R)</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/PostGIS">PostgreSQL/PostGIS</a>, <a class="reference external" href="https://www.gaia-gis.it/fossil/libspatialite/">SQLite/SpatiaLite</a>, <a class="reference external" href="https://www.oracle.com/database/technologies/spatialandgraph.html">Oracle Spatial</a> y <a class="reference external" href="https://www.microsoft.com/en-us/sql-server/">Microsoft SQL Server</a>, entre muchas otras.</p>
+<p>La especificación define 17 tipos de geometrías, de las cuales siete son las más comúnmente utilizadas. Estas últimas se muestran en la <a class="reference internal" href="#figure-tipos-geometrias-sf"><span class="std std-numref">Fig. 17</span></a>.</p>
+<div class="figure align-default" id="figure-tipos-geometrias-sf">
+<img alt="../../_images/tipos-geometrias-sf.png" src="../../_images/tipos-geometrias-sf.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Tipos de geometrías de Simple Features más usadas. Imagen de <a class="reference external" href="https://geocompr.robinlovelace.net/spatial-class.html#vector-data">Robin Lovelace et al.</a>.</span><a class="headerlink" href="#figure-tipos-geometrias-sf" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 
