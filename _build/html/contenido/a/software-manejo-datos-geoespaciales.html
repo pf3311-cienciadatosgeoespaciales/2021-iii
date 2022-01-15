@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sistemas de información geográfica &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    <title>Software para manejo de datos geoespaciales &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="QGIS: sistema de información geográfica de escritorio" href="qgis-sig-escritorio.html" />
-    <link rel="prev" title="Fundamentos de cartografía y geodesia" href="fundamentos-geodesia-cartografia.html" />
+    <link rel="prev" title="Modelos y estándares de datos geoespaciales" href="modelos-estandares-datos-geoespaciales.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -144,8 +143,8 @@
    Fundamentos de cartografía y geodesia
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="sistemas-informacion-geografica.html">
    Sistemas de información geográfica
   </a>
  </li>
@@ -159,8 +158,8 @@
    Modelos y estándares de datos geoespaciales
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="software-manejo-datos-geoespaciales.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Software para manejo de datos geoespaciales
   </a>
  </li>
@@ -205,7 +204,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contenido/a/sistemas-informacion-geografica.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contenido/a/software-manejo-datos-geoespaciales.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -225,7 +224,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/a/sistemas-informacion-geografica.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/a/software-manejo-datos-geoespaciales.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -269,8 +268,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   Sistemas de información geográfica
+  <a class="reference internal nav-link" href="#bibliotecas">
+   Bibliotecas
   </a>
  </li>
 </ul>
@@ -284,29 +283,27 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="sistemas-de-informacion-geografica">
-<h1>Sistemas de información geográfica<a class="headerlink" href="#sistemas-de-informacion-geografica" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="software-para-manejo-de-datos-geoespaciales">
+<h1>Software para manejo de datos geoespaciales<a class="headerlink" href="#software-para-manejo-de-datos-geoespaciales" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="trabajo-previo">
 <h2>Trabajo previo<a class="headerlink" href="#trabajo-previo" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="lecturas">
 <h3>Lecturas<a class="headerlink" href="#lecturas" title="Permalink to this headline">¶</a></h3>
-<p>Olaya, V. (2020). Sistemas de Información Geográfica. <a class="reference external" href="https://volaya.github.io/libro-sig/">https://volaya.github.io/libro-sig/</a> (Parte 1, capítulo “¿Qué es un SIG?”)</p>
+<p>Pebesma, E., Wagner, W., Verbesselt, J., Goor, E., Briese, C., &amp; Neteler, M. (2016). OpenEO: a GDAL for Earth Observation Analytics. <a class="reference external" href="https://r-spatial.org/2016/11/29/openeo.html">https://r-spatial.org/2016/11/29/openeo.html</a></p>
 </div>
 </div>
 <div class="section" id="resumen">
 <h2>Resumen<a class="headerlink" href="#resumen" title="Permalink to this headline">¶</a></h2>
-<p>En general, un sistema de información geográfica (SIG) maneja datos georreferenciados (i.e. ubicados en un sistema de coordenadas) y los asocia con datos convencionales (ej. números, textos).</p>
+<p>Se introducen las bibliotecas GDAL, GEOS y PROJ.</p>
 </div>
-<div class="section" id="id1">
-<h2>Sistemas de información geográfica<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>A principios de la década de 1960, el geógrafo inglés <a class="reference external" href="https://es.wikipedia.org/wiki/Roger_Tomlinson">Roger Tomlinson</a> desarrolló en Canadá el que se considera el primer sistema de información geográfica. Se trataba del <a class="reference external" href="https://en.wikipedia.org/wiki/Canada_Geographic_Information_System">Canada Geographic Information System (CGIS)</a> y su objetivo fue manejar los datos del inventario geográfico canadiense y su análisis para la gestión del territorio rural. De manera casi simultánea al trabajo de Tomlinson, surgieron desarrollos similares en Estados Unidos y en el Reino Unido. El surgimiento de los sistemas de información geográfica no implicó solo el surgimiento de nuevas herramientas de software, sino también el desarrollo de técnicas que hasta entonces no habían sido necesarias <span id="id2">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id41">Ola20</a>]</span> como, por ejemplo, la manipulación de nuevos tipos de datos geométricos (ej. puntos, líneas, polígonos).</p>
-<p>En general, un sistema de información geográfica (SIG) maneja datos georreferenciados (i.e. ubicados en un sistema de coordenadas) y los asocia con datos convencionales (ej. números, textos), como se muestra en la <a class="reference internal" href="#figure-mapa-qgis"><span class="std std-numref">Fig. 14</span></a>.</p>
-<div class="figure align-default" id="figure-mapa-qgis">
-<img alt="../../_images/mapa-qgis.png" src="../../_images/mapa-qgis.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Mapa elaborado en QGIS que muestra la ubicación de los aeródromos de Costa Rica.</span><a class="headerlink" href="#figure-mapa-qgis" title="Permalink to this image">¶</a></p>
-</div>
-<p>En la actualidad, los SIG presentan los datos en capas (<em>layers</em>). Por ejemplo, el mapa de la <a class="reference internal" href="#figure-mapa-qgis"><span class="std std-numref">Fig. 14</span></a> contiene una capa base raster (la que muestra el mar y el continente), una capa de polígonos correspondiente a las provincias de Costa Rica y una capa de puntos correspondiente a los aeródromos. A la izquierda puede apreciarse la lista de esas capas y a la derecha un cuadro con información detallada sobre uno de los aeródromos.</p>
-<p>Los SIG de escritorio (ej. <a class="reference external" href="https://www.esri.com/en-us/arcgis/products/arcgis-desktop/overview">ArcGIS Desktop</a>, <a class="reference external" href="https://www.qgis.org/">QGIS</a>) son herramientas con interfaces de usuario muy gráficas e intuitivas, que no requieren de conocimientos de programación de computadoras y que permiten generar cartografía de alta calidad. Sin embargo, son poco flexibles y los resultados que producen son difícilmente <a class="reference external" href="https://es.wikipedia.org/wiki/Reproducibilidad_y_repetibilidad">reproducibles</a>.</p>
+<div class="section" id="bibliotecas">
+<h2>Bibliotecas<a class="headerlink" href="#bibliotecas" title="Permalink to this headline">¶</a></h2>
+<p>Las bibliotecas de sftware GDAL, GEOS y PROJ son utilizadas desde una gran cantidad de aplicaciones geoespaciales (ej. sistemas de información geográfica de escritorio, motores de bases de datos, servidores de mapas).</p>
+<ul class="simple">
+<li><p><strong>GDAL</strong>: <a class="reference external" href="https://gdal.org/">Geospatial Data Abstraction Library (GDAL</a> es una biblioteca para leer y escribir datos geoespaciales en varios formatos <a class="reference external" href="https://gdal.org/drivers/raster/">raster</a> y <a class="reference external" href="https://gdal.org/drivers/vector/">vectoriales</a>. Implementa un único <a class="reference external" href="https://gdal.org/user/raster_data_model.html">modelo abstracto de datos raster</a> y un único <a class="reference external" href="https://gdal.org/user/vector_data_model.html">modelo abstracto de datos vectoriales</a>, lo que permite programar aplicaciones geoespaciales sin tener que ocuparse de las particularidades de cada formato que se utilice (GeoTIFF, NetCDF, ESRI Shapefile, GeoJSON, etc.). A pesar de que GDAL está programada en C/C++, cuenta con una interfaz de programación de aplicaciones (API) para varios lenguajes de programación, incluyendo <a class="reference external" href="https://gdal.org/api/index.html#c-api">C</a>, <a class="reference external" href="https://gdal.org/api/index.html#id3">C++</a>, <a class="reference external" href="https://gdal.org/python/index.html">Python</a> y <a class="reference external" href="https://gdal.org/java/overview-summary.html">Java</a>. Además, ofrece un conjunto de <a class="reference external" href="https://gdal.org/programs/">utilitarios de línea de comandos</a> cuyas <a class="reference external" href="https://gdal.org/download.html#binaries">distribuciones binarias</a> están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Linux.</p></li>
+<li><p><strong>GEOS</strong>: <a class="reference external" href="https://trac.osgeo.org/geos">Geometry Engine, Open Source (GEOS)</a> es una implementación en C++ de la biblioteca <a class="reference external" href="http://www.tsusiatsoftware.net/jts/main.html">JTS Topology Suite</a> (desarrollada en Java) y que implementa un conjunto de operaciones y predicados geoespaciales (ej. unión, intersección, distancia, área).</p></li>
+<li><p><strong>PROJ</strong>: <a class="reference external" href="https://proj.org/">PROJ</a> es una biblioteca que transforma coordenadas entre diferentes CRS, incluyendo tanto proyecciones cartográficas como transformaciones geodésicas.</p></li>
+</ul>
 </div>
 </div>
 
@@ -335,19 +332,12 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="fundamentos-geodesia-cartografia.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="modelos-estandares-datos-geoespaciales.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Fundamentos de cartografía y geodesia</p>
+            <p class="prev-next-title">Modelos y estándares de datos geoespaciales</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="qgis-sig-escritorio.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">QGIS: sistema de información geográfica de escritorio</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
