@@ -15,5 +15,6 @@ parts:
     chapters:
     - file: contenido/a/introduccion-ciencia-datos-geoespaciales
     - file: contenido/a/fundamentos-geodesia-cartografia
+    - file: contenido/a/sistemas-informacion-geografica
     - file: contenido/a/qgis-sig-escritorio
     - file: contenido/a/modelos-estandares-datos-geoespaciales
