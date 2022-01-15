@@ -19,3 +19,4 @@ parts:
     - file: contenido/a/qgis-sig-escritorio
     - file: contenido/a/modelos-estandares-datos-geoespaciales
     - file: contenido/a/software-manejo-datos-geoespaciales
+    - file: contenido/a/gdal-biblioteca-lectura-escritura-datos-geoespaciales    
