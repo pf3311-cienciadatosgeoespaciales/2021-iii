@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GDAL: biblioteca para lectura y escritura de datos geoespaciales &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">PF-3311 Ciencia de datos geoespaciales 2021-III</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   PF-3311 Ciencia de datos geoespaciales 2021-III
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Información sobre el curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/descripcion-curso.html">
+   Descripción general, objetivos y metodología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/requisitos-curso.html">
+   Requisitos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/cronograma-curso.html">
+   Cronograma
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/evaluacion-curso.html">
+   Evaluación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/bibliografia-curso.html">
+   Bibliografía y otros recursos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  A - Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduccion-ciencia-datos-geoespaciales.html">
+   Introducción a la ciencia de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fundamentos-geodesia-cartografia.html">
+   Fundamentos de cartografía y geodesia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sistemas-informacion-geografica.html">
+   Sistemas de información geográfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qgis-sig-escritorio.html">
+   QGIS: sistema de información geográfica de escritorio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="modelos-estandares-datos-geoespaciales.html">
+   Modelos y estándares de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="software-manejo-datos-geoespaciales.html">
+   Software para manejo de datos geoespaciales
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contenido/a/gdal-biblioteca-lectura-escritura-datos-geoespaciales.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/a/gdal-biblioteca-lectura-escritura-datos-geoespaciales.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trabajo-previo">
+   Trabajo previo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tutoriales">
+     Tutoriales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resumen">
+   Resumen
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#caracteristicas-generales-de-gdal">
+   Características generales de GDAL
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#utilitarios-de-linea-de-comandos">
+     Utilitarios de línea de comandos
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#instalacion">
+       Instalación
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#consideraciones-generales">
+       Consideraciones generales
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplos-de-uso-de-comandos">
+       Ejemplos de uso de comandos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ogrinfo">
+         ogrinfo
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#ogr2ogr">
+         ogr2ogr
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#conversion-entre-formatos">
+           Conversión entre formatos
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#descarga-desde-un-servicio-wfs-validacion-de-geometrias-y-reproyeccion">
+           Descarga desde un servicio WFS, validación de geometrías y reproyección
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#filtrado-por-atributos">
+           Filtrado por atributos
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#seleccion-de-atributos-y-filtrado">
+           Selección de atributos y filtrado
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejercicios">
+       Ejercicios
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="gdal-biblioteca-para-lectura-y-escritura-de-datos-geoespaciales">
+<h1>GDAL: biblioteca para lectura y escritura de datos geoespaciales<a class="headerlink" href="#gdal-biblioteca-para-lectura-y-escritura-de-datos-geoespaciales" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="trabajo-previo">
+<h2>Trabajo previo<a class="headerlink" href="#trabajo-previo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="tutoriales">
+<h3>Tutoriales<a class="headerlink" href="#tutoriales" title="Permalink to this headline">¶</a></h3>
+<p>Gandhi, U. (2020a, febrero 1). Mastering GDAL Tools. Spatial Thoughts. <a class="reference external" href="https://spatialthoughts.com/courses/mastering-gdal-tools/">https://spatialthoughts.com/courses/mastering-gdal-tools/</a></p>
+</div>
+</div>
+<div class="section" id="resumen">
+<h2>Resumen<a class="headerlink" href="#resumen" title="Permalink to this headline">¶</a></h2>
+<p>Se introduce la biblioteca GDAL para lectura y escritura de datos geoespaciales y se muestran varios ejemplos de su uso.</p>
+</div>
+<div class="section" id="caracteristicas-generales-de-gdal">
+<h2>Características generales de GDAL<a class="headerlink" href="#caracteristicas-generales-de-gdal" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://gdal.org/">Geospatial Data Abstraction Library (GDAL)</a> es una biblioteca para leer y escribir datos geoespaciales en varios formatos <a class="reference external" href="https://gdal.org/drivers/raster/">raster</a> y <a class="reference external" href="https://gdal.org/drivers/vector/">vectoriales</a>. En ocasiones, también es denominada GDAL/OGR, en donde GDAL se refiere a la funcionalidad para datos raster y OGR (sigla antes usada para “OpenGIS Simple Features Reference Implementation”) a la correspondiente a datos vectoriales. En este documento, se utilizará la sigla GDAL para referirse a ambos modelos de datos. GDAL es distribuida por la <a class="reference external" href="https://www.osgeo.org/">Open Source Geospatial Foundation (OSGeo)</a> con una <a class="reference external" href="https://gdal.org/license.html#license">licencia X/MIT</a>.</p>
+<p>GDAL cuenta con un único <a class="reference external" href="https://gdal.org/user/raster_data_model.html">modelo abstracto de datos raster</a> y un único <a class="reference external" href="https://gdal.org/user/vector_data_model.html">modelo abstracto de datos vectoriales</a>, lo que permite programar aplicaciones geoespaciales sin tener que ocuparse de las particularidades de cada formato que se utilice (GeoTIFF, NetCDF, ESRI Shapefile, GeoJSON, etc.).</p>
+<p>A pesar de que GDAL está programada en C/C++, cuenta con una interfaz de programación de aplicaciones (API) para varios lenguajes de programación, incluyendo <a class="reference external" href="https://gdal.org/api/index.html#c-api">C</a>, <a class="reference external" href="https://gdal.org/api/index.html#id3">C++</a>, <a class="reference external" href="https://gdal.org/python/index.html">Python</a> y <a class="reference external" href="https://gdal.org/java/overview-summary.html">Java</a>. Además, ofrece un conjunto de <a class="reference external" href="https://gdal.org/programs/">utilitarios de línea de comandos</a> cuyas <a class="reference external" href="https://gdal.org/download.html#binaries">distribuciones binarias</a> están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Linux. Estas API y los utilitarios también están incluídos en plataforma de ciencia de datos llamada <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>, la cual cuenta con versiones para todos los sistemas operativos mencionados.</p>
+<div class="section" id="utilitarios-de-linea-de-comandos">
+<h3>Utilitarios de línea de comandos<a class="headerlink" href="#utilitarios-de-linea-de-comandos" title="Permalink to this headline">¶</a></h3>
+<p>Los <a class="reference external" href="https://gdal.org/programs/">utilitarios de línea de comandos de GDAL</a> permiten ejecutar tareas de geoprocesamiento y de conversión entre formatos geoespaciales sin utilizar una interfaz gráfica o un lenguaje de programación. Están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Unix/Linux.</p>
+<div class="section" id="instalacion">
+<h4>Instalación<a class="headerlink" href="#instalacion" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="consideraciones-generales">
+<h4>Consideraciones generales<a class="headerlink" href="#consideraciones-generales" title="Permalink to this headline">¶</a></h4>
+<p>Los utilitarios de línea de comandos de GDAL comparten una serie de <a class="reference external" href="https://gdal.org/programs/raster_common_options.html#raster-common-options">opciones comunes</a> que pueden visualizarse con la opción <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">help-general</span></code>. Por ejemplo:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ogrinfo --help-general
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Generic GDAL utility <span class="nb">command</span> options:
+  --version: report version of GDAL <span class="k">in</span> use.
+  --license: report GDAL license info.
+  --formats: report all configured format drivers.
+  --format <span class="o">[</span>format<span class="o">]</span>: details of one format.
+  --optfile filename: expand an option file into the argument list.
+  --config key value: <span class="nb">set</span> system configuration option.
+  --debug <span class="o">[</span>on/off/value<span class="o">]</span>: <span class="nb">set</span> debug level.
+  --pause: <span class="nb">wait</span> <span class="k">for</span> user input, <span class="nb">time</span> to attach debugger
+  --locale <span class="o">[</span>locale<span class="o">]</span>: install locale <span class="k">for</span> debugging <span class="o">(</span>i.e. en_US.UTF-8<span class="o">)</span>
+  --help-general: report detailed <span class="nb">help</span> on general options.
+</pre></div>
+</div>
+<p>Para obtener ayuda acerca de un comando particular, puede usarse la opción <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">help</span></code>. Por ejemplo:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ogrinfo --help
+</pre></div>
+</div>
+</div>
+<div class="section" id="ejemplos-de-uso-de-comandos">
+<h4>Ejemplos de uso de comandos<a class="headerlink" href="#ejemplos-de-uso-de-comandos" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="ogrinfo">
+<h5>ogrinfo<a class="headerlink" href="#ogrinfo" title="Permalink to this headline">¶</a></h5>
+<p>El comando <a class="reference external" href="https://gdal.org/programs/ogrinfo.html">ogrinfo</a> despliega información acerca de una fuente de datos vectoriales.</p>
+<p>Los siguientes comandos despliegan información sobre la <a class="reference external" href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/">capa de países</a> de <a class="reference external" href="https://www.naturalearthdata.com/">Natural Earth</a>, tanto para el formato comprimido como para el formato shapefile. En el caso comprimido, note el uso de <a class="reference external" href="https://gdal.org/user/virtual_file_systems.html">/vsizip/</a>, para sistemas de archivos virtuales.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Información sobre la capa comprimida en formato ZIP</span>
+ogrinfo -al -so /vsizip/ne_110m_admin_0_countries.zip
+
+<span class="c1"># Información sobre la capa descomprimida en formato shapefile</span>
+ogrinfo -al -so ne_110m_admin_0_countries.shp
+</pre></div>
+</div>
+</div>
+<div class="section" id="ogr2ogr">
+<h5>ogr2ogr<a class="headerlink" href="#ogr2ogr" title="Permalink to this headline">¶</a></h5>
+<p>El comando <a class="reference external" href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr</a> realiza conversiones entre formatos de fuentes de datos geoespaciales. A la vez, realiza otras operaciones como selección de atributos y geometrías, filtrado por criterios espaciales y no espaciales, reproyección y validación de geometrías, entre otras.</p>
+<div class="section" id="conversion-entre-formatos">
+<h6>Conversión entre formatos<a class="headerlink" href="#conversion-entre-formatos" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Despliegue de la lista de formatos vectoriales soportados por GDAL</span>
+ogr2ogr --formats
+
+<span class="c1"># Conversión de SHP a GeoJSON</span>
+ogr2ogr -f GeoJSON ne_110m_admin_0_countries.geojson ne_110m_admin_0_countries.shp
+</pre></div>
+</div>
+</div>
+<div class="section" id="descarga-desde-un-servicio-wfs-validacion-de-geometrias-y-reproyeccion">
+<h6>Descarga desde un servicio WFS, validación de geometrías y reproyección<a class="headerlink" href="#descarga-desde-un-servicio-wfs-validacion-de-geometrias-y-reproyeccion" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de la capa de cantones del IGN en el SNIT (https://www.snitcr.go.cr/)</span>
+ogr2ogr -f GeoJSON -t_srs EPSG:4326 -makevalid cantones.geojson WFS:<span class="s2">&quot;http://geos.snitcr.go.cr/be/IGN_5/wfs&quot;</span> <span class="s2">&quot;IGN_5:limitecantonal_5k&quot;</span>
+
+<span class="c1"># Información sobre la capa descargada</span>
+ogrinfo -al -so cantones.geojson
+</pre></div>
+</div>
+<p><strong>NOTA: si no puede acceder al servicio WFS del SNIT, descargue el archivo  <code class="docutils literal notranslate"><span class="pre">cantones.geojson</span> </code> de la dirección <a class="reference external" href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson</a>. Utilice la opción <em>Save Page As..</em> (Guardar página como…) al hacer clic derecho en su navegador web. Abra el archivo en QGIS (u otro SIG de escritorio) para verificar que se guardó correctamente.</strong></p>
+</div>
+<div class="section" id="filtrado-por-atributos">
+<h6>Filtrado por atributos<a class="headerlink" href="#filtrado-por-atributos" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtrado y extracción de los cantones con área &gt;= 2000 km2</span>
+ogr2ogr -where <span class="s2">&quot;area &gt;= 2000&quot;</span> cantones-grandes.geojson cantones.geojson
+
+<span class="c1"># Filtrado y extracción de los cantones de la provincia de Heredia</span>
+ogr2ogr -where <span class="s2">&quot;provincia = &#39;Heredia&#39;&quot;</span> cantones-heredia.geojson cantones.geojson
+
+<span class="c1"># Filtrado y extracción de los cantones con área &gt;= 2000 km2 de la provincia de Limón</span>
+ogr2ogr -where <span class="s2">&quot;area &gt;= 2000 AND provincia = &#39;Limón&#39;&quot;</span> cantones-grandes-limon.geojson cantones.geojson
+</pre></div>
+</div>
+</div>
+<div class="section" id="seleccion-de-atributos-y-filtrado">
+<h6>Selección de atributos y filtrado<a class="headerlink" href="#seleccion-de-atributos-y-filtrado" title="Permalink to this headline">¶</a></h6>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extracción de los campos de provincia, cantón y área de los cantones de la provincia de Alajuela</span>
+ogr2ogr -select <span class="s2">&quot;provincia, canton, area&quot;</span> -where <span class="s2">&quot;provincia = &#39;Alajuela&#39;&quot;</span> cantones-alajuela.geojson cantones.geojson
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicios">
+<h4>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Utilizando el archivo <code class="docutils literal notranslate"><span class="pre">cantones.geojson</span></code>, extraiga en otro archivo GeoJSON los cantones de la provincia de Guanacaste.  Incluya todos los campos.</p></li>
+<li><p>Utilizando el archivo <code class="docutils literal notranslate"><span class="pre">cantones.geojson</span></code>, extraiga en otro archivo GeoJSON los cantones de las provincia de Guanacaste, Puntarenas y Limón. Incluya todos los campos.</p></li>
+<li><p>Repita el ejercicio 2, pero guarde el resultado en un archivo tipo Shapefile (SHP).</p></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenido/a"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Manuel Vargas<br/>
+        
+            &copy; Copyright CC BY-SA 4.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
