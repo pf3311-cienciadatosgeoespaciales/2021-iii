@@ -1,14 +1,17 @@
 # Modelos y estándares de datos geoespaciales
 
+
 ## Trabajo previo
 
 ### Lecturas
-Lovelace, R., Nowosad, J., & Münchow, J. (2019). Geocomputation with R. CRC Press, Taylor and Francis Group, CRC Press is an imprint of theTaylor and Francis Group, an informa Buisness, A Chapman & Hall Book. https://geocompr.robinlovelace.net/
+Lovelace, R., Nowosad, J., & Münchow, J. (2019). Geocomputation with R. CRC Press, Taylor and Francis Group, CRC Press is an imprint of theTaylor and Francis Group, an informa Buisness, A Chapman & Hall Book. https://geocompr.robinlovelace.net/ (Parte 2, capítulo “Modelos para la información geográfica”)
 
-Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/ (Capítulo 2)
+
 
 ## Resumen
 Se introducen los modelos vectorial y raster, así como el estándar Simple Features para datos vectoriales.
+
 
 ## Modelos de datos
 Se utilizan dos modelos para la representación de datos geoespaciales: el vectorial y el raster.

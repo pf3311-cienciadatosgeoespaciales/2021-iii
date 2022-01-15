@@ -1,15 +1,10 @@
-# Práctica: Diseño de mapas con QGIS
+# QGIS: sistema de información geográfica de escritorio
+
 
 ## Trabajo previo
 
-### Lecturas
-Gandhi, U. (s. f.). Automating Map Creation with Print Layout Atlas (QGIS3)—QGIS Tutorials and Tips. Recuperado 11 de enero de 2022, de https://www.qgistutorials.com/en/docs/3/automating_map_creation.html
-
-Gandhi, U. (s. f.). Making a Map (QGIS3)—QGIS Tutorials and Tips. Recuperado 11 de enero de 2022, de https://www.qgistutorials.com/en/docs/3/making_a_map.html
-
+### Tutoriales
 Gandhi, U. (2020b, febrero 1). Spatial Data Visualization and Analytics. Spatial Thoughts. https://spatialthoughts.com/courses/spatial-data-viz/
-
-Graser, A. (2021, diciembre 20). QGIS Map Design – Free Christmas DLC. Locate Press Blog. https://blog.locatepress.com/qgis-map-design-free-christmas-dlc/
 
 
 ## Resumen
