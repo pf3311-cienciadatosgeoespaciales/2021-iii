@@ -274,6 +274,11 @@
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#el-modelo-raster">
+     El modelo raster
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -315,6 +320,21 @@
 <img alt="../../_images/tipos-geometrias-sf.png" src="../../_images/tipos-geometrias-sf.png" />
 <p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Tipos de geometrías de Simple Features más usadas. Imagen de <a class="reference external" href="https://geocompr.robinlovelace.net/spatial-class.html#vector-data">Robin Lovelace et al.</a>.</span><a class="headerlink" href="#figure-tipos-geometrias-sf" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+</div>
+<div class="section" id="el-modelo-raster">
+<h3>El modelo raster<a class="headerlink" href="#el-modelo-raster" title="Permalink to this headline">¶</a></h3>
+<p>El modelo de datos raster usualmente consiste de un encabezado y de una matriz con celdas (también llamadas pixeles) de un mismo tamaño. El encabezado define el CRS, la extensión y el punto de origen de una capa raster. Por lo general, el origen se ubica en la esquina inferior izquierda o en la esquina superior izquierda de la matriz. La extensión se define mediante el número de filas, el número de columnas y el tamaño (resolución) de la celda.</p>
+<p>Cada celda tiene una identificación (ID) y almacena un único valor, el cual puede ser numérico o categórico, como se muestra en la <a class="reference internal" href="#figure-modelo-raster"><span class="std std-numref">Fig. 18</span></a>.</p>
+<div class="figure align-default" id="figure-modelo-raster">
+<img alt="contenido/a/img/modelo-raster.png" src="contenido/a/img/modelo-raster.png" />
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">El modelo raster: (A) ID de las celdas, (B) valores de las celdas, (C) mapa raster de colores. Imagen de <a class="reference external" href="https://geocompr.robinlovelace.net/spatial-class.html#raster-data">Robin Lovelace et al.</a>.</span><a class="headerlink" href="#figure-modelo-raster" title="Permalink to this image">¶</a></p>
+</div>
+<p>A diferencia del modelo vectorial, el modelo raster no necesita almacenar todas las coordenadas de cada geometría (i.e. las esquinas de las celdas), debido a que la ubicación de cada celda puede calcularse a partir de la información contenida en el encabezado. Esta simplicidad, en conjunto con el <a class="reference external" href="https://en.wikipedia.org/wiki/Map_algebra">álgebra de mapas</a>, permiten que el procesamiento de datos raster sea mucho más eficiente que el procesamiento de datos vectoriales. Por otra parte, el modelo vectorial es mucho más flexible en cuanto a las posibilidades de representación de geometrías y almacenamiento de valores, por medio de múltiples elementos de datos.</p>
+<p>Los mapas raster generalmente almacenan fenómenos continuos como elevación, precipitación, temperatura, densidad de población y datos espectrales. También es posible representar mediante raster datos discretos, tales como tipos de suelo o clases de cobertura de la tierra, como se muestra en la <a class="reference internal" href="#figure-raster-continuo-categorico"><span class="std std-numref">Fig. 19</span></a>.</p>
+<div class="figure align-default" id="figure-raster-continuo-categorico">
+<img alt="contenido/a/img/raster-continuo-categorico.png" src="contenido/a/img/raster-continuo-categorico.png" />
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Ejemplos de mapas raster continuos y categóricos. Imagen de <a class="reference external" href="https://geocompr.robinlovelace.net/spatial-class.html#raster-data">Robin Lovelace et al.</a>.</span><a class="headerlink" href="#figure-raster-continuo-categorico" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
