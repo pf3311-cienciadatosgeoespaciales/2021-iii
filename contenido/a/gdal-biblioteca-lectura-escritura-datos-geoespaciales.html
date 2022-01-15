@@ -374,6 +374,27 @@
 <p>Los <a class="reference external" href="https://gdal.org/programs/">utilitarios de línea de comandos de GDAL</a> permiten ejecutar tareas de geoprocesamiento y de conversión entre formatos geoespaciales sin utilizar una interfaz gráfica o un lenguaje de programación. Están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Unix/Linux.</p>
 <div class="section" id="instalacion">
 <h4>Instalación<a class="headerlink" href="#instalacion" title="Permalink to this headline">¶</a></h4>
+<p>En el sitio web de GDAL se describen varias opciones para su <a class="reference external" href="https://gdal.org/download.html">descarga e instalación</a>, incluyendo <a class="reference external" href="https://gdal.org/download.html#binaries">archivos binarios ejecutables para varias plataformas</a>.</p>
+<p>Seguidamente, se detalla el procedimiento de <a class="reference external" href="https://gdal.org/download.html#conda">instalación mediante Conda</a>, el cual puede ejecutarse desde Linux, macOS o Windows. <a class="reference external" href="https://conda.io/">Conda</a> es un administrador de paquetes que puede instalarse como parte de <a class="reference external" href="https://anaconda.org/">Anaconda</a> o <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> (se recomienda esta última opción, por requerir menos recursos). Entre otras ventajas, conda permite el manejo de <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">ambientes (<em>environments</em>)</a>, cada uno con sus propias versiones de los paquetes instalados.</p>
+<p>Para instalar GDAL, luego de instalar Anaconda o Miniconda, ejecute los siguientes comandos desde una terminal:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creación de un ambiente conda llamado gdal</span>
+conda create --name gdal
+
+<span class="c1"># Activación del ambiente</span>
+conda activate gdal
+
+<span class="c1"># Instalación de la biblioteca gdal a través del canal conda-forge</span>
+conda install -c conda-forge gdal
+
+<span class="c1"># Prueba de la instalación</span>
+gdalinfo --version
+ogrinfo --version
+
+<span class="c1"># Desactivación del ambiente (luego de finalizado el trabajo con GDAL)</span>
+conda deactivate
+</pre></div>
+</div>
+<p>Una vez instalado el ambiente, puede activarse y desactivarse con <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activat</span> <span class="pre">gdal</span></code> y <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>.</p>
 </div>
 <div class="section" id="consideraciones-generales">
 <h4>Consideraciones generales<a class="headerlink" href="#consideraciones-generales" title="Permalink to this headline">¶</a></h4>

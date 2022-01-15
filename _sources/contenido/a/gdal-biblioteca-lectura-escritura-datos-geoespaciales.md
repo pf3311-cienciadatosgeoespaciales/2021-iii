@@ -21,6 +21,31 @@ A pesar de que GDAL está programada en C/C++, cuenta con una interfaz de progra
 Los [utilitarios de línea de comandos de GDAL](https://gdal.org/programs/) permiten ejecutar tareas de geoprocesamiento y de conversión entre formatos geoespaciales sin utilizar una interfaz gráfica o un lenguaje de programación. Están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Unix/Linux.
 
 #### Instalación
+En el sitio web de GDAL se describen varias opciones para su [descarga e instalación](https://gdal.org/download.html), incluyendo [archivos binarios ejecutables para varias plataformas](https://gdal.org/download.html#binaries).
+
+Seguidamente, se detalla el procedimiento de [instalación mediante Conda](https://gdal.org/download.html#conda), el cual puede ejecutarse desde Linux, macOS o Windows. [Conda](https://conda.io/) es un administrador de paquetes que puede instalarse como parte de [Anaconda](https://anaconda.org/) o [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (se recomienda esta última opción, por requerir menos recursos). Entre otras ventajas, conda permite el manejo de [ambientes (*environments*)](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html), cada uno con sus propias versiones de los paquetes instalados.
+
+Para instalar GDAL, luego de instalar Anaconda o Miniconda, ejecute los siguientes comandos desde una terminal:
+
+```shell
+# Creación de un ambiente conda llamado gdal
+conda create --name gdal
+
+# Activación del ambiente
+conda activate gdal
+
+# Instalación de la biblioteca gdal a través del canal conda-forge
+conda install -c conda-forge gdal
+
+# Prueba de la instalación
+gdalinfo --version
+ogrinfo --version
+
+# Desactivación del ambiente (luego de finalizado el trabajo con GDAL)
+conda deactivate
+```
+
+Una vez instalado el ambiente, puede activarse y desactivarse con `conda activat gdal` y `conda deactivate`.
 
 #### Consideraciones generales
 Los utilitarios de línea de comandos de GDAL comparten una serie de [opciones comunes](https://gdal.org/programs/raster_common_options.html#raster-common-options) que pueden visualizarse con la opción `-- help-general`. Por ejemplo:
