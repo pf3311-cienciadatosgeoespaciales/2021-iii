@@ -28,7 +28,10 @@ Seguidamente, se detalla el procedimiento de [instalación mediante Conda](https
 Para instalar GDAL, luego de instalar Anaconda o Miniconda, ejecute los siguientes comandos desde una terminal:
 
 ```shell
-# Creación de un ambiente conda llamado gdal
+# Actualización de conda
+$ conda update conda
+
+# Creación de un ambiente conda llamado gdal (puede usarse cualquier otro nombre)
 conda create --name gdal
 
 # Activación del ambiente

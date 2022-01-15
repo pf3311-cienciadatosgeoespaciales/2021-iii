@@ -377,7 +377,10 @@
 <p>En el sitio web de GDAL se describen varias opciones para su <a class="reference external" href="https://gdal.org/download.html">descarga e instalación</a>, incluyendo <a class="reference external" href="https://gdal.org/download.html#binaries">archivos binarios ejecutables para varias plataformas</a>.</p>
 <p>Seguidamente, se detalla el procedimiento de <a class="reference external" href="https://gdal.org/download.html#conda">instalación mediante Conda</a>, el cual puede ejecutarse desde Linux, macOS o Windows. <a class="reference external" href="https://conda.io/">Conda</a> es un administrador de paquetes que puede instalarse como parte de <a class="reference external" href="https://anaconda.org/">Anaconda</a> o <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> (se recomienda esta última opción, por requerir menos recursos). Entre otras ventajas, conda permite el manejo de <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">ambientes (<em>environments</em>)</a>, cada uno con sus propias versiones de los paquetes instalados.</p>
 <p>Para instalar GDAL, luego de instalar Anaconda o Miniconda, ejecute los siguientes comandos desde una terminal:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creación de un ambiente conda llamado gdal</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Actualización de conda</span>
+$ conda update conda
+
+<span class="c1"># Creación de un ambiente conda llamado gdal (puede usarse cualquier otro nombre)</span>
 conda create --name gdal
 
 <span class="c1"># Activación del ambiente</span>
