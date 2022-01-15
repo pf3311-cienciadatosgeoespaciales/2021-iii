@@ -1,13 +1,15 @@
 # Fundamentos de cartografía y geodesia
 
+
 ## Trabajo previo
 
 ### Lecturas
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/ (Parte 1, capítulo “Fundamentos cartográficos y geodésicos”)
 
-Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/
 
 ## Resumen
 La cartografía es el estudio y la práctica de hacer y estudiar mapas. En este capítulo se detallan los principales conceptos cartográficos y geodésicos requeridos para el trabajo con datos geoespaciales.
+
 
 ## Conceptos geodésicos básicos
 La [geodesia](https://oceanservice.noaa.gov/facts/geodesy.html) es la ciencia que trata de la medición de la forma de la Tierra, su orientación en el espacio y su campo gravitacional. Entre las tareas típicas de un geodesta están, por ejemplo, la delineación de costas, el establecimiento de límites de entidades territoriales administrativas (ej. países, provincias) y la medición de áreas de territorios. 
@@ -59,6 +61,7 @@ Para un mismo elipsoide pueden utilizarse distintos puntos fundamentales, que da
 - ED50 (*European Datum* 1950) y ED79 (*European Datum* 1979): para España.
 - SAD69 (*South American Datum* 1969): para Brasil.
 - [CR05](https://epsg.io/1065-datum) (Costa Rica 2005): para Costa Rica, declarado como datum oficial mediante [Decreto Ejecutivo No. 33797-MJ-MOPT - PGR](http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=60238&nValor3=67698&strTipM=TC).
+
 
 ## Sistemas de coordenadas
 Una vez que se dispone de modelos precisos para representar la forma de la Tierra, es posible establecer un sistema para codificar cada una de las posiciones sobre su superficie y asignar a estas las coordenadas correspondientes. Así, podemos definir un sistema de coordenadas esféricas para un elipsoide. A este tipo de coordenadas se les llama **coordenadas geográficas**.
@@ -178,6 +181,7 @@ Cada sistema de referencia de coordenadas cuenta con un código, llamado código
 
 La base de datos EPSG puede consultarse en [http://epsg.io/](http://epsg.io/).
 
+
 ## Ejemplos de mapas
 El uso de los conceptos cartográficos y geodésicos estudiados en este capítulo se ilustra en la {numref}`figure-mapa-lluvia`.
 
@@ -186,6 +190,7 @@ El uso de los conceptos cartográficos y geodésicos estudiados en este capítul
 
 Mapa de lluvia en Costa Rica. Fuente: [Instituto Meteorológico Nacional (IMN)](https://www.imn.ac.cr/).
 ```
+
 
 ## Referencias bibliográficas
 ```{bibliography}
