@@ -4,9 +4,9 @@
 ## Trabajo previo
 
 ### Lecturas
-Lovelace, R., Nowosad, J., & Münchow, J. (2019). Geocomputation with R. CRC Press, Taylor and Francis Group, CRC Press is an imprint of theTaylor and Francis Group, an informa Buisness, A Chapman & Hall Book. https://geocompr.robinlovelace.net/ (Parte 2, capítulo “Modelos para la información geográfica”)
+Lovelace, R., Nowosad, J., & Münchow, J. (2019). Geocomputation with R. CRC Press, Taylor and Francis Group, CRC Press is an imprint of theTaylor and Francis Group, an informa Buisness, A Chapman & Hall Book. https://geocompr.robinlovelace.net/ (Capítulo 2)
 
-Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/ (Capítulo 2)
+Olaya, V. (2020). Sistemas de Información Geográfica. https://volaya.github.io/libro-sig/ (Parte 2, capítulo “Modelos para la información geográfica”)
 
 
 ## Resumen
