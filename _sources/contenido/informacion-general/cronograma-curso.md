@@ -6,10 +6,10 @@
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
 | I (3-9 de enero)    | Introducción a la ciencia de datos geoespaciales | {cite:p}`rey_geographic_2020` (*Part I*), {cite:p}`hwang_building_2021`, {cite:p}`wu_streamlit_2021` |
-|                     | Fundamentos de geodesía y cartografía | {cite:p}`olaya_sistemas_2020` (Parte 1) |
+|                     | Fundamentos de cartografía y geodesia | {cite:p}`olaya_sistemas_2020` (Parte 1, Capítulo: "Fundamentos cartográficos y geodésicos") |
 |                     | Sistemas de información geográfica | {cite:p}`olaya_sistemas_2020` (Partes 1, 2 y 3) |
-| II (10-16 de enero) | QGIS: sistema de información geográfica de escritorio | {cite:p}`gandhi_spatial_2020`, {cite:p}`graser_qgis_2021` |
-|                     | Modelos y estándares de datos | {cite:p}`olaya_sistemas_2020` (Parte 2) |
+| II (10-16 de enero) | QGIS: sistema de información geográfica de escritorio | {cite:p}`gandhi_spatial_2020` |
+|                     | Modelos y estándares de datos geoespaciales | {cite:p}`olaya_sistemas_2020` (Parte 2), {cite:p}`lovelace_geocomputation_2019` (Capítulo 2) |
 |                     | Software para manejo de datos geoespaciales | {cite:p}`pebesma_openeo_2016` |
 | III-i (17-23 de enero) | GDAL/OGR: biblioteca para lectura y escritura de datos geoespaciales | {cite:p}`gandhi_mastering_2020`, {cite:p}`osgeolive_gdalogr_nodate` |
 
