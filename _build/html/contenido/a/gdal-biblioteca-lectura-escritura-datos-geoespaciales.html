@@ -278,8 +278,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#utilitarios-de-linea-de-comandos">
-     Utilitarios de línea de comandos
+    <a class="reference internal nav-link" href="#programas-para-la-linea-de-comandos-del-sistema-operativo">
+     Programas para la línea de comandos del sistema operativo
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
@@ -293,14 +293,21 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ejemplos-de-uso-de-comandos">
-       Ejemplos de uso de comandos
+      <a class="reference internal nav-link" href="#ejemplos-de-uso-de-programas">
+       Ejemplos de uso de programas
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#ogrinfo">
-         ogrinfo
+        <a class="reference internal nav-link" href="#vectoriales">
+         Vectoriales
         </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#ogrinfo">
+           ogrinfo
+          </a>
+         </li>
+        </ul>
        </li>
        <li class="toc-h5 nav-item toc-entry">
         <a class="reference internal nav-link" href="#ogr2ogr">
@@ -362,23 +369,23 @@
 </div>
 <div class="section" id="resumen">
 <h2>Resumen<a class="headerlink" href="#resumen" title="Permalink to this headline">¶</a></h2>
-<p>Se introduce la biblioteca GDAL para lectura y escritura de datos geoespaciales y se muestran varios ejemplos de su uso.</p>
+<p>Se introduce la biblioteca GDAL para lectura y escritura de datos geoespaciales y se muestran varios ejemplos de su uso a través de los programas para la línea de comandos del sistema operativo.</p>
 </div>
 <div class="section" id="caracteristicas-generales-de-gdal">
 <h2>Características generales de GDAL<a class="headerlink" href="#caracteristicas-generales-de-gdal" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://gdal.org/">Geospatial Data Abstraction Library (GDAL)</a> es una biblioteca para leer y escribir datos geoespaciales en varios formatos <a class="reference external" href="https://gdal.org/drivers/raster/">raster</a> y <a class="reference external" href="https://gdal.org/drivers/vector/">vectoriales</a>. En ocasiones, también es denominada GDAL/OGR, en donde GDAL se refiere a la funcionalidad para datos raster y OGR (sigla antes usada para “OpenGIS Simple Features Reference Implementation”) a la correspondiente a datos vectoriales. En este documento, se utilizará la sigla GDAL para referirse a ambos modelos de datos. GDAL es distribuida por la <a class="reference external" href="https://www.osgeo.org/">Open Source Geospatial Foundation (OSGeo)</a> con una <a class="reference external" href="https://gdal.org/license.html#license">licencia X/MIT</a>.</p>
+<p><a class="reference external" href="https://gdal.org/">Geospatial Data Abstraction Library (GDAL)</a> es una biblioteca para leer y escribir datos geoespaciales en varios formatos <a class="reference external" href="https://gdal.org/drivers/raster/">raster</a> y <a class="reference external" href="https://gdal.org/drivers/vector/">vectoriales</a>. En ocasiones, también es denominada GDAL/OGR, en donde GDAL se refiere a la funcionalidad para datos raster y OGR (sigla antes usada para “OpenGIS Simple Features Reference Implementation”) a la correspondiente a datos vectoriales. En este documento, se utilizará la sigla GDAL para referirse a la funcionalidad para ambos modelos de datos. GDAL es distribuida por la <a class="reference external" href="https://www.osgeo.org/">Open Source Geospatial Foundation (OSGeo)</a> con una <a class="reference external" href="https://gdal.org/license.html#license">licencia X/MIT</a>.</p>
 <p>GDAL cuenta con un único <a class="reference external" href="https://gdal.org/user/raster_data_model.html">modelo abstracto de datos raster</a> y un único <a class="reference external" href="https://gdal.org/user/vector_data_model.html">modelo abstracto de datos vectoriales</a>, lo que permite programar aplicaciones geoespaciales sin tener que ocuparse de las particularidades de cada formato que se utilice (GeoTIFF, NetCDF, ESRI Shapefile, GeoJSON, etc.).</p>
-<p>A pesar de que GDAL está programada en C/C++, cuenta con una interfaz de programación de aplicaciones (API) para varios lenguajes de programación, incluyendo <a class="reference external" href="https://gdal.org/api/index.html#c-api">C</a>, <a class="reference external" href="https://gdal.org/api/index.html#id3">C++</a>, <a class="reference external" href="https://gdal.org/python/index.html">Python</a> y <a class="reference external" href="https://gdal.org/java/overview-summary.html">Java</a>. Además, ofrece un conjunto de <a class="reference external" href="https://gdal.org/programs/">utilitarios de línea de comandos</a> cuyas <a class="reference external" href="https://gdal.org/download.html#binaries">distribuciones binarias</a> están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Linux. Estas API y los utilitarios también están incluídos en plataforma de ciencia de datos llamada <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>, la cual cuenta con versiones para todos los sistemas operativos mencionados.</p>
-<div class="section" id="utilitarios-de-linea-de-comandos">
-<h3>Utilitarios de línea de comandos<a class="headerlink" href="#utilitarios-de-linea-de-comandos" title="Permalink to this headline">¶</a></h3>
-<p>Los <a class="reference external" href="https://gdal.org/programs/">utilitarios de línea de comandos de GDAL</a> permiten ejecutar tareas de geoprocesamiento y de conversión entre formatos geoespaciales sin utilizar una interfaz gráfica o un lenguaje de programación. Están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Unix/Linux.</p>
+<p>A pesar de que GDAL está programada en C/C++, cuenta con una interfaz de programación de aplicaciones (API) para varios lenguajes de programación, incluyendo <a class="reference external" href="https://gdal.org/api/index.html#c-api">C</a>, <a class="reference external" href="https://gdal.org/api/index.html#id3">C++</a>, <a class="reference external" href="https://gdal.org/python/index.html">Python</a> y <a class="reference external" href="https://gdal.org/java/overview-summary.html">Java</a>. Además, ofrece un conjunto de <a class="reference external" href="https://gdal.org/programs/">programas para la línea de comandos del sistema operativo</a> cuyas <a class="reference external" href="https://gdal.org/download.html#binaries">distribuciones binarias</a> están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Linux. Estas API y los programas también están incluídos en la plataforma de ciencia de datos llamada <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>, la cual cuenta con versiones para todos los sistemas operativos mencionados.</p>
+<div class="section" id="programas-para-la-linea-de-comandos-del-sistema-operativo">
+<h3>Programas para la línea de comandos del sistema operativo<a class="headerlink" href="#programas-para-la-linea-de-comandos-del-sistema-operativo" title="Permalink to this headline">¶</a></h3>
+<p>Los <a class="reference external" href="https://gdal.org/programs/">programas de GDAL para la línea de comandos del sistema operativo</a> permiten ejecutar tareas de geoprocesamiento y de conversión entre formatos geoespaciales sin utilizar una interfaz gráfica o un lenguaje de programación.</p>
 <div class="section" id="instalacion">
 <h4>Instalación<a class="headerlink" href="#instalacion" title="Permalink to this headline">¶</a></h4>
 <p>En el sitio web de GDAL se describen varias opciones para su <a class="reference external" href="https://gdal.org/download.html">descarga e instalación</a>, incluyendo <a class="reference external" href="https://gdal.org/download.html#binaries">archivos binarios ejecutables para varias plataformas</a>.</p>
 <p>Seguidamente, se detalla el procedimiento de <a class="reference external" href="https://gdal.org/download.html#conda">instalación mediante Conda</a>, el cual puede ejecutarse desde Linux, macOS o Windows. <a class="reference external" href="https://conda.io/">Conda</a> es un administrador de paquetes que puede instalarse como parte de <a class="reference external" href="https://anaconda.org/">Anaconda</a> o <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> (se recomienda esta última opción, por requerir menos recursos). Entre otras ventajas, conda permite el manejo de <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">ambientes (<em>environments</em>)</a>, cada uno con sus propias versiones de los paquetes instalados.</p>
-<p>Para instalar GDAL, luego de instalar Anaconda o Miniconda, ejecute los siguientes comandos desde una terminal:</p>
+<p>Para instalar los programas de GDAL, luego de instalar Anaconda o Miniconda, ejecute los siguientes comandos desde una terminal:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Actualización de conda</span>
-$ conda update conda
+conda update conda
 
 <span class="c1"># Creación de un ambiente conda llamado gdal (puede usarse cualquier otro nombre)</span>
 conda create --name gdal
@@ -397,11 +404,11 @@ ogrinfo --version
 conda deactivate
 </pre></div>
 </div>
-<p>Una vez instalado el ambiente, puede activarse y desactivarse con <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activat</span> <span class="pre">gdal</span></code> y <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code>.</p>
+<p>Una vez instalado el ambiente, puede activarse y desactivarse con <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">gdal</span></code> y <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code> respectivamente.</p>
 </div>
 <div class="section" id="consideraciones-generales">
 <h4>Consideraciones generales<a class="headerlink" href="#consideraciones-generales" title="Permalink to this headline">¶</a></h4>
-<p>Los utilitarios de línea de comandos de GDAL comparten una serie de <a class="reference external" href="https://gdal.org/programs/raster_common_options.html#raster-common-options">opciones comunes</a> que pueden visualizarse con la opción <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">help-general</span></code>. Por ejemplo:</p>
+<p>Los programas de GDAL comparten una serie de <a class="reference external" href="https://gdal.org/programs/raster_common_options.html#raster-common-options">opciones comunes para datos raster</a> y de <a class="reference external" href="https://gdal.org/programs/vector_common_options.html">opciones comunes para datos vectoriales</a> que pueden visualizarse con la opción <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">help-general</span></code>. Por ejemplo:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ogrinfo --help-general
 </pre></div>
 </div>
@@ -422,19 +429,46 @@ conda deactivate
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ogrinfo --help
 </pre></div>
 </div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Usage: ogrinfo <span class="o">[</span>--help-general<span class="o">]</span> <span class="o">[</span>-ro<span class="o">]</span> <span class="o">[</span>-q<span class="o">]</span> <span class="o">[</span>-where restricted_where<span class="p">|</span>@filename<span class="o">]</span>
+               <span class="o">[</span>-spat xmin ymin xmax ymax<span class="o">]</span> <span class="o">[</span>-geomfield field<span class="o">]</span> <span class="o">[</span>-fid fid<span class="o">]</span>
+               <span class="o">[</span>-sql statement<span class="p">|</span>@filename<span class="o">]</span> <span class="o">[</span>-dialect sql_dialect<span class="o">]</span> <span class="o">[</span>-al<span class="o">]</span> <span class="o">[</span>-rl<span class="o">]</span> <span class="o">[</span>-so<span class="o">]</span> <span class="o">[</span>-fields<span class="o">={</span>YES/NO<span class="o">}]</span>
+               <span class="o">[</span>-geom<span class="o">={</span>YES/NO/SUMMARY<span class="o">}]</span> <span class="o">[[</span>-oo <span class="nv">NAME</span><span class="o">=</span>VALUE<span class="o">]</span> ...<span class="o">]</span>
+               <span class="o">[</span>-nomd<span class="o">]</span> <span class="o">[</span>-listmdd<span class="o">]</span> <span class="o">[</span>-mdd domain<span class="p">|</span><span class="sb">`</span>all<span class="sb">`</span><span class="o">]</span>*
+               <span class="o">[</span>-nocount<span class="o">]</span> <span class="o">[</span>-noextent<span class="o">]</span> <span class="o">[</span>-nogeomtype<span class="o">]</span> <span class="o">[</span>-wkt_format WKT1<span class="p">|</span>WKT2<span class="p">|</span>...<span class="o">]</span>
+               <span class="o">[</span>-fielddomain name<span class="o">]</span>
+               datasource_name <span class="o">[</span>layer <span class="o">[</span>layer ...<span class="o">]]</span>
+</pre></div>
 </div>
-<div class="section" id="ejemplos-de-uso-de-comandos">
-<h4>Ejemplos de uso de comandos<a class="headerlink" href="#ejemplos-de-uso-de-comandos" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="ejemplos-de-uso-de-programas">
+<h4>Ejemplos de uso de programas<a class="headerlink" href="#ejemplos-de-uso-de-programas" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="vectoriales">
+<h5>Vectoriales<a class="headerlink" href="#vectoriales" title="Permalink to this headline">¶</a></h5>
 <div class="section" id="ogrinfo">
-<h5>ogrinfo<a class="headerlink" href="#ogrinfo" title="Permalink to this headline">¶</a></h5>
-<p>El comando <a class="reference external" href="https://gdal.org/programs/ogrinfo.html">ogrinfo</a> despliega información acerca de una fuente de datos vectoriales.</p>
+<h6>ogrinfo<a class="headerlink" href="#ogrinfo" title="Permalink to this headline">¶</a></h6>
+<p>El programa <a class="reference external" href="https://gdal.org/programs/ogrinfo.html">ogrinfo</a> despliega información acerca de una fuente de datos vectoriales.</p>
 <p>Los siguientes comandos despliegan información sobre la <a class="reference external" href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/">capa de países</a> de <a class="reference external" href="https://www.naturalearthdata.com/">Natural Earth</a>, tanto para el formato comprimido como para el formato shapefile. En el caso comprimido, note el uso de <a class="reference external" href="https://gdal.org/user/virtual_file_systems.html">/vsizip/</a>, para sistemas de archivos virtuales.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Información sobre la capa comprimida en formato ZIP</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga del archivo ZIP</span>
+wget https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
+
+<span class="c1"># Información sobre la capa comprimida en formato ZIP</span>
 ogrinfo -al -so /vsizip/ne_110m_admin_0_countries.zip
+
+<span class="c1"># Descompresión del archivo ZIP</span>
+unzip ne_110m_admin_0_countries.zip
 
 <span class="c1"># Información sobre la capa descomprimida en formato shapefile</span>
 ogrinfo -al -so ne_110m_admin_0_countries.shp
 </pre></div>
+</div>
+<p>Puede utilizarse SQL para consultar los datos:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consulta SQL (en Windows, sustituya los &quot;\&quot; por &quot;^&quot; para los cambios de línea)</span>
+ogrinfo <span class="se">\</span>
+  -sql <span class="s2">&quot;SELECT name, continent FROM ne_110m_admin_0_countries&quot;</span> <span class="se">\</span>
+  -geom<span class="o">=</span>NO <span class="se">\</span>
+  ne_110m_admin_0_countries.shp
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="ogr2ogr">
