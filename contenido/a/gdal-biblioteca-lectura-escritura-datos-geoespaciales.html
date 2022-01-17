@@ -307,41 +307,19 @@
            ogrinfo
           </a>
          </li>
-        </ul>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#ogr2ogr">
-         ogr2ogr
-        </a>
-        <ul class="nav section-nav flex-column">
          <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#conversion-entre-formatos">
-           Conversión entre formatos
+          <a class="reference internal nav-link" href="#ogr2ogr">
+           ogr2ogr
           </a>
          </li>
          <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#descarga-desde-un-servicio-wfs-validacion-de-geometrias-y-reproyeccion">
-           Descarga desde un servicio WFS, validación de geometrías y reproyección
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#filtrado-por-atributos">
-           Filtrado por atributos
-          </a>
-         </li>
-         <li class="toc-h6 nav-item toc-entry">
-          <a class="reference internal nav-link" href="#seleccion-de-atributos-y-filtrado">
-           Selección de atributos y filtrado
+          <a class="reference internal nav-link" href="#ejemplo-de-analisis-distribucion-de-especies-de-murcielagos">
+           Ejemplo de análisis: distribución de especies de murciélagos
           </a>
          </li>
         </ul>
        </li>
       </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#ejercicios">
-       Ejercicios
-      </a>
      </li>
     </ul>
    </li>
@@ -448,7 +426,7 @@ conda deactivate
 <h6>ogrinfo<a class="headerlink" href="#ogrinfo" title="Permalink to this headline">¶</a></h6>
 <p>El programa <a class="reference external" href="https://gdal.org/programs/ogrinfo.html">ogrinfo</a> despliega información acerca de una fuente de datos vectoriales.</p>
 <p>Los siguientes comandos despliegan información sobre la <a class="reference external" href="https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/">capa de países</a> de <a class="reference external" href="https://www.naturalearthdata.com/">Natural Earth</a>, tanto para el formato comprimido como para el formato shapefile. En el caso comprimido, note el uso de <a class="reference external" href="https://gdal.org/user/virtual_file_systems.html">/vsizip/</a>, para sistemas de archivos virtuales.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga del archivo ZIP</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga del archivo ZIP (en Windows, puede instalar wget o descargar el archivo con un navegador)</span>
 wget https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip
 
 <span class="c1"># Información sobre la capa comprimida en formato ZIP</span>
@@ -457,73 +435,131 @@ ogrinfo -al -so /vsizip/ne_110m_admin_0_countries.zip
 <span class="c1"># Descompresión del archivo ZIP</span>
 unzip ne_110m_admin_0_countries.zip
 
-<span class="c1"># Información sobre la capa descomprimida en formato shapefile</span>
+<span class="c1"># Información sobre la capa descomprimida en formato SHP</span>
 ogrinfo -al -so ne_110m_admin_0_countries.shp
 </pre></div>
 </div>
 <p>Puede utilizarse SQL para consultar los datos:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consulta SQL (en Windows, sustituya los &quot;\&quot; por &quot;^&quot; para los cambios de línea)</span>
 ogrinfo <span class="se">\</span>
-  -sql <span class="s2">&quot;SELECT name, continent FROM ne_110m_admin_0_countries&quot;</span> <span class="se">\</span>
+  -sql <span class="s2">&quot;SELECT name, continent FROM ne_110m_admin_0_countries WHERE continent = &#39;Oceania&#39; ORDER BY name&quot;</span> <span class="se">\</span>
   -geom<span class="o">=</span>NO <span class="se">\</span>
   ne_110m_admin_0_countries.shp
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="ogr2ogr">
-<h5>ogr2ogr<a class="headerlink" href="#ogr2ogr" title="Permalink to this headline">¶</a></h5>
-<p>El comando <a class="reference external" href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr</a> realiza conversiones entre formatos de fuentes de datos geoespaciales. A la vez, realiza otras operaciones como selección de atributos y geometrías, filtrado por criterios espaciales y no espaciales, reproyección y validación de geometrías, entre otras.</p>
-<div class="section" id="conversion-entre-formatos">
-<h6>Conversión entre formatos<a class="headerlink" href="#conversion-entre-formatos" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Despliegue de la lista de formatos vectoriales soportados por GDAL</span>
+<h6>ogr2ogr<a class="headerlink" href="#ogr2ogr" title="Permalink to this headline">¶</a></h6>
+<p>El comando <a class="reference external" href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr</a> realiza conversiones entre formatos de fuentes de datos geoespaciales. A la vez, puede ejecutar otras operaciones como selección de atributos y geometrías, filtrado por criterios espaciales y no espaciales, reproyección y validación de geometrías, entre otras.</p>
+<p>Conversión entre formatos:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Despliegue de la lista de formatos vectoriales soportados por GDAL/OGR</span>
 ogr2ogr --formats
 
 <span class="c1"># Conversión de SHP a GeoJSON</span>
-ogr2ogr -f GeoJSON ne_110m_admin_0_countries.geojson ne_110m_admin_0_countries.shp
+ogr2ogr ne_110m_admin_0_countries.geojson ne_110m_admin_0_countries.shp
+
+<span class="c1"># Conversión de SHP a GeoPackage</span>
+ogr2ogr ne_110m_admin_0_countries.gpkg ne_110m_admin_0_countries.shp
 </pre></div>
 </div>
 </div>
-<div class="section" id="descarga-desde-un-servicio-wfs-validacion-de-geometrias-y-reproyeccion">
-<h6>Descarga desde un servicio WFS, validación de geometrías y reproyección<a class="headerlink" href="#descarga-desde-un-servicio-wfs-validacion-de-geometrias-y-reproyeccion" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de la capa de cantones del IGN en el SNIT (https://www.snitcr.go.cr/)</span>
-ogr2ogr -f GeoJSON -t_srs EPSG:4326 -makevalid cantones.geojson WFS:<span class="s2">&quot;http://geos.snitcr.go.cr/be/IGN_5/wfs&quot;</span> <span class="s2">&quot;IGN_5:limitecantonal_5k&quot;</span>
+<div class="section" id="ejemplo-de-analisis-distribucion-de-especies-de-murcielagos">
+<h6>Ejemplo de análisis: distribución de especies de murciélagos<a class="headerlink" href="#ejemplo-de-analisis-distribucion-de-especies-de-murcielagos" title="Permalink to this headline">¶</a></h6>
+<p>Se crea el archivo distribucion-murcielagos.gpkg para contener las capas necesarias para el análisis de distribución de murciélagos en Costa Rica.</p>
+<p>Descarga de capas desde un servicio WFS, reproyección y validación de geometrías:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de capas en servicio WFS del Sinac</span>
+ogrinfo WFS:<span class="s2">&quot;http://geos1pne.sirefor.go.cr/wfs&quot;</span>
+
+<span class="c1"># Descarga a GPKG de la capa WFS de áreas silvestres protegidas (ASP) con reproyección a WGS84 y validación de geometrías</span>
+ogr2ogr -nln asp <span class="se">\</span>
+  -s_srs EPSG:5367 -t_srs EPSG:4326 <span class="se">\</span>
+  -makevalid <span class="se">\</span>
+  distribucion-murcielagos.gpkg WFS:<span class="s2">&quot;http://geos1pne.sirefor.go.cr/wfs&quot;</span> <span class="s2">&quot;PNE:areas_silvestres_protegidas&quot;</span>
 
 <span class="c1"># Información sobre la capa descargada</span>
-ogrinfo -al -so cantones.geojson
-</pre></div>
-</div>
-<p><strong>NOTA: si no puede acceder al servicio WFS del SNIT, descargue el archivo  <code class="docutils literal notranslate"><span class="pre">cantones.geojson</span> </code> de la dirección <a class="reference external" href="https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson">https://raw.githubusercontent.com/gf0604-procesamientodatosgeograficos/2021i-datos/main/ign/delimitacion-territorial-administrativa/cantones.geojson</a>. Utilice la opción <em>Save Page As..</em> (Guardar página como…) al hacer clic derecho en su navegador web. Abra el archivo en QGIS (u otro SIG de escritorio) para verificar que se guardó correctamente.</strong></p>
-</div>
-<div class="section" id="filtrado-por-atributos">
-<h6>Filtrado por atributos<a class="headerlink" href="#filtrado-por-atributos" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Filtrado y extracción de los cantones con área &gt;= 2000 km2</span>
-ogr2ogr -where <span class="s2">&quot;area &gt;= 2000&quot;</span> cantones-grandes.geojson cantones.geojson
+ogrinfo -al -so distribucion-murcielagos.gpkg asp
 
-<span class="c1"># Filtrado y extracción de los cantones de la provincia de Heredia</span>
-ogr2ogr -where <span class="s2">&quot;provincia = &#39;Heredia&#39;&quot;</span> cantones-heredia.geojson cantones.geojson
 
-<span class="c1"># Filtrado y extracción de los cantones con área &gt;= 2000 km2 de la provincia de Limón</span>
-ogr2ogr -where <span class="s2">&quot;area &gt;= 2000 AND provincia = &#39;Limón&#39;&quot;</span> cantones-grandes-limon.geojson cantones.geojson
+<span class="c1"># Lista de capas en servicio WFS del IGN</span>
+ogrinfo WFS:<span class="s2">&quot;https://geos.snitcr.go.cr/be/IGN_5/wfs&quot;</span>
+
+<span class="c1"># Descarga a GPKG de la capa WFS de cantones con reproyección a WGS84 y validación de geometrías</span>
+ogr2ogr -update -nln cantones <span class="se">\</span>
+  -s_srs EPSG:5367 -t_srs EPSG:4326 <span class="se">\</span>
+  -makevalid <span class="se">\</span>
+  distribucion-murcielagos.gpkg WFS:<span class="s2">&quot;https://geos.snitcr.go.cr/be/IGN_5/wfs&quot;</span> <span class="s2">&quot;IGN_5:limitecantonal_5k&quot;</span>
+
+<span class="c1"># Información sobre la capa descargada</span>
+ogrinfo -al -so distribucion-murcielagos.gpkg cantones
 </pre></div>
 </div>
-</div>
-<div class="section" id="seleccion-de-atributos-y-filtrado">
-<h6>Selección de atributos y filtrado<a class="headerlink" href="#seleccion-de-atributos-y-filtrado" title="Permalink to this headline">¶</a></h6>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extracción de los campos de provincia, cantón y área de los cantones de la provincia de Alajuela</span>
-ogr2ogr -select <span class="s2">&quot;provincia, canton, area&quot;</span> -where <span class="s2">&quot;provincia = &#39;Alajuela&#39;&quot;</span> cantones-alajuela.geojson cantones.geojson
+<p>Descarga de datos desde un archivo CSV y conversión a un formato geoespacial:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de registros de presencia de murciélagos</span>
+wget https://api.gbif.org/v1/occurrence/download/request/0105729-210914110416597.zip
+
+<span class="c1"># Descompresión</span>
+unzip <span class="m">0105729</span>-210914110416597.zip
+
+<span class="c1"># Cambio de nombre del archivo (en Windows, puede usar el comando ren)</span>
+mv <span class="m">0105729</span>-210914110416597.csv murcielagos.csv
+
+<span class="c1"># Información sobre el conjunto de datos, sin interpretación de columnas de coordenadas</span>
+ogrinfo -al -so murcielagos.csv
+
+<span class="c1"># Información sobre el conjunto de datos, con interpretación de columnas de coordenadas</span>
+ogrinfo -al -so <span class="se">\</span>
+  -oo <span class="nv">X_POSSIBLE_NAMES</span><span class="o">=</span>decimalLongitude -oo <span class="nv">Y_POSSIBLE_NAMES</span><span class="o">=</span>decimalLatitude <span class="se">\</span>
+  murcielagos.csv
+
+<span class="c1"># Adición al GPKG de análisis de distribución de murciélagos</span>
+ogr2ogr -update -nln registros-murcielagos <span class="se">\</span>
+  -s_srs EPSG:4326 -t_srs EPSG:4326 <span class="se">\</span>
+  -oo <span class="nv">X_POSSIBLE_NAMES</span><span class="o">=</span>decimalLongitude -oo <span class="nv">Y_POSSIBLE_NAMES</span><span class="o">=</span>decimalLatitude <span class="se">\</span>
+  distribucion-murcielagos.gpkg murcielagos.csv
 </pre></div>
 </div>
+<p>Generación de capa con cantidad de especies de murciélagos en polígonos</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Revisión de índices y nombres de columnas geométricas</span>
+ogrinfo <span class="se">\</span>
+  -sql <span class="s2">&quot;SELECT table_name, column_name, HasSpatialIndex(table_name, column_name) FROM gpkg_geometry_columns&quot;</span> <span class="se">\</span>
+  distribucion-murcielagos.gpkg
+
+<span class="c1"># Creación de capa con cantidad de especies por ASP</span>
+ogr2ogr <span class="se">\</span>
+  -update -nln asp-especies <span class="se">\</span>
+  -dialect sqlite -sql <span class="s2">&quot;SELECT ST_Union(p.SHAPE), p.nombre_asp, Count(DISTINCT species) AS especies_murcielagos FROM asp p LEFT JOIN &#39;registros-murcielagos&#39; r ON ST_Contains(p.SHAPE, r.geom) GROUP BY p.nombre_asp&quot;</span> <span class="se">\</span>
+  distribucion-murcielagos.gpkg distribucion-murcielagos.gpkg
+
+<span class="c1"># Creación de capa con cantidad de especies por cantón</span>
+ogr2ogr <span class="se">\</span>
+  -update -nln cantones-especies <span class="se">\</span>
+  -dialect sqlite -sql <span class="s2">&quot;SELECT p.SHAPE, p.canton, Count(DISTINCT species) AS especies_murcielagos FROM cantones p LEFT JOIN &#39;registros-murcielagos&#39; r ON ST_Contains(p.SHAPE, r.geom) GROUP BY p.canton&quot;</span> <span class="se">\</span>
+  distribucion-murcielagos.gpkg distribucion-murcielagos.gpkg
+</pre></div>
+</div>
+<p><strong>Preguntas de análisis</strong></p>
+<p>¿Cuáles son las 10 ASP con mayor cantidad de especies de murciélagos?</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10 ASP con mayor cantidad de especies de murciélagos</span>
+ogrinfo <span class="se">\</span>
+  -sql <span class="s2">&quot;SELECT nombre_asp, especies_murcielagos FROM &#39;asp-especies&#39; ORDER BY especies_murcielagos DESC LIMIT 10&quot;</span> <span class="se">\</span>
+  distribucion-murcielagos.gpkg
+</pre></div>
+</div>
+<p>¿Cuál es el promedio de especies de murciélagos en los cantones de la provincia de Heredia?</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cantidad de especies de murciélagos en los cantones de la provincia de Heredia</span>
+ogrinfo <span class="se">\</span>
+  -sql <span class="s2">&quot;SELECT c.canton, especies_murcielagos FROM cantones c, &#39;cantones-especies&#39; ce WHERE c.provincia = &#39;Heredia&#39; AND c.canton=ce.canton ORDER BY especies_murcielagos DESC&quot;</span> <span class="se">\</span>
+  distribucion-murcielagos.gpkg
+
+<span class="c1"># Promedio de especies de murciélagos en los cantones de la provincia de Heredia</span>
+ogrinfo <span class="se">\</span>
+  -sql <span class="s2">&quot;SELECT Avg(especies_murcielagos) promedio FROM cantones c, &#39;cantones-especies&#39; ce WHERE c.provincia = &#39;Heredia&#39; AND c.canton=ce.canton&quot;</span> <span class="se">\</span>
+  distribucion-murcielagos.gpkg
+</pre></div>
+</div>
+<p>¿Cuáles son las 5 especies de murciélagos con mayor cantidad de registros?</p>
 </div>
 </div>
-</div>
-<div class="section" id="ejercicios">
-<h4>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h4>
-<ol class="simple">
-<li><p>Utilizando el archivo <code class="docutils literal notranslate"><span class="pre">cantones.geojson</span></code>, extraiga en otro archivo GeoJSON los cantones de la provincia de Guanacaste.  Incluya todos los campos.</p></li>
-<li><p>Utilizando el archivo <code class="docutils literal notranslate"><span class="pre">cantones.geojson</span></code>, extraiga en otro archivo GeoJSON los cantones de las provincia de Guanacaste, Puntarenas y Limón. Incluya todos los campos.</p></li>
-<li><p>Repita el ejercicio 2, pero guarde el resultado en un archivo tipo Shapefile (SHP).</p></li>
-</ol>
 </div>
 </div>
 </div>
