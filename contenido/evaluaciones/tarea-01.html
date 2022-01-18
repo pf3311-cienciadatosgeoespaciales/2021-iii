@@ -302,15 +302,15 @@
 <h1>Tarea 01 - Elaboración de un mapa en QGIS<a class="headerlink" href="#tarea-01-elaboracion-de-un-mapa-en-qgis" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fecha-de-entrega">
 <h2>Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permalink to this headline">¶</a></h2>
-<p>La fecha y hora límites para la entrega de esta tarea es el <strong>martes 25 de enero de 2022 a las 16:59</strong>.</p>
+<p>La fecha y hora límite para la entrega de esta tarea es <strong>martes 25 de enero de 2022 a las 16:59</strong>.</p>
 </div>
 <div class="section" id="desarrollo">
 <h2>Desarrollo<a class="headerlink" href="#desarrollo" title="Permalink to this headline">¶</a></h2>
 <p>Debe elaborar un <a class="reference external" href="https://es.wikipedia.org/wiki/Mapa_coropl%C3%A9tico">mapa de coropletas</a> en <a class="reference external" href="https://qgis.org/">QGIS</a> que muestre la densidad de la red vial en los cantones de Costa Rica.</p>
 <p>La densidad de la red vial para un polígono se define como:<br />
-<strong>km de longitud de caminos / km2 de área</strong><br />
-Por ejemplo, si un cantón tiene 500 km de longitud de caminos y un área de 1000 km2, la densidad de su red vial es 0.5.</p>
-<p>Utilice las siguientes capas WFS publicadas por el Instituto Geográfico Nacional (IGN) en el <a class="reference external" href="https://www.snitcr.go.cr/">Sistema Nacional de Información Territorial (SNIT)</a>:</p>
+<strong>km de longitud de red vial / km2 de área</strong><br />
+Por ejemplo, si un cantón tiene 500 km de longitud de red vial y un área de 1000 km2, la densidad de su red vial es 0.5.</p>
+<p>Utilice las siguientes capas Web Feature Service (WFS) publicadas por el Instituto Geográfico Nacional (IGN) en el <a class="reference external" href="https://www.snitcr.go.cr/">Sistema Nacional de Información Territorial (SNIT)</a>:</p>
 <ul class="simple">
 <li><p>Límite cantonal 1:5000</p></li>
 <li><p>Red vial 1:200000</p></li>
@@ -318,30 +318,34 @@ Por ejemplo, si un cantón tiene 500 km de longitud de caminos y un área de 100
 </div>
 <div class="section" id="entregables">
 <h2>Entregables<a class="headerlink" href="#entregables" title="Permalink to this headline">¶</a></h2>
-<p>Un archivo comprimido (ej. ZIP) con tres archivos:</p>
+<p>Un archivo comprimido (ej. ZIP) que incluya tres archivos:</p>
 <ul class="simple">
-<li><p>Un archivo GeoPackage (GPKG) con la capa de cantones y el campo correspondiente a la densidad de la red vial.</p></li>
+<li><p>Un archivo GeoPackage (GPKG) con la capa de cantones y el campo correspondiente a la densidad de la red vial para cada cantón.</p></li>
 <li><p>Un archivo gráfico (ej. PNG, JPG) con el mapa de coropletas correspondiente a la densidad de la red vial en los cantones de Costa Rica.</p></li>
-<li><p>Un archivo llamado <code class="docutils literal notranslate"><span class="pre">leame.txt</span></code> con una descripción no mayor a 250 palabras del proceso realizado para elaborar el mapa.</p></li>
+<li><p>Un archivo llamado <code class="docutils literal notranslate"><span class="pre">leame.txt</span></code> con una descripción, no mayor a 250 palabras, del procedimiento seguido para elaborar el mapa.</p></li>
 </ul>
 <p>La entrega debe realizarse a través de la plataforma <a class="reference external" href="https://mediacionvirtual.ucr.ac.cr/">Mediación Virtual</a>.</p>
 </div>
 <div class="section" id="calificacion">
 <h2>Calificación<a class="headerlink" href="#calificacion" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>30% - Archivo GeoPackage (GPKG) con la capa de cantones.</p></li>
+<li><p>30% - Archivo GeoPackage (GPKG) con la capa de cantones y el campo correspondiente a la densidad de la red vial para cada cantón.</p></li>
 <li><p>60% - Archivo gráfico con el mapa</p>
 <ul>
 <li><p>20% - Capa de coropletas.</p></li>
 <li><p>10% - Simbología.</p></li>
 <li><p>10% - Grilla de coordenadas en WGS84 (EPSG:4326).</p></li>
 <li><p>5% - Escala.</p></li>
-<li><p>5% - Título, especificación del sistema de coordenadas y fuentes de datos utilizadas.</p></li>
+<li><p>5% - Información general: título, especificación del sistema de coordenadas y fuentes de datos utilizadas.</p></li>
 </ul>
 </li>
 <li><p>10% - Archivo <code class="docutils literal notranslate"><span class="pre">leame.txt</span></code> con descripción del proceso realizado para elaborar el mapa.</p></li>
 </ul>
-<p>Elija cuidadosamente las categorías y los colores del mapa de coropletas.</p>
+<p>Tenga en cuenta las siguientes consideraciones:</p>
+<ul class="simple">
+<li><p>Obtenga las longitudes y áreas que necesite a través de cálculos (ej. SQL, funcionalidades de QGIS). <strong>No utilice los campos precalculados de las capas (si los hay)</strong>.</p></li>
+<li><p>Elija cuidadosamente las categorías y los colores del mapa de coropletas.</p></li>
+</ul>
 </div>
 </div>
 
