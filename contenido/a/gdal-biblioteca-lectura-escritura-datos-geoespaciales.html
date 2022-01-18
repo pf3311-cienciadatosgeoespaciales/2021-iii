@@ -509,7 +509,7 @@ SOVEREIGNT: String (32.0)
 ...
 </pre></div>
 </div>
-<p>Puede utilizarse el lenguaje <a class="reference external" href="https://es.wikipedia.org/wiki/SQL">Structured Query Language (SQL)</a> para consultar los datos:</p>
+<p>Para consultar los datos, puede utilizarse el lenguaje <a class="reference external" href="https://es.wikipedia.org/wiki/SQL">Structured Query Language (SQL)</a> junto con el dialecto <a class="reference external" href="https://www.sqlite.org/">sqlite</a> y sus <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/spatialite-sql-5.0.1.html">funciones espaciales</a>. Estas funcionalidades espaciales son parte de los proyectos de <a class="reference external" href="http://www.gaia-gis.it/gaia-sins/">Gaia-SINS</a>.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consulta SQL (en Windows, sustituya los &quot;\&quot; por &quot;^&quot; para los cambios de línea)</span>
 ogrinfo <span class="se">\</span>
   -sql <span class="s2">&quot;SELECT name, continent FROM ne_110m_admin_0_countries WHERE continent = &#39;Oceania&#39; ORDER BY name&quot;</span> <span class="se">\</span>

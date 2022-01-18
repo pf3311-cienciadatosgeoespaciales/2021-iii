@@ -143,7 +143,7 @@ SOVEREIGNT: String (32.0)
 ...
 ```
 
-Puede utilizarse el lenguaje [Structured Query Language (SQL)](https://es.wikipedia.org/wiki/SQL) para consultar los datos:
+Para consultar los datos, puede utilizarse el lenguaje [Structured Query Language (SQL)](https://es.wikipedia.org/wiki/SQL) junto con el dialecto [sqlite](https://www.sqlite.org/) y sus [funciones espaciales](http://www.gaia-gis.it/gaia-sins/spatialite-sql-5.0.1.html). Estas funcionalidades espaciales son parte de los proyectos de [Gaia-SINS](http://www.gaia-gis.it/gaia-sins/).
 
 ```shell
 # Consulta SQL (en Windows, sustituya los "\" por "^" para los cambios de línea)
