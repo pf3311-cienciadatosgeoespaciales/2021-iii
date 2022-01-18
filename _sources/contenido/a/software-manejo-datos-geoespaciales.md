@@ -19,3 +19,8 @@ Las bibliotecas de sftware GDAL, GEOS y PROJ son utilizadas desde una gran canti
 * **GEOS**: [Geometry Engine, Open Source (GEOS)](https://libgeos.org/) es una implementación en C++ de la biblioteca [JTS Topology Suite](http://www.tsusiatsoftware.net/jts/main.html) (desarrollada en Java) y que implementa un conjunto de operaciones y predicados geoespaciales (ej. unión, intersección, distancia, área).
 
 * **PROJ**: [PROJ](https://proj.org/) es una biblioteca que transforma coordenadas entre diferentes CRS, incluyendo tanto proyecciones cartográficas como transformaciones geodésicas.
+
+## Otros tipos de software
+Las bibliotecas mencionadas en la sección anterior pueden utilizarse para desarrollar una gran variedad de software, incluyendo otras bibliotecas, sistemas administradores de bases de datos, servidores de mapas, sistemas de información geográfica de escritorio y sistemas de gestión de contenidos, entre otros.
+
+La [Open Source Geospatial Foundation (OSGeo)](https://www.osgeo.org/) mantiene una lista de proyectos de software geoespacial, muchos de los cuales utilizan estas bibliotecas.
