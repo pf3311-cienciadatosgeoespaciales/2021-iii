@@ -1,4 +1,4 @@
-# Tarea 01
+# Tarea 01 - Elaboración de un mapa en QGIS
 
 ## Fecha de entrega
 La fecha y hora límites para la entrega de esta tarea es el **martes 25 de enero de 2022 a las 16:59**.
