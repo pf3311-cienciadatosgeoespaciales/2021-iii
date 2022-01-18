@@ -298,8 +298,8 @@
       </a>
       <ul class="nav section-nav flex-column">
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#vectoriales">
-         Vectoriales
+        <a class="reference internal nav-link" href="#programas-para-datos-vectoriales">
+         Programas para datos vectoriales
         </a>
         <ul class="nav section-nav flex-column">
          <li class="toc-h6 nav-item toc-entry">
@@ -315,6 +315,28 @@
          <li class="toc-h6 nav-item toc-entry">
           <a class="reference internal nav-link" href="#ejemplo-de-analisis-distribucion-de-especies-de-murcielagos">
            Ejemplo de análisis: distribución de especies de murciélagos
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#programas-para-datos-raster">
+         Programas para datos raster
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#gdalinfo">
+           gdalinfo
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#gdalwarp">
+           gdalwarp
+          </a>
+         </li>
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#gdaldem">
+           gdaldem
           </a>
          </li>
         </ul>
@@ -352,8 +374,8 @@
 <div class="section" id="caracteristicas-generales-de-gdal">
 <h2>Características generales de GDAL<a class="headerlink" href="#caracteristicas-generales-de-gdal" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference external" href="https://gdal.org/">Geospatial Data Abstraction Library (GDAL)</a> es una biblioteca para leer y escribir datos geoespaciales en varios formatos <a class="reference external" href="https://gdal.org/drivers/raster/">raster</a> y <a class="reference external" href="https://gdal.org/drivers/vector/">vectoriales</a>. En ocasiones, también es denominada GDAL/OGR, en donde GDAL se refiere a la funcionalidad para datos raster y OGR (sigla antes usada para “OpenGIS Simple Features Reference Implementation”) a la correspondiente a datos vectoriales. En este documento, se utilizará la sigla GDAL para referirse a la funcionalidad para ambos modelos de datos. GDAL es distribuida por la <a class="reference external" href="https://www.osgeo.org/">Open Source Geospatial Foundation (OSGeo)</a> con una <a class="reference external" href="https://gdal.org/license.html#license">licencia X/MIT</a>.</p>
-<p>GDAL cuenta con un único <a class="reference external" href="https://gdal.org/user/raster_data_model.html">modelo abstracto de datos raster</a> y un único <a class="reference external" href="https://gdal.org/user/vector_data_model.html">modelo abstracto de datos vectoriales</a>, lo que permite programar aplicaciones geoespaciales sin tener que ocuparse de las particularidades de cada formato que se utilice (GeoTIFF, NetCDF, ESRI Shapefile, GeoJSON, etc.).</p>
-<p>A pesar de que GDAL está programada en C/C++, cuenta con una interfaz de programación de aplicaciones (API) para varios lenguajes de programación, incluyendo <a class="reference external" href="https://gdal.org/api/index.html#c-api">C</a>, <a class="reference external" href="https://gdal.org/api/index.html#id3">C++</a>, <a class="reference external" href="https://gdal.org/python/index.html">Python</a> y <a class="reference external" href="https://gdal.org/java/overview-summary.html">Java</a>. Además, ofrece un conjunto de <a class="reference external" href="https://gdal.org/programs/">programas para la línea de comandos del sistema operativo</a> cuyas <a class="reference external" href="https://gdal.org/download.html#binaries">distribuciones binarias</a> están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Linux. Estas API y los programas también están incluídos en la plataforma de ciencia de datos llamada <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>, la cual cuenta con versiones para todos los sistemas operativos mencionados.</p>
+<p>GDAL cuenta con un único <a class="reference external" href="https://gdal.org/user/raster_data_model.html">modelo abstracto de datos raster</a> y un único <a class="reference external" href="https://gdal.org/user/vector_data_model.html">modelo abstracto de datos vectoriales</a>, lo que permite programar aplicaciones geoespaciales sin tener que ocuparse de las particularidades de cada formato que se utilice (GeoTIFF, NetCDF, ESRI Shapefile, GeoPackage, GeoJSON, etc.).</p>
+<p>A pesar de que GDAL está programada en C/C++, cuenta con una interfaz de programación de aplicaciones (API; en inglés, <em>Application Programming Interface</em>) para varios lenguajes de programación, incluyendo <a class="reference external" href="https://gdal.org/api/index.html#c-api">C</a>, <a class="reference external" href="https://gdal.org/api/index.html#id3">C++</a>, <a class="reference external" href="https://gdal.org/python/index.html">Python</a> y <a class="reference external" href="https://gdal.org/java/overview-summary.html">Java</a>. Además, ofrece un conjunto de <a class="reference external" href="https://gdal.org/programs/">programas para la línea de comandos del sistema operativo</a> cuyas <a class="reference external" href="https://gdal.org/download.html#binaries">distribuciones binarias</a> están disponibles para varios sistemas operativos, incluyendo Windows, macOS y Linux. Estas API y los programas también están incluídos en la plataforma de ciencia de datos <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>, la cual puede instalarse en todos los sistemas operativos mencionados.</p>
 <div class="section" id="programas-para-la-linea-de-comandos-del-sistema-operativo">
 <h3>Programas para la línea de comandos del sistema operativo<a class="headerlink" href="#programas-para-la-linea-de-comandos-del-sistema-operativo" title="Permalink to this headline">¶</a></h3>
 <p>Los <a class="reference external" href="https://gdal.org/programs/">programas de GDAL para la línea de comandos del sistema operativo</a> permiten ejecutar tareas de geoprocesamiento y de conversión entre formatos geoespaciales sin utilizar una interfaz gráfica o un lenguaje de programación.</p>
@@ -390,38 +412,39 @@ conda deactivate
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ogrinfo --help-general
 </pre></div>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Generic GDAL utility <span class="nb">command</span> options:
-  --version: report version of GDAL <span class="k">in</span> use.
-  --license: report GDAL license info.
-  --formats: report all configured format drivers.
-  --format <span class="o">[</span>format<span class="o">]</span>: details of one format.
-  --optfile filename: expand an option file into the argument list.
-  --config key value: <span class="nb">set</span> system configuration option.
-  --debug <span class="o">[</span>on/off/value<span class="o">]</span>: <span class="nb">set</span> debug level.
-  --pause: <span class="nb">wait</span> <span class="k">for</span> user input, <span class="nb">time</span> to attach debugger
-  --locale <span class="o">[</span>locale<span class="o">]</span>: install locale <span class="k">for</span> debugging <span class="o">(</span>i.e. en_US.UTF-8<span class="o">)</span>
-  --help-general: report detailed <span class="nb">help</span> on general options.
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Generic</span> <span class="n">GDAL</span> <span class="n">utility</span> <span class="n">command</span> <span class="n">options</span><span class="p">:</span>
+  <span class="o">--</span><span class="n">version</span><span class="p">:</span> <span class="n">report</span> <span class="n">version</span> <span class="n">of</span> <span class="n">GDAL</span> <span class="ow">in</span> <span class="n">use</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">license</span><span class="p">:</span> <span class="n">report</span> <span class="n">GDAL</span> <span class="n">license</span> <span class="n">info</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">formats</span><span class="p">:</span> <span class="n">report</span> <span class="nb">all</span> <span class="n">configured</span> <span class="nb">format</span> <span class="n">drivers</span><span class="o">.</span>
+  <span class="o">--</span><span class="nb">format</span> <span class="p">[</span><span class="nb">format</span><span class="p">]:</span> <span class="n">details</span> <span class="n">of</span> <span class="n">one</span> <span class="nb">format</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">optfile</span> <span class="n">filename</span><span class="p">:</span> <span class="n">expand</span> <span class="n">an</span> <span class="n">option</span> <span class="n">file</span> <span class="n">into</span> <span class="n">the</span> <span class="n">argument</span> <span class="nb">list</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">config</span> <span class="n">key</span> <span class="n">value</span><span class="p">:</span> <span class="nb">set</span> <span class="n">system</span> <span class="n">configuration</span> <span class="n">option</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">debug</span> <span class="p">[</span><span class="n">on</span><span class="o">/</span><span class="n">off</span><span class="o">/</span><span class="n">value</span><span class="p">]:</span> <span class="nb">set</span> <span class="n">debug</span> <span class="n">level</span><span class="o">.</span>
+  <span class="o">--</span><span class="n">pause</span><span class="p">:</span> <span class="n">wait</span> <span class="k">for</span> <span class="n">user</span> <span class="nb">input</span><span class="p">,</span> <span class="n">time</span> <span class="n">to</span> <span class="n">attach</span> <span class="n">debugger</span>
+  <span class="o">--</span><span class="n">locale</span> <span class="p">[</span><span class="n">locale</span><span class="p">]:</span> <span class="n">install</span> <span class="n">locale</span> <span class="k">for</span> <span class="n">debugging</span> <span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">e</span><span class="o">.</span> <span class="n">en_US</span><span class="o">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+  <span class="o">--</span><span class="n">help</span><span class="o">-</span><span class="n">general</span><span class="p">:</span> <span class="n">report</span> <span class="n">detailed</span> <span class="n">help</span> <span class="n">on</span> <span class="n">general</span> <span class="n">options</span><span class="o">.</span>
 </pre></div>
 </div>
 <p>Para obtener ayuda acerca de un comando particular, puede usarse la opción <code class="docutils literal notranslate"><span class="pre">--</span> <span class="pre">help</span></code>. Por ejemplo:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ogrinfo --help
 </pre></div>
 </div>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Usage: ogrinfo <span class="o">[</span>--help-general<span class="o">]</span> <span class="o">[</span>-ro<span class="o">]</span> <span class="o">[</span>-q<span class="o">]</span> <span class="o">[</span>-where restricted_where<span class="p">|</span>@filename<span class="o">]</span>
-               <span class="o">[</span>-spat xmin ymin xmax ymax<span class="o">]</span> <span class="o">[</span>-geomfield field<span class="o">]</span> <span class="o">[</span>-fid fid<span class="o">]</span>
-               <span class="o">[</span>-sql statement<span class="p">|</span>@filename<span class="o">]</span> <span class="o">[</span>-dialect sql_dialect<span class="o">]</span> <span class="o">[</span>-al<span class="o">]</span> <span class="o">[</span>-rl<span class="o">]</span> <span class="o">[</span>-so<span class="o">]</span> <span class="o">[</span>-fields<span class="o">={</span>YES/NO<span class="o">}]</span>
-               <span class="o">[</span>-geom<span class="o">={</span>YES/NO/SUMMARY<span class="o">}]</span> <span class="o">[[</span>-oo <span class="nv">NAME</span><span class="o">=</span>VALUE<span class="o">]</span> ...<span class="o">]</span>
-               <span class="o">[</span>-nomd<span class="o">]</span> <span class="o">[</span>-listmdd<span class="o">]</span> <span class="o">[</span>-mdd domain<span class="p">|</span><span class="sb">`</span>all<span class="sb">`</span><span class="o">]</span>*
-               <span class="o">[</span>-nocount<span class="o">]</span> <span class="o">[</span>-noextent<span class="o">]</span> <span class="o">[</span>-nogeomtype<span class="o">]</span> <span class="o">[</span>-wkt_format WKT1<span class="p">|</span>WKT2<span class="p">|</span>...<span class="o">]</span>
-               <span class="o">[</span>-fielddomain name<span class="o">]</span>
-               datasource_name <span class="o">[</span>layer <span class="o">[</span>layer ...<span class="o">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Usage: ogrinfo [--help-general] [-ro] [-q] [-where restricted_where|@filename]
+               [-spat xmin ymin xmax ymax] [-geomfield field] [-fid fid]
+               [-sql statement|@filename] [-dialect sql_dialect] [-al] [-rl] [-so] [-fields={YES/NO}]
+               [-geom={YES/NO/SUMMARY}] [[-oo NAME=VALUE] ...]
+               [-nomd] [-listmdd] [-mdd domain|`all`]*
+               [-nocount] [-noextent] [-nogeomtype] [-wkt_format WKT1|WKT2|...]
+               [-fielddomain name]
+               datasource_name [layer [layer ...]]
 </pre></div>
 </div>
 </div>
 <div class="section" id="ejemplos-de-uso-de-programas">
 <h4>Ejemplos de uso de programas<a class="headerlink" href="#ejemplos-de-uso-de-programas" title="Permalink to this headline">¶</a></h4>
-<div class="section" id="vectoriales">
-<h5>Vectoriales<a class="headerlink" href="#vectoriales" title="Permalink to this headline">¶</a></h5>
+<p>En esta sección, se presentan ejemplos de uso de los programas, tanto para datos vectoriales como para datos raster.</p>
+<div class="section" id="programas-para-datos-vectoriales">
+<h5>Programas para datos vectoriales<a class="headerlink" href="#programas-para-datos-vectoriales" title="Permalink to this headline">¶</a></h5>
 <div class="section" id="ogrinfo">
 <h6>ogrinfo<a class="headerlink" href="#ogrinfo" title="Permalink to this headline">¶</a></h6>
 <p>El programa <a class="reference external" href="https://gdal.org/programs/ogrinfo.html">ogrinfo</a> despliega información acerca de una fuente de datos vectoriales.</p>
@@ -439,7 +462,39 @@ unzip ne_110m_admin_0_countries.zip
 ogrinfo -al -so ne_110m_admin_0_countries.shp
 </pre></div>
 </div>
-<p>Puede utilizarse SQL para consultar los datos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>INFO: Open of `ne_110m_admin_0_countries.shp&#39;
+      using driver `ESRI Shapefile&#39; successful.
+
+Layer name: ne_110m_admin_0_countries
+Metadata:
+  DBF_DATE_LAST_UPDATE=2021-12-07
+Geometry: Polygon
+Feature Count: 177
+Extent: (-180.000000, -90.000000) - (180.000000, 83.645130)
+Layer SRS WKT:
+GEOGCRS[&quot;WGS 84&quot;,
+    DATUM[&quot;World Geodetic System 1984&quot;,
+        ELLIPSOID[&quot;WGS 84&quot;,6378137,298.257223563,
+            LENGTHUNIT[&quot;metre&quot;,1]]],
+    PRIMEM[&quot;Greenwich&quot;,0,
+        ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+    CS[ellipsoidal,2],
+        AXIS[&quot;latitude&quot;,north,
+            ORDER[1],
+            ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+        AXIS[&quot;longitude&quot;,east,
+            ORDER[2],
+            ANGLEUNIT[&quot;degree&quot;,0.0174532925199433]],
+    ID[&quot;EPSG&quot;,4326]]
+Data axis to CRS axis mapping: 2,1
+featurecla: String (15.0)
+scalerank: Integer (1.0)
+LABELRANK: Integer (1.0)
+SOVEREIGNT: String (32.0)
+...
+</pre></div>
+</div>
+<p>Puede utilizarse el lenguaje <a class="reference external" href="https://es.wikipedia.org/wiki/SQL">Structured Query Language (SQL)</a> para consultar los datos:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Consulta SQL (en Windows, sustituya los &quot;\&quot; por &quot;^&quot; para los cambios de línea)</span>
 ogrinfo <span class="se">\</span>
   -sql <span class="s2">&quot;SELECT name, continent FROM ne_110m_admin_0_countries WHERE continent = &#39;Oceania&#39; ORDER BY name&quot;</span> <span class="se">\</span>
@@ -447,15 +502,63 @@ ogrinfo <span class="se">\</span>
   ne_110m_admin_0_countries.shp
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">ne_110m_admin_0_countries</span><span class="p">):</span><span class="mi">137</span>
+  <span class="n">name</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Australia</span>
+  <span class="n">continent</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Oceania</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">ne_110m_admin_0_countries</span><span class="p">):</span><span class="mi">0</span>
+  <span class="n">name</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Fiji</span>
+  <span class="n">continent</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Oceania</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">ne_110m_admin_0_countries</span><span class="p">):</span><span class="mi">134</span>
+  <span class="n">name</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">New</span> <span class="n">Caledonia</span>
+  <span class="n">continent</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Oceania</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">ne_110m_admin_0_countries</span><span class="p">):</span><span class="mi">136</span>
+  <span class="n">name</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">New</span> <span class="n">Zealand</span>
+  <span class="n">continent</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Oceania</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">ne_110m_admin_0_countries</span><span class="p">):</span><span class="mi">7</span>
+  <span class="n">name</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Papua</span> <span class="n">New</span> <span class="n">Guinea</span>
+  <span class="n">continent</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Oceania</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">ne_110m_admin_0_countries</span><span class="p">):</span><span class="mi">135</span>
+  <span class="n">name</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Solomon</span> <span class="n">Is</span><span class="o">.</span>
+  <span class="n">continent</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Oceania</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">ne_110m_admin_0_countries</span><span class="p">):</span><span class="mi">89</span>
+  <span class="n">name</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Vanuatu</span>
+  <span class="n">continent</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Oceania</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ogr2ogr">
 <h6>ogr2ogr<a class="headerlink" href="#ogr2ogr" title="Permalink to this headline">¶</a></h6>
-<p>El comando <a class="reference external" href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr</a> realiza conversiones entre formatos de fuentes de datos geoespaciales. A la vez, puede ejecutar otras operaciones como selección de atributos y geometrías, filtrado por criterios espaciales y no espaciales, reproyección y validación de geometrías, entre otras.</p>
-<p>Conversión entre formatos:</p>
+<p>El comando <a class="reference external" href="https://gdal.org/programs/ogr2ogr.html">ogr2ogr</a> realiza conversiones entre formatos de fuentes de datos vectoriales. A la vez, puede ejecutar otras operaciones como selección de atributos y geometrías, filtrado por criterios espaciales y no espaciales, reproyección y validación de geometrías, entre otras.</p>
+<p>Visualización de la lista de formatos vectoriales:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Despliegue de la lista de formatos vectoriales soportados por GDAL/OGR</span>
 ogr2ogr --formats
-
-<span class="c1"># Conversión de SHP a GeoJSON</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Supported</span> <span class="n">Formats</span><span class="p">:</span>
+  <span class="n">FITS</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="p">):</span> <span class="n">Flexible</span> <span class="n">Image</span> <span class="n">Transport</span> <span class="n">System</span>
+  <span class="n">PCIDSK</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">v</span><span class="p">):</span> <span class="n">PCIDSK</span> <span class="n">Database</span> <span class="n">File</span>
+  <span class="n">netCDF</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">multidimensional</span> <span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">vs</span><span class="p">):</span> <span class="n">Network</span> <span class="n">Common</span> <span class="n">Data</span> <span class="n">Format</span>
+  <span class="n">PDS4</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">vs</span><span class="p">):</span> <span class="n">NASA</span> <span class="n">Planetary</span> <span class="n">Data</span> <span class="n">System</span> <span class="mi">4</span>
+  <span class="n">VICAR</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">v</span><span class="p">):</span> <span class="n">MIPL</span> <span class="n">VICAR</span> <span class="n">file</span>
+  <span class="n">JP2OpenJPEG</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rwv</span><span class="p">):</span> <span class="n">JPEG</span><span class="o">-</span><span class="mi">2000</span> <span class="n">driver</span> <span class="n">based</span> <span class="n">on</span> <span class="n">OpenJPEG</span> <span class="n">library</span>
+  <span class="n">PDF</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">vs</span><span class="p">):</span> <span class="n">Geospatial</span> <span class="n">PDF</span>
+  <span class="n">MBTiles</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">v</span><span class="p">):</span> <span class="n">MBTiles</span>
+  <span class="n">BAG</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">multidimensional</span> <span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">v</span><span class="p">):</span> <span class="n">Bathymetry</span> <span class="n">Attributed</span> <span class="n">Grid</span>
+  <span class="n">EEDA</span> <span class="o">-</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">ro</span><span class="p">):</span> <span class="n">Earth</span> <span class="n">Engine</span> <span class="n">Data</span> <span class="n">API</span>
+  <span class="n">OGCAPI</span> <span class="o">-</span><span class="n">raster</span><span class="p">,</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rov</span><span class="p">):</span> <span class="n">OGCAPI</span>
+  <span class="n">ESRI</span> <span class="n">Shapefile</span> <span class="o">-</span><span class="n">vector</span><span class="o">-</span> <span class="p">(</span><span class="n">rw</span><span class="o">+</span><span class="n">v</span><span class="p">):</span> <span class="n">ESRI</span> <span class="n">Shapefile</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>Conversión entre formatos:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conversión de SHP a GeoJSON</span>
 ogr2ogr ne_110m_admin_0_countries.geojson ne_110m_admin_0_countries.shp
 
 <span class="c1"># Conversión de SHP a GeoPackage</span>
@@ -465,8 +568,14 @@ ogr2ogr ne_110m_admin_0_countries.gpkg ne_110m_admin_0_countries.shp
 </div>
 <div class="section" id="ejemplo-de-analisis-distribucion-de-especies-de-murcielagos">
 <h6>Ejemplo de análisis: distribución de especies de murciélagos<a class="headerlink" href="#ejemplo-de-analisis-distribucion-de-especies-de-murcielagos" title="Permalink to this headline">¶</a></h6>
-<p>Se crea el archivo distribucion-murcielagos.gpkg para contener las capas necesarias para el análisis de distribución de murciélagos en Costa Rica.</p>
-<p>Descarga de capas desde un servicio WFS, reproyección y validación de geometrías:</p>
+<p>Se analiza la distribución de especies de <a class="reference external" href="https://es.wikipedia.org/wiki/Chiroptera">murciélagos</a> en Costa Rica con base en varias divisiones del territorio.</p>
+<p>Se utilizan las siguientes fuentes de datos:</p>
+<ul class="simple">
+<li><p>Registros de presencia de murciélagos, agrupados por la <a class="reference external" href="https://api.gbif.org/v1/occurrence/download/request/0105729-210914110416597.zip">Infraestructura Mundial de Información en Biodiversidad (GBIF)</a>.</p></li>
+<li><p>Capas geoespaciales de Costa Rica agrupadas por el <a class="reference external" href="https://www.snitcr.go.cr/">Sistema Nacional de Información Territorial (SNIT)</a>.</p></li>
+</ul>
+<p>Se crea el archivo <code class="docutils literal notranslate"><span class="pre">distribucion-murcielagos.gpkg</span></code> para contener las capas necesarias para el análisis.</p>
+<p>Descarga de capas desde servicios Web Feature Service (WFS) agrupados en el SNIT, reproyección y validación de geometrías:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lista de capas en servicio WFS del Sinac</span>
 ogrinfo WFS:<span class="s2">&quot;http://geos1pne.sirefor.go.cr/wfs&quot;</span>
 
@@ -493,7 +602,7 @@ ogr2ogr -update -nln cantones <span class="se">\</span>
 ogrinfo -al -so distribucion-murcielagos.gpkg cantones
 </pre></div>
 </div>
-<p>Descarga de datos desde un archivo CSV y conversión a un formato geoespacial:</p>
+<p>Descarga de datos de presencia de murciélagos desde un archivo CSV y conversión a un formato geoespacial:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de registros de presencia de murciélagos</span>
 wget https://api.gbif.org/v1/occurrence/download/request/0105729-210914110416597.zip
 
@@ -518,7 +627,7 @@ ogr2ogr -update -nln registros-murcielagos <span class="se">\</span>
   distribucion-murcielagos.gpkg murcielagos.csv
 </pre></div>
 </div>
-<p>Generación de capa con cantidad de especies de murciélagos en polígonos</p>
+<p>Generación de capa con cantidad de especies de murciélagos en polígonos:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Revisión de índices y nombres de columnas geométricas</span>
 ogrinfo <span class="se">\</span>
   -sql <span class="s2">&quot;SELECT table_name, column_name, HasSpatialIndex(table_name, column_name) FROM gpkg_geometry_columns&quot;</span> <span class="se">\</span>
@@ -537,12 +646,38 @@ ogr2ogr <span class="se">\</span>
   distribucion-murcielagos.gpkg distribucion-murcielagos.gpkg
 </pre></div>
 </div>
+<p>La <a class="reference internal" href="#figure-mapa-especies-murcielagos-asp"><span class="std std-numref">Fig. 21</span></a> muestra un <a class="reference external" href="https://es.wikipedia.org/wiki/Mapa_coropl%C3%A9tico">mapa de coropletas</a> elaborado con <a class="reference external" href="https://qgis.org/">QGIS</a>, con la distribución de especies de murciélagos por ASP:</p>
+<div class="figure align-default" id="figure-mapa-especies-murcielagos-asp">
+<img alt="../../_images/mapa-especies-murcielagos-asp.png" src="../../_images/mapa-especies-murcielagos-asp.png" />
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Mapa de cantidad de especies de murciélagos por cantón.</span><a class="headerlink" href="#figure-mapa-especies-murcielagos-asp" title="Permalink to this image">¶</a></p>
+</div>
 <p><strong>Preguntas de análisis</strong></p>
-<p>¿Cuáles son las 10 ASP con mayor cantidad de especies de murciélagos?</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 10 ASP con mayor cantidad de especies de murciélagos</span>
+<p>¿Cuáles son las 5 ASP con mayor cantidad de especies de murciélagos?</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># 5 ASP con mayor cantidad de especies de murciélagos</span>
 ogrinfo <span class="se">\</span>
-  -sql <span class="s2">&quot;SELECT nombre_asp, especies_murcielagos FROM &#39;asp-especies&#39; ORDER BY especies_murcielagos DESC LIMIT 10&quot;</span> <span class="se">\</span>
+  -sql <span class="s2">&quot;SELECT nombre_asp, especies_murcielagos FROM &#39;asp-especies&#39; ORDER BY especies_murcielagos DESC LIMIT 5&quot;</span> <span class="se">\</span>
   distribucion-murcielagos.gpkg
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">0</span>
+  <span class="n">nombre_asp</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Golfo</span> <span class="n">Dulce</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">55</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">1</span>
+  <span class="n">nombre_asp</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Arenal</span> <span class="n">Monteverde</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">32</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">2</span>
+  <span class="n">nombre_asp</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Palo</span> <span class="n">Verde</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">3</span>
+  <span class="n">nombre_asp</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Corcovado</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">29</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">4</span>
+  <span class="n">nombre_asp</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Barra</span> <span class="k">del</span> <span class="n">Colorado</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">28</span>
 </pre></div>
 </div>
 <p>¿Cuál es el promedio de especies de murciélagos en los cantones de la provincia de Heredia?</p>
@@ -550,14 +685,187 @@ ogrinfo <span class="se">\</span>
 ogrinfo <span class="se">\</span>
   -sql <span class="s2">&quot;SELECT c.canton, especies_murcielagos FROM cantones c, &#39;cantones-especies&#39; ce WHERE c.provincia = &#39;Heredia&#39; AND c.canton=ce.canton ORDER BY especies_murcielagos DESC&quot;</span> <span class="se">\</span>
   distribucion-murcielagos.gpkg
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">0</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Sarapiquí</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">76</span>
 
-<span class="c1"># Promedio de especies de murciélagos en los cantones de la provincia de Heredia</span>
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">1</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Heredia</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">22</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">2</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Barva</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">3</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Santo</span> <span class="n">Domingo</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">4</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">San</span> <span class="n">Rafael</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">5</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Belén</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">6</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">San</span> <span class="n">Pablo</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">7</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Flores</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">8</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">San</span> <span class="n">Isidro</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">9</span>
+  <span class="n">canton</span> <span class="p">(</span><span class="n">String</span><span class="p">)</span> <span class="o">=</span> <span class="n">Santa</span> <span class="n">Bárbara</span>
+  <span class="n">especies_murcielagos</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Promedio de especies de murciélagos en los cantones de la provincia de Heredia</span>
 ogrinfo <span class="se">\</span>
   -sql <span class="s2">&quot;SELECT Avg(especies_murcielagos) promedio FROM cantones c, &#39;cantones-especies&#39; ce WHERE c.provincia = &#39;Heredia&#39; AND c.canton=ce.canton&quot;</span> <span class="se">\</span>
   distribucion-murcielagos.gpkg
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">promedio</span><span class="p">:</span> <span class="n">Real</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">OGRFeature</span><span class="p">(</span><span class="n">SELECT</span><span class="p">):</span><span class="mi">0</span>
+  <span class="n">promedio</span> <span class="p">(</span><span class="n">Real</span><span class="p">)</span> <span class="o">=</span> <span class="mf">11.5</span>
+</pre></div>
+</div>
 <p>¿Cuáles son las 5 especies de murciélagos con mayor cantidad de registros?</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="programas-para-datos-raster">
+<h5>Programas para datos raster<a class="headerlink" href="#programas-para-datos-raster" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="gdalinfo">
+<h6>gdalinfo<a class="headerlink" href="#gdalinfo" title="Permalink to this headline">¶</a></h6>
+<p>El programa <a class="reference external" href="https://gdal.org/programs/gdalinfo.html">gdalinfo</a> despliega información acerca de una fuente de datos raster.</p>
+<p>Los siguientes comandos trabajan con la capa global de altitud de la base de datos de tiempo y clima <a class="reference external" href="https://www.worldclim.org/">WorldClim</a>.</p>
+<p>Descarga y descompresión de la capa de altitud global:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de la capa de altitud global</span>
+wget https://biogeo.ucdavis.edu/data/worldclim/v2.1/base/wc2.1_30s_elev.zip
+
+<span class="c1"># Descompresión</span>
+unzip wc2.1_30s_elev.zip
+</pre></div>
+</div>
+<p>Información sobre la capa:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Información sobre la capa</span>
+gdalinfo -stats wc2.1_30s_elev.tif
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Driver</span><span class="p">:</span> <span class="n">GTiff</span><span class="o">/</span><span class="n">GeoTIFF</span>
+<span class="n">Files</span><span class="p">:</span> <span class="n">wc2</span><span class="mf">.1_30</span><span class="n">s_elev</span><span class="o">.</span><span class="n">tif</span>
+<span class="n">Size</span> <span class="ow">is</span> <span class="mi">43200</span><span class="p">,</span> <span class="mi">21600</span>
+<span class="n">Coordinate</span> <span class="n">System</span> <span class="ow">is</span><span class="p">:</span>
+<span class="n">GEOGCRS</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span>
+    <span class="n">DATUM</span><span class="p">[</span><span class="s2">&quot;World Geodetic System 1984&quot;</span><span class="p">,</span>
+        <span class="n">ELLIPSOID</span><span class="p">[</span><span class="s2">&quot;WGS 84&quot;</span><span class="p">,</span><span class="mi">6378137</span><span class="p">,</span><span class="mf">298.257223563</span><span class="p">,</span>
+            <span class="n">LENGTHUNIT</span><span class="p">[</span><span class="s2">&quot;metre&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">]]],</span>
+    <span class="n">PRIMEM</span><span class="p">[</span><span class="s2">&quot;Greenwich&quot;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+    <span class="n">CS</span><span class="p">[</span><span class="n">ellipsoidal</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>
+        <span class="n">AXIS</span><span class="p">[</span><span class="s2">&quot;geodetic latitude (Lat)&quot;</span><span class="p">,</span><span class="n">north</span><span class="p">,</span>
+            <span class="n">ORDER</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+            <span class="n">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+        <span class="n">AXIS</span><span class="p">[</span><span class="s2">&quot;geodetic longitude (Lon)&quot;</span><span class="p">,</span><span class="n">east</span><span class="p">,</span>
+            <span class="n">ORDER</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+            <span class="n">ANGLEUNIT</span><span class="p">[</span><span class="s2">&quot;degree&quot;</span><span class="p">,</span><span class="mf">0.0174532925199433</span><span class="p">]],</span>
+    <span class="n">ID</span><span class="p">[</span><span class="s2">&quot;EPSG&quot;</span><span class="p">,</span><span class="mi">4326</span><span class="p">]]</span>
+<span class="n">Data</span> <span class="n">axis</span> <span class="n">to</span> <span class="n">CRS</span> <span class="n">axis</span> <span class="n">mapping</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span><span class="mi">1</span>
+<span class="n">Origin</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">180.000000000000000</span><span class="p">,</span><span class="mf">90.000000000000000</span><span class="p">)</span>
+<span class="n">Pixel</span> <span class="n">Size</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.008333333333333</span><span class="p">,</span><span class="o">-</span><span class="mf">0.008333333333333</span><span class="p">)</span>
+<span class="n">Metadata</span><span class="p">:</span>
+  <span class="n">AREA_OR_POINT</span><span class="o">=</span><span class="n">Area</span>
+<span class="n">Image</span> <span class="n">Structure</span> <span class="n">Metadata</span><span class="p">:</span>
+  <span class="n">COMPRESSION</span><span class="o">=</span><span class="n">DEFLATE</span>
+  <span class="n">INTERLEAVE</span><span class="o">=</span><span class="n">BAND</span>
+<span class="n">Corner</span> <span class="n">Coordinates</span><span class="p">:</span>
+<span class="n">Upper</span> <span class="n">Left</span>  <span class="p">(</span><span class="o">-</span><span class="mf">180.0000000</span><span class="p">,</span>  <span class="mf">90.0000000</span><span class="p">)</span> <span class="p">(</span><span class="mi">180</span><span class="n">d</span> <span class="mi">0</span><span class="s1">&#39; 0.00&quot;W, 90d 0&#39;</span> <span class="mf">0.00</span><span class="s2">&quot;N)</span>
+<span class="n">Lower</span> <span class="n">Left</span>  <span class="p">(</span><span class="o">-</span><span class="mf">180.0000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.0000000</span><span class="p">)</span> <span class="p">(</span><span class="mi">180</span><span class="n">d</span> <span class="mi">0</span><span class="s1">&#39; 0.00&quot;W, 90d 0&#39;</span> <span class="mf">0.00</span><span class="s2">&quot;S)</span>
+<span class="n">Upper</span> <span class="n">Right</span> <span class="p">(</span> <span class="mf">180.0000000</span><span class="p">,</span>  <span class="mf">90.0000000</span><span class="p">)</span> <span class="p">(</span><span class="mi">180</span><span class="n">d</span> <span class="mi">0</span><span class="s1">&#39; 0.00&quot;E, 90d 0&#39;</span> <span class="mf">0.00</span><span class="s2">&quot;N)</span>
+<span class="n">Lower</span> <span class="n">Right</span> <span class="p">(</span> <span class="mf">180.0000000</span><span class="p">,</span> <span class="o">-</span><span class="mf">90.0000000</span><span class="p">)</span> <span class="p">(</span><span class="mi">180</span><span class="n">d</span> <span class="mi">0</span><span class="s1">&#39; 0.00&quot;E, 90d 0&#39;</span> <span class="mf">0.00</span><span class="s2">&quot;S)</span>
+<span class="n">Center</span>      <span class="p">(</span>   <span class="mf">0.0000000</span><span class="p">,</span>   <span class="mf">0.0000000</span><span class="p">)</span> <span class="p">(</span>  <span class="mi">0</span><span class="n">d</span> <span class="mi">0</span><span class="s1">&#39; 0.01&quot;E,  0d 0&#39;</span> <span class="mf">0.01</span><span class="s2">&quot;N)</span>
+<span class="n">Band</span> <span class="mi">1</span> <span class="n">Block</span><span class="o">=</span><span class="mi">43200</span><span class="n">x1</span> <span class="n">Type</span><span class="o">=</span><span class="n">Int16</span><span class="p">,</span> <span class="n">ColorInterp</span><span class="o">=</span><span class="n">Gray</span>
+  <span class="n">Min</span><span class="o">=-</span><span class="mf">415.000</span> <span class="n">Max</span><span class="o">=</span><span class="mf">8424.000</span> 
+  <span class="n">Minimum</span><span class="o">=-</span><span class="mf">415.000</span><span class="p">,</span> <span class="n">Maximum</span><span class="o">=</span><span class="mf">8424.000</span><span class="p">,</span> <span class="n">Mean</span><span class="o">=</span><span class="n">nan</span><span class="p">,</span> <span class="n">StdDev</span><span class="o">=</span><span class="n">nan</span>
+  <span class="n">NoData</span> <span class="n">Value</span><span class="o">=-</span><span class="mi">32768</span>
+  <span class="n">Metadata</span><span class="p">:</span>
+    <span class="n">STATISTICS_MAXIMUM</span><span class="o">=</span><span class="mi">8424</span>
+    <span class="n">STATISTICS_MEAN</span><span class="o">=</span><span class="mf">1.</span><span class="c1">#SNAN</span>
+    <span class="n">STATISTICS_MINIMUM</span><span class="o">=-</span><span class="mi">415</span>
+    <span class="n">STATISTICS_STDDEV</span><span class="o">=</span><span class="mf">1.</span><span class="c1">#SNAN</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gdalwarp">
+<h6>gdalwarp<a class="headerlink" href="#gdalwarp" title="Permalink to this headline">¶</a></h6>
+<p>El programa <a class="reference external" href="https://gdal.org/programs/gdalwarp.html">gdalwarp</a> se utiliza para reproyectar y transformar datos raster.</p>
+<p>Recorte de la capa raster de altitud global con el contorno de la capa de cantones de Costa Rica:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recorte de la capa raster de altitud global con el contorno de la capa de cantones de Costa Rica</span>
+gdalwarp <span class="se">\</span>
+  -dstnodata -9999 <span class="se">\</span>
+  -tr <span class="m">0</span>.00833333 <span class="m">0</span>.00833333 -q <span class="se">\</span>
+  -cutline <span class="s1">&#39;distribucion-murcielagos.gpkg&#39;</span> -cl cantones -crop_to_cutline wc2.1_30s_elev.tif altitud-cr.tif
+
+<span class="c1"># Información sobre la capa de altitud de Costa Rica</span>
+gdalinfo -stats altitud-cr.tif
+</pre></div>
+</div>
+</div>
+<div class="section" id="gdaldem">
+<h6>gdaldem<a class="headerlink" href="#gdaldem" title="Permalink to this headline">¶</a></h6>
+<p>El programa <a class="reference external" href="https://gdal.org/programs/gdaldem.html">gdaldem</a> proporciona un conjunto de herramientas para analizar y visualizar <a class="reference external" href="https://es.wikipedia.org/wiki/Modelo_digital_del_terreno">modelos digitales de elevaciones (DEM; en inglés, <em>Digital Elevation Model</em>)</a>.</p>
+<p>Generación de <em>hillshade</em> (efecto de relieve):</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generación de efecto &quot;hillshade&quot;</span>
+gdaldem hillshade <span class="s1">&#39;altitud-cr.tif&#39;</span> <span class="s1">&#39;relieve-cr.tif&#39;</span> -s <span class="m">111120</span>
+
+<span class="c1"># Generación de efecto &quot;hillshade&quot; multidireccional</span>
+gdaldem hillshade <span class="s1">&#39;altitud-cr.tif&#39;</span> <span class="s1">&#39;relieve-multi-cr.tif&#39;</span> -s <span class="m">111120</span> -multidirectional
+</pre></div>
+</div>
+<p>El <em>hillshade</em> multidireccional se muestra en la <a class="reference internal" href="#figure-relieve-multi-cr"><span class="std std-numref">Fig. 22</span></a>.</p>
+<div class="figure align-default" id="figure-relieve-multi-cr">
+<img alt="../../_images/relieve-multi-cr.png" src="../../_images/relieve-multi-cr.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Mapa de Costa Rica con <em>hillshade</em> (efecto relieve) multidireccional.</span><a class="headerlink" href="#figure-relieve-multi-cr" title="Permalink to this image">¶</a></p>
+</div>
+<p>Generación de efecto relieve de color:</p>
+<p>Se requiere un archivo con la codificación de los colores para cada banda de altitud, como el siguiente:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contenido de colores.txt</span>
+<span class="c1"># altitud, rojo, verde, azul</span>
+
+<span class="m">0</span>,101,146,82
+<span class="m">500</span>,190,202,130
+<span class="m">1000</span>,241,225,145
+<span class="m">1500</span>,244,200,126
+<span class="m">2000</span>,197,147,117
+<span class="m">2500</span>,204,169,170
+<span class="m">3000</span>,251,238,253
+<span class="m">3500</span>,255,255,255
+nv <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span>
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generación de efecto relieve de color</span>
+gdaldem color-relief <span class="s1">&#39;altitud-cr.tif&#39;</span> colores.txt relieve-color-cr.tif
+</pre></div>
+</div>
+<p>El efecto relieve de color se muestra en la <a class="reference internal" href="#figure-relieve-color-cr"><span class="std std-numref">Fig. 23</span></a>.</p>
+<div class="figure align-default" id="figure-relieve-color-cr">
+<img alt="../../_images/relieve-color-cr.png" src="../../_images/relieve-color-cr.png" />
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Mapa de Costa Rica con efecto relieve de color.</span><a class="headerlink" href="#figure-relieve-color-cr" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 </div>
