@@ -219,7 +219,7 @@ ogr2ogr ne_110m_admin_0_countries.geojson ne_110m_admin_0_countries.shp
 ogr2ogr ne_110m_admin_0_countries.gpkg ne_110m_admin_0_countries.shp
 ```
 
-###### Ejemplo de análisis: distribución de especies de murciélagos
+**Ejemplo de análisis: distribución de especies de murciélagos**
 Se analiza la distribución de especies de [murciélagos](https://es.wikipedia.org/wiki/Chiroptera) en Costa Rica con base en varias divisiones del territorio.
 
 Se utilizan las siguientes fuentes de datos:
@@ -314,7 +314,7 @@ La {numref}`figure-mapa-especies-murcielagos-asp` muestra un [mapa de coropletas
 Mapa de cantidad de especies de murciélagos por cantón.
 ```
 
-**Preguntas de análisis**
+**Preguntas**
 
 ¿Cuáles son las 5 ASP con mayor cantidad de especies de murciélagos?
 
