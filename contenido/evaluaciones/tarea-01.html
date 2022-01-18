@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Requisitos &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    <title>Tarea 01 &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,8 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Cronograma" href="cronograma-curso.html" />
-    <link rel="prev" title="Descripción general, objetivos y metodología" href="descripcion-curso.html" />
+    <link rel="prev" title="GDAL: biblioteca para lectura y escritura de datos geoespaciales" href="../a/gdal-biblioteca-lectura-escritura-datos-geoespaciales.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -101,29 +100,29 @@
   Información sobre el curso
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="descripcion-curso.html">
+  <a class="reference internal" href="../informacion-general/descripcion-curso.html">
    Descripción general, objetivos y metodología
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/requisitos-curso.html">
    Requisitos
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="cronograma-curso.html">
+  <a class="reference internal" href="../informacion-general/cronograma-curso.html">
    Cronograma
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="evaluacion-curso.html">
+  <a class="reference internal" href="../informacion-general/evaluacion-curso.html">
    Evaluación
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="bibliografia-curso.html">
+  <a class="reference internal" href="../informacion-general/bibliografia-curso.html">
    Bibliografía y otros recursos
   </a>
  </li>
@@ -175,9 +174,9 @@
   Evaluaciones
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../evaluaciones/tarea-01.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Tarea 01
   </a>
  </li>
@@ -222,7 +221,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/contenido/informacion-general/requisitos-curso.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/contenido/evaluaciones/tarea-01.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -242,7 +241,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/informacion-general/requisitos-curso.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/evaluaciones/tarea-01.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -263,6 +262,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fecha-de-entrega">
+   Fecha de entrega
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#desarrollo">
+   Desarrollo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entregables">
+   Entregables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calificacion">
+   Calificación
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -271,26 +298,51 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="requisitos">
-<h1>Requisitos<a class="headerlink" href="#requisitos" title="Permalink to this headline">¶</a></h1>
-<p>Se requiere que los estudiantes cuenten con conocimientos sobre los siguientes temas:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="tarea-01">
+<h1>Tarea 01<a class="headerlink" href="#tarea-01" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fecha-de-entrega">
+<h2>Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permalink to this headline">¶</a></h2>
+<p>La fecha y hora límites para la entrega de esta tarea es el <strong>martes 25 de enero de 2022 a las 16:59</strong>.</p>
+</div>
+<div class="section" id="desarrollo">
+<h2>Desarrollo<a class="headerlink" href="#desarrollo" title="Permalink to this headline">¶</a></h2>
+<p>Debe elaborar un <a class="reference external" href="https://es.wikipedia.org/wiki/Mapa_coropl%C3%A9tico">mapa de coropletas</a> en <a class="reference external" href="https://qgis.org/">QGIS</a> que muestre la densidad de la red vial en los cantones de Costa Rica.</p>
+<p>La densidad de la red vial para un polígono se define como:<br />
+<strong>km de longitud de caminos / km2 de área</strong><br />
+Por ejemplo, si un cantón tiene 500 km de longitud de caminos y un área de 1000 km2, la densidad de su red vial es 0.5.</p>
+<p>Utilice las siguientes capas WFS publicadas por el Instituto Geográfico Nacional (IGN) en el <a class="reference external" href="https://www.snitcr.go.cr/">Sistema Nacional de Información Territorial (SNIT)</a>:</p>
 <ul class="simple">
-<li><p>Lenguaje de programación <a class="reference external" href="https://www.python.org/">Python</a> (o algún otro lenguaje de programación).</p></li>
-<li><p>Interfaz de desarrollo <a class="reference external" href="https://jupyter.org/">Jupyter Notebook</a>.</p></li>
-<li><p>Lenguaje de marcado <a class="reference external" href="https://daringfireball.net/projects/markdown/">Markdown</a>.</p></li>
-<li><p>Sistema de control de versiones <a class="reference external" href="http://git-scm.com/">Git</a>.</p></li>
-<li><p>Plataforma de desarrollo colaborativo <a class="reference external" href="https://github.com/">GitHub</a> u otra similar (ej. <a class="reference external" href="https://gitlab.com/">GitLab</a>, <a class="reference external" href="https://bitbucket.org/">Bitbucket</a>).</p></li>
+<li><p>Límite cantonal 1:5000</p></li>
+<li><p>Red vial 1:200000</p></li>
 </ul>
-<p>Además, es recomendable tener nociones de:</p>
+</div>
+<div class="section" id="entregables">
+<h2>Entregables<a class="headerlink" href="#entregables" title="Permalink to this headline">¶</a></h2>
+<p>Un archivo comprimido (ej. ZIP) con tres archivos:</p>
 <ul class="simple">
-<li><p>Distribución de Python <a class="reference external" href="https://www.anaconda.com/">Anaconda</a>/<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> y gestor de paquetes <a class="reference external" href="https://docs.conda.io/">Conda</a>.</p></li>
-<li><p>Ambientes de computación en la nube: <a class="reference external" href="https://colab.research.google.com/">Google Colab</a>, <a class="reference external" href="https://jupyter.org/binder">Binder</a>, <a class="reference external" href="https://www.kaggle.com/">Kaggle</a> y otros.</p></li>
-<li><p>Plataformas de alojamiento de sitios web: <a class="reference external" href="https://pages.github.com/">GitHub Pages</a>, <a class="reference external" href="https://www.netlify.com/">Netlify</a> u otras.</p></li>
-<li><p>Plataformas de alojamiento de aplicaciones web (<em>data apps</em>): <a class="reference external" href="https://www.heroku.com/">Heroku</a>, <a class="reference external" href="https://streamlit.io/cloud">Streamlit Cloud</a> u otras.</p></li>
-<li><p>Estadística y análisis de datos.</p></li>
-<li><p>Ciencia de datos.</p></li>
-<li><p>Aprendizaje automatizado.</p></li>
+<li><p>Un archivo GeoPackage (GPKG) con la capa de cantones y el campo correspondiente a la densidad de la red vial.</p></li>
+<li><p>Un archivo gráfico (ej. PNG, JPG) con el mapa de coropletas correspondiente a la densidad de la red vial en los cantones de Costa Rica.</p></li>
+<li><p>Un archivo llamado <code class="docutils literal notranslate"><span class="pre">leame.txt</span></code> con una descripción no mayor a 250 palabras del proceso realizado para elaborar el mapa.</p></li>
 </ul>
+<p>La entrega debe realizarse a través de la plataforma <a class="reference external" href="https://mediacionvirtual.ucr.ac.cr/">Mediación Virtual</a>.</p>
+</div>
+<div class="section" id="calificacion">
+<h2>Calificación<a class="headerlink" href="#calificacion" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>30% - Archivo GeoPackage (GPKG) con la capa de cantones.</p></li>
+<li><p>60% - Archivo gráfico con el mapa</p>
+<ul>
+<li><p>20% - Capa de coropletas.</p></li>
+<li><p>10% - Simbología.</p></li>
+<li><p>10% - Grilla de coordenadas en WGS84 (EPSG:4326).</p></li>
+<li><p>5% - Escala.</p></li>
+<li><p>5% - Título, especificación del sistema de coordenadas y fuentes de datos utilizadas.</p></li>
+</ul>
+</li>
+<li><p>10% - Archivo <code class="docutils literal notranslate"><span class="pre">leame.txt</span></code> con descripción del proceso realizado para elaborar el mapa.</p></li>
+</ul>
+<p>Elija cuidadosamente las categorías y los colores del mapa de coropletas.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -306,7 +358,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./contenido/informacion-general"
+            path: "./contenido/evaluaciones"
         },
         predefinedOutput: true
     }
@@ -318,19 +370,12 @@
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="descripcion-curso.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../a/gdal-biblioteca-lectura-escritura-datos-geoespaciales.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Descripción general, objetivos y metodología</p>
+            <p class="prev-next-title">GDAL: biblioteca para lectura y escritura de datos geoespaciales</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="cronograma-curso.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Cronograma</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
         
