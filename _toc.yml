@@ -20,3 +20,6 @@ parts:
     - file: contenido/a/modelos-estandares-datos-geoespaciales
     - file: contenido/a/software-manejo-datos-geoespaciales
     - file: contenido/a/gdal-biblioteca-lectura-escritura-datos-geoespaciales    
+  - caption: Evaluaciones
+    chapters:
+    - file: contenido/evaluaciones/tarea-01
