@@ -27,8 +27,8 @@ La entrega debe realizarse a través de la plataforma [Mediación Virtual](https
 ## Calificación
 - 30% - Archivo GeoPackage (GPKG) con la capa de cantones y el campo correspondiente a la densidad de la red vial para cada cantón.
 - 60% - Archivo gráfico con el mapa
-    - 20% - Capa de coropletas.
-    - 10% - Simbología.
+    - 25% - Capa de coropletas.
+    - 15% - Simbología.
     - 10% - Grilla de coordenadas en WGS84 (EPSG:4326).
     -  5% - Escala.
     -  5% - Información general: título, especificación del sistema de coordenadas y fuentes de datos utilizadas.
