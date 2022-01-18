@@ -38,3 +38,5 @@ Tenga en cuenta las siguientes consideraciones:
 
 - Obtenga las longitudes y áreas que necesite a través de cálculos (ej. SQL, funcionalidades de QGIS). **No utilice los campos precalculados de las capas (si los hay)**.
 - Elija cuidadosamente las categorías y los colores del mapa de coropletas.
+
+**Esta tarea es para realizarse de manera estrictamente individual**.
