@@ -29,6 +29,8 @@ Gillies, S. (s. f.-c). Shapely: Geometric objects, predicates, and operations (
 
 Graser, A. (2021, diciembre 20). QGIS Map Design – Free Christmas DLC. Locate Press Blog. https://blog.locatepress.com/qgis-map-design-free-christmas-dlc/
 
+Guo, P. (2014, julio 7). Python Is Now the Most Popular Introductory Teaching Language at Top ­U.S. ­Universities. https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext
+
 Hwang, J. P. (2021, septiembre 3). Building a Big Data Geographical Dashboard with Open-Source Tools. Plotly. https://medium.com/plotly/building-a-big-data-geographical-dashboard-with-open-source-tools-c5108d7d5683
 
 Kaggle. (s. f.). Learn Geospatial Analysis Tutorials. Recuperado 30 de diciembre de 2021, de https://www.kaggle.com/learn/geospatial-analysis
@@ -59,6 +61,8 @@ Python Software Foundation. (2021). Python Language Reference. https://www.pytho
 Rey, S. J., Arribas-Bel, D., & Wolf, L. J. (2020). Geographic Data Science with Python. https://geographicdata.science/book/
 
 Richards, T. (2021). Getting started with Streamlit for data science: Create and deploy Streamlit web applications from scratch in Python. Packt Publishing. https://www.packtpub.com/product/getting-started-with-streamlit-for-data-science/9781800565500
+
+Robinson, D. (2017, septiembre 6). The Incredible Growth of Python. Stack Overflow Blog. https://stackoverflow.blog/2017/09/06/incredible-growth-python/
 
 Schmitt, M. (2020). Data dashboarding tools | Streamlit v.s. Dash v.s. Shiny vs. Voila vs. Flask vs. Jupyter. https://www.datarevenue.com/en-blog/data-dashboarding-streamlit-vs-dash-vs-shiny-vs-voila
 
