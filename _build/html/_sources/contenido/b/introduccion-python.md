@@ -4,7 +4,7 @@
 ## Trabajo previo
 
 ### Tutoriales
-Severance, C. (s. f.). PY4E - Python for Everybody. Recuperado 1 de enero de 2022, de https://www.py4e.com/ (Lecciones en: https://www.py4e.com/lessons)
+Severance, C. (s. f.). PY4E - Python for Everybody. Recuperado 1 de enero de 2022, de https://www.py4e.com/ (Lecciones en https://www.py4e.com/lessons)
 
 
 ## Resumen
@@ -12,7 +12,7 @@ En este capítulo, se introduce el lenguaje de programación Python.
 
 ## El lenguaje de programación Python
 
-[Python](https://www.python.org/) es un lenguaje de programación de propósito general que ha alcanzado una [gran popularidad en los últimos años](https://www.infoworld.com/article/3331603/pythons-popularity-surges-as-a-mainstay-language.html). Fue declarado el lenguaje del año 2018 por el índice [Tiobe](https://www.tiobe.com/tiobe-index/) de popularidad de lenguajes de programación, debido al crecimiento de su uso en diversas áreas, entre las que destacan la [ciencia de datos](https://es.wikipedia.org/wiki/Ciencia_de_datos) y el [aprendizaje automatizado](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico), además de otras como desarrollo web, _scripting_ y visualización de datos, entre muchas. Esta popularidad es respaldada por otras fuentes como el índice [PYPL](http://pypl.github.io/PYPL.html) y el sitio de preguntas y respuestas para programadores [Stack Overflow](https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies). Este último lo consideró, en 2017, el [lenguaje de programación de mayor crecimiento en los países de alto ingreso](https://stackoverflow.blog/2017/09/06/incredible-growth-python/?_ga=2.202250515.367846061.1552160385-2089845565.1546395318), como se muestra en la {numref}`figure-crecimiento-lenguajes`.
+[Python](https://www.python.org/) es un lenguaje de programación de propósito general que ha alcanzado una [gran popularidad en los últimos años](https://www.infoworld.com/article/3331603/pythons-popularity-surges-as-a-mainstay-language.html). Fue declarado el lenguaje del año en 2020 y 2021 por el índice [Tiobe](https://www.tiobe.com/tiobe-index/) de popularidad de lenguajes de programación, debido al crecimiento de su uso en diversas áreas, entre las que destacan la [ciencia de datos](https://es.wikipedia.org/wiki/Ciencia_de_datos) y el [aprendizaje automatizado](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico), además de otras como desarrollo web, _scripting_ y visualización de datos, entre muchas. Esta popularidad es respaldada por otras fuentes como el índice [PYPL](http://pypl.github.io/PYPL.html) y el sitio de preguntas y respuestas para programadores [Stack Overflow](https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies). Este último lo consideró, en 2017, el [lenguaje de programación de mayor crecimiento en los países de alto ingreso](https://stackoverflow.blog/2017/09/06/incredible-growth-python/?_ga=2.202250515.367846061.1552160385-2089845565.1546395318), como se muestra en la {numref}`figure-crecimiento-lenguajes`.
 
 ```{figure} img/growth_major_languages.png
 :name: figure-crecimiento-lenguajes
@@ -32,19 +32,26 @@ Este uso en enseñanza se debe, entre otras razones, a que los programas en Pyth
 
 
 ### Historia
-Python fue creado por el programador holandés [Guido van Rossum](https://gvanrossum.github.io//) (véase la {numref}`figura-rossum`), quién concibió el diseño original del lenguaje a finales de la década de 1980 y dio a conocer la primera versión en 1991. El nombre del lenguaje es un homenaje al grupo de comedia británico [Monty Python](https://es.wikipedia.org/wiki/Monty_Python). [Según van Rossum](https://www.python.org/doc/essays/foreword/), en diciembre de 1989 buscaba un proyecto de programación como "pasatiempo" durante los días cercanos a la navidad, por lo que decidió escribir un interpretador para un lenguaje de programación en el que había estado pensando recientemente. Escogió el nombre Python por encontrarse en un "humor ligeramente irreverente" y ser un gran aficionado al programa de televisión ["El circo volador de Monty Python" (_Monty Python's Flying Circus_)](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus) (véase la {numref}`figura-monty`). La "cultura" de Python ocasionalmente hace referencia a Monty Python en tutoriales, ejemplos y otros materiales (ej. uso de [_spam_, _ham_ y _eggs_](https://en.wikipedia.org/wiki/Metasyntactic_variable#Python_2) como [variables metasintéticas](https://en.wikipedia.org/wiki/Metasyntactic_variable) en lugar de las tradicionales [_foo_, _bar_ y _baz_](https://en.wikipedia.org/wiki/Foobar), en alusión al _sketch_ [Spam](https://en.wikipedia.org/wiki/Spam_(Monty_Python)) de Monty Python).
+Python fue creado por el programador holandés [Guido van Rossum](https://gvanrossum.github.io//) ({numref}`figure-rossum`), quién concibió el diseño original del lenguaje a finales de la década de 1980 y dio a conocer la primera versión en 1991. 
 
 ```{figure} img/Guido-portrait-2014.jpg
-:name: figura-rossum
+:name: figure-rossum
 
 Guido van Rossum, creador de Python. Fuente: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg).
+
+Guido van Rossum, creador de Python. Imagen de Daniel Stroud compartida a través de [Wikimedia Commons]((https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg).
 ```
 
+El nombre del lenguaje es un homenaje al grupo de comedia británico [Monty Python](https://es.wikipedia.org/wiki/Monty_Python). [Según van Rossum](https://www.python.org/doc/essays/foreword/), en diciembre de 1989 buscaba un proyecto de programación como "pasatiempo" durante los días cercanos a la navidad, por lo que decidió escribir un interpretador para un lenguaje de programación en el que había estado pensando recientemente. Escogió el nombre Python por encontrarse en un "humor ligeramente irreverente" y ser un gran aficionado al programa de televisión ["El circo volador de Monty Python" (_Monty Python's Flying Circus_)](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus) ({numref}`figure-monty-python`). 
+
 ```{figure} img/montypython.jpg
-:name: figura-monty
+:name: figure-monty-python
 
 El circo volador de Monty Python. Fuente: [Internet Movie Database (IMDB)](http://www.imdb.com/title/tt0063929/).
 ```
+
+La "cultura" de Python ocasionalmente hace referencia a Monty Python en tutoriales, ejemplos y otros materiales (ej. uso de [_spam_, _ham_ y _eggs_](https://en.wikipedia.org/wiki/Metasyntactic_variable#Python_2) como [variables metasintéticas](https://en.wikipedia.org/wiki/Metasyntactic_variable) en lugar de las tradicionales [_foo_, _bar_ y _baz_](https://en.wikipedia.org/wiki/Foobar), en alusión al _sketch_ [Spam](https://en.wikipedia.org/wiki/Spam_(Monty_Python)) de Monty Python) ([video](https://www.youtube.com/watch?v=_bW4vEo1F4E)).
+
 
 ### Principales características del lenguaje
 La filosofía de diseño de Python enfatiza la importancia de que los programas sean fáciles de leer, de manera que los programadores puedan entender rápidamente su propósito, control de flujo y funcionamiento. Esto facilita el mantenimiento de los programas existentes y disminuye la necesidad de crear otros nuevos.
