@@ -229,8 +229,7 @@ print(monto_impuesto)
 
 # ### Ejercicios
 
-# **Ejercicio 1**  
-# Utilice variables en un programa que covierta grados Celsius a Fahrenheit. Puede consultar la fórmula en https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html
+# 1. Utilice variables en un programa que covierta grados Celsius a Fahrenheit. Puede consultar la fórmula en https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html
 
 # In[17]:
 
@@ -242,8 +241,7 @@ print(monto_impuesto)
 # Salida
 
 
-# **Ejercicio 2**  
-# Utilice variables en un programa que calcule el índice de masa corporal. Pueden consultar la fórmula en [https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator](https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator)
+# 2. Utilice variables en un programa que calcule el índice de masa corporal. Pueden consultar la fórmula en [https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator](https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator)
 
 # In[18]:
 
@@ -526,11 +524,617 @@ print("Fin del programa.")
 # 
 # **NOTA:** deben utilizarse espacios y NO TABULADORES. Si se mezclan espacios y tabuladores, el programa puede comportarse de forma errónea.
 
+# ## Excepciones
+
+# Las [excepciones](https://docs.python.org/3/reference/executionmodel.html#exceptions) son un mecanismo que provee Python para manejar errores o situaciones inesperadas que se producen durante la ejecución de los programas. Mediante este mecanismo, el curso de ejecución del programa se interrumpe cuando ocurre un error y una excepción es "levantada" (_raised_). El control pasa entonces a otro bloque de instrucciones, el cual se encarga de manejar el error.
+
+# ### Las sentencias try y except
+
+# Las sentencias [try](https://docs.python.org/3/reference/compound_stmts.html#try) y [except](https://docs.python.org/3/reference/compound_stmts.html#except) son las que implementan el manejo de excepciones en Python. En el bloque **_try_** se coloca el código que puede ocasionar que se levante la excepción y en el bloque **_except_** se ubica el código que maneja la excepción.
+# 
+# La estructura básica es la siguiente:
+# 
+# ```python
+# try:
+#     <bloque de sentencias que puede generar un error>
+# except:
+#     <bloque de sentencias que maneja el error>
+# ``` 
+# 
+# Por ejemplo, un llamado a la función **_float()_** puede ocasionar un error si la hilera de entrada no corresponde a un número entero.
+
+# In[33]:
+
+
+x = float("8,5")
+
+
+# In[ ]:
+
+
+try:
+    x = float("8,5")
+except:
+    print("Por favor utilice un número")
+
+
+# El siguiente ejemplo maneja el mismo error, que puede generarse por una entrada errónea por parte del usuario.
+
+# In[ ]:
+
+
+fahr_hilera = input('Ingrese la temperatura en grados Fahrenheit: ')
+try:
+    fahr = float(fahr_hilera)
+    celsius = (fahr - 32.0) * 5.0 / 9.0
+    print("El equivalente el grados Celsius es: ", celsius)
+except:
+    print('Por favor ingrese un número.')
+
+
 # ### Ejercicios
 
-# Escriba un programa que:
+# 1. Reescriba el programa que calcula el IMC y maneje las excepciones que puedan producirse.
+
+# ## Ciclos
+
+# Los ciclos son bloques de instrucciones que se ejecutan varias veces. Para manejar ciclos, Python provee dos mecanismos: la sentencia **_while_** y la sentencia **_for_**.
+
+# ### La sentencia while
+
+# La setencia [while](https://docs.python.org/3/reference/compound_stmts.html#the-while-statement) se utiliza para ejecutar repetidamente un bloque de instrucciones mientras que una condición sea verdadera. Su estructura básica es:
+# 
+# ```python
+# while <condicion>:
+#     <bloque de sentencias>
+# ``` 
+# 
+# Típicamente, en el bloque hay instrucciones que provocan que la condición se vuelva falsa eventualmente y el ciclo termine. De lo contrario, se producirá un **ciclo infinito**. Nótese que si la condición ya es falsa cuando el flujo del programa llega al **_while_**, el bloque no se ejecutará nunca.
+
+# #### Ejemplos
+
+# In[ ]:
+
+
+# Contador de números en orden ascendente
+n = 1
+while n <= 5:
+    print(n)
+    n = n + 1
+
+
+# In[ ]:
+
+
+# Contador de números en orden descendente
+n = 5
+while n >= 1:
+    print(n)
+    n = n - 1
+
+
+# In[ ]:
+
+
+# Recorrido de una hilera
+texto = "Lorem ipsum"
+n = 0
+while n < len(texto) :
+    print(texto[n])
+    n = n + 1
+
+
+# In[ ]:
+
+
+# Validación de entrada de datos
+numero = -1
+while not(numero >= 5 and numero <= 10) :
+    numero = float(input("\nPor favor ingrese un número entre 5 y 10: "))
+    if not(numero >= 5 and numero <= 10) :
+        print("El número no está entre 5 y 10, por favor inténtelo de nuevo...")
+print("¡Gracias!")
+
+
+# ### La sentencia for
+
+# La sentencia [for](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement) se utiliza para iterar sobre los elementos de estructuras de datos como secuencias (ej. hilera, lista, tupla). Su sintaxis puede resumirse de la siguiente manera:
+# 
+# ```python
+# for <variable_iteracion> in <secuencia>:
+#     <bloque de sentencias>
+# ``` 
+# 
+# La variable de iteración es una variable que asume el valor del elemento que se procesa en cada iteración.
+
+# #### Ejemplos
+
+# In[ ]:
+
+
+# Recorrido de una lista
+alumnos = ['Juan', 'María', 'Pedro']
+for alumno in alumnos:
+    print("¡Buenos días " + alumno + "!")
+
+
+# In[ ]:
+
+
+# Recorrido de un rango de números
+# La función range(a, b) crea una secuencia de números entre a y b-1.
+for numero in range(1, 11):
+    print(numero)
+
+
+# In[ ]:
+
+
+# Cálculo de la cantidad de elementos 
+lista = [3, 41, 12, 9, 74, 15]
+contador = 0
+print("Lista: ", lista)
+for item in lista :
+    contador += 1 # esto es lo mismo que: contador = contador + 1
+print("Cantidad de elementos:", contador)
+
+
+# In[ ]:
+
+
+# Suma de los elementos de una lista
+lista = [3, 41, 12, 9, 74, 15]
+suma = 0
+print("Lista: ", lista)
+for item in lista :
+    suma += item
+print("Suma de los elementos:", suma)
+
+
+# ### La sentencia break
+
+# La sentencia [break](https://docs.python.org/3/reference/simple_stmts.html#break) finaliza un ciclo y pasa el flujo del programa a la instrucción que sigue al bloque del while o del for.
+
+# In[ ]:
+
+
+# Busca el primer número de una lista que sea mayor que 20 y sale del ciclo una vez que lo ha encontrado
+lista = [3, 41, 12, 9, 74, 15]
+print("Lista: ", lista)
+for item in lista :
+    if item > 20 :
+        print("Primer número mayor que 20: ", item)
+        break
+
+
+# ### La sentencia continue
+
+# La sentencia [continue](https://docs.python.org/3/reference/simple_stmts.html#continue) interrumpe la iteración actual de un ciclo y continúa con la siguiente. No sale completamente del ciclo, como la sentencia break.
+
+# In[ ]:
+
+
+# Imprime el doble de cada uno de los números mayores que 20 que hay en una lista. 
+# Si el número de la iteración es menor o igual que 20, utiliza la sentencia continue para "saltarse" esa iteración.
+
+lista = [3, 41, 12, 9, 74, 15]
+print("Lista: ", lista)
+for item in lista :
+    if item <= 20:
+        continue
+    print(item * 2)
+
+
+# ### Ejercicios
+
+# 1. Escriba un programa que calcule el promedio de los números de una lista.
+# 2. Escriba un programa que calcule la desviación estándar de los números de una lista.
+# 
+# (Maneje la lista en una variable)
+
+# ## Funciones
+
+# Las [funciones](https://docs.python.org/3/reference/compound_stmts.html#function-definitions) son conjuntos de sentencias que **tienen un nombre y realizan una tarea específica** como, por ejemplo, un cálculo matemático o un procesamiento de texto. Por lo general, una función recibe datos de entrada, llamados **argumentos**, y **retorna un valor**.
+# 
+# 
+# El uso de funciones tiene múltiples ventajas, entre las que pueden mencionarse:
+# 
+# - Mejoran la legibilidad de los programas: mediante el uso de nombres significativos para las secciones de código que realizan una tarea.
+# - Evitan la duplicidad de código fuente: una función se define una vez y luego pueden ser invocada muchas veces en un programa.
+# - Facilitan el mantenimiento de los programas: al realizar las modificaciones en el código de una función, se evita la necesidad de realizarlas en múltiples secciones de un programa.
+# - Facilitan la reutilización de código: mediante mecanismos como módulos de funciones (archivos con colecciones de funciones).
+
+# ### Funciones predefinidas
+
+# Python tiene una lista de [funciones predefinidas](https://docs.python.org/3/library/functions.html), de las cuales algunas se han utilizado ya en este curso:
+
+# In[ ]:
+
+
+# type(): tipo de datos de una expresión
+type(20)
+
+
+# In[ ]:
+
+
+# int(): convierte una expresión a un número de tipo entero (int)
+int("100")
+
+
+# In[ ]:
+
+
+# len(): retorna la cantidad de elementos (items) de una hilera, lista 
+# u otros tipos de secuencias y de colecciones.
+lista_provincias = ["Limón", "Guanacaste", "Puntarenas", "Heredia", "Alajuela", "Cartago", "San José"]
+len(lista_provincias)
+
+
+# In[ ]:
+
+
+# pow(): eleva un número a una potencia
+pow(5, 2)
+
+
+# Estas funciones predefinidas pueden invocarse en cualquier parte de un programa en Python, con solo escribir su nombre y argumentos.
+
+# ### Funciones definidas en módulos de la biblioteca estándar
+
+# La [biblioteca estándar de Python](https://docs.python.org/3/library/) es el conjunto de módulos que se incluye junto con cada distribución de Python, sin necesidad de instalarlos separadamente. Estos módulos proporcionan un conjunto de funciones más especializadas en áreas como matemáticas, multimedios, redes y otras. Para utilizar estas funciones, primero debe importarse el módulo del que forman parte mediante la sentencia [import](https://docs.python.org/3/reference/simple_stmts.html#import). Por ejemplo:
+
+# In[ ]:
+
+
+import math
+
+
+# La instrucción anterior brinda acceso a las funciones del módulo [math](https://docs.python.org/3/library/math.html), que contiene un conjunto de funciones matemáticas. Por ejemplo:
+
+# In[ ]:
+
+
+# math.factorial(): retorna el factorial de un número
+math.factorial(4)
+
+
+# In[ ]:
+
+
+# math.sqrt(): retorna la raíz cuadrada de un número
+math.sqrt(9)
+
+
+# Nótese que para invocar a estas funciones, debe escribirse antes el nombre del módulo y un punto.
+
+# ### Paquetes externos
+
+# No están incluídos en la biblioteca estándar de Python y deben instalarse de acuerdo con el procedimiento definido por sus autores, como por ejemplo con los programas administradores de paquetes [pip](https://pypi.org/project/pip/) y [Conda](https://conda.io/).
+# 
+# Muchos de estos paquetes se distribuyen a través de repositorios como el [Python Package Index (PyPI)](https://pypi.python.org/), que a la fecha alberga cerca de 260000 proyectos desarrollados por la comunidad de desarrolladores en Python.
+
+# ### Sintaxis para la definición de nuevas funciones
+
+# En Python, el programador puede definir nuevas funciones a través de la palabra reservada **def**, con la siguiente sintaxis:
+# 
+# ```python
+# def <nombre_funcion>(<arg1>, <arg2>, ..., <argn>):
+#     <bloque de sentencias>
+#     return <valor_retorno>
+# ``` 
+# 
+# - El nombre de la función es elegido por el usuario y sigue las mismas reglas y recomendaciones que en el caso de los nombres de las variables.
+# - Los argumentos se especifican entre paréntesis y se separan entre paréntesis. Si la función no tiene argumentos, deben incluirse paréntesis vacíos.
+# - La palabra reservada **return** especifica el valor de retorno de la función.
+
+# #### Ejemplos
+
+# In[ ]:
+
+
+# Definición de una función
+def fahrenheit_a_celsius(grados_fahrenheit):
+    grados_celsius = (grados_fahrenheit - 32.0) * 5.0 / 9.0
+    return grados_celsius
+
+# Llamados a la función
+print(fahrenheit_a_celsius(104))
+print(fahrenheit_a_celsius(50))
+print(fahrenheit_a_celsius(32))
+print(fahrenheit_a_celsius(14))
+
+
+# ### Ejercicios
+
+# 1. Defina una función llamada celsius_a_fahrenheit() e inclúyala en el programa del ejemplo anterior. Realice algunos llamados de prueba a la nueva función.
+
+# 2. Escriba un programa que:
 # * Le solicite al usuario su peso y su estatura.
 # * Calcule su índice de masa corporal.
 # * Indique el valor del índice y si este es considerado bajo (menor que 18.5), normal (entre 18.5 y 25) o alto (mayor o igual que 25).
 # 
 # Los detalles del cálculo del índice están en [https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator](https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator).
+
+# # Programación orientada a objetos
+
+# La [Programación Orientada a Objetos (POO)](https://en.wikipedia.org/wiki/Object-oriented_programming) es un [paradigma de programación](https://en.wikipedia.org/wiki/Programming_paradigm) basado en el concepto de **objeto**. En el contexto de la POO, los objetos son entidades que poseen:
+# - **Estado**: implementado con un conjunto de variables llamadas **propiedades**.
+# - **Comportamiento**: implementado con un conjunto de funciones llamadas **métodos**.
+# 
+# Los objetos se agrupan en [clases](https://docs.python.org/3/tutorial/classes.html). Todos los objetos de una clase contienen los mismos métodos y propiedades. Una clase puede verse como una plantilla o “machote” a partir de la cual se crean objetos. A un objeto creado a partir de una clase se le llama también una **instancia** de esa clase.
+
+# In[ ]:
+
+
+# Definición de la clase cuentaBancaria
+class cuentaBancaria:
+    # Propiedades
+    propietario = ""
+    balance = 0
+    
+    # Métodos
+    # Constructor de la clase: crea nuevas instancias e inicializa las propiedades
+    def __init__(self, propietario, balance):
+        self.propietario = propietario
+        self.balance = balance
+    
+    # Método para realizar depósitos
+    def depositar(self, monto):
+        self.balance = self.balance + monto
+
+    # Método para realizar retiros
+    def retirar(self, monto):
+        self.balance = self.balance - monto
+
+    # Método para imprimir información
+    def imprimirInformacion(self):
+        print("Propietario: " + self.propietario + ", Balance: " + str(self.balance))       
+
+
+# Una vez definida una clase, pueden declararse objetos o instancias de esta. Las instancias pueden invocar métodos de la clase mediante la notación:
+# 
+# ```python
+#     <instancia>.<método>
+# ``` 
+# 
+# A continuación, se presentan algunos ejemplos de instancias de la clase _cuentaBancaria_ y de llamados a sus métodos.
+
+# In[ ]:
+
+
+# Instancia cuenta01
+cuenta01 = cuentaBancaria("Juan Pérez", 1000)
+cuenta01.depositar(5000)
+cuenta01.imprimirInformacion()
+
+
+# In[ ]:
+
+
+# Instancia cuenta02
+cuenta02 = cuentaBancaria("María Pérez", 10000)
+cuenta02.depositar(15000)
+cuenta02.retirar(24000)
+cuenta02.imprimirInformacion()
+
+
+# ### Objetos y clases predefinidas de Python
+
+# Todos los datos de un programa en Python se representan mediante objetos o por relaciones entre objetos. Los tipos de datos corresponden a las clases de los objetos.
+
+# In[34]:
+
+
+# Clase int
+print(type(234))
+
+
+# In[35]:
+
+
+# Clase float
+print(type(10.3))
+
+
+# In[36]:
+
+
+# Clase bool
+print(type(True))
+
+
+# In[37]:
+
+
+# Clase list
+print(type([True, 23, 20.6, (1, 2, 3)]))
+
+
+# El que un dato sea un objeto, implica que además de su valor tiene un conjunto de operaciones asociadas (métodos) que se aplican mediante operadores (ej. +, -, *, %) o funciones (ej. len(), type()). Tanto los operadores como las funciones pueden aplicarse en varias clases. Por ejemplo, el operador + se usa para _int_, _float_, _str_, _list_ y otras clases; _len()_ se usa también en varios tipos de datos.
+
+# ## Colecciones
+
+# ### La clase str
+
+# Como ya se ha explicado, la clase [str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) se utiliza para representar datos textuales en Python. Esta clase proporciona un conjunto de [métodos](https://docs.python.org/3/library/stdtypes.html#string-methods), de los que se presentan algunos ejemplos a continuación.
+
+# In[38]:
+
+
+# str.capitalize(): retorna una copia de 'str' con el primer carácter en mayúscula y el resto en minúscula.
+'hola'.capitalize()
+
+
+# In[39]:
+
+
+# str.lower(): retorna una copia de 'str' con todos los caracteres en minúscula
+'HOLA'.lower()
+
+
+# In[40]:
+
+
+# str.count(sub[, start[, end]]): retorna el número de hileras no traslapadas de la subhilera 'sub' 
+# en el rango [start, end], el cual es opcional, de 'str'.
+
+cita_socrates = 'Yo solo sé, que no sé nada'
+cita_socrates.count('sé') # se cuentan todas las ocurrencias de 'sé'
+
+
+# In[41]:
+
+
+cita_socrates.count('sé', 0, 10) # se cuentan solo las ocurrencias ubicadas en el rango [0, 10]
+
+
+# In[42]:
+
+
+# str.find(sub[, start[, end]]): retorna el índice menor en donde se encuentra 'sub'
+# en el rango [start, end] de 'str'
+
+'Yo solo sé, que no sé nada'.find('solo')
+
+
+# In[43]:
+
+
+# str.replace(old, new[, count]): retorna una copia de 'str' con todas las ocurrencias
+# de la subhilera 'old' reemplazadas por 'new'. 
+# Si 'count' es especificado, solo se reemplazan las primeras 'count' ocurrencias de 'old'
+cita_socrates.replace("solo", "solamente")
+
+
+# **Formateo de hileras**
+# 
+# Se implementa a través del método [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format). Pueden verse varios ejemplos en [https://pyformat.info/](https://pyformat.info/).
+
+# In[44]:
+
+
+# Formateo de números enteros
+'La suma de 3 + 4 es {} y la resta de 10 - 6 es {}'.format(7, 4)
+
+
+# In[45]:
+
+
+# Formateo de un número en punto flotante (6 caracteres, 4 después del punto decimal)
+'La relación entre la longitud de una circunferencia y su diámetro es {:6.4f}'.format(3.141592653589793)
+
+
+# In[46]:
+
+
+# Formateo de fecha y hora
+from datetime import datetime
+'{:%d/%m/%Y %H:%M}'.format(datetime(2001, 2, 3, 4, 5))
+
+
+# ### La clase list
+
+# La clase [list](https://docs.python.org/3/library/stdtypes.html#lists) implementa secuencias mutables (i.e. modificables) de objetos que se especifican como **ítems separados por comas y encerrados entre paréntesis cuadrados**.
+# 
+# Se presentan a continuación algunos ejemplos de operaciones y métodos de la clase _list_, los cuales son comunes a todas las clases de [secuencias mutables](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types):
+
+# In[47]:
+
+
+lista = [10, 20, 30, 40, 50]
+
+
+# In[48]:
+
+
+# Reemplazo de un ítem con base en su posición
+lista[2] = 300
+lista
+
+
+# In[49]:
+
+
+# Borrado de un ítem con base en su posición
+del lista[4]
+lista
+
+
+# In[50]:
+
+
+# list.append(x): agrega 'x' al final de 'list'
+lista.append(50)
+lista
+
+
+# In[51]:
+
+
+# list.insert(i, x): inserta 'x' en al posición 'i'
+lista.insert(4, 45)
+lista
+
+
+# ### La clase dict
+
+# La clase [dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) implementa un conjunto de pares ordenados de la forma _atributo_:_valor_. Por ejemplo:
+
+# In[52]:
+
+
+persona = {"cedula":"408730281", "nombre":"Juan", "apellido":"Pérez"}
+
+
+# Ejemplos de operaciones y métodos de la clase dict:
+
+# In[53]:
+
+
+# Retorno de valor correspondiente a una llave
+persona["cedula"]
+
+
+# In[54]:
+
+
+# Asignación de un valor a una llave
+persona["nombre"] = "María"
+persona
+
+
+# In[55]:
+
+
+# Verificación de si una llave existe
+"apellido" in persona
+
+
+# In[56]:
+
+
+# dict.items(): retorna los ítems (pares (llave, valor)) de 'dict'
+persona.items()
+
+
+# In[57]:
+
+
+# dict.keys(): retorna las llaves de 'dict'
+persona.keys()
+
+
+# In[58]:
+
+
+# dict.values(): retorna los valores de 'dict'
+persona.values()
+
+
+# In[59]:
+
+
+# dict.get(key[, default]): retorna el valor de la llave 'key' en 'dict'
+persona.get("apellido")
+
