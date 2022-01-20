@@ -856,7 +856,7 @@ print(fahrenheit_a_celsius(14))
 # 
 # Los detalles del cálculo del índice están en [https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator](https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator).
 
-# # Programación orientada a objetos
+# ## Programación orientada a objetos
 
 # La [Programación Orientada a Objetos (POO)](https://en.wikipedia.org/wiki/Object-oriented_programming) es un [paradigma de programación](https://en.wikipedia.org/wiki/Programming_paradigm) basado en el concepto de **objeto**. En el contexto de la POO, los objetos son entidades que poseen:
 # - **Estado**: implementado con un conjunto de variables llamadas **propiedades**.
@@ -923,28 +923,28 @@ cuenta02.imprimirInformacion()
 
 # Todos los datos de un programa en Python se representan mediante objetos o por relaciones entre objetos. Los tipos de datos corresponden a las clases de los objetos.
 
-# In[34]:
+# In[ ]:
 
 
 # Clase int
 print(type(234))
 
 
-# In[35]:
+# In[ ]:
 
 
 # Clase float
 print(type(10.3))
 
 
-# In[36]:
+# In[ ]:
 
 
 # Clase bool
 print(type(True))
 
 
-# In[37]:
+# In[ ]:
 
 
 # Clase list
@@ -959,21 +959,21 @@ print(type([True, 23, 20.6, (1, 2, 3)]))
 
 # Como ya se ha explicado, la clase [str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) se utiliza para representar datos textuales en Python. Esta clase proporciona un conjunto de [métodos](https://docs.python.org/3/library/stdtypes.html#string-methods), de los que se presentan algunos ejemplos a continuación.
 
-# In[38]:
+# In[ ]:
 
 
 # str.capitalize(): retorna una copia de 'str' con el primer carácter en mayúscula y el resto en minúscula.
 'hola'.capitalize()
 
 
-# In[39]:
+# In[ ]:
 
 
 # str.lower(): retorna una copia de 'str' con todos los caracteres en minúscula
 'HOLA'.lower()
 
 
-# In[40]:
+# In[ ]:
 
 
 # str.count(sub[, start[, end]]): retorna el número de hileras no traslapadas de la subhilera 'sub' 
@@ -983,13 +983,13 @@ cita_socrates = 'Yo solo sé, que no sé nada'
 cita_socrates.count('sé') # se cuentan todas las ocurrencias de 'sé'
 
 
-# In[41]:
+# In[ ]:
 
 
 cita_socrates.count('sé', 0, 10) # se cuentan solo las ocurrencias ubicadas en el rango [0, 10]
 
 
-# In[42]:
+# In[ ]:
 
 
 # str.find(sub[, start[, end]]): retorna el índice menor en donde se encuentra 'sub'
@@ -998,7 +998,7 @@ cita_socrates.count('sé', 0, 10) # se cuentan solo las ocurrencias ubicadas en 
 'Yo solo sé, que no sé nada'.find('solo')
 
 
-# In[43]:
+# In[ ]:
 
 
 # str.replace(old, new[, count]): retorna una copia de 'str' con todas las ocurrencias
@@ -1011,21 +1011,21 @@ cita_socrates.replace("solo", "solamente")
 # 
 # Se implementa a través del método [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format). Pueden verse varios ejemplos en [https://pyformat.info/](https://pyformat.info/).
 
-# In[44]:
+# In[ ]:
 
 
 # Formateo de números enteros
 'La suma de 3 + 4 es {} y la resta de 10 - 6 es {}'.format(7, 4)
 
 
-# In[45]:
+# In[ ]:
 
 
 # Formateo de un número en punto flotante (6 caracteres, 4 después del punto decimal)
 'La relación entre la longitud de una circunferencia y su diámetro es {:6.4f}'.format(3.141592653589793)
 
 
-# In[46]:
+# In[ ]:
 
 
 # Formateo de fecha y hora
@@ -1039,13 +1039,13 @@ from datetime import datetime
 # 
 # Se presentan a continuación algunos ejemplos de operaciones y métodos de la clase _list_, los cuales son comunes a todas las clases de [secuencias mutables](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types):
 
-# In[47]:
+# In[ ]:
 
 
 lista = [10, 20, 30, 40, 50]
 
 
-# In[48]:
+# In[ ]:
 
 
 # Reemplazo de un ítem con base en su posición
@@ -1053,7 +1053,7 @@ lista[2] = 300
 lista
 
 
-# In[49]:
+# In[ ]:
 
 
 # Borrado de un ítem con base en su posición
@@ -1061,7 +1061,7 @@ del lista[4]
 lista
 
 
-# In[50]:
+# In[ ]:
 
 
 # list.append(x): agrega 'x' al final de 'list'
@@ -1069,7 +1069,7 @@ lista.append(50)
 lista
 
 
-# In[51]:
+# In[ ]:
 
 
 # list.insert(i, x): inserta 'x' en al posición 'i'
@@ -1081,7 +1081,7 @@ lista
 
 # La clase [dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) implementa un conjunto de pares ordenados de la forma _atributo_:_valor_. Por ejemplo:
 
-# In[52]:
+# In[ ]:
 
 
 persona = {"cedula":"408730281", "nombre":"Juan", "apellido":"Pérez"}
@@ -1089,14 +1089,14 @@ persona = {"cedula":"408730281", "nombre":"Juan", "apellido":"Pérez"}
 
 # Ejemplos de operaciones y métodos de la clase dict:
 
-# In[53]:
+# In[ ]:
 
 
 # Retorno de valor correspondiente a una llave
 persona["cedula"]
 
 
-# In[54]:
+# In[ ]:
 
 
 # Asignación de un valor a una llave
@@ -1104,35 +1104,35 @@ persona["nombre"] = "María"
 persona
 
 
-# In[55]:
+# In[ ]:
 
 
 # Verificación de si una llave existe
 "apellido" in persona
 
 
-# In[56]:
+# In[ ]:
 
 
 # dict.items(): retorna los ítems (pares (llave, valor)) de 'dict'
 persona.items()
 
 
-# In[57]:
+# In[ ]:
 
 
 # dict.keys(): retorna las llaves de 'dict'
 persona.keys()
 
 
-# In[58]:
+# In[ ]:
 
 
 # dict.values(): retorna los valores de 'dict'
 persona.values()
 
 
-# In[59]:
+# In[ ]:
 
 
 # dict.get(key[, default]): retorna el valor de la llave 'key' en 'dict'
