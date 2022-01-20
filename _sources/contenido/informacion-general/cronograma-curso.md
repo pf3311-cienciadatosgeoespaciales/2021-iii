@@ -13,7 +13,7 @@
 |                     | Software para manejo de datos geoespaciales | {cite:p}`pebesma_openeo_2016` |
 | III-i (17-23 de enero) | GDAL: biblioteca para lectura y escritura de datos geoespaciales | {cite:p}`gandhi_mastering_2020`, {cite:p}`osgeolive_gdalogr_nodate` |
 
-### B - PROCESAMIENTO DE DATOS GEOESPACIALES
+### B - PROCESAMIENTO DE DATOS GEOESPACIALES CON PYTHON
 | Semana | Temas | Lecturas |
 | :- | :- | :- |
 | III-ii (17-23 de enero) | El ecosistema geoespacial de Python | {cite:p}`severance_py4e_nodate`, {cite:p}`wu_geographic_nodate`, {cite:p}`gandhi_python_2020`, , {cite:p}`tenkanen_automating_2021`, {cite:p}`dorman_spatial_2021` |
