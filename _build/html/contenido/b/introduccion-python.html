@@ -313,6 +313,16 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filosofia-de-diseno">
+     Filosofía de diseño
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#licenciamiento">
+     Licenciamiento
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#aplicacion-en-datos-geoespaciales">
      Aplicación en datos geoespaciales
     </a>
@@ -322,13 +332,11 @@
      Python 2 y Python 3
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#herramientas-para-desarrollo-en-python">
-   Herramientas para desarrollo en Python
-  </a>
-  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#herramientas-para-desarrollo-en-python">
+     Herramientas para desarrollo en Python
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#editores-de-texto">
      Editores de texto
@@ -409,12 +417,12 @@
 <p><a class="reference external" href="https://www.python.org/">Python</a> es un lenguaje de programación de propósito general que ha alcanzado una <a class="reference external" href="https://www.infoworld.com/article/3331603/pythons-popularity-surges-as-a-mainstay-language.html">gran popularidad en los últimos años</a>. Fue declarado el lenguaje del año en 2020 y 2021 por el índice <a class="reference external" href="https://www.tiobe.com/tiobe-index/">Tiobe</a> de popularidad de lenguajes de programación, debido al crecimiento de su uso en diversas áreas, entre las que destacan la <a class="reference external" href="https://es.wikipedia.org/wiki/Ciencia_de_datos">ciencia de datos</a> y el <a class="reference external" href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico">aprendizaje automatizado</a>, además de otras como desarrollo web, <em>scripting</em> y visualización de datos, entre muchas. Esta popularidad es respaldada por otras fuentes como el índice <a class="reference external" href="http://pypl.github.io/PYPL.html">PYPL</a> y el sitio de preguntas y respuestas para programadores <a class="reference external" href="https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies">Stack Overflow</a>. Este último lo consideró, en 2017, el <a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/?_ga=2.202250515.367846061.1552160385-2089845565.1546395318">lenguaje de programación de mayor crecimiento en los países de alto ingreso</a>, como se muestra en la <a class="reference internal" href="#figure-crecimiento-lenguajes"><span class="std std-numref">Fig. 24</span></a>.</p>
 <div class="figure align-default" id="figure-crecimiento-lenguajes">
 <img alt="../../_images/growth_major_languages.png" src="../../_images/growth_major_languages.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Crecimiento de los principales lenguajes de programación en los países de alto ingreso. Fuente: <span id="id1">[<a class="reference internal" href="#id45">Rob17</a>]</span>.</span><a class="headerlink" href="#figure-crecimiento-lenguajes" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Crecimiento de los principales lenguajes de programación en los países de alto ingreso. Fuente: <span id="id1">[<a class="reference internal" href="#id46">Rob17</a>]</span>.</span><a class="headerlink" href="#figure-crecimiento-lenguajes" title="Permalink to this image">¶</a></p>
 </div>
 <p>Python es ampliamente utilizado en enseñanza de la programación. En 2014, era el <a class="reference external" href="https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities/fulltext">lenguaje más empleado en cursos introductorios de programación de las principales universidades de Estados Unidos</a>, como puede apreciarse en el gráfico de la <a class="reference internal" href="#figure-lenguajes-universidades"><span class="std std-numref">Fig. 25</span></a>.</p>
 <div class="figure align-default" id="figure-lenguajes-universidades">
 <img alt="../../_images/top-languajes-universities.png" src="../../_images/top-languajes-universities.png" />
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Lenguajes de programación utilizados en los departamentos de ciencias de la computación de las principales universidades de Estados Unidos. Fuente: <span id="id2">[<a class="reference internal" href="#id46">Guo14</a>]</span>.</span><a class="headerlink" href="#figure-lenguajes-universidades" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Lenguajes de programación utilizados en los departamentos de ciencias de la computación de las principales universidades de Estados Unidos. Fuente: <span id="id2">[<a class="reference internal" href="#id47">Guo14</a>]</span>.</span><a class="headerlink" href="#figure-lenguajes-universidades" title="Permalink to this image">¶</a></p>
 </div>
 <p>Este uso en enseñanza se debe, entre otras razones, a que los programas en Python son más fáciles de leer y requieren menos líneas de <a class="reference external" href="https://en.wikipedia.org/wiki/Source_code">código fuente</a> que otros lenguajes de amplia difusión, tales como <a class="reference external" href="http://oracle.com/java/">Java</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/C_(programming_language)">C</a> o <a class="reference external" href="https://isocpp.org/">C++</a>.</p>
 <div class="section" id="historia">
@@ -422,17 +430,14 @@
 <p>Python fue creado por el programador holandés <a class="reference external" href="https://gvanrossum.github.io//">Guido van Rossum</a> (<a class="reference internal" href="#figure-rossum"><span class="std std-numref">Fig. 26</span></a>), quién concibió el diseño original del lenguaje a finales de la década de 1980 y dio a conocer la primera versión en 1991.</p>
 <div class="figure align-default" id="figure-rossum">
 <img alt="../../_images/Guido-portrait-2014.jpg" src="../../_images/Guido-portrait-2014.jpg" />
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Guido van Rossum, creador de Python. Fuente: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-rossum" title="Permalink to this image">¶</a></p>
-<div class="legend">
-<p>Guido van Rossum, creador de Python. Imagen de Daniel Stroud compartida a través de [Wikimedia Commons]((<a class="reference external" href="https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg">https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg</a>).</p>
-</div>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Guido van Rossum, creador de Python. Imagen de Daniel Stroud compartida a través de <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg">Wikimedia Commons</a>.</span><a class="headerlink" href="#figure-rossum" title="Permalink to this image">¶</a></p>
 </div>
 <p>El nombre del lenguaje es un homenaje al grupo de comedia británico <a class="reference external" href="https://es.wikipedia.org/wiki/Monty_Python">Monty Python</a>. <a class="reference external" href="https://www.python.org/doc/essays/foreword/">Según van Rossum</a>, en diciembre de 1989 buscaba un proyecto de programación como “pasatiempo” durante los días cercanos a la navidad, por lo que decidió escribir un interpretador para un lenguaje de programación en el que había estado pensando recientemente. Escogió el nombre Python por encontrarse en un “humor ligeramente irreverente” y ser un gran aficionado al programa de televisión <a class="reference external" href="https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus">“El circo volador de Monty Python” (<em>Monty Python’s Flying Circus</em>)</a> (<a class="reference internal" href="#figure-monty-python"><span class="std std-numref">Fig. 27</span></a>).</p>
 <div class="figure align-default" id="figure-monty-python">
 <img alt="../../_images/montypython.jpg" src="../../_images/montypython.jpg" />
 <p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">El circo volador de Monty Python. Fuente: <a class="reference external" href="http://www.imdb.com/title/tt0063929/">Internet Movie Database (IMDB)</a>.</span><a class="headerlink" href="#figure-monty-python" title="Permalink to this image">¶</a></p>
 </div>
-<p>La “cultura” de Python ocasionalmente hace referencia a Monty Python en tutoriales, ejemplos y otros materiales (ej. uso de <a class="reference external" href="https://en.wikipedia.org/wiki/Metasyntactic_variable#Python_2"><em>spam</em>, <em>ham</em> y <em>eggs</em></a> como <a class="reference external" href="https://en.wikipedia.org/wiki/Metasyntactic_variable">variables metasintéticas</a> en lugar de las tradicionales <a class="reference external" href="https://en.wikipedia.org/wiki/Foobar"><em>foo</em>, <em>bar</em> y <em>baz</em></a>, en alusión al <em>sketch</em> <a class="reference external" href="https://en.wikipedia.org/wiki/Spam_(Monty_Python)">Spam</a> de Monty Python) (<a class="reference external" href="https://www.youtube.com/watch?v=_bW4vEo1F4E">video</a>).</p>
+<p>La “cultura” de Python ocasionalmente hace referencia a Monty Python en tutoriales, ejemplos y otros materiales. Por ejemplo, en el <a class="reference external" href="https://en.wikipedia.org/wiki/Metasyntactic_variable">uso de <em>spam</em>, <em>ham</em> y <em>eggs</em> como variables metasintéticas</a> en sustitución de las tradicionales <a class="reference external" href="https://en.wikipedia.org/wiki/Foobar"><em>foo</em>, <em>bar</em> y <em>baz</em></a>, en alusión al <em>sketch</em> <a class="reference external" href="https://en.wikipedia.org/wiki/Spam_(Monty_Python)">Spam</a> de Monty Python) (<a class="reference external" href="https://www.youtube.com/watch?v=_bW4vEo1F4E">video</a>.</p>
 </div>
 <div class="section" id="principales-caracteristicas-del-lenguaje">
 <h3>Principales características del lenguaje<a class="headerlink" href="#principales-caracteristicas-del-lenguaje" title="Permalink to this headline">¶</a></h3>
@@ -445,28 +450,34 @@
 <li><p>Cuenta con <a class="reference external" href="https://docs.python.org/3/c-api/memory.html">administración automática de memoria</a>: el interpretador se encarga de asignar y administrar la memoria de las variables, sin intervención del programador. Esto incluye un sistema de <a class="reference external" href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">recolección de basura</a>, que libera la memoria de las variables que no están siendo utilizadas.</p></li>
 <li><p>Soporta varios <a class="reference external" href="https://en.wikipedia.org/wiki/Programming_paradigm">paradigmas de programación</a>: los paradigmas son estilos o enfoques teóricos de programación. En el caso de Python, incluye <a class="reference external" href="https://en.wikipedia.org/wiki/Object-oriented_programming">programación orientada a objetos</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Imperative_programming">programación imperativa</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Functional_programming">programación funcional</a> y <a class="reference external" href="https://en.wikipedia.org/wiki/Procedural_programming">programación procedimental</a>.</p></li>
 </ul>
+</div>
+<div class="section" id="filosofia-de-diseno">
+<h3>Filosofía de diseño<a class="headerlink" href="#filosofia-de-diseno" title="Permalink to this headline">¶</a></h3>
 <p>La filosofía de diseño de Python está resumida en una lista de 19 principios conocida como el <a class="reference external" href="https://www.python.org/dev/peps/pep-0020/">Zen de Python</a> que guían el uso del lenguaje. La aplicación de estos principios y el seguimiento de mejores prácticas y de <a class="reference external" href="https://en.wikipedia.org/wiki/Programming_idiom"><em>idioms</em> de programación</a>, como los descritos en <a class="reference external" href="https://docs.python-guide.org/">The Hitchhiker’s Guide to Python!</a>, hacen que un programa se considere “pitónico” (<em>pythonic</em>). Los programadores que siguen la filosofía de Python son llamados <a class="reference external" href="https://david.goodger.org/projects/pycon/2007/idiomatic/"><em>pythonists</em>, <em>pythonistas</em> o <em>pythoneers</em></a>.</p>
-<p>La implementación de referencia del interpretador de Python, llamada <a class="reference external" href="https://github.com/python/cpython">CPython</a>, es software de <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_model">código abierto (<em>open source</em>)</a>, lo que facilita que el desarrollo de Python sea conducido por una comunidad de programadores enlazada a través de Internet. Este modelo es seguido por la mayoría de las implementaciones del interpretador de Python. Una muestra muy representativa de este esquema de colaboración es el <a class="reference external" href="https://pypi.python.org">Python Package Index (PyPI)</a>, un repositorio para compartir componentes de software programados con Python, que a la fecha alberga más de 170000 proyectos.</p>
+</div>
+<div class="section" id="licenciamiento">
+<h3>Licenciamiento<a class="headerlink" href="#licenciamiento" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://www.python.org/psf/">Python Software Foundation (PSF)</a> es la organización sin fines de lucro que posee los derechos de propiedad intelectual del lenguaje Python y que maneja las licencias de software libre con las que se distribuye. Su misión es <em>“promover, proteger y avanzar el lenguaje de programación Python, así como apoyar y facilitar el crecimiento de una comunidad diversa e internacional de programadores de Python”</em>.</p>
+<p>La implementación de referencia del interpretador de Python, llamada <a class="reference external" href="https://github.com/python/cpython">CPython</a>, es software de <a class="reference external" href="https://en.wikipedia.org/wiki/Open-source_model">código abierto (<em>open source</em>)</a>, lo que facilita que el desarrollo de Python sea conducido por una comunidad de programadores enlazada a través de Internet. Este modelo es seguido por la mayoría de las implementaciones del interpretador de Python. Una muestra muy representativa de este esquema de colaboración es el <a class="reference external" href="https://pypi.python.org">Python Package Index (PyPI)</a>, un repositorio para compartir componentes de software programados con Python, que a la fecha alberga más de 350000 proyectos.</p>
 </div>
 <div class="section" id="aplicacion-en-datos-geoespaciales">
 <h3>Aplicación en datos geoespaciales<a class="headerlink" href="#aplicacion-en-datos-geoespaciales" title="Permalink to this headline">¶</a></h3>
 <p>Python ha tomado una gran importancia en el área del desarrollo de aplicaciones geoespaciales debido a su popularidad, “suavidad” de la curva de aprendizaje y abundancia de recursos de educación y consulta (ej. tutoriales, libros, listas de correo, foros de discusión). Todas estas son características que, entre otras, lo hacen muy apropiado para programadores que no son especialistas en ciencias de la computación, como es el caso de muchos de los usuarios de sistemas de información geográfica (SIG). De hecho, muchas de estas herramientas han seleccionado a <a class="reference external" href="http://www.mdpi.com/2220-9964/2/1/201">Python como el lenguaje de preferencia para que sus usuarios amplíen o configuren la funcionalidad que ofrecen</a>. Como ejemplos, pueden mencionarse las bibliotecas <a class="reference external" href="http://desktop.arcgis.com/en/arcmap/10.3/analyze/arcpy/what-is-arcpy-.htm">ArcPy</a> para <a class="reference external" href="https://www.arcgis.com/">ArcGIS</a>, <a class="reference external" href="https://docs.qgis.org/testing/en/docs/pyqgis_developer_cookbook/">PyQGIS</a> para <a class="reference external" href="https://www.qgis.org/">QGIS</a> y <a class="reference external" href="https://grass.osgeo.org/grass70/manuals/libpython/pygrass_index.html">PyGRASS</a> para <a class="reference external" href="https://grass.osgeo.org/">GRASS GIS</a>. De manera similar, hay una gran cantidad de bibliotecas que ofrecen funciones geoespaciales que pueden ser utilizadas por cualquier otra herramienta. Entre estas, pueden mencionarse <a class="reference external" href="http://www.gdal.org/">GDAL/OGR</a>, para conversiones entre diferentes formatos vectoriales y raster; <a class="reference external" href="http://proj4.org/">PROJ</a>, para transformaciones entre sistemas de coordenadas y <a class="reference external" href="http://geopandas.org/">GeoPandas</a>, para análisis geoespacial. Muchas de estas bibliotecas son distribuidas con licencias de <a class="reference external" href="https://en.wikipedia.org/wiki/Free_software">software libre (<em>free software</em>)</a>.</p>
-<p>En la <a class="reference internal" href="#figura-python-gis"><span class="std std-numref">Fig. 28</span></a>, puede observarse como Python es ampliamente utilizado como lenguaje de <em>scripting</em> en SIG.</p>
-<div class="figure align-default" id="figura-python-gis">
+<p>En la <a class="reference internal" href="#figure-python-gis"><span class="std std-numref">Fig. 28</span></a>, puede observarse como Python es ampliamente utilizado como lenguaje de <em>scripting</em> en SIG.</p>
+<div class="figure align-default" id="figure-python-gis">
 <img alt="../../_images/python-gis-software.png" src="../../_images/python-gis-software.png" />
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Uso de Python en SIG. Fuente: <a class="reference external" href="http://www.mdpi.com/2220-9964/2/1/201">Zambelli et al. (2013)</a>.</span><a class="headerlink" href="#figura-python-gis" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Uso de Python en SIG. Fuente: <span id="id3">[<a class="reference internal" href="#id48">ZGC13</a>]</span>.</span><a class="headerlink" href="#figure-python-gis" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="python-2-y-python-3">
 <h3>Python 2 y Python 3<a class="headerlink" href="#python-2-y-python-3" title="Permalink to this headline">¶</a></h3>
-<p>La versión 3 de Python fue liberada en 2008 y tiene diferencias en su sintaxis que la hacen incompatible con la versión 2. Desde entonces, se recomienda la migración de los programas en Python 2 a Python 3 y el uso de Python 3 para el desarrollo de nuevas aplicaciones. <a class="reference external" href="https://www.python.org/dev/peps/pep-0373/">La versión 2 no recibirá más soporte a partir de 2020</a>. La PSF proporciona una <a class="reference external" href="https://docs.python.org/3/howto/pyporting.html">guía oficial para migrar programas de Python 2 a Python 3</a>.</p>
-<p>Por estos motivos, este curso se enfocará en Python 3. Cabe destacar que las <a class="reference external" href="https://learntocodewith.me/programming/python/python-2-vs-python-3/#2018-differences-of-python2-vs-3">diferencias de importancia entre ambas versiones son realmente pocas</a> y un programador experimentado en el uso de Python 3 puede entender facilidad un programa en Python 2 y viceversa.</p>
-</div>
+<p>La versión 3 de Python fue liberada en 2008 y tiene diferencias en su sintaxis que la hacen incompatible con la versión 2. Desde entonces, se recomienda la migración de los programas en Python 2 a Python 3 y el uso de Python 3 para el desarrollo de nuevas aplicaciones. Ya no se brinda soporte oficial para Python 2. La PSF proporciona una <a class="reference external" href="https://docs.python.org/3/howto/pyporting.html">guía oficial para migrar programas de Python 2 a Python 3</a>.</p>
+<p>Este curso se enfoca en Python 3. Cabe destacar que las <a class="reference external" href="https://learntocodewith.me/programming/python/python-2-vs-python-3/#2018-differences-of-python2-vs-3">diferencias de importancia entre ambas versiones son realmente pocas</a> y un programador experimentado en el uso de Python 3 puede entender facilidad un programa en Python 2 y viceversa.</p>
 </div>
 <div class="section" id="herramientas-para-desarrollo-en-python">
-<h2>Herramientas para desarrollo en Python<a class="headerlink" href="#herramientas-para-desarrollo-en-python" title="Permalink to this headline">¶</a></h2>
+<h3>Herramientas para desarrollo en Python<a class="headerlink" href="#herramientas-para-desarrollo-en-python" title="Permalink to this headline">¶</a></h3>
 <p>Hay tres principales tipos de herramientas para elaborar programas en Python: editores de texto, ambientes integrados de desarrollo y <em>notebooks</em>.</p>
+</div>
 <div class="section" id="editores-de-texto">
 <h3>Editores de texto<a class="headerlink" href="#editores-de-texto" title="Permalink to this headline">¶</a></h3>
 <p>Son editores para cualquier tipo de archivo de texto. Aquí se presentan los que proveen algunas facilidades para la edición de código fuente (ej. colores para diferenciar palabras clave o tabulación automática). Son fáciles de utilizar, pero no aportan mayores facilidades para el proceso de desarrollo. Son apropiados para programas pequeños y de no muy alta complejidad. Algunos de los más populares son:</p>
@@ -523,12 +534,15 @@
 </div>
 <div class="section" id="referencias-bibliograficas">
 <h2>Referencias bibliográficas<a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this headline">¶</a></h2>
-<p id="id3"><dl class="citation">
-<dt class="label" id="id46"><span class="brackets"><a class="fn-backref" href="#id2">Guo14</a></span></dt>
+<p id="id4"><dl class="citation">
+<dt class="label" id="id47"><span class="brackets"><a class="fn-backref" href="#id2">Guo14</a></span></dt>
 <dd><p>Philip Guo. Python Is Now the Most Popular Introductory Teaching Language at Top ­U.S. ­Universities. July 2014. URL: <a class="reference external" href="https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext">https://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-us-universities/fulltext</a> (visited on 2022-01-20).</p>
 </dd>
-<dt class="label" id="id45"><span class="brackets"><a class="fn-backref" href="#id1">Rob17</a></span></dt>
+<dt class="label" id="id46"><span class="brackets"><a class="fn-backref" href="#id1">Rob17</a></span></dt>
 <dd><p>David Robinson. The Incredible Growth of Python. September 2017. URL: <a class="reference external" href="https://stackoverflow.blog/2017/09/06/incredible-growth-python/">https://stackoverflow.blog/2017/09/06/incredible-growth-python/</a> (visited on 2022-01-20).</p>
+</dd>
+<dt class="label" id="id48"><span class="brackets"><a class="fn-backref" href="#id3">ZGC13</a></span></dt>
+<dd><p>Pietro Zambelli, Sören Gebbert, and Marco Ciolli. Pygrass: An Object Oriented Python Application Programming Interface (API) for Geographic Resources Analysis Support System (GRASS) Geographic Information System (GIS). <em>ISPRS International Journal of Geo-Information</em>, 2(1):201–219, March 2013. Number: 1 Publisher: Multidisciplinary Digital Publishing Institute. URL: <a class="reference external" href="https://www.mdpi.com/2220-9964/2/1/201">https://www.mdpi.com/2220-9964/2/1/201</a> (visited on 2022-01-20), <a class="reference external" href="https://doi.org/10.3390/ijgi2010201">doi:10.3390/ijgi2010201</a>.</p>
 </dd>
 </dl>
 </p>

@@ -83,3 +83,5 @@ Whipp, D., Tenkanen, H., Heikinheimo, V., & Aagesen, H. W. (2021). Geo-Python. h
 Wu, Q. (s. f.). Geographic Software Design. Recuperado 2 de enero de 2022, de https://www.youtube.com/playlist?list=PLAxJ4-o7ZoPeUqGpMhvJoVk5G-TrvMAd-
 
 Wu, Q. (2021, octubre 25). A streamlit app for creating timelapse of annual Landsat imagery (1984–2021). Medium. https://giswqs.medium.com/a-streamlit-app-for-creating-timelapse-of-annual-landsat-imagery-1984-2021-3db407a8ac32
+
+Zambelli, P., Gebbert, S., & Ciolli, M. (2013). Pygrass: An Object Oriented Python Application Programming Interface (API) for Geographic Resources Analysis Support System (GRASS) Geographic Information System (GIS). ISPRS International Journal of Geo-Information, 2(1), 201-219. https://doi.org/10.3390/ijgi2010201
