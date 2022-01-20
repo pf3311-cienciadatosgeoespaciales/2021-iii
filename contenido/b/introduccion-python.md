@@ -31,15 +31,7 @@ Lenguajes de programación utilizados en los departamentos de ciencias de la com
 Este uso en enseñanza se debe, entre otras razones, a que los programas en Python son más fáciles de leer y requieren menos líneas de [código fuente](https://en.wikipedia.org/wiki/Source_code) que otros lenguajes de amplia difusión, tales como [Java](http://oracle.com/java/), [C](https://en.wikipedia.org/wiki/C_(programming_language)) o [C++](https://isocpp.org/).
 
 ### Historia
-Python fue creado por el programador holandés [Guido van Rossum](https://gvanrossum.github.io//) ({numref}`figure-rossum`), quién concibió el diseño original del lenguaje a finales de la década de 1980 y dio a conocer la primera versión en 1991. 
-
-```{figure} img/Guido-portrait-2014.jpg
-:name: figure-rossum
-
-Guido van Rossum, creador de Python. Imagen de Daniel Stroud compartida a través de [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg).
-```
-
-El nombre del lenguaje es un homenaje al grupo de comedia británico [Monty Python](https://es.wikipedia.org/wiki/Monty_Python). [Según van Rossum](https://www.python.org/doc/essays/foreword/), en diciembre de 1989 buscaba un proyecto de programación como "pasatiempo" durante los días cercanos a la navidad, por lo que decidió escribir un interpretador para un lenguaje de programación en el que había estado pensando recientemente. Escogió el nombre Python por encontrarse en un "humor ligeramente irreverente" y ser un gran aficionado al programa de televisión ["El circo volador de Monty Python" (_Monty Python's Flying Circus_)](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus) ({numref}`figure-monty-python`). 
+Python fue creado por el programador holandés [Guido van Rossum](https://gvanrossum.github.io//), quién concibió el diseño original del lenguaje a finales de la década de 1980 y dio a conocer la primera versión en 1991. El nombre del lenguaje es un homenaje al grupo de comedia británico [Monty Python](https://es.wikipedia.org/wiki/Monty_Python). [Según van Rossum](https://www.python.org/doc/essays/foreword/), en diciembre de 1989 buscaba un proyecto de programación como "pasatiempo" durante los días cercanos a la navidad, por lo que decidió escribir un interpretador para un lenguaje de programación en el que había estado pensando recientemente. Escogió el nombre Python por encontrarse en un "humor ligeramente irreverente" y ser un gran aficionado al programa de televisión ["El circo volador de Monty Python" (_Monty Python's Flying Circus_)](https://en.wikipedia.org/wiki/Monty_Python%27s_Flying_Circus) ({numref}`figure-monty-python`). 
 
 ```{figure} img/montypython.jpg
 :name: figure-monty-python
@@ -60,8 +52,10 @@ Las siguientes son otras características importantes del lenguaje Python:
 * Cuenta con [administración automática de memoria](https://docs.python.org/3/c-api/memory.html): el interpretador se encarga de asignar y administrar la memoria de las variables, sin intervención del programador. Esto incluye un sistema de [recolección de basura](https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)), que libera la memoria de las variables que no están siendo utilizadas.
 * Soporta varios [paradigmas de programación](https://en.wikipedia.org/wiki/Programming_paradigm): los paradigmas son estilos o enfoques teóricos de programación. En el caso de Python, incluye [programación orientada a objetos](https://en.wikipedia.org/wiki/Object-oriented_programming), [programación imperativa](https://en.wikipedia.org/wiki/Imperative_programming), [programación funcional](https://en.wikipedia.org/wiki/Functional_programming) y [programación procedimental](https://en.wikipedia.org/wiki/Procedural_programming).
 
-### Filosofía de diseño
+### Principios de diseño
 La filosofía de diseño de Python está resumida en una lista de 19 principios conocida como el [Zen de Python](https://www.python.org/dev/peps/pep-0020/) que guían el uso del lenguaje. La aplicación de estos principios y el seguimiento de mejores prácticas y de [_idioms_ de programación](https://en.wikipedia.org/wiki/Programming_idiom), como los descritos en [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/), hacen que un programa se considere "pitónico" (_pythonic_). Los programadores que siguen la filosofía de Python son llamados [_pythonists_, _pythonistas_ o _pythoneers_](https://david.goodger.org/projects/pycon/2007/idiomatic/).
+
+Los principios de diseño se reflejan en la [guía de estilo para código Python](https://www.python.org/dev/peps/pep-0008/), la cual proporciona una serie de convenciones para la escritura de programas.
 
 ### Licenciamiento
 [Python Software Foundation (PSF)](https://www.python.org/psf/) es la organización sin fines de lucro que posee los derechos de propiedad intelectual del lenguaje Python y que maneja las licencias de software libre con las que se distribuye. Su misión es _"promover, proteger y avanzar el lenguaje de programación Python, así como apoyar y facilitar el crecimiento de una comunidad diversa e internacional de programadores de Python"_.
@@ -92,9 +86,10 @@ Hay tres principales tipos de herramientas para desarrollar programas en Python:
 Son editores para cualquier tipo de archivo de texto. Aquí se presentan los que proveen algunas facilidades para la edición de código fuente (ej. colores para diferenciar palabras clave o tabulación automática). Son fáciles de utilizar, pero no aportan mayores facilidades para el proceso de desarrollo. Son apropiados para programas pequeños y de no muy alta complejidad. Algunos de los más populares son:
 
 * [Visual Studio Code](https://code.visualstudio.com/)
-* [Atom](https://atom.io/)
 * [Sublime Text](https://www.sublimetext.com/)
+* [Atom](https://atom.io/)
 * [Notepad++](https://notepad-plus-plus.org/)
+* [vi](http://ex-vi.sourceforge.net/)/[vim](https://www.vim.org/)
 
 ### Ambientes integrados de desarrollo
 Un [ambiente integrado de desarrollo (_Integrated Development Environment_ [IDE])](https://en.wikipedia.org/wiki/Integrated_development_environment), es una aplicación informática que provee soporte integrado al proceso de programación. Típicamente, consiste de un editor de texto para el código fuente, [herramientas para la construcción de archivos ejecutables](https://en.wikipedia.org/wiki/Build_automation) y un [depurador (_debugger_)](https://en.wikipedia.org/wiki/Debugger). Facilitan la elaboración de proyectos de mayor tamaño y complejidad. En el caso de Python, los IDE más populares son:
@@ -118,7 +113,7 @@ Un _notebook_ consiste de una secuencia de celdas que pueden llenarse con códig
 ```{figure} img/jupyter-holamundo.png
 :name: figure-jupyter-holamundo
 
-Programa ["Hola Mundo"](https://github.com/mfvargas/curso-python-geoespacial/blob/master/nb/Hola%20mundo.ipynb) en un Jupyter Notebook.
+Programa ["Hola Mundo"](https://es.wikipedia.org/wiki/Hola_mundo) en un Jupyter Notebook.
 ```
 
 ## Instalación
@@ -150,8 +145,7 @@ conda config --env --set channel_priority strict
 # Instalación de módulos requeridos
 conda install git python jupyter numpy pandas matplotlib plotly dash gdal fiona shapely geopandas rasterio folium
 
-Instalación de módulos opcionales
-# Si se desea desarrollar con streamlit:
+# Instalación de módulos opcionales
 conda install streamlit
 
 # Desactivación del ambiente
