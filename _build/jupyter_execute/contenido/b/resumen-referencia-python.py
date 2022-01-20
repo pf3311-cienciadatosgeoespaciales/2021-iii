@@ -5,8 +5,97 @@
 
 # Este capítulo contiene un resumen de la sintaxis y la semántica base de Python. También puede consultar:
 # 
-# - [Documentación del lenguaje Python](https://docs.python.org/)
-# - [Referencia del lenguaje Python](https://docs.python.org/3/reference/i)
+# - [Documentación oficial de Python](https://docs.python.org/)
+#     - [Referencia del lenguaje Python](https://docs.python.org/3/reference/i)
+#     - [La biblioteca estándar de Python](https://docs.python.org/3/library/index.html#library-index)
+#     - [El tutorial de Python](https://docs.python.org/3/tutorial/index.html#tutorial-index)
+
+# ## Comentarios
+
+# Python permite varios tipos de comentarios en el código fuente. Las convenciones generales para su uso se detallan en [PEP 8 -- Style Guide for Python Code - Comments](https://www.python.org/dev/peps/pep-0008/#comments).
+
+# ### De una línea
+
+# Se definen con el símbolo `#` (*hash*). Por ejemplo:
+
+# In[1]:
+
+
+# Cálculo del índice de masa corporal (IMC)
+
+peso = 73 # peso en kilogramos
+estatura = 1.70 # estatura en metros
+
+imc = peso/estatura**2
+
+print("El IMC es {imc:.2f}".format(imc=imc))
+
+
+# ### De múltiples líneas
+
+# Python no tiene soporte explícito para comentarios de varias líneas. Sin embargo, se pueden implementar de dos formas:
+
+# 1. Con varias líneas iniciadas con `#`:
+
+# In[2]:
+
+
+# Línea 1
+# Línea 2
+# Línea 3
+
+
+# 2. Con bloques de líneas delimitados con `"""` (tres comillas dobles) al inicio y al final:
+
+# In[3]:
+
+
+"""
+Línea 1
+Línea 2
+Línea 3
+"""
+
+
+# ### docstrings
+
+# Las *docstrings* son una forma de documentar módulos, funciones, clases y métodos de Python. Se agregan debajo del encabezado y están delimitados con `"""` (tres comillas dobles) al inicio y al final.
+# 
+# Pueden contener una o varias líneas. En este último caso, la primera línea es una descripción corta y es seguida de una línea en blanco, previa a las líneas restantes. Deben iniciar con mayúscula y finalizar con punto.
+
+# *docstring* de una línea:
+
+# In[4]:
+
+
+def imc(peso, estatura):
+    """Cálculo del índice de masa corporal (IMC)."""
+    return peso/estatura**2
+
+print(imc.__doc__)
+
+
+# *docstring* de varias líneas:
+
+# In[5]:
+
+
+def imc2(peso, estatura):
+    """Cálculo del índice de masa corporal (IMC)
+    
+    El IMC es una razón matemática que asocia el peso y la estatura de un individuo, 
+    ideada por el estadístico belga Adolphe Quetelet, 
+    por lo que también se conoce como índice de Quetelet. 
+    """
+    
+    return peso/estatura**2
+
+print(imc2.__doc__)
+
+
+# Varias herramientas pueden generar documentación a partir de *docstrings*. Entre estas, pueden mencionarse [Doxygen](http://www.doxygen.nl/), [pydoc](https://docs.python.org/3/library/pydoc.html) y [Sphinx](https://www.sphinx-doc.org/).
+# 
+# Las convenciones para el uso de *docstrings* se detallan en [PEP 257 -- Docstring Conventions](https://www.python.org/dev/peps/pep-0257/).
 
 # ## Tipos de datos
 # Python puede trabajar con una gran variedad de tipos de datos, entre los que están los siguientes:
@@ -31,25 +120,25 @@
 # ### La función type()
 # La función [type()](https://docs.python.org/3/library/functions.html#type) retorna el tipo del objeto que recibe como argumento.
 
-# In[1]:
+# In[6]:
 
 
 type(25)
 
 
-# In[2]:
+# In[7]:
 
 
 type("Costa Rica")
 
 
-# In[3]:
+# In[8]:
 
 
 type([1, 2, 3])
 
 
-# In[4]:
+# In[9]:
 
 
 type(2 > 5)
@@ -58,7 +147,7 @@ type(2 > 5)
 # ## Variables
 # Una variable es un nombre que se asigna a un espacio en la memoria del computador que contiene un valor. El valor se asigna mediante el operador **=**
 
-# In[5]:
+# In[10]:
 
 
 # A la variable x se le asigna el valor 10
@@ -67,7 +156,7 @@ print(x)
 print(type(x))
 
 
-# In[6]:
+# In[11]:
 
 
 # A la variable nombre se le asigna el valor "Patricia"
@@ -76,7 +165,7 @@ print(nombre)
 print(type(nombre))
 
 
-# In[7]:
+# In[12]:
 
 
 # A la variable lista_primos se le asigna una lista de números primos
@@ -85,7 +174,7 @@ print(lista_primos)
 print(type(lista_primos))
 
 
-# In[8]:
+# In[13]:
 
 
 # Una variable puede cambiar de valor durante la ejecución del programa
@@ -95,7 +184,7 @@ i = i + 1
 print(i)
 
 
-# In[9]:
+# In[14]:
 
 
 # El valor de una variable pueden asignarse con base en los de otras variable
@@ -115,14 +204,14 @@ print(z)
 
 # Las variables mejoran la legibilidad de los procesos:
 
-# In[10]:
+# In[15]:
 
 
 # Cálculo del impuesto de ventas, sin variables
 100000 * 0.13
 
 
-# In[11]:
+# In[16]:
 
 
 # Cálculo del impuesto de ventas, con variables
@@ -143,7 +232,7 @@ print(monto_impuesto)
 # ### Ejercicio 1
 # Utilice variables en un programa que covierta grados Celsius a Fahrenheit. Puede consultar la fórmula en https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html
 
-# In[12]:
+# In[17]:
 
 
 # Entrada
@@ -156,7 +245,7 @@ print(monto_impuesto)
 # ### Ejercicio 2
 # Utilice variables en un programa que calcule el índice de masa corporal. Pueden consultar la fórmula en [https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator](https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator)
 
-# In[13]:
+# In[18]:
 
 
 # Entrada
