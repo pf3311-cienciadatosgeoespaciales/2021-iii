@@ -150,14 +150,11 @@ conda install git python jupyter numpy pandas matplotlib plotly dash gdal fiona 
 # Instalación de módulos opcionales
 conda install streamlit
 
+# Para iniciar la interfaz de Jupyter Notebook
+jupyter notebook
+
 # Desactivación del ambiente
 conda deactivate
-```
-
-Para iniciar la interfaz de Jupyter Notebook:
-
-```shell
-jupyter notebook
 ```
 
 Una vez instalado el ambiente, puede activarse y desactivarse con `conda activate geopython` y `conda deactivate` respectivamente.
