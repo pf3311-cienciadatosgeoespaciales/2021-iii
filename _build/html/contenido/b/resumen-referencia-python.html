@@ -1,0 +1,670 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumen de referencia de Python &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tarea 01 - Elaboración de un mapa en QGIS" href="../evaluaciones/tarea-01.html" />
+    <link rel="prev" title="Introducción al lenguaje de programación Python" href="introduccion-python.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">PF-3311 Ciencia de datos geoespaciales 2021-III</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   PF-3311 Ciencia de datos geoespaciales 2021-III
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Información sobre el curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/descripcion-curso.html">
+   Descripción general, objetivos y metodología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/requisitos-curso.html">
+   Requisitos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/cronograma-curso.html">
+   Cronograma
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/evaluacion-curso.html">
+   Evaluación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/bibliografia-curso.html">
+   Bibliografía y otros recursos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  A - Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/introduccion-ciencia-datos-geoespaciales.html">
+   Introducción a la ciencia de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/fundamentos-geodesia-cartografia.html">
+   Fundamentos de cartografía y geodesia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/sistemas-informacion-geografica.html">
+   Sistemas de información geográfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/qgis-sig-escritorio.html">
+   QGIS: sistema de información geográfica de escritorio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/modelos-estandares-datos-geoespaciales.html">
+   Modelos y estándares de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/software-manejo-datos-geoespaciales.html">
+   Software para manejo de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/gdal-biblioteca-lectura-escritura-datos-geoespaciales.html">
+   GDAL: biblioteca para lectura y escritura de datos geoespaciales
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  B - Procesamiento de datos geoespaciales con Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduccion-python.html">
+   Introducción al lenguaje de programación Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Resumen de referencia de Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Evaluaciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../evaluaciones/tarea-01.html">
+   Tarea 01 - Elaboración de un mapa en QGIS
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contenido/b/resumen-referencia-python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/b/resumen-referencia-python.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pf3311-cienciadatosgeoespaciales/2021-iii/master?urlpath=tree/docs/contenido/b/resumen-referencia-python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tipos-de-datos">
+   Tipos de datos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-funcion-type">
+     La función type()
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#variables">
+   Variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reglas-para-los-nombres-de-variables">
+     Reglas para los nombres de variables
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1">
+     Ejercicio 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2">
+     Ejercicio 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3">
+     Ejercicio 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="resumen-de-referencia-de-python">
+<h1>Resumen de referencia de Python<a class="headerlink" href="#resumen-de-referencia-de-python" title="Permalink to this headline">¶</a></h1>
+<p>Este capítulo contiene un resumen de la sintaxis y la semántica base de Python. También puede consultar:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/">Documentación del lenguaje Python</a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/i">Referencia del lenguaje Python</a></p></li>
+</ul>
+<div class="section" id="tipos-de-datos">
+<h2>Tipos de datos<a class="headerlink" href="#tipos-de-datos" title="Permalink to this headline">¶</a></h2>
+<p>Python puede trabajar con una gran variedad de tipos de datos, entre los que están los siguientes:</p>
+<table>
+<tr><th>Nombre</th><th>Palabra reservada</th><th>Descripción</th></tr>
+<tr><td>Enteros</td><td>int</td><td>Números enteros: 0, 20, -34</td></tr>
+<tr><td>Punto flotante</td><td>float</td><td>Números con punto decimal: 0.1, 35.0, -100.5</td></tr>
+<tr><td>Booleanos</td><td>bool</td><td>Valores lógicos de <strong>True</strong> (verdadero) o <strong>False</strong> (falso)</td></tr>
+<tr><td>Hileras</td><td>str</td><td>Secuencias ordenadas de caracteres: "Python", "Hola mundo"</td></tr>
+<tr><td>Listas</td><td>list</td><td>Secuencias ordenadas de objetos: [1, 2, 3, "cuatro", True, [5, 6, 7]]</td></tr>
+<tr><td>Tuplas</td><td>tuple</td><td>Secuencias ordenadas inmutables de objetos: ("tres", [23, 34], -89, False)</td></tr>
+<tr><td>Conjuntos</td><td>set</td><td>Colecciones no ordenadas de objetos: {1, 2, "a", "b"}</td></tr>
+<tr><td>Diccionarios</td><td>dict</td><td>Pares ordenados atributo:valor: {"nombre":"Juan", "apellido":"Pérez"}</td></tr>
+</table>
+<p>Existen otros tipos de datos más especializados (ej. fechas, horas, enumerados) que pueden consultarse en la <a class="reference external" href="https://docs.python.org/3/library/datatypes.html">documentación oficial de Python sobre tipos de datos</a>.</p>
+<div class="section" id="la-funcion-type">
+<h3>La función type()<a class="headerlink" href="#la-funcion-type" title="Permalink to this headline">¶</a></h3>
+<p>La función <a class="reference external" href="https://docs.python.org/3/library/functions.html#type">type()</a> retorna el tipo del objeto que recibe como argumento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="s2">&quot;Costa Rica&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bool
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Una variable es un nombre que se asigna a un espacio en la memoria del computador que contiene un valor. El valor se asigna mediante el operador <strong>=</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A la variable x se le asigna el valor 10</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A la variable nombre se le asigna el valor &quot;Patricia&quot;</span>
+<span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Patricia&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Patricia
+&lt;class &#39;str&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A la variable lista_primos se le asigna una lista de números primos</span>
+<span class="n">lista_primos</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">17</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista_primos</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">lista_primos</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2, 3, 5, 7, 11, 13, 17]
+&lt;class &#39;list&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Una variable puede cambiar de valor durante la ejecución del programa</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># El valor de una variable pueden asignarse con base en los de otras variable</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="reglas-para-los-nombres-de-variables">
+<h3>Reglas para los nombres de variables<a class="headerlink" href="#reglas-para-los-nombres-de-variables" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>No pueden empezar con un número (sí pueden usarse números en el resto del nombre).</p></li>
+<li><p>No pueden contener espacios (se sugiere usar el guión bajo: _).</p></li>
+<li><p>No pueden contener ninguno de los siguientes símbolos: ‘”,&lt;&gt;:/?|!&#64;#%^&amp;*~-+</p></li>
+<li><p>No deben utilizarse <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">palabras reservadas de Python</a>.</p></li>
+<li><p>Se considera una <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#function-and-variable-names">buena práctica utilizar nombres en minúscula y con guiones bajos</a>, para así mejorar la legibilidad.</p></li>
+<li><p>Es importante utilizar nombres significativos para las variables, que reflejen su propósito.</p></li>
+</ul>
+<p>Las variables mejoran la legibilidad de los procesos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cálculo del impuesto de ventas, sin variables</span>
+<span class="mi">100000</span> <span class="o">*</span> <span class="mf">0.13</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13000.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cálculo del impuesto de ventas, con variables</span>
+
+<span class="c1"># Entrada</span>
+<span class="n">precio_articulo</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">tasa_impuesto</span> <span class="o">=</span> <span class="mf">0.13</span>
+
+<span class="c1"># Proceso</span>
+<span class="n">monto_impuesto</span> <span class="o">=</span> <span class="n">precio_articulo</span> <span class="o">*</span> <span class="n">tasa_impuesto</span>
+
+<span class="c1"># Salida</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">monto_impuesto</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13000.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="ejercicio-1">
+<h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h3>
+<p>Utilice variables en un programa que covierta grados Celsius a Fahrenheit. Puede consultar la fórmula en <a class="reference external" href="https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html">https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrada</span>
+
+<span class="c1"># Proceso</span>
+
+<span class="c1"># Salida</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-2">
+<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">¶</a></h3>
+<p>Utilice variables en un programa que calcule el índice de masa corporal. Pueden consultar la fórmula en <a class="reference external" href="https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator">https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrada</span>
+
+<span class="c1"># Proceso</span>
+
+<span class="c1"># Salida</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-3">
+<h3>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Permalink to this headline">¶</a></h3>
+<p>Copie en archivos el código fuente de los ejercicios 1 y 2 y ejecútelos desde la línea de comandos de Anaconda.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenido/b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="introduccion-python.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introducción al lenguaje de programación Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../evaluaciones/tarea-01.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tarea 01 - Elaboración de un mapa en QGIS</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Manuel Vargas<br/>
+        
+            &copy; Copyright CC BY-SA 4.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

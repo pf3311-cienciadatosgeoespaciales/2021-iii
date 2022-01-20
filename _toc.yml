@@ -23,6 +23,7 @@ parts:
   - caption: B - Procesamiento de datos geoespaciales con Python
     chapters:
     - file: contenido/b/introduccion-python    
+    - file: contenido/b/resumen-referencia-python    
   - caption: Evaluaciones
     chapters:
     - file: contenido/evaluaciones/tarea-01
