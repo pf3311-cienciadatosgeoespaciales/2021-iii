@@ -145,7 +145,7 @@ type(2 > 5)
 
 
 # ## Variables
-# Una variable es un nombre que se asigna a un espacio en la memoria del computador que contiene un valor. El valor se asigna mediante el operador **=**
+# Una variable es un nombre que se asigna a un espacio en la memoria del computador que contiene un valor. El valor se asigna mediante el operador `=`.
 
 # In[10]:
 
@@ -196,8 +196,8 @@ print(z)
 
 # ### Reglas para los nombres de variables
 # - No pueden empezar con un número (sí pueden usarse números en el resto del nombre).
-# - No pueden contener espacios (se sugiere usar el guión bajo: _).
-# - No pueden contener ninguno de los siguientes símbolos: '",<>:/?|\!@#%^&*~-+
+# - No pueden contener espacios (se sugiere usar el guión bajo: `_`).
+# - No pueden contener ninguno de los siguientes símbolos: `'",<>:/?|\!@#%^&*~-+`.
 # - No deben utilizarse [palabras reservadas de Python](https://docs.python.org/3/reference/lexical_analysis.html#keywords).
 # - Se considera una [buena práctica utilizar nombres en minúscula y con guiones bajos](https://www.python.org/dev/peps/pep-0008/#function-and-variable-names), para así mejorar la legibilidad.
 # - Es importante utilizar nombres significativos para las variables, que reflejen su propósito.
@@ -227,9 +227,9 @@ monto_impuesto = precio_articulo * tasa_impuesto
 print(monto_impuesto)
 
 
-# ## Ejercicios
+# ### Ejercicios
 
-# ### Ejercicio 1
+# **Ejercicio 1**  
 # Utilice variables en un programa que covierta grados Celsius a Fahrenheit. Puede consultar la fórmula en https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html
 
 # In[17]:
@@ -242,7 +242,7 @@ print(monto_impuesto)
 # Salida
 
 
-# ### Ejercicio 2
+# **Ejercicio 2**  
 # Utilice variables en un programa que calcule el índice de masa corporal. Pueden consultar la fórmula en [https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator](https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator)
 
 # In[18]:
@@ -255,5 +255,282 @@ print(monto_impuesto)
 # Salida
 
 
-# ### Ejercicio 3
-# Copie en archivos el código fuente de los ejercicios 1 y 2 y ejecútelos desde la línea de comandos de Anaconda.
+# ## Expresiones
+
+# En Python, una [expresión](https://docs.python.org/3/reference/expressions.html) es una combinación de:
+# * [Literales](https://docs.python.org/3/reference/lexical_analysis.html#literals): valores constantes de números, hileras, listas, booleanos y otros tipos de datos.
+# * Variables.
+# * Los dos anteriores combinados mediante [operadores](https://docs.python.org/3/reference/lexical_analysis.html#operators) o funciones.
+# 
+# **Una expresión tiene un valor numérico, textual, booleano o de otro tipo**. En las secciones siguientes se brindan algunos ejemplos de expresiones.
+# 
+# **NOTA:** al escribir una expresión en la línea de comandos del interpretador de Python o en un _notebook_, esta retorna su valor. Sin embargo, esto no sucede en un programa. En este último caso, si se quiere visualizar el valor de una expresión, debe imprimirse con la función **print()**, por ejemplo.
+
+# Para los ejemplos siguientes, se definen las variables:
+
+# In[19]:
+
+
+x = 20
+y = 21.5
+h = "Python"
+
+
+# ### Aritméticas
+
+# Se utilizan para realizar operaciones matemáticas con números enteros, complejos o de punto flotante.
+
+# #### Operadores aritméticos
+# 
+# <table>
+# 
+# <tr><th>Operador</th><th>Descripción</th><th>Ejemplo</th></tr>
+# 
+# <tr><td>+</td><td>Suma</td><td>4 + 3 (= 7)</td></tr>
+# <tr><td>-</td><td>Resta</td><td>10 - 5 (= 5)</td></tr>
+# <tr><td>*</td><td>Multiplicación</td><td>3 * 4 (= 12)</td></tr>
+# <tr><td>/</td><td>División</td><td>5 / 2 (= 2.5)</td></tr>
+# <tr><td>//</td><td>División entera</td><td>5 // 2 (= 2)</td></tr>
+# <tr><td>%</td><td>Módulo</td><td>5 % 2 (= 1)</td></tr>
+# <tr><td>**</td><td>Exponenciación</td><td>2 ** 3 (= 8)</td></tr>
+# </table>
+
+# #### Ejemplos
+
+# In[20]:
+
+
+# Literal
+0
+
+
+# In[21]:
+
+
+# Variable
+x
+
+
+# In[22]:
+
+
+# Literal, variable, operador aritmético y función
+34 + int(y)
+
+
+# ### Booleanas
+
+# Se les llama también expresiones lógicas. Tienen solamente dos posibles valores:
+# * **True** (verdadero)
+# * **False** (falso)
+# 
+# Son sumamente importantes en Python (y en otros lenguajes de programación) porque con base en expresiones boolenanas se construyen sentencias como condicionales y ciclos.
+
+# #### Operadores booleanos
+
+# <table>
+# 
+# <tr><th>Operador</th><th>Descripción</th><th>Ejemplo</th></tr>
+# 
+# <tr><td>and</td><td>Retorna <strong>True</strong> si ambos operandos son verdaderos y <strong>False</strong> en caso contrario</td><td>(1 < 2) and (4 > 3) [= True]</td></tr>
+# <tr><td>or</td><td>Retorna <strong>True</strong> si al menos uno de los operados es verdadero y <strong>False</strong> en caso contrario</td><td>(10 > 20) or (40 < 30) [= False]</td></tr>
+# <tr><td>not</td><td>Retorna <strong>True</strong> si el operando el falso  y <strong>False</strong> en caso contrario</td><td>not (4 > 2) [= False]</td></tr>
+# </table>
+
+# #### Operadores relacionales
+
+# Con frecuencia, las expresiones boolenas incluyen operadores relacionales (de comparación).
+# <table>
+# 
+# <tr><th>Operador</th><th>Descripción</th><th>Ejemplo</th></tr>
+# 
+# <tr><td>==</td><td>Igual</td><td>(3 + 1) == (2 ** 2)</td></tr>
+# <tr><td>!=</td><td>Diferente</td><td>0 != 1</td></tr>
+# <tr><td>></td><td>Mayor que</td><td>3 > 2</td></tr>
+# <tr><td><</td><td>Menor que</td><td>2 < 3</td></tr>
+# <tr><td>>=</td><td>Mayor o igual que</td><td>3 >= (2 + 1)</td></tr>
+# <tr><td><=</td><td>Menor o igual que</td><td>2 <= 5</td></tr>
+# 
+# </table>
+
+# #### Ejemplos
+
+# In[23]:
+
+
+# Literal
+True
+
+
+# In[24]:
+
+
+# Literal y variable
+x == 20
+
+
+# In[25]:
+
+
+# Literal, variable y operador
+x > 100
+
+
+# In[26]:
+
+
+# Literales, variables, operador aritmético y operador relacional
+(x + 45) > 10 
+
+
+# In[27]:
+
+
+# Literales, variables, operadores aritméticos, operadores relacionales y operadores lógicos
+((x + 45) > 10) and ((y - 20) <= 0)
+
+
+# ### Otras
+
+# In[28]:
+
+
+# Hileras
+"Hola " + h
+
+
+# In[29]:
+
+
+# Listas
+[1, 2, 3] + ["a", "b", "c"]
+
+
+# ## Condicionales
+
+# Los condicionales son instrucciones que permiten evaluar condiciones (i.e. expresiones lógicas) y alterar el flujo del programa de acuerdo con su valor.
+
+# ### La sentencia if
+
+# En Python, los condicionales se implementan a través de la sentencia [if](https://docs.python.org/3/reference/compound_stmts.html#the-if-statement). En su forma más básica, tiene la siguiente estructura:
+# 
+# ```python
+# if <condición>:
+#     <bloque de sentencias>
+# ```
+# 
+# <condición> es una expresión lógica (que es verdadera o falsa). Si la condición es verdadera, se ejecutará el bloque de sentencias que está luego de los dos puntos (:). En Python, un bloque de instrucciones se identifica por la cantidad de espacios que lo tabulan.
+# 
+# Por ejemplo:
+
+# In[30]:
+
+
+print("Inicio del programa.")
+print("Este programa indica si una persona es menor de edad.")
+print("\n")
+
+edad = 15
+if edad < 18:
+    print("- La persona es MENOR.")
+    print("- No puede votar en las elecciones presidenciales.")
+    print("- No puede tener licencia para conducir automóviles.")
+    
+print("\n")    
+print("Fin del programa.")
+
+
+# Después de ejecutar el bloque (si se cumple la condición), el programa continua ejecutando las instrucciones que están fuera del bloque, si es que las hay.
+
+# #### La cláusula else
+
+# Es una cláusula opcional que se utiliza para especificar un bloque alterno que se ejecuta si no se cumple la condición del if. Tiene la siguiente estructura:
+# 
+# ```python
+# if <condición>:
+#     <bloque de sentencias>
+# else:
+#     <bloque de sentencias>
+# ```
+# 
+# Solamente puede usarse una cláusula else en cada sentencia if. Por ejemplo:
+
+# In[31]:
+
+
+print("Inicio del programa.")
+print("Este programa indica si una persona es menor o adulta.")
+print("\n")
+
+edad = 22
+if edad < 18:
+    print("- La persona es MENOR.")
+    print("- No puede votar en las elecciones presidenciales.")
+    print("- No puede tener licencia para conducir automóviles.")    
+else:
+    print("- La persona es ADULTA.")
+    print("- Puede votar en las elecciones presidenciales.")
+    print("- Puede tener licencia para conducir automóviles.")
+    
+print("\n")    
+print("Fin del programa.")
+
+
+# #### La cláusula elif
+
+# Es una cláusula opcional que permite especificar condiciones adicionales entre las cláusulas if y else. 
+# 
+# ```python
+# if <condición>:
+#     <bloque de sentencias>
+# elif <condición>:
+#     <bloque de sentencias>
+# else:
+#     <bloque de sentencias>
+# ```    
+# 
+# Puede usarse cualquier cantidad de cláusulas elif. La cláusula elif puede utilizarse sin la clásula else y viceversa.
+# 
+# Ejemplo:
+
+# In[32]:
+
+
+print("Inicio del programa.")
+print("Este programa indica si una persona es menor, adulta o adulta mayor.")
+print("\n")
+
+edad = 65
+if edad < 18:
+    print("- La persona es MENOR.")
+    print("- No puede votar en las elecciones presidenciales.")
+    print("- No puede tener licencia para conducir automóviles.")
+elif (edad >= 18) and (edad < 65):
+    print("- La persona es ADULTA.")
+    print("- Puede votar en las elecciones presidenciales.")
+    print("- Puede tener licencia para conducir automóviles.")    
+else:
+    print("- La persona es ADULTA MAYOR.")
+    print("- Puede votar en las elecciones presidenciales.")
+    print("- Puede tener licencia para conducir automóviles.")
+    print("- Tiene acceso gratuito al servicio público de autobuses.")
+    print("- Tiene prioridad en las filas de atención en bancos y otros servicios.")
+    
+print("\n")    
+print("Fin del programa.")
+
+
+# ### Acerca de los bloques en Python
+
+# Los bloques son conjuntos de sentencias contiguas que están tabulados con la misma cantidad de espacios. La cantidad de espacios puede ser decidida por el programador, pero [se recomienda usar cuatro espacios](https://www.python.org/dev/peps/pep-0008/#indentation).
+# 
+# **NOTA:** deben utilizarse espacios y NO TABULADORES. Si se mezclan espacios y tabuladores, el programa puede comportarse de forma errónea.
+
+# ### Ejercicios
+
+# Escriba un programa que:
+# * Le solicite al usuario su peso y su estatura.
+# * Calcule su índice de masa corporal.
+# * Indique el valor del índice y si este es considerado bajo (menor que 18.5), normal (entre 18.5 y 25) o alto (mayor o igual que 25).
+# 
+# Los detalles del cálculo del índice están en [https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator](https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator).
