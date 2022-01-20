@@ -346,26 +346,94 @@
      Reglas para los nombres de variables
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicios">
+     Ejercicios
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicios">
-   Ejercicios
+  <a class="reference internal nav-link" href="#expresiones">
+   Expresiones
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejercicio-1">
-     Ejercicio 1
+    <a class="reference internal nav-link" href="#aritmeticas">
+     Aritméticas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operadores-aritmeticos">
+       Operadores aritméticos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ejemplos">
+       Ejemplos
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#booleanas">
+     Booleanas
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operadores-booleanos">
+       Operadores booleanos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#operadores-relacionales">
+       Operadores relacionales
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Ejemplos
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#otras">
+     Otras
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#condicionales">
+   Condicionales
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#la-sentencia-if">
+     La sentencia if
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-clausula-else">
+       La cláusula else
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#la-clausula-elif">
+       La cláusula elif
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acerca-de-los-bloques-en-python">
+     Acerca de los bloques en Python
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejercicio-2">
-     Ejercicio 2
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ejercicio-3">
-     Ejercicio 3
+    <a class="reference internal nav-link" href="#id2">
+     Ejercicios
     </a>
    </li>
   </ul>
@@ -577,7 +645,7 @@
 </div>
 <div class="section" id="variables">
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
-<p>Una variable es un nombre que se asigna a un espacio en la memoria del computador que contiene un valor. El valor se asigna mediante el operador <strong>=</strong></p>
+<p>Una variable es un nombre que se asigna a un espacio en la memoria del computador que contiene un valor. El valor se asigna mediante el operador <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A la variable x se le asigna el valor 10</span>
@@ -663,8 +731,8 @@
 <h3>Reglas para los nombres de variables<a class="headerlink" href="#reglas-para-los-nombres-de-variables" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>No pueden empezar con un número (sí pueden usarse números en el resto del nombre).</p></li>
-<li><p>No pueden contener espacios (se sugiere usar el guión bajo: _).</p></li>
-<li><p>No pueden contener ninguno de los siguientes símbolos: ‘”,&lt;&gt;:/?|!&#64;#%^&amp;*~-+</p></li>
+<li><p>No pueden contener espacios (se sugiere usar el guión bajo: <code class="docutils literal notranslate"><span class="pre">_</span></code>).</p></li>
+<li><p>No pueden contener ninguno de los siguientes símbolos: <code class="docutils literal notranslate"><span class="pre">'&quot;,&lt;&gt;:/?|\!&#64;#%^&amp;*~-+</span></code>.</p></li>
 <li><p>No deben utilizarse <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#keywords">palabras reservadas de Python</a>.</p></li>
 <li><p>Se considera una <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#function-and-variable-names">buena práctica utilizar nombres en minúscula y con guiones bajos</a>, para así mejorar la legibilidad.</p></li>
 <li><p>Es importante utilizar nombres significativos para las variables, que reflejen su propósito.</p></li>
@@ -706,12 +774,23 @@
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="ejercicio-1">
-<h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h3>
-<p>Utilice variables en un programa que covierta grados Celsius a Fahrenheit. Puede consultar la fórmula en <a class="reference external" href="https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html">https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html</a></p>
+<h3>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">¶</a></h3>
+<p><strong>Ejercicio 1</strong><br />
+Utilice variables en un programa que covierta grados Celsius a Fahrenheit. Puede consultar la fórmula en <a class="reference external" href="https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html">https://www.rapidtables.com/convert/temperature/celsius-to-fahrenheit.html</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrada</span>
+
+<span class="c1"># Proceso</span>
+
+<span class="c1"># Salida</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Ejercicio 2</strong><br />
+Utilice variables en un programa que calcule el índice de masa corporal. Pueden consultar la fórmula en <a class="reference external" href="https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator">https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrada</span>
@@ -724,24 +803,377 @@
 </div>
 </div>
 </div>
-<div class="section" id="ejercicio-2">
-<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">¶</a></h3>
-<p>Utilice variables en un programa que calcule el índice de masa corporal. Pueden consultar la fórmula en <a class="reference external" href="https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator">https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator</a></p>
+</div>
+<div class="section" id="expresiones">
+<h2>Expresiones<a class="headerlink" href="#expresiones" title="Permalink to this headline">¶</a></h2>
+<p>En Python, una <a class="reference external" href="https://docs.python.org/3/reference/expressions.html">expresión</a> es una combinación de:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#literals">Literales</a>: valores constantes de números, hileras, listas, booleanos y otros tipos de datos.</p></li>
+<li><p>Variables.</p></li>
+<li><p>Los dos anteriores combinados mediante <a class="reference external" href="https://docs.python.org/3/reference/lexical_analysis.html#operators">operadores</a> o funciones.</p></li>
+</ul>
+<p><strong>Una expresión tiene un valor numérico, textual, booleano o de otro tipo</strong>. En las secciones siguientes se brindan algunos ejemplos de expresiones.</p>
+<p><strong>NOTA:</strong> al escribir una expresión en la línea de comandos del interpretador de Python o en un <em>notebook</em>, esta retorna su valor. Sin embargo, esto no sucede en un programa. En este último caso, si se quiere visualizar el valor de una expresión, debe imprimirse con la función <strong>print()</strong>, por ejemplo.</p>
+<p>Para los ejemplos siguientes, se definen las variables:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Entrada</span>
-
-<span class="c1"># Proceso</span>
-
-<span class="c1"># Salida</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">21.5</span>
+<span class="n">h</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aritmeticas">
+<h3>Aritméticas<a class="headerlink" href="#aritmeticas" title="Permalink to this headline">¶</a></h3>
+<p>Se utilizan para realizar operaciones matemáticas con números enteros, complejos o de punto flotante.</p>
+<div class="section" id="operadores-aritmeticos">
+<h4>Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permalink to this headline">¶</a></h4>
+<table>
+<tr><th>Operador</th><th>Descripción</th><th>Ejemplo</th></tr>
+<tr><td>+</td><td>Suma</td><td>4 + 3 (= 7)</td></tr>
+<tr><td>-</td><td>Resta</td><td>10 - 5 (= 5)</td></tr>
+<tr><td>*</td><td>Multiplicación</td><td>3 * 4 (= 12)</td></tr>
+<tr><td>/</td><td>División</td><td>5 / 2 (= 2.5)</td></tr>
+<tr><td>//</td><td>División entera</td><td>5 // 2 (= 2)</td></tr>
+<tr><td>%</td><td>Módulo</td><td>5 % 2 (= 1)</td></tr>
+<tr><td>**</td><td>Exponenciación</td><td>2 ** 3 (= 8)</td></tr>
+</table></div>
+<div class="section" id="ejemplos">
+<h4>Ejemplos<a class="headerlink" href="#ejemplos" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Literal</span>
+<span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variable</span>
+<span class="n">x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Literal, variable, operador aritmético y función</span>
+<span class="mi">34</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="ejercicio-3">
-<h3>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Permalink to this headline">¶</a></h3>
-<p>Copie en archivos el código fuente de los ejercicios 1 y 2 y ejecútelos desde la línea de comandos de Anaconda.</p>
+</div>
+<div class="section" id="booleanas">
+<h3>Booleanas<a class="headerlink" href="#booleanas" title="Permalink to this headline">¶</a></h3>
+<p>Se les llama también expresiones lógicas. Tienen solamente dos posibles valores:</p>
+<ul class="simple">
+<li><p><strong>True</strong> (verdadero)</p></li>
+<li><p><strong>False</strong> (falso)</p></li>
+</ul>
+<p>Son sumamente importantes en Python (y en otros lenguajes de programación) porque con base en expresiones boolenanas se construyen sentencias como condicionales y ciclos.</p>
+<div class="section" id="operadores-booleanos">
+<h4>Operadores booleanos<a class="headerlink" href="#operadores-booleanos" title="Permalink to this headline">¶</a></h4>
+<table>
+<tr><th>Operador</th><th>Descripción</th><th>Ejemplo</th></tr>
+<tr><td>and</td><td>Retorna <strong>True</strong> si ambos operandos son verdaderos y <strong>False</strong> en caso contrario</td><td>(1 < 2) and (4 > 3) [= True]</td></tr>
+<tr><td>or</td><td>Retorna <strong>True</strong> si al menos uno de los operados es verdadero y <strong>False</strong> en caso contrario</td><td>(10 > 20) or (40 < 30) [= False]</td></tr>
+<tr><td>not</td><td>Retorna <strong>True</strong> si el operando el falso  y <strong>False</strong> en caso contrario</td><td>not (4 > 2) [= False]</td></tr>
+</table></div>
+<div class="section" id="operadores-relacionales">
+<h4>Operadores relacionales<a class="headerlink" href="#operadores-relacionales" title="Permalink to this headline">¶</a></h4>
+<p>Con frecuencia, las expresiones boolenas incluyen operadores relacionales (de comparación).</p>
+<table>
+<tr><th>Operador</th><th>Descripción</th><th>Ejemplo</th></tr>
+<tr><td>==</td><td>Igual</td><td>(3 + 1) == (2 ** 2)</td></tr>
+<tr><td>!=</td><td>Diferente</td><td>0 != 1</td></tr>
+<tr><td>></td><td>Mayor que</td><td>3 > 2</td></tr>
+<tr><td><</td><td>Menor que</td><td>2 < 3</td></tr>
+<tr><td>>=</td><td>Mayor o igual que</td><td>3 >= (2 + 1)</td></tr>
+<tr><td><=</td><td>Menor o igual que</td><td>2 <= 5</td></tr>
+</table></div>
+<div class="section" id="id1">
+<h4>Ejemplos<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Literal</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Literal y variable</span>
+<span class="n">x</span> <span class="o">==</span> <span class="mi">20</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Literal, variable y operador</span>
+<span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Literales, variables, operador aritmético y operador relacional</span>
+<span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">45</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Literales, variables, operadores aritméticos, operadores relacionales y operadores lógicos</span>
+<span class="p">((</span><span class="n">x</span> <span class="o">+</span> <span class="mi">45</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="mi">20</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="otras">
+<h3>Otras<a class="headerlink" href="#otras" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hileras</span>
+<span class="s2">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">h</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hola Python&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Listas</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, &#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="condicionales">
+<h2>Condicionales<a class="headerlink" href="#condicionales" title="Permalink to this headline">¶</a></h2>
+<p>Los condicionales son instrucciones que permiten evaluar condiciones (i.e. expresiones lógicas) y alterar el flujo del programa de acuerdo con su valor.</p>
+<div class="section" id="la-sentencia-if">
+<h3>La sentencia if<a class="headerlink" href="#la-sentencia-if" title="Permalink to this headline">¶</a></h3>
+<p>En Python, los condicionales se implementan a través de la sentencia <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#the-if-statement">if</a>. En su forma más básica, tiene la siguiente estructura:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">condición</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>&lt;condición&gt; es una expresión lógica (que es verdadera o falsa). Si la condición es verdadera, se ejecutará el bloque de sentencias que está luego de los dos puntos (:). En Python, un bloque de instrucciones se identifica por la cantidad de espacios que lo tabulan.</p>
+<p>Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inicio del programa.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este programa indica si una persona es menor de edad.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">edad</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- La persona es MENOR.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- No puede votar en las elecciones presidenciales.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- No puede tener licencia para conducir automóviles.&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin del programa.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inicio del programa.
+Este programa indica si una persona es menor de edad.
+
+
+- La persona es MENOR.
+- No puede votar en las elecciones presidenciales.
+- No puede tener licencia para conducir automóviles.
+
+
+Fin del programa.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Después de ejecutar el bloque (si se cumple la condición), el programa continua ejecutando las instrucciones que están fuera del bloque, si es que las hay.</p>
+<div class="section" id="la-clausula-else">
+<h4>La cláusula else<a class="headerlink" href="#la-clausula-else" title="Permalink to this headline">¶</a></h4>
+<p>Es una cláusula opcional que se utiliza para especificar un bloque alterno que se ejecuta si no se cumple la condición del if. Tiene la siguiente estructura:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">condición</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Solamente puede usarse una cláusula else en cada sentencia if. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inicio del programa.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este programa indica si una persona es menor o adulta.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">edad</span> <span class="o">=</span> <span class="mi">22</span>
+<span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- La persona es MENOR.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- No puede votar en las elecciones presidenciales.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- No puede tener licencia para conducir automóviles.&quot;</span><span class="p">)</span>    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- La persona es ADULTA.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Puede votar en las elecciones presidenciales.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Puede tener licencia para conducir automóviles.&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin del programa.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inicio del programa.
+Este programa indica si una persona es menor o adulta.
+
+
+- La persona es ADULTA.
+- Puede votar en las elecciones presidenciales.
+- Puede tener licencia para conducir automóviles.
+
+
+Fin del programa.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="la-clausula-elif">
+<h4>La cláusula elif<a class="headerlink" href="#la-clausula-elif" title="Permalink to this headline">¶</a></h4>
+<p>Es una cláusula opcional que permite especificar condiciones adicionales entre las cláusulas if y else.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">&lt;</span><span class="n">condición</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span><span class="o">&gt;</span>
+<span class="k">elif</span> <span class="o">&lt;</span><span class="n">condición</span><span class="o">&gt;</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span><span class="o">&gt;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">bloque</span> <span class="n">de</span> <span class="n">sentencias</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Puede usarse cualquier cantidad de cláusulas elif. La cláusula elif puede utilizarse sin la clásula else y viceversa.</p>
+<p>Ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Inicio del programa.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Este programa indica si una persona es menor, adulta o adulta mayor.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">edad</span> <span class="o">=</span> <span class="mi">65</span>
+<span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- La persona es MENOR.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- No puede votar en las elecciones presidenciales.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- No puede tener licencia para conducir automóviles.&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">edad</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- La persona es ADULTA.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Puede votar en las elecciones presidenciales.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Puede tener licencia para conducir automóviles.&quot;</span><span class="p">)</span>    
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- La persona es ADULTA MAYOR.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Puede votar en las elecciones presidenciales.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Puede tener licencia para conducir automóviles.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Tiene acceso gratuito al servicio público de autobuses.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;- Tiene prioridad en las filas de atención en bancos y otros servicios.&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>    
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fin del programa.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Inicio del programa.
+Este programa indica si una persona es menor, adulta o adulta mayor.
+
+
+- La persona es ADULTA MAYOR.
+- Puede votar en las elecciones presidenciales.
+- Puede tener licencia para conducir automóviles.
+- Tiene acceso gratuito al servicio público de autobuses.
+- Tiene prioridad en las filas de atención en bancos y otros servicios.
+
+
+Fin del programa.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="acerca-de-los-bloques-en-python">
+<h3>Acerca de los bloques en Python<a class="headerlink" href="#acerca-de-los-bloques-en-python" title="Permalink to this headline">¶</a></h3>
+<p>Los bloques son conjuntos de sentencias contiguas que están tabulados con la misma cantidad de espacios. La cantidad de espacios puede ser decidida por el programador, pero <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#indentation">se recomienda usar cuatro espacios</a>.</p>
+<p><strong>NOTA:</strong> deben utilizarse espacios y NO TABULADORES. Si se mezclan espacios y tabuladores, el programa puede comportarse de forma errónea.</p>
+</div>
+<div class="section" id="id2">
+<h3>Ejercicios<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Escriba un programa que:</p>
+<ul class="simple">
+<li><p>Le solicite al usuario su peso y su estatura.</p></li>
+<li><p>Calcule su índice de masa corporal.</p></li>
+<li><p>Indique el valor del índice y si este es considerado bajo (menor que 18.5), normal (entre 18.5 y 25) o alto (mayor o igual que 25).</p></li>
+</ul>
+<p>Los detalles del cálculo del índice están en <a class="reference external" href="https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator">https://www.diabetes.ca/diabetes-and-you/healthy-living-resources/weight-management/body-mass-index-bmi-calculator</a>.</p>
 </div>
 </div>
 </div>
