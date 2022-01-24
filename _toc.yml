@@ -24,6 +24,7 @@ parts:
     chapters:
     - file: contenido/b/introduccion-python    
     - file: contenido/b/resumen-referencia-python    
+    - file: contenido/b/fiona-shapely    
   - caption: Evaluaciones
     chapters:
     - file: contenido/evaluaciones/tarea-01
