@@ -1,0 +1,1060 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiona y Shapely: paquetes para lectura, escritura y análisis de datos vectoriales &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tarea 01 - Elaboración de un mapa en QGIS" href="../evaluaciones/tarea-01.html" />
+    <link rel="prev" title="Resumen de referencia de Python" href="resumen-referencia-python.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">PF-3311 Ciencia de datos geoespaciales 2021-III</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   PF-3311 Ciencia de datos geoespaciales 2021-III
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Información sobre el curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/descripcion-curso.html">
+   Descripción general, objetivos y metodología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/requisitos-curso.html">
+   Requisitos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/cronograma-curso.html">
+   Cronograma
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/evaluacion-curso.html">
+   Evaluación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/bibliografia-curso.html">
+   Bibliografía y otros recursos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  A - Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/introduccion-ciencia-datos-geoespaciales.html">
+   Introducción a la ciencia de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/fundamentos-geodesia-cartografia.html">
+   Fundamentos de cartografía y geodesia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/sistemas-informacion-geografica.html">
+   Sistemas de información geográfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/qgis-sig-escritorio.html">
+   QGIS: sistema de información geográfica de escritorio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/modelos-estandares-datos-geoespaciales.html">
+   Modelos y estándares de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/software-manejo-datos-geoespaciales.html">
+   Software para manejo de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/gdal-biblioteca-lectura-escritura-datos-geoespaciales.html">
+   GDAL: biblioteca para lectura y escritura de datos geoespaciales
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  B - Procesamiento de datos geoespaciales con Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduccion-python.html">
+   Introducción al lenguaje de programación Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="resumen-referencia-python.html">
+   Resumen de referencia de Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Fiona y Shapely: paquetes para lectura, escritura y análisis de datos vectoriales
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Evaluaciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../evaluaciones/tarea-01.html">
+   Tarea 01 - Elaboración de un mapa en QGIS
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contenido/b/fiona-shapely.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/b/fiona-shapely.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pf3311-cienciadatosgeoespaciales/2021-iii/master?urlpath=tree/docs/contenido/b/fiona-shapely.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#descripcion-general">
+   Descripción general
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fiona">
+     Fiona
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shapely">
+     Shapely
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos-de-uso">
+   Ejemplos de uso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analisis-de-distribucion-de-especies-de-murcielagos-en-costa-rica">
+     Análisis de distribución de especies de murciélagos en Costa Rica
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bibliotecas">
+       Bibliotecas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#obtencion-de-datos">
+       1. Obtención de datos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#registros-de-presencia-de-murcielagos">
+         Registros de presencia de murciélagos
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#capas-geoespaciales-de-costa-rica">
+         Capas geoespaciales de Costa Rica
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#areas-silvestres-protegidas-asp">
+           Áreas silvestres protegidas (ASP)
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creacion-de-un-archivo-geopackage-con-todas-las-capas">
+       2. Creación de un archivo GeoPackage con todas las capas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Registros de presencia de murciélagos
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id2">
+         Áreas Silvestres Protegidas (ASP)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conteo-de-especies-en-cada-poligono-de-las-capas">
+       3. Conteo de especies en cada polígono de las capas
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#en-asp">
+         En ÁSP
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fiona-y-shapely-paquetes-para-lectura-escritura-y-analisis-de-datos-vectoriales">
+<h1>Fiona y Shapely: paquetes para lectura, escritura y análisis de datos vectoriales<a class="headerlink" href="#fiona-y-shapely-paquetes-para-lectura-escritura-y-analisis-de-datos-vectoriales" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="descripcion-general">
+<h2>Descripción general<a class="headerlink" href="#descripcion-general" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fiona">
+<h3>Fiona<a class="headerlink" href="#fiona" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/Toblerity/Fiona">Fiona</a> es una biblioteca en Python para la lectura y escritura de datos geoespaciales. Su código está enlazado con <a class="reference external" href="https://gdal.org/">GDAL</a>, desarrollada en C/C++.</p>
+<p>A diferencia de otras bibliotecas basadas en GDAL (ej. <a class="reference external" href="https://gdal.org/python/">osgeo.gdal/osgeo.ogr</a>, con ejemplos en <a class="reference external" href="https://pcjericks.github.io/py-gdalogr-cookbook/">Python GDAL/OGR Cookbook</a>), Fiona está diseñada para seguir el estilo estándar de entrada-salida (IO) de Python, mediante protocolos y tipos de datos típicos de Python, tales como archivos, diccionarios, mapeos e iteradores, en lugar de clases específicas de la implementación C/C++ de GDAL.</p>
+<p>Fiona está hecha para ser “simple y confiable”. Está integrada con otras bibliotecas geoespaciales de Python como <a class="reference external" href="https://github.com/pyproj4/pyproj">pyproj</a>, <a class="reference external" href="https://github.com/Toblerity/rtree">Rtree</a> y <a class="reference external" href="https://github.com/shapely/shapely">Shapely</a>.</p>
+</div>
+<div class="section" id="shapely">
+<h3>Shapely<a class="headerlink" href="#shapely" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/shapely/shapely">Shapely</a> es una biblioteca en Python para la manipulación y análisis de objetos geométricos planos. Está basada en la biblioteca <a class="reference external" href="https://libgeos.org/">GEOS</a>, programada en C/C++.</p>
+<p>Shapely no se ocupa de formatos de datos o sistemas de coordenadas, pero puede integrarse con bibliotecas que lo hacen (ej. <a class="reference external" href="https://github.com/Toblerity/Fiona">Fiona</a>, <a class="reference external" href="https://github.com/pyproj4/pyproj">pyproj</a>).</p>
+<p>Tanto Fiona como Shapely son utilizadas por la biblioteca <a class="reference external" href="https://geopandas.org/">geopandas</a>, para el análisis avanzado de datos geoespaciales.</p>
+</div>
+</div>
+<div class="section" id="ejemplos-de-uso">
+<h2>Ejemplos de uso<a class="headerlink" href="#ejemplos-de-uso" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="analisis-de-distribucion-de-especies-de-murcielagos-en-costa-rica">
+<h3>Análisis de distribución de especies de murciélagos en Costa Rica<a class="headerlink" href="#analisis-de-distribucion-de-especies-de-murcielagos-en-costa-rica" title="Permalink to this headline">¶</a></h3>
+<p>Se analiza la distribución de especies de <a class="reference external" href="https://es.wikipedia.org/wiki/Chiroptera">murciélagos</a> en Costa Rica con base en varias divisiones del territorio. Se utilizan las siguientes fuentes de datos:</p>
+<ul class="simple">
+<li><p>Registros de presencia de murciélagos, agrupados por la <a class="reference external" href="https://api.gbif.org/v1/occurrence/download/request/0105729-210914110416597.zip">Infraestructura Mundial de Información en Biodiversidad (GBIF)</a>.</p></li>
+<li><p>Capas geoespaciales de Costa Rica agrupadas por el <a class="reference external" href="https://www.snitcr.go.cr/">Sistema Nacional de Información Territorial (SNIT)</a>.</p></li>
+</ul>
+<p>Los pasos del procedimiento a seguir son:</p>
+<ol class="simple">
+<li><p>Obtención de datos.</p></li>
+<li><p>Creación de un archivo GeoPackage con todas las capas.</p></li>
+<li><p>Conteo de especies en cada polígono de las capas.</p></li>
+</ol>
+<div class="section" id="bibliotecas">
+<h4>Bibliotecas<a class="headerlink" href="#bibliotecas" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="kn">import</span> <span class="nn">fiona</span>
+<span class="kn">import</span> <span class="nn">fiona.crs</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">shape</span>
+
+<span class="kn">from</span> <span class="nn">owslib.wfs</span> <span class="kn">import</span> <span class="n">WebFeatureService</span>
+<span class="kn">from</span> <span class="nn">geojson</span> <span class="kn">import</span> <span class="n">dump</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="obtencion-de-datos">
+<h4>1. Obtención de datos<a class="headerlink" href="#obtencion-de-datos" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="registros-de-presencia-de-murcielagos">
+<h5>Registros de presencia de murciélagos<a class="headerlink" href="#registros-de-presencia-de-murcielagos" title="Permalink to this headline">¶</a></h5>
+<p>Se descargan en un archivo CSV desde una consulta al portal de GBIF.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de archivo CSV comprimido en ZIP mediante solicitud tipo GET</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.gbif.org/v1/occurrence/download/request/0105729-210914110416597.zip&#39;</span><span class="p">,</span> 
+                        <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;murcielagos.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>793319
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descompresión</span>
+
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s2">&quot;murcielagos.zip&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipfile</span><span class="p">:</span>
+    <span class="n">zipfile</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cambio de nombre del archivo CSV</span>
+
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;0105729-210914110416597.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;murcielagos.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="capas-geoespaciales-de-costa-rica">
+<h5>Capas geoespaciales de Costa Rica<a class="headerlink" href="#capas-geoespaciales-de-costa-rica" title="Permalink to this headline">¶</a></h5>
+<p>Se descargan como archivos GeoJON desde servicios WFS.</p>
+<div class="section" id="areas-silvestres-protegidas-asp">
+<h6>Áreas silvestres protegidas (ASP)<a class="headerlink" href="#areas-silvestres-protegidas-asp" title="Permalink to this headline">¶</a></h6>
+<p>Lista de capas del servidor WFS del Sinac:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clase WebFeatureService de owslib.wfs</span>
+
+<span class="n">wfs</span> <span class="o">=</span> <span class="n">WebFeatureService</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://geos1pne.sirefor.go.cr/wfs&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.1.0&#39;</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">wfs</span><span class="o">.</span><span class="n">contents</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;PNE:bosque_decidio&#39;,
+ &#39;PNE:bosque_maduro&#39;,
+ &#39;PNE:bosque_secundario&#39;,
+ &#39;PNE:bosque_palmas&#39;,
+ &#39;PNE:corredoresbiologicos&#39;,
+ &#39;PNE:registro_nacional_humedales&#39;,
+ &#39;PNE:areas_silvestres_protegidas&#39;,
+ &#39;PNE:areas_conservacion&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otras propiedades del objeto WebFeatureService:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Título</span>
+<span class="n">wfs</span><span class="o">.</span><span class="n">identification</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;PNE Web Map Service&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Operaciones</span>
+<span class="p">[</span><span class="n">operation</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">operation</span> <span class="ow">in</span> <span class="n">wfs</span><span class="o">.</span><span class="n">operations</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;GetCapabilities&#39;,
+ &#39;DescribeFeatureType&#39;,
+ &#39;GetFeature&#39;,
+ &#39;GetGmlObject&#39;,
+ &#39;LockFeature&#39;,
+ &#39;GetFeatureWithLock&#39;,
+ &#39;Transaction&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Las operaciones y sus parámetros están documentados en <a class="reference external" href="http://opengeospatial.github.io/e-learning/wfs/text/operations.html">http://opengeospatial.github.io/e-learning/wfs/text/operations.html</a>.</p>
+<p>Operación <a class="reference external" href="http://opengeospatial.github.io/e-learning/wfs/text/operations.html#getcapabilities">GetCapabilities</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solicitud de metadatos del servicio</span>
+
+<span class="c1"># Parámetros de la solicitud</span>
+<span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s1">&#39;WFS&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="s1">&#39;GetCapabilities&#39;</span><span class="p">)</span>
+
+<span class="c1"># Solicitud</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://geos1pne.sirefor.go.cr/wfs&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+
+<span class="c1"># Despliegue del contenido de la respuesta</span>
+<span class="n">response</span><span class="o">.</span><span class="n">content</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>b&#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;\r\n&lt;wfs:WFS_Capabilities version=&quot;1.1.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns=&quot;http://www.opengis.net/wfs&quot; xmlns:wfs=&quot;http://www.opengis.net/wfs&quot; xmlns:ows=&quot;http://www.opengis.net/ows&quot; xmlns:gml=&quot;http://www.opengis.net/gml&quot; xmlns:ogc=&quot;http://www.opengis.net/ogc&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xsi:schemaLocation=&quot;http://www.opengis.net/wfs http://addaxgeos1:10080/geoserver/PNE/wfs?service=wfs/schemas/wfs/1.1.0/wfs.xsd&quot; xmlns:Aguas=&quot;Aguas&quot; updateSequence=&quot;6170&quot;&gt;\r\n    &lt;ows:ServiceIdentification&gt;\r\n        &lt;ows:Title&gt;PNE Web Map Service&lt;/ows:Title&gt;\r\n        &lt;ows:Abstract&gt;Servicio de mapas de Patrimonio Natural del Estado.&lt;/ows:Abstract&gt;\r\n        &lt;ows:Keywords&gt;\r\n            &lt;ows:Keyword&gt;WFS&lt;/ows:Keyword&gt;\r\n            &lt;ows:Keyword&gt;WMS&lt;/ows:Keyword&gt;\r\n            &lt;ows:Keyword&gt;PNE&lt;/ows:Keyword&gt;\r\n            &lt;ows:Keyword&gt;Patrimonio&lt;/ows:Keyword&gt;\r\n            &lt;ows:Keyword&gt;Natural&lt;/ows:Keyword&gt;\r\n            &lt;ows:Keyword&gt;Estado&lt;/ows:Keyword&gt;\r\n        &lt;/ows:Keywords&gt;\r\n        &lt;ows:ServiceType&gt;WFS&lt;/ows:ServiceType&gt;\r\n        &lt;ows:ServiceTypeVersion&gt;1.1.0&lt;/ows:ServiceTypeVersion&gt;\r\n        &lt;ows:Fees&gt;NONE&lt;/ows:Fees&gt;\r\n        &lt;ows:AccessConstraints&gt;NONE&lt;/ows:AccessConstraints&gt;\r\n    &lt;/ows:ServiceIdentification&gt;\r\n    &lt;ows:ServiceProvider&gt;\r\n        &lt;ows:ProviderName&gt;The ancient geographes INC&lt;/ows:ProviderName&gt;\r\n        &lt;ows:ServiceContact&gt;\r\n            &lt;ows:IndividualName&gt;Claudius Ptolomaeus&lt;/ows:IndividualName&gt;\r\n            &lt;ows:PositionName&gt;Chief geographer&lt;/ows:PositionName&gt;\r\n            &lt;ows:ContactInfo&gt;\r\n                &lt;ows:Phone&gt;\r\n                    &lt;ows:Voice /&gt;\r\n                    &lt;ows:Facsimile /&gt;\r\n                &lt;/ows:Phone&gt;\r\n                &lt;ows:Address&gt;\r\n                    &lt;ows:DeliveryPoint /&gt;\r\n                    &lt;ows:City&gt;Alexandria&lt;/ows:City&gt;\r\n                    &lt;ows:AdministrativeArea /&gt;\r\n                    &lt;ows:PostalCode /&gt;\r\n                    &lt;ows:Country&gt;Egypt&lt;/ows:Country&gt;\r\n                    &lt;ows:ElectronicMailAddress /&gt;\r\n                &lt;/ows:Address&gt;\r\n            &lt;/ows:ContactInfo&gt;\r\n        &lt;/ows:ServiceContact&gt;\r\n    &lt;/ows:ServiceProvider&gt;\r\n    &lt;ows:OperationsMetadata&gt;\r\n        &lt;ows:Operation name=&quot;GetCapabilities&quot;&gt;\r\n            &lt;ows:DCP&gt;\r\n                &lt;ows:HTTP&gt;\r\n                    &lt;ows:Get xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                    &lt;ows:Post xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                &lt;/ows:HTTP&gt;\r\n            &lt;/ows:DCP&gt;\r\n            &lt;ows:Parameter name=&quot;AcceptVersions&quot;&gt;\r\n                &lt;ows:Value&gt;1.0.0&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;1.1.0&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n            &lt;ows:Parameter name=&quot;AcceptFormats&quot;&gt;\r\n                &lt;ows:Value&gt;text/xml&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n        &lt;/ows:Operation&gt;\r\n        &lt;ows:Operation name=&quot;DescribeFeatureType&quot;&gt;\r\n            &lt;ows:DCP&gt;\r\n                &lt;ows:HTTP&gt;\r\n                    &lt;ows:Get xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                    &lt;ows:Post xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                &lt;/ows:HTTP&gt;\r\n            &lt;/ows:DCP&gt;\r\n            &lt;ows:Parameter name=&quot;outputFormat&quot;&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/3.1.1&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n        &lt;/ows:Operation&gt;\r\n        &lt;ows:Operation name=&quot;GetFeature&quot;&gt;\r\n            &lt;ows:DCP&gt;\r\n                &lt;ows:HTTP&gt;\r\n                    &lt;ows:Get xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                    &lt;ows:Post xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                &lt;/ows:HTTP&gt;\r\n            &lt;/ows:DCP&gt;\r\n            &lt;ows:Parameter name=&quot;resultType&quot;&gt;\r\n                &lt;ows:Value&gt;results&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;hits&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n            &lt;ows:Parameter name=&quot;outputFormat&quot;&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/3.1.1&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;GML2&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;KML&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;SHAPE-ZIP&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/gml+xml; version=3.2&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/json&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/vnd.google-earth.kml xml&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/vnd.google-earth.kml+xml&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;csv&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;gml3&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;gml32&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;json&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/2.1.2&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/3.2&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n            &lt;ows:Constraint name=&quot;LocalTraverseXLinkScope&quot;&gt;\r\n                &lt;ows:Value&gt;2&lt;/ows:Value&gt;\r\n            &lt;/ows:Constraint&gt;\r\n        &lt;/ows:Operation&gt;\r\n        &lt;ows:Operation name=&quot;GetGmlObject&quot;&gt;\r\n            &lt;ows:DCP&gt;\r\n                &lt;ows:HTTP&gt;\r\n                    &lt;ows:Get xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                    &lt;ows:Post xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                &lt;/ows:HTTP&gt;\r\n            &lt;/ows:DCP&gt;\r\n        &lt;/ows:Operation&gt;\r\n        &lt;ows:Operation name=&quot;LockFeature&quot;&gt;\r\n            &lt;ows:DCP&gt;\r\n                &lt;ows:HTTP&gt;\r\n                    &lt;ows:Get xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                    &lt;ows:Post xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                &lt;/ows:HTTP&gt;\r\n            &lt;/ows:DCP&gt;\r\n            &lt;ows:Parameter name=&quot;releaseAction&quot;&gt;\r\n                &lt;ows:Value&gt;ALL&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;SOME&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n        &lt;/ows:Operation&gt;\r\n        &lt;ows:Operation name=&quot;GetFeatureWithLock&quot;&gt;\r\n            &lt;ows:DCP&gt;\r\n                &lt;ows:HTTP&gt;\r\n                    &lt;ows:Get xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                    &lt;ows:Post xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                &lt;/ows:HTTP&gt;\r\n            &lt;/ows:DCP&gt;\r\n            &lt;ows:Parameter name=&quot;resultType&quot;&gt;\r\n                &lt;ows:Value&gt;results&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;hits&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n            &lt;ows:Parameter name=&quot;outputFormat&quot;&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/3.1.1&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;GML2&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;KML&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;SHAPE-ZIP&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/gml+xml; version=3.2&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/json&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/vnd.google-earth.kml xml&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;application/vnd.google-earth.kml+xml&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;csv&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;gml3&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;gml32&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;json&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/2.1.2&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/3.2&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n        &lt;/ows:Operation&gt;\r\n        &lt;ows:Operation name=&quot;Transaction&quot;&gt;\r\n            &lt;ows:DCP&gt;\r\n                &lt;ows:HTTP&gt;\r\n                    &lt;ows:Get xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                    &lt;ows:Post xlink:href=&quot;http://geos1pne.sirefor.go.cr/GeoserviciosPNE/wfs?service=wfs&amp;amp;&quot; /&gt;\r\n                &lt;/ows:HTTP&gt;\r\n            &lt;/ows:DCP&gt;\r\n            &lt;ows:Parameter name=&quot;inputFormat&quot;&gt;\r\n                &lt;ows:Value&gt;text/xml; subtype=gml/3.1.1&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n            &lt;ows:Parameter name=&quot;idgen&quot;&gt;\r\n                &lt;ows:Value&gt;GenerateNew&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;UseExisting&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;ReplaceDuplicate&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n            &lt;ows:Parameter name=&quot;releaseAction&quot;&gt;\r\n                &lt;ows:Value&gt;ALL&lt;/ows:Value&gt;\r\n                &lt;ows:Value&gt;SOME&lt;/ows:Value&gt;\r\n            &lt;/ows:Parameter&gt;\r\n        &lt;/ows:Operation&gt;\r\n    &lt;/ows:OperationsMetadata&gt;\r\n    &lt;FeatureTypeList&gt;\r\n        &lt;Operations&gt;\r\n            &lt;Operation&gt;Query&lt;/Operation&gt;\r\n            &lt;Operation&gt;Insert&lt;/Operation&gt;\r\n            &lt;Operation&gt;Update&lt;/Operation&gt;\r\n            &lt;Operation&gt;Delete&lt;/Operation&gt;\r\n            &lt;Operation&gt;Lock&lt;/Operation&gt;\r\n        &lt;/Operations&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:bosque_decidio&lt;/Name&gt;&lt;Title&gt;Bosque Deciduo&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;shp_bosque_decidio&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683928066 2.2077648187972607&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.3770756753309 11.781591560078915&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:bosque_maduro&lt;/Name&gt;&lt;Title&gt;Bosque Maduro&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;shp_bosque_maduro&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683928066 2.2077648187972607&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.3770756753309 11.781591560078915&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:bosque_secundario&lt;/Name&gt;&lt;Title&gt;Bosque Secundario&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;shp_bosque_secundario&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683928066 2.2077648187972607&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.3770756753309 11.781591560078915&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:bosque_palmas&lt;/Name&gt;&lt;Title&gt;Bosque de Palmas&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;shp_bosque_palmas&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683928066 2.2077648187972607&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.3770756753309 11.781591560078915&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:corredoresbiologicos&lt;/Name&gt;&lt;Title&gt;Corredores Biol\xc3\xb3gicos&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;shp_corredoresbiologicos&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683928067 2.2077648187972607&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.3770756753309 11.781591560078915&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:registro_nacional_humedales&lt;/Name&gt;&lt;Title&gt;Registro Nacional de Humedales&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;shp_registro_nacional_humedales&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683927726 2.2077648187245025&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.37707567533441 11.78159155969892&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:areas_silvestres_protegidas&lt;/Name&gt;&lt;Title&gt;\xc3\x81reas Silvestres Protegidas&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;shp_areassilvestresprotegidas&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683928066 2.2077648187972607&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.3770756753309 11.781591560078915&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;&lt;FeatureType xmlns:PNE=&quot;PNE&quot;&gt;&lt;Name&gt;PNE:areas_conservacion&lt;/Name&gt;&lt;Title&gt;\xc3\x81reas de Conservaci\xc3\xb3n&lt;/Title&gt;&lt;Abstract/&gt;&lt;ows:Keywords&gt;&lt;ows:Keyword&gt;shp_areasdeconservacion&lt;/ows:Keyword&gt;&lt;ows:Keyword&gt;features&lt;/ows:Keyword&gt;&lt;/ows:Keywords&gt;&lt;DefaultSRS&gt;urn:x-ogc:def:crs:EPSG:5367&lt;/DefaultSRS&gt;&lt;ows:WGS84BoundingBox&gt;&lt;ows:LowerCorner&gt;-86.55148683928066 2.2077648187972607&lt;/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-81.3770756753309 11.781591560078915&lt;/ows:UpperCorner&gt;&lt;/ows:WGS84BoundingBox&gt;&lt;/FeatureType&gt;    &lt;/FeatureTypeList&gt;\r\n    &lt;ogc:Filter_Capabilities&gt;\r\n        &lt;ogc:Spatial_Capabilities&gt;\r\n            &lt;ogc:GeometryOperands&gt;\r\n                &lt;ogc:GeometryOperand&gt;gml:Envelope&lt;/ogc:GeometryOperand&gt;\r\n                &lt;ogc:GeometryOperand&gt;gml:Point&lt;/ogc:GeometryOperand&gt;\r\n                &lt;ogc:GeometryOperand&gt;gml:LineString&lt;/ogc:GeometryOperand&gt;\r\n                &lt;ogc:GeometryOperand&gt;gml:Polygon&lt;/ogc:GeometryOperand&gt;\r\n            &lt;/ogc:GeometryOperands&gt;\r\n            &lt;ogc:SpatialOperators&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Disjoint&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Equals&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;DWithin&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Beyond&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Intersects&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Touches&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Crosses&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Within&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Contains&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;Overlaps&quot; /&gt;\r\n                &lt;ogc:SpatialOperator name=&quot;BBOX&quot; /&gt;\r\n            &lt;/ogc:SpatialOperators&gt;\r\n        &lt;/ogc:Spatial_Capabilities&gt;\r\n        &lt;ogc:Scalar_Capabilities&gt;\r\n            &lt;ogc:LogicalOperators /&gt;\r\n            &lt;ogc:ComparisonOperators&gt;\r\n                &lt;ogc:ComparisonOperator&gt;LessThan&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;GreaterThan&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;LessThanEqualTo&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;GreaterThanEqualTo&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;EqualTo&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;NotEqualTo&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;Like&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;Between&lt;/ogc:ComparisonOperator&gt;\r\n                &lt;ogc:ComparisonOperator&gt;NullCheck&lt;/ogc:ComparisonOperator&gt;\r\n            &lt;/ogc:ComparisonOperators&gt;\r\n            &lt;ogc:ArithmeticOperators&gt;\r\n                &lt;ogc:SimpleArithmetic /&gt;\r\n                &lt;ogc:Functions&gt;\r\n                    &lt;ogc:FunctionNames&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;abs&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;abs_2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;abs_3&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;abs_4&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;acos&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;AddCoverages&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;Affine&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;Aggregate&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;area&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;area2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;AreaGrid&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;asin&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;atan&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;atan2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;BandMerge&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;BandSelect&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-6&quot;&gt;BarnesSurface&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;between&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;boundary&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;boundaryDimension&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Bounds&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;buffer&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;BufferFeatureCollection&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;bufferWithSegments&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;7&quot;&gt;Categorize&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;ceil&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;centroid&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;classify&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;Clip&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;CollectGeometries&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Average&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Bounds&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;0&quot;&gt;Collection_Count&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Max&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Median&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Min&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Nearest&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Sum&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Collection_Unique&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;Concatenate&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;contains&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;Contour&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;convert&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;convexHull&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;cos&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;Count&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;CropCoverage&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;crosses&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;dateFormat&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;dateParse&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;densify&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;difference&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;dimension&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;disjoint&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;disjoint3D&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;distance&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;distance3D&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;double2bool&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;endAngle&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;endPoint&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;env&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;envelope&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;EqualInterval&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;equalsExact&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;equalsExactTolerance&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;equalTo&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;exp&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;exteriorRing&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;Feature&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;floor&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;geometryType&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;geomFromWKT&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;geomLength&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-3&quot;&gt;GeorectifyCoverage&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;GetFullCoverage&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;getGeometryN&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;getX&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;getY&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;getz&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;greaterEqualThan&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;greaterThan&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-3&quot;&gt;Grid&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-5&quot;&gt;Heatmap&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;0&quot;&gt;id&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;IEEEremainder&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;if_then_else&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;0&quot;&gt;Import&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;11&quot;&gt;in10&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;in2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;4&quot;&gt;in3&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;5&quot;&gt;in4&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;6&quot;&gt;in5&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;7&quot;&gt;in6&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;8&quot;&gt;in7&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;9&quot;&gt;in8&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;10&quot;&gt;in9&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;InclusionFeatureCollection&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;int2bbool&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;int2ddouble&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;interiorPoint&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;interiorRingN&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-5&quot;&gt;Interpolate&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;intersection&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;IntersectionFeatureCollection&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;intersects&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;intersects3D&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;isClosed&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;0&quot;&gt;isCoverage&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;isEmpty&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;isInstanceOf&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;isLike&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;isNull&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;isometric&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;isRing&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;isSimple&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;isValid&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;isWithinDistance&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;isWithinDistance3D&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;Jenks&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;length&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;lessEqualThan&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;lessThan&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;list&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;log&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;4&quot;&gt;LRSGeocode&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-4&quot;&gt;LRSMeasure&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;5&quot;&gt;LRSSegment&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;max&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;max_2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;max_3&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;max_4&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;min&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;min_2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;min_3&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;min_4&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;mincircle&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;minimumdiameter&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;minrectangle&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;modulo&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;MultiplyCoverages&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;Nearest&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;not&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;notEqualTo&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;numberFormat&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;5&quot;&gt;numberFormat2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;numGeometries&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;numInteriorRing&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;numPoints&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;octagonalenvelope&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;offset&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;overlaps&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;PagedUnique&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;parameter&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;parseBoolean&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;parseDouble&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;parseInt&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;parseLong&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;0&quot;&gt;pi&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;PointBuffers&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;pointN&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-6&quot;&gt;PointStacker&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;PolygonExtraction&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;polygonize&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;pow&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;property&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;PropertyExists&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;Quantile&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;Query&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;0&quot;&gt;random&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;RangeLookup&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;RasterAsPointCollection&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;RasterZonalStatistics&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;5&quot;&gt;Recode&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;RectangularClip&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;relate&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;relatePattern&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;reproject&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-1&quot;&gt;ReprojectGeometry&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-3&quot;&gt;rescaleToPixels&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;rint&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;round&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;round_2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;roundDouble&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-5&quot;&gt;ScaleCoverage&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;setCRS&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;simplify&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;sin&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;Snap&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;splitPolygon&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;sqrt&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;StandardDeviation&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;startAngle&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;startPoint&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;StoreCoverage&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;strCapitalize&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strConcat&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strEndsWith&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strEqualsIgnoreCase&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strIndexOf&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;4&quot;&gt;stringTemplate&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strLastIndexOf&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;strLength&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strMatches&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;strPosition&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;4&quot;&gt;strReplace&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strStartsWith&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;strSubstring&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;strSubstringStart&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;strToLowerCase&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;strToUpperCase&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;strTrim&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;strTrim2&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;StyleCoverage&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;symDifference&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;tan&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;toDegrees&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;toRadians&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;touches&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;toWKT&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;Transform&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-2&quot;&gt;union&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;UnionFeatureCollection&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;Unique&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;UniqueInterval&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;-4&quot;&gt;VectorToRaster&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;3&quot;&gt;VectorZonalStatistics&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;1&quot;&gt;vertices&lt;/ogc:FunctionName&gt;\r\n                        &lt;ogc:FunctionName nArgs=&quot;2&quot;&gt;within&lt;/ogc:FunctionName&gt;\r\n                    &lt;/ogc:FunctionNames&gt;\r\n                &lt;/ogc:Functions&gt;\r\n            &lt;/ogc:ArithmeticOperators&gt;\r\n        &lt;/ogc:Scalar_Capabilities&gt;\r\n        &lt;ogc:Id_Capabilities&gt;\r\n            &lt;ogc:FID /&gt;\r\n            &lt;ogc:EID /&gt;\r\n        &lt;/ogc:Id_Capabilities&gt;\r\n    &lt;/ogc:Filter_Capabilities&gt;\r\n&lt;/wfs:WFS_Capabilities&gt;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Puede ver el XML de manera estructurada en <a class="reference external" href="https://jsonformatter.org/xml-parser">https://jsonformatter.org/xml-parser</a></p>
+<p>Operación <a class="reference external" href="http://opengeospatial.github.io/e-learning/wfs/text/operations.html#getfeature">GetFeature</a>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solicitud de capa WFS de ASP mediante GET, para retornarse como JSON</span>
+
+<span class="c1"># Parámetros de la solicitud</span>
+<span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s1">&#39;WFS&#39;</span><span class="p">,</span>
+              <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> 
+              <span class="n">request</span><span class="o">=</span><span class="s1">&#39;GetFeature&#39;</span><span class="p">,</span> 
+              <span class="n">typeName</span><span class="o">=</span><span class="s1">&#39;PNE:areas_silvestres_protegidas&#39;</span><span class="p">,</span>
+              <span class="n">srsName</span><span class="o">=</span><span class="s1">&#39;urn:ogc:def:crs:EPSG::4326&#39;</span><span class="p">,</span>
+              <span class="n">outputFormat</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
+
+<span class="c1"># Solicitud</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://geos1pne.sirefor.go.cr/wfs&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de la respuesta en un archivo GeoJSON</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;asp.geojson&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+   <span class="n">dump</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creacion-de-un-archivo-geopackage-con-todas-las-capas">
+<h4>2. Creación de un archivo GeoPackage con todas las capas<a class="headerlink" href="#creacion-de-un-archivo-geopackage-con-todas-las-capas" title="Permalink to this headline">¶</a></h4>
+<p>El archivo Geopackage se crea con el objetivo de mantener todas las capas en una misma estructura y así facilitar la manipulación de los datos.</p>
+<div class="section" id="id1">
+<h5>Registros de presencia de murciélagos<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esquema de la nueva capa de registros de presencia de murciélagos</span>
+<span class="c1"># Se incluyen solo los campos más importantes para el análisis</span>
+<span class="n">schema</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;geometry&#39;</span><span class="p">:</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;properties&#39;</span><span class="p">:{</span><span class="s1">&#39;gbifID&#39;</span><span class="p">:</span><span class="s1">&#39;str&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;species&#39;</span><span class="p">:</span><span class="s1">&#39;str&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;decimalLatitude&#39;</span><span class="p">:</span><span class="s1">&#39;float&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;decimalLongitude&#39;</span><span class="p">:</span><span class="s1">&#39;float&#39;</span>
+                       <span class="p">}}</span>
+
+<span class="c1"># Inserción de registros en el archivo GeoPackage</span>
+<span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;distribucion-murcielagos.gpkg&#39;</span><span class="p">,</span> 
+                <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span>
+                <span class="n">schema</span><span class="o">=</span><span class="n">schema</span><span class="p">,</span>
+                <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;GPKG&#39;</span><span class="p">,</span>
+                <span class="n">crs</span><span class="o">=</span><span class="n">fiona</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">from_epsg</span><span class="p">(</span><span class="mi">4326</span><span class="p">),</span>
+                <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;registros-murcielagos&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">collection</span><span class="p">:</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;murcielagos.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLatitude&#39;</span><span class="p">]))</span>
+            <span class="n">collection</span><span class="o">.</span><span class="n">write</span><span class="p">({</span>
+                <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;gbifID&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;gbifID&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;species&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;decimalLatitude&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLatitude&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;decimalLongitude&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">]</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;geometry&#39;</span><span class="p">:</span><span class="n">mapping</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+            <span class="p">})</span>                        
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h5>Áreas Silvestres Protegidas (ASP)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se agrega el archivo GeoJSON de ASP al GPKG</span>
+
+<span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;asp.geojson&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;distribucion-murcielagos.gpkg&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;GPKG&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">schema</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;asp&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sink</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">source</span><span class="p">:</span>
+            <span class="n">sink</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conteo-de-especies-en-cada-poligono-de-las-capas">
+<h4>3. Conteo de especies en cada polígono de las capas<a class="headerlink" href="#conteo-de-especies-en-cada-poligono-de-las-capas" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="en-asp">
+<h5>En ÁSP<a class="headerlink" href="#en-asp" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conteo de especies en ASP</span>
+
+<span class="c1"># Esquema de la capa con el total y la lista de especies por ASP</span>
+<span class="n">schema</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;geometry&#39;</span><span class="p">:</span><span class="s1">&#39;Unknown&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;properties&#39;</span><span class="p">:{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="s1">&#39;str&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;nombre_asp&#39;</span><span class="p">:</span><span class="s1">&#39;str&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;cantidad_especies&#39;</span><span class="p">:</span><span class="s1">&#39;int&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;lista_especies&#39;</span><span class="p">:</span><span class="s1">&#39;str&#39;</span>
+                       <span class="p">}}</span>
+
+<span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;distribucion-murcielagos.gpkg&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;asp&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">asp</span><span class="p">:</span>
+    
+    <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># contador de ASP, para imprimir el progreso del procedimiento</span>
+    
+    <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;asp-especies.geojson&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">,</span><span class="s1">&#39;GeoJSON&#39;</span><span class="p">,</span> <span class="n">schema</span><span class="p">,</span> <span class="n">asp</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span> <span class="k">as</span> <span class="n">sink</span><span class="p">:</span>
+    
+        <span class="k">for</span> <span class="n">record_asp</span> <span class="ow">in</span> <span class="n">asp</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;siglas_cat&#39;</span><span class="p">],</span> <span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;nombre_asp&#39;</span><span class="p">])</span>
+
+            <span class="n">species_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># conjunto de especies en el ASP</span>
+
+            <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;distribucion-murcielagos.gpkg&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;registros-murcielagos&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">registros</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">registro</span> <span class="ow">in</span> <span class="n">registros</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
+                        <span class="k">continue</span>
+                    
+                    <span class="k">if</span> <span class="n">shape</span><span class="p">(</span><span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">shape</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])):</span>
+                        <span class="n">species_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;species&#39;</span><span class="p">])</span>
+
+            <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">species_set</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">species_set</span><span class="p">))</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+                
+            <span class="n">sink</span><span class="o">.</span><span class="n">write</span><span class="p">({</span>
+                <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s1">&#39;id&#39;</span><span class="p">:</span><span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;nombre_asp&#39;</span><span class="p">:</span><span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;nombre_asp&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;cantidad_especies&#39;</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">species_set</span><span class="p">),</span>
+                    <span class="s1">&#39;lista_especies&#39;</span><span class="p">:</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">species_set</span><span class="p">)</span>
+                <span class="p">},</span>
+                <span class="s1">&#39;geometry&#39;</span><span class="p">:</span><span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span>
+            <span class="p">})</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 AMM Montes Submarinos
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+2 AMM Cabo Blanco
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+3 RB Alberto Manuel Brenes
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+4 RB Isla Guayabo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+5 RB Isla Pajaros
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+6 RB Islas Negritos
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+7 RB Hitoy Cerere
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+8 RB Lomas de Barbudal
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+9 RB Cerro Las Vueltas
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+10 HH De San Vito
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+11 HH Lacustrino Laguna del Paraguas
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+12 HH Palustrino Corral de piedra
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+13 HH Lacustrino Bonilla Bonillita
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+14 HH Humedal lacustrino Rio Canas
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+Saccopteryx bilineata
+
+
+15 HH Humedal Laguna Madrigal
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+16 HH Marino Playa Blanca
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+17 HH Marino Playa Blanca
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+18 HH Nacional Cariari
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+19 HH Estero Puntarenas y Manglares Asociados
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+20 MN Monumento Nacional Guayabo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+21 RNA Cabo Blanco
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+22 RNA Cabo Blanco
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
+Glossophaga mutica, Pteronotus mesoamericanus, Carollia perspicillata, Saccopteryx bilineata, Artibeus phaeotis, Micronycteris schmidtorum, Trachops cirrhosus, Diclidurus albus, Noctilio leporinus
+
+
+23 RNA Cabo Blanco
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+24 RNA Nicolas Wessberg
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+25 PN Arenal
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+Saccopteryx bilineata
+
+
+26 PN Braulio Carrillo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
+Glossophaga mutica, Carollia brevicaudum, Centurio senex, Lophostoma silvicola, Carollia perspicillata, Glossophaga commissarisi, Micronycteris megalotis, Sturnira hondurensis, Artibeus jamaicensis, Rhynchonycteris naso, Myotis nigricans, Myotis pilosatibialis, Lonchorhina aurita, Pteronotus parnellii, Carollia castanea, Ectophylla alba, Lonchophylla robusta
+
+
+27 PN Juan Castro Blanco
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+
+
+
+28 PN Volcan Turrialba
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+Glossophaga soricina, Sturnira ludovici, Phyllostomus hastatus, Artibeus jamaicensis
+
+
+29 PN Volcan Poas
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+Lasiurus blossevillii, Sturnira ludovici, Tadarida brasiliensis, Myotis nigricans
+
+
+30 PN Barra Honda
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+Artibeus lituratus, Desmodus rotundus, Micronycteris megalotis, Platyrrhinus helleri, Trachops cirrhosus
+
+
+31 PN Marino las Baulas de Guanacaste
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2754276</span><span class="o">/</span><span class="mf">1266701875.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span>                         <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span> 
+<span class="ne">---&gt; </span><span class="mi">27</span>                     <span class="k">if</span> <span class="n">shape</span><span class="p">(</span><span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">shape</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])):</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>                         <span class="n">species_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;species&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">29</span> 
+
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/geo.py</span> in <span class="ni">shape</span><span class="nt">(context)</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="k">return</span> <span class="n">_empty_shape_for_no_coordinates</span><span class="p">(</span><span class="n">geom_type</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="k">elif</span> <span class="n">geom_type</span> <span class="o">==</span> <span class="s2">&quot;point&quot;</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">106</span>         <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="n">ob</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="k">elif</span> <span class="n">geom_type</span> <span class="o">==</span> <span class="s2">&quot;linestring&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="k">return</span> <span class="n">LineString</span><span class="p">(</span><span class="n">ob</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/point.py</span> in <span class="ni">__init__</span><span class="nt">(self, *args)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">51</span>                 <span class="n">geom</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">geos_point_from_py</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>             <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>                 <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span>
+
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/point.py</span> in <span class="ni">geos_point_from_py</span><span class="nt">(ob, update_geom, update_ndim)</span>
+<span class="g g-Whitespace">    </span><span class="mi">284</span>         <span class="k">return</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">286</span>         <span class="k">return</span> <span class="n">lgeos</span><span class="o">.</span><span class="n">GEOSGeom_createPoint</span><span class="p">(</span><span class="n">cs</span><span class="p">),</span> <span class="n">n</span>
+<span class="g g-Whitespace">    </span><span class="mi">287</span> 
+<span class="g g-Whitespace">    </span><span class="mi">288</span> 
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Se agrega el archivo GeoJSON de asp-especies al GPKG</span>
+
+<span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;asp-especies.geojson&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">source</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;distribucion-murcielagos.gpkg&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="s1">&#39;GPKG&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">schema</span><span class="p">,</span> <span class="n">source</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;asp-especies&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">sink</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">source</span><span class="p">:</span>
+            <span class="n">sink</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenido/b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="resumen-referencia-python.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Resumen de referencia de Python</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../evaluaciones/tarea-01.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tarea 01 - Elaboración de un mapa en QGIS</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Manuel Vargas<br/>
+        
+            &copy; Copyright CC BY-SA 4.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
