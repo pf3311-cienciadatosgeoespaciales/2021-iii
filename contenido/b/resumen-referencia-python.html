@@ -578,6 +578,36 @@
   <a class="reference internal nav-link" href="#archivos">
    Archivos
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#uso-de-la-sentencia-with-para-leer-y-escribir-en-archivos">
+     Uso de la sentencia
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       with
+      </span>
+     </code>
+     para leer y escribir en archivos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#archivos-csv">
+     Archivos CSV
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#el-modulo-csv">
+       El módulo
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         csv
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -1332,7 +1362,7 @@ Fin del programa.
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2809288</span><span class="o">/</span><span class="mf">2988467274.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2819295</span><span class="o">/</span><span class="mf">2988467274.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;8,5&quot;</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: could not convert string to float: &#39;8,5&#39;
@@ -1650,14 +1680,6 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40.0
-10.0
-0.0
--10.0
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1728,11 +1750,6 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Propietario: Juan Pérez, Balance: 6000
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1741,11 +1758,6 @@ Fin del programa.
 <span class="n">cuenta02</span><span class="o">.</span><span class="n">depositar</span><span class="p">(</span><span class="mi">15000</span><span class="p">)</span>
 <span class="n">cuenta02</span><span class="o">.</span><span class="n">retirar</span><span class="p">(</span><span class="mi">24000</span><span class="p">)</span>
 <span class="n">cuenta02</span><span class="o">.</span><span class="n">imprimirInformacion</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Propietario: María Pérez, Balance: 1000
 </pre></div>
 </div>
 </div>
@@ -1760,21 +1772,11 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clase float</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mf">10.3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1786,21 +1788,11 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;bool&#39;&gt;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clase list</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mf">20.6</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -1820,21 +1812,11 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hola&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># str.lower(): retorna una copia de &#39;str&#39; con todos los caracteres en minúscula</span>
 <span class="s1">&#39;HOLA&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;hola&#39;
 </pre></div>
 </div>
 </div>
@@ -1849,20 +1831,10 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cita_socrates</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;sé&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># se cuentan solo las ocurrencias ubicadas en el rango [0, 10]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1873,11 +1845,6 @@ Fin del programa.
 <span class="c1"># en el rango [start, end] de &#39;str&#39;</span>
 
 <span class="s1">&#39;Yo solo sé, que no sé nada&#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;solo&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -1892,7 +1859,14 @@ Fin del programa.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Yo solamente sé, que no sé nada&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2819216</span><span class="o">/</span><span class="mf">3201709909.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># de la subhilera &#39;old&#39; reemplazadas por &#39;new&#39;.</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Si &#39;count&#39; es especificado, solo se reemplazan las primeras &#39;count&#39; ocurrencias de &#39;old&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">cita_socrates</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;solo&quot;</span><span class="p">,</span> <span class="s2">&quot;solamente&quot;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;cita_socrates&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1906,21 +1880,11 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La suma de 3 + 4 es 7 y la resta de 10 - 6 es 4&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Formateo de un número en punto flotante (6 caracteres, 4 después del punto decimal)</span>
 <span class="s1">&#39;La relación entre la longitud de una circunferencia y su diámetro es </span><span class="si">{:6.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">3.141592653589793</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;La relación entre la longitud de una circunferencia y su diámetro es 3.1416&#39;
 </pre></div>
 </div>
 </div>
@@ -1930,11 +1894,6 @@ Fin del programa.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Formateo de fecha y hora</span>
 <span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
 <span class="s1">&#39;{:</span><span class="si">%d</span><span class="s1">/%m/%Y %H:%M}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2001</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;03/02/2001 04:05&#39;
 </pre></div>
 </div>
 </div>
@@ -1959,22 +1918,12 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 300, 40, 50]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Borrado de un ítem con base en su posición</span>
 <span class="k">del</span> <span class="n">lista</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="n">lista</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 300, 40]
 </pre></div>
 </div>
 </div>
@@ -1987,22 +1936,12 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 300, 40, 50]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list.insert(i, x): inserta &#39;x&#39; en al posición &#39;i&#39;</span>
 <span class="n">lista</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">45</span><span class="p">)</span>
 <span class="n">lista</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 20, 300, 40, 45, 50]
 </pre></div>
 </div>
 </div>
@@ -2027,7 +1966,13 @@ Fin del programa.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;408730281&#39;
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2819216</span><span class="o">/</span><span class="mf">2978699166.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Retorno de valor correspondiente a una llave</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">persona</span><span class="p">[</span><span class="s2">&quot;cedula&quot;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;persona&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2040,21 +1985,11 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;cedula&#39;: &#39;408730281&#39;, &#39;nombre&#39;: &#39;María&#39;, &#39;apellido&#39;: &#39;Pérez&#39;}
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Verificación de si una llave existe</span>
 <span class="s2">&quot;apellido&quot;</span> <span class="ow">in</span> <span class="n">persona</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -2066,21 +2001,11 @@ Fin del programa.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_items([(&#39;cedula&#39;, &#39;408730281&#39;), (&#39;nombre&#39;, &#39;María&#39;), (&#39;apellido&#39;, &#39;Pérez&#39;)])
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dict.keys(): retorna las llaves de &#39;dict&#39;</span>
 <span class="n">persona</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_keys([&#39;cedula&#39;, &#39;nombre&#39;, &#39;apellido&#39;])
 </pre></div>
 </div>
 </div>
@@ -2093,7 +2018,13 @@ Fin del programa.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict_values([&#39;408730281&#39;, &#39;María&#39;, &#39;Pérez&#39;])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2819216</span><span class="o">/</span><span class="mf">218897839.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># dict.values(): retorna los valores de &#39;dict&#39;</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">persona</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+<span class="ne">NameError</span>: name &#39;persona&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -2102,11 +2033,6 @@ Fin del programa.
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dict.get(key[, default]): retorna el valor de la llave &#39;key&#39; en &#39;dict&#39;</span>
 <span class="n">persona</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;apellido&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Pérez&#39;
 </pre></div>
 </div>
 </div>
@@ -2128,6 +2054,165 @@ Fin del programa.
 <p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Operaciones para manejo de archivos en Python. Fuente: <span id="id8">[<a class="reference internal" href="../informacion-general/cronograma-curso.html#id46">Sev</a>]</span>.</span><a class="headerlink" href="#figure-operaciones-archivos-python" title="Permalink to this image">¶</a></p>
 </div>
 <p>Estas operaciones se realizan a través de una variable llamada “manejador de archivo” (<em>file handle</em>).</p>
+<div class="section" id="uso-de-la-sentencia-with-para-leer-y-escribir-en-archivos">
+<h3>Uso de la sentencia <code class="docutils literal notranslate"><span class="pre">with</span></code> para leer y escribir en archivos<a class="headerlink" href="#uso-de-la-sentencia-with-para-leer-y-escribir-en-archivos" title="Permalink to this headline">¶</a></h3>
+<p>La sentencia <a class="reference external" href="https://docs.python.org/3/reference/compound_stmts.html#with">with</a> se utiliza para ejecutar un bloque con métodos definidos por un <a class="reference external" href="https://docs.python.org/3/reference/datamodel.html#context-managers">administrador de contexto (<em>context manager</em>)</a>. Entre otros usos, permite recorrer un archivo y cerrarlo automáticamente cuando se finaliza.</p>
+<p>El siguiente bloque de código abre un archivo en modo de lectura (<code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code>) con la función open() y recorre e imprime cada una de sus líneas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recorrido e impresión de las líneas de un archivo de texto</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datos/maravillas_antiguas.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">archivo</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nombre,pais,longitud,latitud
+La Gran Pirámide de Guiza,Egipto,31.134358,29.979175
+Los Jardines Colgantes de Babilonia,Irak,44.4275,32.5355
+El Templo de Artemisa,Turquía,37.949722,27.363889
+La Estatua de Zeus en Olimpia,Grecia,21.63,37.637861
+El Mausoleo de Halicarnaso,Turquía,27.424056,37.037944
+El Coloso de Rodas,Grecia,28.227778,36.451111
+El Faro de Alejandría,Egipto,29.885,31.214167
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para escribir en un archivo, este debe abrirse en modo de escritura (<code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escritura en un archivo</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datos/archivo_nuevo.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Línea 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Línea 2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Línea 3</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="archivos-csv">
+<h3>Archivos CSV<a class="headerlink" href="#archivos-csv" title="Permalink to this headline">¶</a></h3>
+<p>Los archivos CSV (<em>comma separated values</em>, valores separados por comas) son de los más empleados para intercambiar datos en formato tabular (i.e. en columnas). Pueden llamarse de otras formas, como por ejemplo “archivos de texto delimitado”. Son ampliamente utilizados para importar y exportar datos desde y hacia hojas electrónicas, bases de datos y otros sistemas de manejo de información. Consisten de líneas de texto en las cuales hay datos separados por comas. Cada dato corresponde a una columna. Por ejemplo, el siguiente es el contenido de un archivo CSV con cuatro columnas:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span><span class="p">,</span><span class="n">ubicacion</span><span class="p">,</span><span class="n">longitud</span><span class="p">,</span><span class="n">latitud</span>
+<span class="n">Taj</span> <span class="n">Mahal</span><span class="p">,</span><span class="n">India</span><span class="p">,</span><span class="mf">78.042111</span><span class="p">,</span><span class="mf">27.174799</span>
+<span class="n">Chichen</span> <span class="n">Itza</span><span class="p">,</span><span class="n">México</span><span class="p">,</span><span class="o">-</span><span class="mf">88.56865</span><span class="p">,</span><span class="mf">20.6829</span>
+<span class="n">La</span> <span class="n">estatua</span> <span class="n">de</span> <span class="n">Cristo</span> <span class="n">Redentor</span><span class="p">,</span><span class="n">Brasil</span><span class="p">,</span><span class="o">-</span><span class="mf">43.210556</span><span class="p">,</span><span class="o">-</span><span class="mf">22.951944</span>
+</pre></div>
+</div>
+<p>A pesar de ser ampliamente usados, los archivos CSV no son un formato completamente estandarizado, por lo que pueden presentarse con algunas variantes:</p>
+<ul class="simple">
+<li><p>La primera línea tiene usualmente los nombres de las columnas (llamados también encabezados), pero no siempre.</p></li>
+<li><p>El caracter separador de las columnas no siempre es una coma. Puede ser también un tabulador, un punto y coma, otro carácter o incluso una combinación de caracteres.</p></li>
+<li><p>Las columnas de texto pueden ir encerradas entre comillas para evitar el problema que se presenta si dentro del texto hay una coma u otro carácter separador.</p></li>
+<li><p>El conjunto de caracteres puede sufrir alteraciones cuando se traslada entre herramientas de software o entre sistemas operativos, sobre en todo en caracteres especiales como los acentos.</p></li>
+</ul>
+<div class="section" id="el-modulo-csv">
+<h4>El módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code><a class="headerlink" href="#el-modulo-csv" title="Permalink to this headline">¶</a></h4>
+<p>El módulo <a class="reference external" href="https://docs.python.org/3/library/csv.html">csv</a> facilita el manejo de archivos CSV en Python. Además de leer el archivo línea por línea, las separa en sus respectivas columnas, al representarlas mediante listas. El método <a class="reference external" href="https://docs.python.org/3/library/csv.html#csv.reader">csv.reader()</a> retorna una lista con las líneas del archivo. Cada línea es, a su vez, una lista de hileras de texto que corresponden a las columnas del archivo.</p>
+<p>El siguiente bloque de código recorre un archivo CSV e imprime sus líneas y las columnas que las componen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Recorrido e impresión de las líneas de un archivo de texto</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datos/maravillas_antiguas.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="c1"># Se crea el objeto reader</span>
+    <span class="n">lector</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    
+    <span class="c1"># Se recorren las líneas</span>
+    <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">lector</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Línea: &#39;</span><span class="p">,</span> <span class="n">linea</span><span class="p">)</span>
+        
+        <span class="c1"># Se recorren las columnas de la línea</span>
+        <span class="k">for</span> <span class="n">columna</span> <span class="ow">in</span> <span class="n">linea</span><span class="p">:</span>
+            <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Columna: &#39;</span><span class="p">,</span> <span class="n">columna</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Línea:  [&#39;nombre&#39;, &#39;pais&#39;, &#39;longitud&#39;, &#39;latitud&#39;]
+Columna:  nombre
+Columna:  pais
+Columna:  longitud
+Columna:  latitud
+Línea:  [&#39;La Gran Pirámide de Guiza&#39;, &#39;Egipto&#39;, &#39;31.134358&#39;, &#39;29.979175&#39;]
+Columna:  La Gran Pirámide de Guiza
+Columna:  Egipto
+Columna:  31.134358
+Columna:  29.979175
+Línea:  [&#39;Los Jardines Colgantes de Babilonia&#39;, &#39;Irak&#39;, &#39;44.4275&#39;, &#39;32.5355&#39;]
+Columna:  Los Jardines Colgantes de Babilonia
+Columna:  Irak
+Columna:  44.4275
+Columna:  32.5355
+Línea:  [&#39;El Templo de Artemisa&#39;, &#39;Turquía&#39;, &#39;37.949722&#39;, &#39;27.363889&#39;]
+Columna:  El Templo de Artemisa
+Columna:  Turquía
+Columna:  37.949722
+Columna:  27.363889
+Línea:  [&#39;La Estatua de Zeus en Olimpia&#39;, &#39;Grecia&#39;, &#39;21.63&#39;, &#39;37.637861&#39;]
+Columna:  La Estatua de Zeus en Olimpia
+Columna:  Grecia
+Columna:  21.63
+Columna:  37.637861
+Línea:  [&#39;El Mausoleo de Halicarnaso&#39;, &#39;Turquía&#39;, &#39;27.424056&#39;, &#39;37.037944&#39;]
+Columna:  El Mausoleo de Halicarnaso
+Columna:  Turquía
+Columna:  27.424056
+Columna:  37.037944
+Línea:  [&#39;El Coloso de Rodas&#39;, &#39;Grecia&#39;, &#39;28.227778&#39;, &#39;36.451111&#39;]
+Columna:  El Coloso de Rodas
+Columna:  Grecia
+Columna:  28.227778
+Columna:  36.451111
+Línea:  [&#39;El Faro de Alejandría&#39;, &#39;Egipto&#39;, &#39;29.885&#39;, &#39;31.214167&#39;]
+Columna:  El Faro de Alejandría
+Columna:  Egipto
+Columna:  29.885
+Columna:  31.214167
+</pre></div>
+</div>
+</div>
+</div>
+<p>El método <a class="reference external" href="https://docs.python.org/3/library/csv.html#csv.writer">csv.writer()</a> se utiliza para escribir en un archivo CSV. El siguiente bloque de código abre un archivo CSV de entrada y recorre sus líneas. Si la columna de ubicación de una línea corresponde a Egipto o Irak, escribe la línea en un archivo de salida.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Recorrido de las líneas de un archivo de texto y escritura en un nuevo archivo de las líneas que cumplen con una condición</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datos/maravillas_antiguas.csv&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo_entrada</span><span class="p">:</span>
+    <span class="n">lector</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo_entrada</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;datos/maravillas_antiguas_irak_egipto.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo_salida</span><span class="p">:</span>
+        <span class="n">escritor</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">archivo_salida</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">linea</span> <span class="ow">in</span> <span class="n">lector</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Línea del encabezado</span>
+                <span class="n">escritor</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">linea</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Irak&quot;</span> <span class="ow">or</span> <span class="n">linea</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Egipto&quot;</span><span class="p">:</span>
+                 <span class="c1"># La ubicación es Egipto o Irak</span>
+                <span class="n">escritor</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">linea</span><span class="p">)</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;nombre&#39;, &#39;pais&#39;, &#39;longitud&#39;, &#39;latitud&#39;]
+[&#39;La Gran Pirámide de Guiza&#39;, &#39;Egipto&#39;, &#39;31.134358&#39;, &#39;29.979175&#39;]
+[&#39;Los Jardines Colgantes de Babilonia&#39;, &#39;Irak&#39;, &#39;44.4275&#39;, &#39;32.5355&#39;]
+[&#39;El Faro de Alejandría&#39;, &#39;Egipto&#39;, &#39;29.885&#39;, &#39;31.214167&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
