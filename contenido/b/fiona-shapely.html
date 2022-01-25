@@ -657,6 +657,34 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2809184</span><span class="o">/</span><span class="mf">702281525.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="n">point</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLatitude&#39;</span><span class="p">]))</span>
+<span class="ne">---&gt; </span><span class="mi">21</span>             <span class="n">collection</span><span class="o">.</span><span class="n">write</span><span class="p">({</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>                 <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>                     <span class="s1">&#39;gbifID&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;gbifID&#39;</span><span class="p">],</span>
+
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/fiona/collection.py</span> in <span class="ni">write</span><span class="nt">(self, record)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="sd">&quot;&quot;&quot;Stages a record for writing to disk.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">367</span>         <span class="bp">self</span><span class="o">.</span><span class="n">writerecords</span><span class="p">([</span><span class="n">record</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span> 
+<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="k">def</span> <span class="nf">validate_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/fiona/collection.py</span> in <span class="ni">writerecords</span><span class="nt">(self, records)</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>             <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;collection not open for writing&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">361</span>         <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">writerecs</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get_length</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id2">
@@ -730,249 +758,864 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 AMM Montes Submarinos
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 2 AMM Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 3 RB Alberto Manuel Brenes
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 4 RB Isla Guayabo
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 5 RB Isla Pajaros
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 6 RB Islas Negritos
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 7 RB Hitoy Cerere
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 8 RB Lomas de Barbudal
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 9 RB Cerro Las Vueltas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 10 HH De San Vito
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 11 HH Lacustrino Laguna del Paraguas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 12 HH Palustrino Corral de piedra
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 13 HH Lacustrino Bonilla Bonillita
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 14 HH Humedal lacustrino Rio Canas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
 Saccopteryx bilineata
 
 
 15 HH Humedal Laguna Madrigal
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 16 HH Marino Playa Blanca
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 17 HH Marino Playa Blanca
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 18 HH Nacional Cariari
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 19 HH Estero Puntarenas y Manglares Asociados
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 20 MN Monumento Nacional Guayabo
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 21 RNA Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 22 RNA Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
-Artibeus phaeotis, Saccopteryx bilineata, Noctilio leporinus, Carollia perspicillata, Trachops cirrhosus, Pteronotus mesoamericanus, Diclidurus albus, Glossophaga mutica, Micronycteris schmidtorum
+9
+Noctilio leporinus, Micronycteris schmidtorum, Trachops cirrhosus, Pteronotus mesoamericanus, Saccopteryx bilineata, Glossophaga mutica, Carollia perspicillata, Artibeus phaeotis, Diclidurus albus
 
 
 23 RNA Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 24 RNA Nicolas Wessberg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+0
 
 
 
 25 PN Arenal
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+1
 Saccopteryx bilineata
 
 
 26 PN Braulio Carrillo
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
-Lophostoma silvicola, Lonchorhina aurita, Artibeus jamaicensis, Ectophylla alba, Myotis nigricans, Glossophaga commissarisi, Rhynchonycteris naso, Carollia perspicillata, Myotis pilosatibialis, Pteronotus parnellii, Carollia castanea, Carollia brevicaudum, Micronycteris megalotis, Lonchophylla robusta, Glossophaga mutica, Centurio senex, Sturnira hondurensis
+17
+Lophostoma silvicola, Pteronotus parnellii, Carollia castanea, Artibeus jamaicensis, Lonchophylla robusta, Myotis pilosatibialis, Micronycteris megalotis, Sturnira hondurensis, Glossophaga commissarisi, Carollia brevicaudum, Myotis nigricans, Ectophylla alba, Rhynchonycteris naso, Glossophaga mutica, Carollia perspicillata, Centurio senex, Lonchorhina aurita
 
 
 27 PN Juan Castro Blanco
+0
+
+
+
+28 PN Volcan Turrialba
+4
+Sturnira ludovici, Glossophaga soricina, Artibeus jamaicensis, Phyllostomus hastatus
+
+
+29 PN Volcan Poas
+4
+Sturnira ludovici, Lasiurus blossevillii, Myotis nigricans, Tadarida brasiliensis
+
+
+30 PN Barra Honda
+5
+Micronycteris megalotis, Trachops cirrhosus, Platyrrhinus helleri, Desmodus rotundus, Artibeus lituratus
+
+
+31 PN Marino las Baulas de Guanacaste
+2
+Saccopteryx leptura, Phyllostomus discolor
+
+
+32 PN Marino las Baulas de Guanacaste
+0
+
+
+
+33 PN Marino las Baulas de Guanacaste
+0
+
+
+
+34 PN Tortuguero
+0
+
+
+
+35 PN Tortuguero
+12
+Centronycteris centralis, Thyroptera tricolor, Saccopteryx leptura, Noctilio leporinus, Macrophyllum macrophyllum, Artibeus watsoni, Ectophylla alba, Saccopteryx bilineata, Rhynchonycteris naso, Desmodus rotundus, Carollia perspicillata, Diclidurus albus
+
+
+36 PN Manuel Antonio
+0
+
+
+
+37 PN Manuel Antonio
+5
+Uroderma bilobatum, Artibeus watsoni, Rhynchonycteris naso, Saccopteryx bilineata, Artibeus phaeotis
+
+
+38 PN Cahuita
+0
+
+
+
+39 PN Cahuita
+4
+Artibeus watsoni, Cormura brevirostris, Saccopteryx bilineata, Rhynchonycteris naso
+
+
+40 PN Chirripo
+11
+Artibeus aztecus, Hylonycteris underwoodi, Anoura cultrata, Sturnira mordax, Micronycteris megalotis, Sturnira oporaphilum, Anoura geoffroyi, Enchisthenes hartii, Myotis oxyotus, Myotis chiloensis, Centurio senex
+
+
+41 PN Barbilla
+0
+
+
+
+42 PN Isla del Coco
+0
+
+
+
+43 PN Isla del Coco
+0
+
+
+
+44 PN Palo Verde
+29
+Micronycteris megalotis, Natalus mexicanus, Pteronotus davyi, Micronycteris schmidtorum, Pteronotus mesoamericanus, Carollia brevicaudum, Saccopteryx bilineata, Micronycteris minuta, Micronycteris microtis, Lonchophylla concava, Artibeus jamaicensis, Lampronycteris brachyotis, Sturnira parvidens, Glossophaga commissarisi, Balantiopteryx plicata, Uroderma convexum, Glossophaga soricina, Carollia perspicillata, Desmodus rotundus, Centurio senex, Sturnira lilium, Saccopteryx leptura, Platyrrhinus helleri, Glossophaga mutica, Artibeus phaeotis, Artibeus lituratus, Noctilio leporinus, Rhynchonycteris naso, Lophostoma brasiliense
+
+
+45 PN Volcan Tenorio
+0
+
+
+
+46 PN Volcan Irazu
+1
+Anoura geoffroyi
+
+
+47 PN Tapanti-Macizo de la Muerte
+15
+Sturnira ludovici, Uroderma bilobatum, Mesophylla macconnelli, Platyrrhinus vittatus, Micronycteris megalotis, Vampyressa pusilla, Myotis nigricans, Ectophylla alba, Eptesicus brasiliensis, Rhynchonycteris naso, Saccopteryx bilineata, Myotis oxyotus, Carollia perspicillata, Glossophaga soricina, Desmodus rotundus
+
+
+48 PN Carara
+4
+Trachops cirrhosus, Diclidurus albus, Artibeus jamaicensis, Saccopteryx bilineata
+
+
+49 PN La Cangreja
+0
+
+
+
+50 PN Diria
+1
+Saccopteryx bilineata
+
+
+51 PN Los Quetzales
+0
+
+
+
+52 RF Rio Pacuare
+0
+
+
+
+53 RF Cordillera Volcanica Central
+8
+Sturnira ludovici, Artibeus toltecus, Artibeus jamaicensis, Vampyrodes caraccioli, Sturnira oporaphilum, Ectophylla alba, Desmodus rotundus, Carollia castanea
+
+
+54 PN Los Santos
+8
+Sturnira ludovici, Thyroptera tricolor, Artibeus glaucus, Sturnira oporaphilum, Myotis nigricans, Carollia brevicaudum, Myotis oxyotus, Carollia castanea
+
+
+55 RF Taboga
+0
+
+
+
+56 RF Grecia
+0
+
+
+
+57 RF Rio Macho
+9
+Sturnira ludovici, Artibeus aztecus, Myotis chiloensis, Sturnira mordax, Sturnira oporaphilum, Eptesicus brasiliensis, Anoura geoffroyi, Saccopteryx bilineata, Carollia perspicillata
+
+
+58 RF Pacuare Matina
+1
+Rhynchonycteris naso
+
+
+59 RF Zona de Emergencia Volcan Arenal
+0
+
+
+
+60 RNVS Barra del Colorado
+27
+Hylonycteris underwoodi, Thyroptera tricolor, Artibeus watsoni, Ectophylla alba, Carollia sowelli, Trinycteris nicefori, Carollia castanea, Centronycteris centralis, Cormura brevirostris, Artibeus jamaicensis, Uroderma bilobatum, Glossophaga commissarisi, Artibeus glaucus, Desmodus rotundus, Carollia perspicillata, Thyroptera discifera, Vampyriscus nymphaea, Myotis riparius, Vampyrum spectrum, Platyrrhinus helleri, Noctilio albiventris, Artibeus phaeotis, Artibeus lituratus, Noctilio leporinus, Trachops cirrhosus, Rhynchonycteris naso, Promops centralis
+
+
+61 RNVS Gandoca Manzanillo
+0
+
+
+
+62 RNVS Gandoca Manzanillo
+1
+Centronycteris centralis
+
+
+63 RNVS Cano Negro
+1
+Rhynchonycteris naso
+
+
+64 RNVS Curu
+1
+Noctilio leporinus
+
+
+65 RNVS Ostional
+0
+
+
+
+66 RNVS Ostional
+0
+
+
+
+67 RNVS Penas Blancas
+0
+
+
+
+68 RNVS Bosque Alegre
+0
+
+
+
+69 RNVS Lagunas las Camelias
+0
+
+
+
+70 RNVS Mata Redonda
+0
+
+
+
+71 RNVS Fernando Castro Cervantes
+0
+
+
+
+72 RNVS Corredor Fronterizo
+2
+Rhynchonycteris naso, Saccopteryx bilineata
+
+
+73 RNVS Limoncito
+0
+
+
+
+74 RNVS Hacienda La Avellana
+0
+
+
+
+75 RNVS Camaronal
+0
+
+
+
+76 RNVS Camaronal
+0
+
+
+
+77 RNVS Iguanita
+0
+
+
+
+78 RNVS Archie Carr
+0
+
+
+
+79 RNVS Werner Sauter
+0
+
+
+
+80 RNVS Finca Baru del Pacifico
+1
+Thyroptera tricolor
+
+
+81 RNVS Portalon
+0
+
+
+
+82 RNVS Cerro Redondo
+0
+
+
+
+83 RNVS Transilvania
+0
+
+
+
+84 RNVS Romelia
+0
+
+
+
+85 RNVS Curi cancha
+6
+Sturnira burtonlimi, Choeroniscus godmani, Eptesicus brasiliensis, Anoura geoffroyi, Desmodus rotundus, Carollia sowelli
+
+
+86 RNVS La Ensenada
+7
+Uroderma bilobatum, Saccopteryx leptura, Platyrrhinus vittatus, Saccopteryx bilineata, Desmodus rotundus, Carollia perspicillata, Phyllostomus hastatus
+
+
+87 RNVS Playa Hermosa-Punta Mala
+0
+
+
+
+88 RNVS Playa Hermosa-Punta Mala
+0
+
+
+
+89 RNVS Isla San lucas
+0
+
+
+
+90 RNVS Isla San Lucas
+0
+
+
+
+91 RNVS Cipanci
+2
+Saccopteryx bilineata, Rhynchonycteris naso
+
+
+92 RNVS La Tirimbina
+8
+Centronycteris centralis, Uroderma bilobatum, Tonatia saurophila, Ectophylla alba, Platyrrhinus helleri, Rhynchonycteris naso, Saccopteryx bilineata, Gardnerycteris crenulatum
+
+
+93 RNVS Isla Chora
+0
+
+
+
+94 RNVS Duaru
+0
+
+
+
+95 RNVS Maquenque
+1
+Rhynchonycteris naso
+
+
+96 RNVS Ara Macao
+0
+
+
+
+97 RNVS Caletas Ario
+0
+
+
+
+98 RNVS Caletas Ario
+1
+Glyphonycteris sylvestris
+
+
+99 RNVS Montana de El Tigre
+0
+
+
+
+100 RNVS Conchal
+0
+
+
+
+101 RNVS Hacienda El Viejo
+2
+Saccopteryx bilineata, Rhynchonycteris naso
+
+
+102 RNVS Tapiria
+0
+
+
+
+103 ZP La Selva
+27
+Hylonycteris underwoodi, Thyroptera tricolor, Pteronotus gymnonotus, Carollia brevicaudum, Ectophylla alba, Saccopteryx bilineata, Carollia sowelli, Carollia castanea, Centronycteris centralis, Chiroderma villosum, Artibeus jamaicensis, Glossophaga commissarisi, Myotis nigricans, Desmodus rotundus, Glossophaga soricina, Carollia perspicillata, Vampyriscus nymphaea, Lichonycteris obscura, Myotis elegans, Saccopteryx leptura, Platyrrhinus helleri, Artibeus phaeotis, Artibeus lituratus, Phyllostomus discolor, Eptesicus furinalis, Trachops cirrhosus, Rhynchonycteris naso
+
+
+104 RNVS Lapa Verde
+0
+
+
+
+105 RNVS Rio General
+0
+
+
+
+106 RNVS Longo Mai
+0
+
+
+
+107 ZP Cerro de Escazu
+1
+Carollia perspicillata
+
+
+108 ZP Caraigres
+0
+
+
+
+109 ZP Las Tablas
+0
+
+
+
+110 ZP Cerros de La Carpintera
+2
+Glossophaga mutica, Micronycteris megalotis
+
+
+111 ZP El Rodeo
+0
+
+
+
+112 ZP Cerro Atenas
+0
+
+
+
+113 ZP Rio Tiribi
+0
+
+
+
+114 ZP Cerros de Turrubares
+0
+
+
+
+115 ZP Rio Navarro-Rio Sombrero
+0
+
+
+
+116 ZP Rio Grande
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
 
 
 
-28 PN Volcan Turrialba
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-Glossophaga soricina, Sturnira ludovici, Artibeus jamaicensis, Phyllostomus hastatus
+117 ZP Cerro Nara
+0
 
 
-29 PN Volcan Poas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-Tadarida brasiliensis, Sturnira ludovici, Myotis nigricans, Lasiurus blossevillii
+
+118 ZP El Chayote
+0
 
 
-30 PN Barra Honda
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-Desmodus rotundus, Trachops cirrhosus, Platyrrhinus helleri, Micronycteris megalotis, Artibeus lituratus
+
+119 ZP Cuenca del Rio Tuis
+0
 
 
-31 PN Marino las Baulas de Guanacaste
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2807600</span><span class="o">/</span><span class="mf">1266701875.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>                         <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> 
-<span class="ne">---&gt; </span><span class="mi">27</span>                     <span class="k">if</span> <span class="n">shape</span><span class="p">(</span><span class="n">record_asp</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">shape</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">])):</span>
-<span class="g g-Whitespace">     </span><span class="mi">28</span>                         <span class="n">species_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;species&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span> 
 
-<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/geo.py</span> in <span class="ni">shape</span><span class="nt">(context)</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="k">return</span> <span class="n">LinearRing</span><span class="p">(</span><span class="n">ob</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>     <span class="k">elif</span> <span class="n">geom_type</span> <span class="o">==</span> <span class="s2">&quot;polygon&quot;</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">112</span>         <span class="k">return</span> <span class="n">Polygon</span><span class="p">(</span><span class="n">ob</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">ob</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">:])</span>
-<span class="g g-Whitespace">    </span><span class="mi">113</span>     <span class="k">elif</span> <span class="n">geom_type</span> <span class="o">==</span> <span class="s2">&quot;multipoint&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="k">return</span> <span class="n">MultiPoint</span><span class="p">(</span><span class="n">ob</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">])</span>
+120 ZP Acuiferos Guacimo y Pococi
+0
 
-<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/polygon.py</span> in <span class="ni">__init__</span><span class="nt">(self, shell, holes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">259</span> 
-<span class="g g-Whitespace">    </span><span class="mi">260</span>         <span class="k">if</span> <span class="n">shell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">261</span>             <span class="n">ret</span> <span class="o">=</span> <span class="n">geos_polygon_from_py</span><span class="p">(</span><span class="n">shell</span><span class="p">,</span> <span class="n">holes</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">262</span>             <span class="k">if</span> <span class="n">ret</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span>                 <span class="n">geom</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">ret</span>
 
-<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/polygon.py</span> in <span class="ni">geos_polygon_from_py</span><span class="nt">(shell, holes)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span> 
-<span class="g g-Whitespace">    </span><span class="mi">538</span>     <span class="k">if</span> <span class="n">shell</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">539</span>         <span class="n">ret</span> <span class="o">=</span> <span class="n">geos_linearring_from_py</span><span class="p">(</span><span class="n">shell</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span>         <span class="k">if</span> <span class="n">ret</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">541</span>             <span class="k">return</span> <span class="kc">None</span>
 
-<span class="ne">KeyboardInterrupt</span>: 
+121 ZP Arenal Monteverde
+31
+Sturnira ludovici, Glossophaga leachii, Micronycteris megalotis, Carollia brevicaudum, Anoura geoffroyi, Artibeus jamaicensis, Eptesicus andinus, Platyrrhinus vittatus, Carollia subrufa, Choeroniscus godmani, Glossophaga commissarisi, Myotis nigricans, Glossophaga soricina, Carollia perspicillata, Sturnira burtonlimi, Centurio senex, Sturnira lilium, Myotis riparius, Vampyressa thyone, Vampyrum spectrum, Eptesicus brasiliensis, Platyrrhinus helleri, Enchisthenes hartii, Noctilio albiventris, Artibeus lituratus, Lonchorhina aurita, Artibeus aztecus, Artibeus toltecus, Pteronotus parnellii, Myotis pilosatibialis, Trachops cirrhosus
+
+
+122 ZP Tenorio
+0
+
+
+
+123 ZP Miravalles
+0
+
+
+
+124 PN Tortuguero
+1
+Rhynchonycteris naso
+
+
+125 ZP Rio Banano
+0
+
+
+
+126 ZP Rio Toro
+0
+
+
+
+127 ZP Peninsula de Nicoya
+0
+
+
+
+128 ZP Monte Alto
+0
+
+
+
+129 ZP Montes de Oro
+0
+
+
+
+130 ZP Cerro La Cruz
+0
+
+
+
+131 ZP Cuenca del Rio Abangares
+0
+
+
+
+132 ZP Cuenca Rio Siquirres
+1
+Ectophylla alba
+
+
+133 ZP Cerro El Chompipe
+0
+
+
+
+134 ZP Las Baulas de Guanacaste
+0
+
+
+
+135 HH Riberino Zapandi
+0
+
+
+
+136 ZP Quitirrisi
+0
+
+
+
+137 PN Miravalles-Jorge Manuel Dengo
+6
+Anoura cultrata, Tonatia saurophila, Phylloderma stenops, Sturnira mordax, Platyrrhinus vittatus, Pteronotus mesoamericanus
+
+
+138 AMM Barra del Colorado
+0
+
+
+
+139 RB Isla del Cano
+1
+Artibeus jamaicensis
+
+
+140 RB Isla del Cano
+0
+
+
+
+141 HH Terraba-Sierpe
+4
+Uroderma bilobatum, Carollia perspicillata, Artibeus cinereus, Rhynchonycteris naso
+
+
+142 PN Corcovado
+27
+Lophostoma silvicola, Thyroptera tricolor, Pteronotus gymnonotus, Vampyressa pusilla, Artibeus watsoni, Carollia brevicaudum, Anoura geoffroyi, Saccopteryx bilineata, Carollia castanea, Lonchophylla concava, Cormura brevirostris, Artibeus jamaicensis, Uroderma bilobatum, Carollia subrufa, Artibeus glaucus, Uroderma convexum, Rhogeessa tumida, Glossophaga soricina, Carollia perspicillata, Uroderma davisi, Saccopteryx leptura, Platyrrhinus helleri, Artibeus phaeotis, Artibeus lituratus, Pteronotus personatus, Rhynchonycteris naso, Molossus sinaloae
+
+
+143 PN Piedras Blancas
+5
+Artibeus jamaicensis, Uroderma bilobatum, Rhogeessa io, Saccopteryx bilineata, Rhynchonycteris naso
+
+
+144 PN Marino Ballena
+1
+Uroderma bilobatum
+
+
+145 RF Golfo Dulce
+54
+Lophostoma silvicola, Tonatia saurophila, Phyllostomus hastatus, Thyroptera tricolor, Pteronotus gymnonotus, Vampyrodes caraccioli, Micronycteris megalotis, Vampyressa pusilla, Tonatia bidens, Carollia brevicaudum, Artibeus watsoni, Saccopteryx bilineata, Centronycteris maximiliani, Carollia castanea, Lonchophylla concava, Chiroderma villosum, Artibeus jamaicensis, Uroderma bilobatum, Diphylla ecaudata, Rhogeessa parvula, Carollia subrufa, Glossophaga commissarisi, Artibeus glaucus, Myotis nigricans, Uroderma convexum, Rhogeessa tumida, Glossophaga soricina, Carollia perspicillata, Desmodus rotundus, Artibeus cinereus, Centurio senex, Uroderma davisi, Myotis elegans, Saccopteryx leptura, Lonchophylla mordax, Vampyressa thyone, Vampyrum spectrum, Eptesicus brasiliensis, Platyrrhinus helleri, Enchisthenes hartii, Glossophaga mutica, Artibeus phaeotis, Artibeus lituratus, Phyllostomus discolor, Pteronotus parnellii, Lonchophylla robusta, Molossus rufus, Pteronotus personatus, Trachops cirrhosus, Rhynchonycteris naso, Lophostoma brasiliense, Dasypterus ega, Molossus sinaloae, Gardnerycteris crenulatum
+
+
+146 RNVS Golfito
+3
+Centronycteris centralis, Artibeus watsoni, Saccopteryx bilineata
+
+
+147 RNVS Punta Rio Claro
+0
+
+
+
+148 RNVS Preciosa Platanares
+0
+
+
+
+149 RNVS Rio Oro
+0
+
+
+
+150 RNVS Pejeperro
+0
+
+
+
+151 RNVS Carate
+1
+Diclidurus albus
+
+
+152 RNVS Osa
+8
+Centronycteris centralis, Artibeus jamaicensis, Uroderma bilobatum, Trachops cirrhosus, Rhynchonycteris naso, Desmodus rotundus, Diclidurus albus, Artibeus lituratus
+
+
+153 RNVS Quillotro
+0
+
+
+
+154 RNVS Saimiri
+0
+
+
+
+155 RNVS Rancho La Merced
+0
+
+
+
+156 PN Piedras Blancas
+1
+Thyroptera tricolor
+
+
+157 HH Pejeperrito
+0
+
+
+
+158 PN Corcovado
+3
+Desmodus rotundus, Artibeus watsoni, Rhynchonycteris naso
+
+
+159 PN Marino Ballena
+0
+
+
+
+160 ZP Tivives
+0
+
+
+
+161 PN Santa Rosa
+17
+Artibeus toltecus, Pteronotus parnellii, Artibeus jamaicensis, Carollia subrufa, Sturnira parvidens, Balantiopteryx plicata, Pteronotus personatus, Artibeus lituratus, Saccopteryx bilineata, Rhogeessa tumida, Platyrrhinus helleri, Desmodus rotundus, Carollia perspicillata, Glossophaga soricina, Artibeus phaeotis, Centurio senex, Carollia castanea
+
+
+162 PN Santa Rosa
+0
+
+
+
+163 PN Guanacaste
+10
+Lionycteris spurrelli, Uroderma bilobatum, Carollia subrufa, Vampyressa pusilla, Carollia brevicaudum, Saccopteryx bilineata, Glossophaga soricina, Carollia perspicillata, Artibeus phaeotis, Carollia castanea
+
+
+164 RVS Bahia Junquillal
+0
+
+
+
+165 PN Rincon de la Vieja
+7
+Vampyrodes major, Carollia subrufa, Micronycteris microtis, Natalus mexicanus, Myotis nigricans, Carollia perspicillata, Artibeus lituratus
+
+
+166 AMM Bahia Santa Elena
+0
+
+
+
+167 ZP Guanacaste
+0
+
+
+
+168 ZP Quebrada Rosario
+0
+
+
+
+169 PN Santa Rosa
+0
+
+
+
+170 RVS Bahia Junquillal
+0
+
+
+
+171 PN Internacional La Amistad
+11
+Sturnira ludovici, Artibeus toltecus, Hylonycteris underwoodi, Platyrrhinus vittatus, Carollia subrufa, Micronycteris megalotis, Myotis nigricans, Artibeus lituratus, Myotis oxyotus, Sturnira burtonlimi, Myotis keaysi
+
+
+172 RB Bicentenario de la República - Pájaro Campana
+0
 </pre></div>
 </div>
 </div>
