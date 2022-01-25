@@ -830,7 +830,7 @@ math.sqrt(9)
 
 # #### Ejemplos
 
-# In[ ]:
+# In[34]:
 
 
 # Definición de una función
@@ -864,7 +864,7 @@ print(fahrenheit_a_celsius(14))
 # 
 # Los objetos se agrupan en [clases](https://docs.python.org/3/tutorial/classes.html). Todos los objetos de una clase contienen los mismos métodos y propiedades. Una clase puede verse como una plantilla o “machote” a partir de la cual se crean objetos. A un objeto creado a partir de una clase se le llama también una **instancia** de esa clase.
 
-# In[ ]:
+# In[35]:
 
 
 # Definición de la clase cuentaBancaria
@@ -900,7 +900,7 @@ class cuentaBancaria:
 # 
 # A continuación, se presentan algunos ejemplos de instancias de la clase _cuentaBancaria_ y de llamados a sus métodos.
 
-# In[ ]:
+# In[36]:
 
 
 # Instancia cuenta01
@@ -909,7 +909,7 @@ cuenta01.depositar(5000)
 cuenta01.imprimirInformacion()
 
 
-# In[ ]:
+# In[37]:
 
 
 # Instancia cuenta02
@@ -923,28 +923,28 @@ cuenta02.imprimirInformacion()
 
 # Todos los datos de un programa en Python se representan mediante objetos o por relaciones entre objetos. Los tipos de datos corresponden a las clases de los objetos.
 
-# In[ ]:
+# In[38]:
 
 
 # Clase int
 print(type(234))
 
 
-# In[ ]:
+# In[39]:
 
 
 # Clase float
 print(type(10.3))
 
 
-# In[ ]:
+# In[40]:
 
 
 # Clase bool
 print(type(True))
 
 
-# In[ ]:
+# In[41]:
 
 
 # Clase list
@@ -959,21 +959,21 @@ print(type([True, 23, 20.6, (1, 2, 3)]))
 
 # Como ya se ha explicado, la clase [str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) se utiliza para representar datos textuales en Python. Esta clase proporciona un conjunto de [métodos](https://docs.python.org/3/library/stdtypes.html#string-methods), de los que se presentan algunos ejemplos a continuación.
 
-# In[ ]:
+# In[42]:
 
 
 # str.capitalize(): retorna una copia de 'str' con el primer carácter en mayúscula y el resto en minúscula.
 'hola'.capitalize()
 
 
-# In[ ]:
+# In[43]:
 
 
 # str.lower(): retorna una copia de 'str' con todos los caracteres en minúscula
 'HOLA'.lower()
 
 
-# In[ ]:
+# In[44]:
 
 
 # str.count(sub[, start[, end]]): retorna el número de hileras no traslapadas de la subhilera 'sub' 
@@ -983,13 +983,13 @@ cita_socrates = 'Yo solo sé, que no sé nada'
 cita_socrates.count('sé') # se cuentan todas las ocurrencias de 'sé'
 
 
-# In[ ]:
+# In[45]:
 
 
 cita_socrates.count('sé', 0, 10) # se cuentan solo las ocurrencias ubicadas en el rango [0, 10]
 
 
-# In[ ]:
+# In[46]:
 
 
 # str.find(sub[, start[, end]]): retorna el índice menor en donde se encuentra 'sub'
@@ -998,7 +998,7 @@ cita_socrates.count('sé', 0, 10) # se cuentan solo las ocurrencias ubicadas en 
 'Yo solo sé, que no sé nada'.find('solo')
 
 
-# In[34]:
+# In[47]:
 
 
 # str.replace(old, new[, count]): retorna una copia de 'str' con todas las ocurrencias
@@ -1011,21 +1011,21 @@ cita_socrates.replace("solo", "solamente")
 # 
 # Se implementa a través del método [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format). Pueden verse varios ejemplos en [https://pyformat.info/](https://pyformat.info/).
 
-# In[ ]:
+# In[48]:
 
 
 # Formateo de números enteros
 'La suma de 3 + 4 es {} y la resta de 10 - 6 es {}'.format(7, 4)
 
 
-# In[ ]:
+# In[49]:
 
 
 # Formateo de un número en punto flotante (6 caracteres, 4 después del punto decimal)
 'La relación entre la longitud de una circunferencia y su diámetro es {:6.4f}'.format(3.141592653589793)
 
 
-# In[ ]:
+# In[50]:
 
 
 # Formateo de fecha y hora
@@ -1039,13 +1039,13 @@ from datetime import datetime
 # 
 # Se presentan a continuación algunos ejemplos de operaciones y métodos de la clase _list_, los cuales son comunes a todas las clases de [secuencias mutables](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types):
 
-# In[ ]:
+# In[51]:
 
 
 lista = [10, 20, 30, 40, 50]
 
 
-# In[ ]:
+# In[52]:
 
 
 # Reemplazo de un ítem con base en su posición
@@ -1053,7 +1053,7 @@ lista[2] = 300
 lista
 
 
-# In[ ]:
+# In[53]:
 
 
 # Borrado de un ítem con base en su posición
@@ -1061,7 +1061,7 @@ del lista[4]
 lista
 
 
-# In[ ]:
+# In[54]:
 
 
 # list.append(x): agrega 'x' al final de 'list'
@@ -1069,7 +1069,7 @@ lista.append(50)
 lista
 
 
-# In[ ]:
+# In[55]:
 
 
 # list.insert(i, x): inserta 'x' en al posición 'i'
@@ -1081,7 +1081,7 @@ lista
 
 # La clase [dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) implementa un conjunto de pares ordenados de la forma _atributo_:_valor_. Por ejemplo:
 
-# In[ ]:
+# In[56]:
 
 
 persona = {"cedula":"408730281", "nombre":"Juan", "apellido":"Pérez"}
@@ -1089,14 +1089,14 @@ persona = {"cedula":"408730281", "nombre":"Juan", "apellido":"Pérez"}
 
 # Ejemplos de operaciones y métodos de la clase dict:
 
-# In[35]:
+# In[57]:
 
 
 # Retorno de valor correspondiente a una llave
 persona["cedula"]
 
 
-# In[ ]:
+# In[58]:
 
 
 # Asignación de un valor a una llave
@@ -1104,35 +1104,35 @@ persona["nombre"] = "María"
 persona
 
 
-# In[ ]:
+# In[59]:
 
 
 # Verificación de si una llave existe
 "apellido" in persona
 
 
-# In[ ]:
+# In[60]:
 
 
 # dict.items(): retorna los ítems (pares (llave, valor)) de 'dict'
 persona.items()
 
 
-# In[ ]:
+# In[61]:
 
 
 # dict.keys(): retorna las llaves de 'dict'
 persona.keys()
 
 
-# In[36]:
+# In[62]:
 
 
 # dict.values(): retorna los valores de 'dict'
 persona.values()
 
 
-# In[ ]:
+# In[63]:
 
 
 # dict.get(key[, default]): retorna el valor de la llave 'key' en 'dict'
@@ -1163,7 +1163,7 @@ persona.get("apellido")
 # 
 # El siguiente bloque de código abre un archivo en modo de lectura (```"r"```) con la función open() y recorre e imprime cada una de sus líneas.
 
-# In[37]:
+# In[64]:
 
 
 # Recorrido e impresión de las líneas de un archivo de texto
@@ -1174,7 +1174,7 @@ with open("datos/maravillas_antiguas.csv", "r") as archivo:
 
 # Para escribir en un archivo, este debe abrirse en modo de escritura (```"w"```).
 
-# In[38]:
+# In[65]:
 
 
 # Escritura en un archivo
@@ -1206,7 +1206,7 @@ with open("datos/archivo_nuevo.csv", "w") as archivo:
 # 
 # El siguiente bloque de código recorre un archivo CSV e imprime sus líneas y las columnas que las componen.
 
-# In[39]:
+# In[66]:
 
 
 import csv
@@ -1227,7 +1227,7 @@ with open("datos/maravillas_antiguas.csv") as archivo:
 
 # El método [csv.writer()](https://docs.python.org/3/library/csv.html#csv.writer) se utiliza para escribir en un archivo CSV. El siguiente bloque de código abre un archivo CSV de entrada y recorre sus líneas. Si la columna de ubicación de una línea corresponde a Egipto o Irak, escribe la línea en un archivo de salida.
 
-# In[40]:
+# In[67]:
 
 
 import csv
