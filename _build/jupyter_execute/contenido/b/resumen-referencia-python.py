@@ -115,7 +115,7 @@ print(imc2.__doc__)
 # 
 # </table>
 # 
-# Existen otros tipos de datos más especializados (ej. fechas, horas, enumerados) que pueden consultarse en la [documentación oficial de Python sobre tipos de datos](https://docs.python.org/3/library/datatypes.html).
+# Existen otros tipos de datos más especializados (ej. fechas, horas, enumerados). Todos pueden consultarse en la documentación de la [biblioteca estándar de Python](https://docs.python.org/3/library/index.html#library-index).
 
 # ### La función type()
 # La función [type()](https://docs.python.org/3/library/functions.html#type) retorna el tipo del objeto que recibe como argumento.
@@ -830,7 +830,7 @@ math.sqrt(9)
 
 # #### Ejemplos
 
-# In[ ]:
+# In[34]:
 
 
 # Definición de una función
@@ -864,7 +864,7 @@ print(fahrenheit_a_celsius(14))
 # 
 # Los objetos se agrupan en [clases](https://docs.python.org/3/tutorial/classes.html). Todos los objetos de una clase contienen los mismos métodos y propiedades. Una clase puede verse como una plantilla o “machote” a partir de la cual se crean objetos. A un objeto creado a partir de una clase se le llama también una **instancia** de esa clase.
 
-# In[ ]:
+# In[35]:
 
 
 # Definición de la clase cuentaBancaria
@@ -900,7 +900,7 @@ class cuentaBancaria:
 # 
 # A continuación, se presentan algunos ejemplos de instancias de la clase _cuentaBancaria_ y de llamados a sus métodos.
 
-# In[ ]:
+# In[36]:
 
 
 # Instancia cuenta01
@@ -909,7 +909,7 @@ cuenta01.depositar(5000)
 cuenta01.imprimirInformacion()
 
 
-# In[ ]:
+# In[37]:
 
 
 # Instancia cuenta02
@@ -923,28 +923,28 @@ cuenta02.imprimirInformacion()
 
 # Todos los datos de un programa en Python se representan mediante objetos o por relaciones entre objetos. Los tipos de datos corresponden a las clases de los objetos.
 
-# In[ ]:
+# In[38]:
 
 
 # Clase int
 print(type(234))
 
 
-# In[ ]:
+# In[39]:
 
 
 # Clase float
 print(type(10.3))
 
 
-# In[ ]:
+# In[40]:
 
 
 # Clase bool
 print(type(True))
 
 
-# In[ ]:
+# In[41]:
 
 
 # Clase list
@@ -953,27 +953,27 @@ print(type([True, 23, 20.6, (1, 2, 3)]))
 
 # El que un dato sea un objeto, implica que además de su valor tiene un conjunto de operaciones asociadas (métodos) que se aplican mediante operadores (ej. +, -, *, %) o funciones (ej. len(), type()). Tanto los operadores como las funciones pueden aplicarse en varias clases. Por ejemplo, el operador + se usa para _int_, _float_, _str_, _list_ y otras clases; _len()_ se usa también en varios tipos de datos.
 
-# ## Colecciones
+# ## Otros tipos de datos: cadenas de caracteres, secuencias y diccionarios
 
 # ### La clase str
 
 # Como ya se ha explicado, la clase [str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) se utiliza para representar datos textuales en Python. Esta clase proporciona un conjunto de [métodos](https://docs.python.org/3/library/stdtypes.html#string-methods), de los que se presentan algunos ejemplos a continuación.
 
-# In[ ]:
+# In[42]:
 
 
 # str.capitalize(): retorna una copia de 'str' con el primer carácter en mayúscula y el resto en minúscula.
 'hola'.capitalize()
 
 
-# In[ ]:
+# In[43]:
 
 
 # str.lower(): retorna una copia de 'str' con todos los caracteres en minúscula
 'HOLA'.lower()
 
 
-# In[ ]:
+# In[44]:
 
 
 # str.count(sub[, start[, end]]): retorna el número de hileras no traslapadas de la subhilera 'sub' 
@@ -983,13 +983,13 @@ cita_socrates = 'Yo solo sé, que no sé nada'
 cita_socrates.count('sé') # se cuentan todas las ocurrencias de 'sé'
 
 
-# In[ ]:
+# In[45]:
 
 
 cita_socrates.count('sé', 0, 10) # se cuentan solo las ocurrencias ubicadas en el rango [0, 10]
 
 
-# In[ ]:
+# In[46]:
 
 
 # str.find(sub[, start[, end]]): retorna el índice menor en donde se encuentra 'sub'
@@ -998,7 +998,7 @@ cita_socrates.count('sé', 0, 10) # se cuentan solo las ocurrencias ubicadas en 
 'Yo solo sé, que no sé nada'.find('solo')
 
 
-# In[ ]:
+# In[47]:
 
 
 # str.replace(old, new[, count]): retorna una copia de 'str' con todas las ocurrencias
@@ -1011,21 +1011,21 @@ cita_socrates.replace("solo", "solamente")
 # 
 # Se implementa a través del método [str.format()](https://docs.python.org/3/library/stdtypes.html#str.format). Pueden verse varios ejemplos en [https://pyformat.info/](https://pyformat.info/).
 
-# In[ ]:
+# In[48]:
 
 
 # Formateo de números enteros
 'La suma de 3 + 4 es {} y la resta de 10 - 6 es {}'.format(7, 4)
 
 
-# In[ ]:
+# In[49]:
 
 
 # Formateo de un número en punto flotante (6 caracteres, 4 después del punto decimal)
 'La relación entre la longitud de una circunferencia y su diámetro es {:6.4f}'.format(3.141592653589793)
 
 
-# In[ ]:
+# In[50]:
 
 
 # Formateo de fecha y hora
@@ -1039,13 +1039,13 @@ from datetime import datetime
 # 
 # Se presentan a continuación algunos ejemplos de operaciones y métodos de la clase _list_, los cuales son comunes a todas las clases de [secuencias mutables](https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types):
 
-# In[ ]:
+# In[51]:
 
 
 lista = [10, 20, 30, 40, 50]
 
 
-# In[ ]:
+# In[52]:
 
 
 # Reemplazo de un ítem con base en su posición
@@ -1053,7 +1053,7 @@ lista[2] = 300
 lista
 
 
-# In[ ]:
+# In[53]:
 
 
 # Borrado de un ítem con base en su posición
@@ -1061,7 +1061,7 @@ del lista[4]
 lista
 
 
-# In[ ]:
+# In[54]:
 
 
 # list.append(x): agrega 'x' al final de 'list'
@@ -1069,7 +1069,7 @@ lista.append(50)
 lista
 
 
-# In[ ]:
+# In[55]:
 
 
 # list.insert(i, x): inserta 'x' en al posición 'i'
@@ -1081,7 +1081,7 @@ lista
 
 # La clase [dict](https://docs.python.org/3/library/stdtypes.html#mapping-types-dict) implementa un conjunto de pares ordenados de la forma _atributo_:_valor_. Por ejemplo:
 
-# In[ ]:
+# In[56]:
 
 
 persona = {"cedula":"408730281", "nombre":"Juan", "apellido":"Pérez"}
@@ -1089,14 +1089,14 @@ persona = {"cedula":"408730281", "nombre":"Juan", "apellido":"Pérez"}
 
 # Ejemplos de operaciones y métodos de la clase dict:
 
-# In[ ]:
+# In[57]:
 
 
 # Retorno de valor correspondiente a una llave
 persona["cedula"]
 
 
-# In[ ]:
+# In[58]:
 
 
 # Asignación de un valor a una llave
@@ -1104,37 +1104,62 @@ persona["nombre"] = "María"
 persona
 
 
-# In[ ]:
+# In[59]:
 
 
 # Verificación de si una llave existe
 "apellido" in persona
 
 
-# In[ ]:
+# In[60]:
 
 
 # dict.items(): retorna los ítems (pares (llave, valor)) de 'dict'
 persona.items()
 
 
-# In[ ]:
+# In[61]:
 
 
 # dict.keys(): retorna las llaves de 'dict'
 persona.keys()
 
 
-# In[ ]:
+# In[62]:
 
 
 # dict.values(): retorna los valores de 'dict'
 persona.values()
 
 
-# In[ ]:
+# In[63]:
 
 
 # dict.get(key[, default]): retorna el valor de la llave 'key' en 'dict'
 persona.get("apellido")
+
+
+# ## Archivos
+
+# Los archivos proporcionan una forma de almacenar datos de manera persistente (i.e. no volátil) en medios como discos duros, discos compactos, DVD, dispositivos de almacenamiento USB y otros. Contrario a lo que sucede a las estructuras que residen en la memoria del computador, como las variables, la información almacenada en archivos permanece después de que finaliza la ejecución de un programa o se apaga el computador. En Python, los archivos se manejan como objetos de tipo [file](https://docs.python.org/3/glossary.html#term-file-object), los cuales tienen un conjunto de [métodos](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files), entre las que están:
+# 
+# * [open()](https://docs.python.org/3/library/functions.html#open): para abrir un archivo.  
+# * [read()](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files): para leer datos de un archivo.  
+# * [write()](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files): para escribir datos en un archivo.  
+# * [close()](https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects): para cerrar un archivo.
+# 
+# Estas operaciones se ilustran en la {numref}`figure-operaciones-archivos-python`.
+# 
+# ```{figure} img/operaciones-archivos-python.png
+# :name: figure-operaciones-archivos-python
+# 
+# Operaciones para manejo de archivos en Python. Fuente: {cite}`severance_py4e_nodate`.
+# ```
+# 
+# Estas operaciones se realizan a través de una variable llamada "manejador de archivo" (*file handle*).
+
+# In[ ]:
+
+
+
 
