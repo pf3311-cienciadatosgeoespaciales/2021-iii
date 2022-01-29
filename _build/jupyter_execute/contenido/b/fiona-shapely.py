@@ -68,7 +68,7 @@ from geojson import dump
 
 response = requests.get('https://api.gbif.org/v1/occurrence/download/request/0105729-210914110416597.zip', 
                         allow_redirects=True)
-open('murcielagos.zip', 'wb').write(response.content)
+open('datos/murcielagos.zip', 'wb').write(response.content)
 
 
 # In[3]:
@@ -76,8 +76,8 @@ open('murcielagos.zip', 'wb').write(response.content)
 
 # Descompresión
 
-with zipfile.ZipFile("murcielagos.zip") as zipfile:
-    zipfile.extractall(".")
+with zipfile.ZipFile("datos/murcielagos.zip") as zipfile:
+    zipfile.extractall("datos/")
 
 
 # In[4]:
@@ -85,7 +85,7 @@ with zipfile.ZipFile("murcielagos.zip") as zipfile:
 
 # Cambio de nombre del archivo CSV
 
-os.rename("0105729-210914110416597.csv", "murcielagos.csv")
+os.rename("datos/0105729-210914110416597.csv", "datos/murcielagos.csv")
 
 
 # ##### Capas geoespaciales de Costa Rica
@@ -166,7 +166,7 @@ response = requests.get("http://geos1pne.sirefor.go.cr/wfs", params=params)
 
 # Descarga de la respuesta en un archivo GeoJSON
 
-with open('asp.geojson', 'w') as file:
+with open('datos/asp.geojson', 'w') as file:
    dump(response.json(), file)
 
 
@@ -189,13 +189,13 @@ schema = {'geometry':'Point',
                        }}
 
 # Inserción de registros en el archivo GeoPackage
-with fiona.collection('distribucion-murcielagos.gpkg', 
+with fiona.collection('datos/distribucion-murcielagos.gpkg', 
                 mode='w',
                 schema=schema,
                 driver='GPKG',
                 crs=fiona.crs.from_epsg(4326),
                 layer='registros-murcielagos') as collection:
-    with open('murcielagos.csv') as file:
+    with open('datos/murcielagos.csv') as file:
         reader = csv.DictReader(file, delimiter='\t')
         for row in reader:
             point = Point(float(row['decimalLongitude']), float(row['decimalLatitude']))
@@ -217,8 +217,8 @@ with fiona.collection('distribucion-murcielagos.gpkg',
 
 # Se agrega el archivo GeoJSON de ASP al GPKG
 
-with fiona.open('asp.geojson') as source:
-    with fiona.open('distribucion-murcielagos.gpkg', 'w', 'GPKG', source.schema, source.crs, layer='asp') as sink:
+with fiona.open('datos/asp.geojson') as source:
+    with fiona.open('datos/distribucion-murcielagos.gpkg', 'w', 'GPKG', source.schema, source.crs, layer='asp') as sink:
         for record in source:
             sink.write(record)
 
@@ -240,18 +240,18 @@ schema = {'geometry':'Unknown',
                         'lista_especies':'str'
                        }}
 
-with fiona.collection('distribucion-murcielagos.gpkg', 'r', layer='asp') as asp:
+with fiona.collection('datos/distribucion-murcielagos.gpkg', 'r', layer='asp') as asp:
     
     i = 1 # contador de ASP, para imprimir el progreso del procedimiento
     
-    with fiona.open('asp-especies.geojson','w','GeoJSON', schema, asp.crs) as sink:
+    with fiona.open('datos/asp-especies.geojson','w','GeoJSON', schema, asp.crs) as sink:
     
         for record_asp in asp:
             print(i, record_asp['properties']['siglas_cat'], record_asp['properties']['nombre_asp'])
 
             species_set = set() # conjunto de especies en el ASP
 
-            with fiona.collection('distribucion-murcielagos.gpkg', 'r', layer='registros-murcielagos') as registros:
+            with fiona.collection('datos/distribucion-murcielagos.gpkg', 'r', layer='registros-murcielagos') as registros:
                 for registro in registros:
                     if (registro['properties']['species'] == ''):
                         continue
@@ -276,13 +276,13 @@ with fiona.collection('distribucion-murcielagos.gpkg', 'r', layer='asp') as asp:
             }) 
 
 
-# In[14]:
+# In[ ]:
 
 
 # Se agrega el archivo GeoJSON de asp-especies al GPKG
 
-with fiona.open('asp-especies.geojson') as source:
-    with fiona.open('distribucion-murcielagos.gpkg', 'w', 'GPKG', source.schema, source.crs, layer='asp-especies') as sink:
+with fiona.open('datos/asp-especies.geojson') as source:
+    with fiona.open('datos/distribucion-murcielagos.gpkg', 'w', 'GPKG', source.schema, source.crs, layer='asp-especies') as sink:
         for record in source:
             sink.write(record)
 
