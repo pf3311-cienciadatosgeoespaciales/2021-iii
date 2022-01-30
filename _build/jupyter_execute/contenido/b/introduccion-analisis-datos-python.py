@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Introducción al análisis de datos con Python¶
+# # Introducción al análisis de datos con Python
 
-# En esta lección, se introducen algunas de las capacidades de Python para el análisis de datos, las cuales son ampliamente utilizadas en áreas como [aprendizaje automatizado](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico) y [cienca de datos](https://es.wikipedia.org/wiki/Ciencia_de_datos), entre otros.
+# En esta lección, se introducen algunas de las capacidades de Python para el análisis de datos, las cuales son ampliamente utilizadas en áreas como [aprendizaje automatizado](https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico) y [ciencia de datos](https://es.wikipedia.org/wiki/Ciencia_de_datos), entre otros.
 
 # ## Análisis de datos del Titanic
 
@@ -29,8 +29,8 @@
 
 # Para construir un modelo de sobrevivencia de los pasajeros del Titanic, se proporcionan dos archivos [CSV (valores separados por comas)](https://es.wikipedia.org/wiki/Valores_separados_por_comas):
 # 
-# - [entrenamiento.csv](https://github.com/curso-python-imn/curso-python-imn.github.io/blob/main/datos/titanic/entrenamiento.csv): contiene datos detallados sobre un subconjunto de pasajeros (891 registros), incluyendo una columna que indica si cada uno sobrevivió o no al naufragio. Este conjunto de datos se utiliza para generar el modelo.
-# - [evaluacion.csv](https://github.com/curso-python-imn/curso-python-imn.github.io/blob/main/datos/titanic/evaluacion.csv): contiene otro subconjunto (418 registros) con las mismas columnas del conjunto de datos de entrenamiento, excepto la que indica si el pasajero sobrevivió al naufragio. Este conjunto se utiliza para evaluar el modelo generado con los datos de entrenamiento.
+# - [entrenamiento.csv](https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/datos/entrenamiento.csv): contiene datos detallados sobre un subconjunto de pasajeros (891 registros), incluyendo una columna que indica si cada uno sobrevivió o no al naufragio. Este conjunto de datos se utiliza para generar el modelo.
+# - [evaluacion.csv](https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/datos/evaluacion.csv): contiene otro subconjunto (418 registros) con las mismas columnas del conjunto de datos de entrenamiento, excepto la que indica si el pasajero sobrevivió al naufragio. Este conjunto se utiliza para evaluar el modelo generado con los datos de entrenamiento.
 
 # Para analizar los datos, se utilizará el paquete [pandas](https://pandas.pydata.org/) de Python.
 
@@ -49,7 +49,7 @@ import pandas as pd
 
 # Carga de los datos de entrenamiento en un data frame de pandas
 
-datos_entrenamiento = pd.read_csv("https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/titanic/entrenamiento.csv")
+datos_entrenamiento = pd.read_csv("https://raw.githubusercontent.com/pf3311-cienciadatosgeoespaciales/2021-iii/main/contenido/b/datos/entrenamiento.csv")
 
 
 # #### Despliegue de datos tabulares
@@ -207,11 +207,13 @@ df.plot(kind='bar', stacked='True')
 
 # ### Modelado
 
-# Seguidamente, se generará un modelo basado en [Random Forest](https://es.wikipedia.org/wiki/Random_forest). Este algoritmo de aprendizaje automatizado construye múltiples árboles de decisión, como se ejemplifica en la siguiente imagen.
+# Seguidamente, se generará un modelo basado en [Random Forest](https://es.wikipedia.org/wiki/Random_forest). Este algoritmo de aprendizaje automatizado construye múltiples árboles de decisión, como se ejemplifica en la {numref}`figure-random-forest`.
 
-# ![Random Forest](img/randomforest.png)
-
-# Representación gráfica del algoritmo Random Forest. Imagen de [Kaggle](https://www.kaggle.com/alexisbcook/titanic-tutorial).
+# ```{figure} img/randomforest.png
+# :name: figure-random-forest
+# 
+# Representación gráfica del algoritmo Random Forest. Fuente [Kaggle](https://www.kaggle.com/alexisbcook/titanic-tutorial).
+# ```
 
 # Cada registro de datos es evaluado en los árboles de decisión y el resultado más frecuente (i.e. sobreviviente o fallecido) pasa a ser la salida para ese registro.
 
@@ -238,8 +240,8 @@ model.fit(X, y)
 predictions = model.predict(X_test)
 
 output = pd.DataFrame({'PassengerId': datos_evaluacion.PassengerId, 'Survived': predictions})
-output.to_csv('salida.csv', index=False)
-print("La salida del modelo se almacenó en el archivo salida.csv")
+output.to_csv('datos/salida-random-forest.csv', index=False)
+print("La salida del modelo se almacenó en el archivo datos/salida-random-forest.csv")
 
 
 # In[ ]:
