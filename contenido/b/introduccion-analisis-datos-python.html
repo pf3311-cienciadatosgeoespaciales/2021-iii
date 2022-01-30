@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introducción al análisis de datos con Python¶ &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    <title>Introducción al análisis de datos con Python &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -193,7 +193,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Introducción al análisis de datos con Python¶
+   Introducción al análisis de datos con Python
   </a>
  </li>
 </ul>
@@ -402,8 +402,8 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="introduccion-al-analisis-de-datos-con-python">
-<h1>Introducción al análisis de datos con Python¶<a class="headerlink" href="#introduccion-al-analisis-de-datos-con-python" title="Permalink to this headline">¶</a></h1>
-<p>En esta lección, se introducen algunas de las capacidades de Python para el análisis de datos, las cuales son ampliamente utilizadas en áreas como <a class="reference external" href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico">aprendizaje automatizado</a> y <a class="reference external" href="https://es.wikipedia.org/wiki/Ciencia_de_datos">cienca de datos</a>, entre otros.</p>
+<h1>Introducción al análisis de datos con Python<a class="headerlink" href="#introduccion-al-analisis-de-datos-con-python" title="Permalink to this headline">¶</a></h1>
+<p>En esta lección, se introducen algunas de las capacidades de Python para el análisis de datos, las cuales son ampliamente utilizadas en áreas como <a class="reference external" href="https://es.wikipedia.org/wiki/Aprendizaje_autom%C3%A1tico">aprendizaje automatizado</a> y <a class="reference external" href="https://es.wikipedia.org/wiki/Ciencia_de_datos">ciencia de datos</a>, entre otros.</p>
 <div class="section" id="analisis-de-datos-del-titanic">
 <h2>Análisis de datos del Titanic<a class="headerlink" href="#analisis-de-datos-del-titanic" title="Permalink to this headline">¶</a></h2>
 <p>Esta sección está basada en la competencia <a class="reference external" href="https://www.kaggle.com/c/titanic/overview">Titanic - Machine Learning from Disaster</a> organizada por <a class="reference external" href="https://www.kaggle.com/">Kaggle</a>.</p>
@@ -422,8 +422,8 @@
 <h3>Visualización y exploración de datos<a class="headerlink" href="#visualizacion-y-exploracion-de-datos" title="Permalink to this headline">¶</a></h3>
 <p>Para construir un modelo de sobrevivencia de los pasajeros del Titanic, se proporcionan dos archivos <a class="reference external" href="https://es.wikipedia.org/wiki/Valores_separados_por_comas">CSV (valores separados por comas)</a>:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/curso-python-imn/curso-python-imn.github.io/blob/main/datos/titanic/entrenamiento.csv">entrenamiento.csv</a>: contiene datos detallados sobre un subconjunto de pasajeros (891 registros), incluyendo una columna que indica si cada uno sobrevivió o no al naufragio. Este conjunto de datos se utiliza para generar el modelo.</p></li>
-<li><p><a class="reference external" href="https://github.com/curso-python-imn/curso-python-imn.github.io/blob/main/datos/titanic/evaluacion.csv">evaluacion.csv</a>: contiene otro subconjunto (418 registros) con las mismas columnas del conjunto de datos de entrenamiento, excepto la que indica si el pasajero sobrevivió al naufragio. Este conjunto se utiliza para evaluar el modelo generado con los datos de entrenamiento.</p></li>
+<li><p><a class="reference external" href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/datos/entrenamiento.csv">entrenamiento.csv</a>: contiene datos detallados sobre un subconjunto de pasajeros (891 registros), incluyendo una columna que indica si cada uno sobrevivió o no al naufragio. Este conjunto de datos se utiliza para generar el modelo.</p></li>
+<li><p><a class="reference external" href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/datos/evaluacion.csv">evaluacion.csv</a>: contiene otro subconjunto (418 registros) con las mismas columnas del conjunto de datos de entrenamiento, excepto la que indica si el pasajero sobrevivió al naufragio. Este conjunto se utiliza para evaluar el modelo generado con los datos de entrenamiento.</p></li>
 </ul>
 <p>Para analizar los datos, se utilizará el paquete <a class="reference external" href="https://pandas.pydata.org/">pandas</a> de Python.</p>
 <div class="cell docutils container">
@@ -440,7 +440,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de los datos de entrenamiento en un data frame de pandas</span>
 
-<span class="n">datos_entrenamiento</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/curso-python-imn/curso-python-imn.github.io/main/datos/titanic/entrenamiento.csv&quot;</span><span class="p">)</span>
+<span class="n">datos_entrenamiento</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/pf3311-cienciadatosgeoespaciales/2021-iii/main/contenido/b/datos/entrenamiento.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -790,9 +790,11 @@
 </div>
 <div class="section" id="modelado">
 <h3>Modelado<a class="headerlink" href="#modelado" title="Permalink to this headline">¶</a></h3>
-<p>Seguidamente, se generará un modelo basado en <a class="reference external" href="https://es.wikipedia.org/wiki/Random_forest">Random Forest</a>. Este algoritmo de aprendizaje automatizado construye múltiples árboles de decisión, como se ejemplifica en la siguiente imagen.</p>
-<p><img alt="Random Forest" src="contenido/b/img/randomforest.png" /></p>
-<p>Representación gráfica del algoritmo Random Forest. Imagen de <a class="reference external" href="https://www.kaggle.com/alexisbcook/titanic-tutorial">Kaggle</a>.</p>
+<p>Seguidamente, se generará un modelo basado en <a class="reference external" href="https://es.wikipedia.org/wiki/Random_forest">Random Forest</a>. Este algoritmo de aprendizaje automatizado construye múltiples árboles de decisión, como se ejemplifica en la <a class="reference internal" href="#figure-random-forest"><span class="std std-numref">Fig. 32</span></a>.</p>
+<div class="figure align-default" id="figure-random-forest">
+<img alt="../../_images/randomforest.png" src="../../_images/randomforest.png" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">Representación gráfica del algoritmo Random Forest. Fuente <a class="reference external" href="https://www.kaggle.com/alexisbcook/titanic-tutorial">Kaggle</a>.</span><a class="headerlink" href="#figure-random-forest" title="Permalink to this image">¶</a></p>
+</div>
 <p>Cada registro de datos es evaluado en los árboles de decisión y el resultado más frecuente (i.e. sobreviviente o fallecido) pasa a ser la salida para ese registro.</p>
 <p>En el siguiente bloque de código en Python, se construyen 100 árboles de decisión para generar un modelo para los datos de los pasajeros del Titanic, el cual predice si cada pasajero sobrevivió o no.</p>
 <div class="cell docutils container">
@@ -815,13 +817,13 @@
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
 <span class="n">output</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;PassengerId&#39;</span><span class="p">:</span> <span class="n">datos_evaluacion</span><span class="o">.</span><span class="n">PassengerId</span><span class="p">,</span> <span class="s1">&#39;Survived&#39;</span><span class="p">:</span> <span class="n">predictions</span><span class="p">})</span>
-<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;salida.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La salida del modelo se almacenó en el archivo salida.csv&quot;</span><span class="p">)</span>
+<span class="n">output</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;datos/salida-random-forest.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La salida del modelo se almacenó en el archivo datos/salida-random-forest.csv&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La salida del modelo se almacenó en el archivo salida.csv
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La salida del modelo se almacenó en el archivo datos/salida-random-forest.csv
 </pre></div>
 </div>
 </div>
