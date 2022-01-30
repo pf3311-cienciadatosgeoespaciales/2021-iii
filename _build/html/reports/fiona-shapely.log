@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['# Conteo de especies en ASP', '', '# Esquema de la capa con el total y la lista de especies por ASP', "schema = {'geometry':'Unknown',", "          'properties':{'id':'str',"]
+['# Esquema de la nueva capa de registros de presencia de murciélagos', '# Se incluyen solo los campos más importantes para el análisis', "schema = {'geometry':'Point',", "          'properties':{'gbifID':'str',", "                        'species':'str',"]
 ...
-["                    'cantidad_especies':len(species_set),", "                    'lista_especies':', '.join(species_set)", '                },', "                'geometry':record_asp['geometry']", '            })']
+["                    'decimalLatitude':row['decimalLatitude'],", "                    'decimalLongitude':row['decimalLongitude']", '                },', "                'geometry':mapping(point)", '            })']
 -------------------
 

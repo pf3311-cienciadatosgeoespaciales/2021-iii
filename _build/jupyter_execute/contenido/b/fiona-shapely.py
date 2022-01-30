@@ -212,7 +212,7 @@ with fiona.collection('datos/distribucion-murcielagos.gpkg',
 
 # ##### Áreas Silvestres Protegidas (ASP)
 
-# In[12]:
+# In[ ]:
 
 
 # Se agrega el archivo GeoJSON de ASP al GPKG
@@ -227,7 +227,7 @@ with fiona.open('datos/asp.geojson') as source:
 
 # ##### En ÁSP
 
-# In[13]:
+# In[ ]:
 
 
 # Conteo de especies en ASP
