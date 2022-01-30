@@ -26,6 +26,7 @@ parts:
     - file: contenido/b/resumen-referencia-python    
     - file: contenido/b/fiona-shapely    
     - file: contenido/b/introduccion-analisis-datos-python        
+    - file: contenido/b/pandas    
   - caption: Evaluaciones
     chapters:
     - file: contenido/evaluaciones/tarea-01
