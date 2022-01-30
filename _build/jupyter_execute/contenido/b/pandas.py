@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # La biblioteca pandas
+# # pandas: paquete para análisis y manipulación de datos
 
 # ## Descripción general
 
