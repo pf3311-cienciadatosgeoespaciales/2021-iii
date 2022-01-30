@@ -51,7 +51,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Tarea 01 - Elaboración de un mapa en QGIS" href="../evaluaciones/tarea-01.html" />
+    <link rel="next" title="Introducción al análisis de datos con Python¶" href="introduccion-analisis-datos-python.html" />
     <link rel="prev" title="Resumen de referencia de Python" href="resumen-referencia-python.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -189,6 +189,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Fiona y Shapely: paquetes para lectura, escritura y análisis de datos vectoriales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduccion-analisis-datos-python.html">
+   Introducción al análisis de datos con Python¶
   </a>
  </li>
 </ul>
@@ -657,6 +662,34 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3031589</span><span class="o">/</span><span class="mf">1231377834.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="n">point</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLatitude&#39;</span><span class="p">]))</span>
+<span class="ne">---&gt; </span><span class="mi">21</span>             <span class="n">collection</span><span class="o">.</span><span class="n">write</span><span class="p">({</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>                 <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>                     <span class="s1">&#39;gbifID&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;gbifID&#39;</span><span class="p">],</span>
+
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/fiona/collection.py</span> in <span class="ni">write</span><span class="nt">(self, record)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="sd">&quot;&quot;&quot;Stages a record for writing to disk.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">367</span>         <span class="bp">self</span><span class="o">.</span><span class="n">writerecords</span><span class="p">([</span><span class="n">record</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span> 
+<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="k">def</span> <span class="nf">validate_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/fiona/collection.py</span> in <span class="ni">writerecords</span><span class="nt">(self, records)</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>             <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;collection not open for writing&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">361</span>         <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">writerecs</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get_length</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id2">
@@ -728,226 +761,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 AMM Montes Submarinos
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-2 AMM Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-3 RB Alberto Manuel Brenes
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-4 RB Isla Guayabo
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-5 RB Isla Pajaros
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-6 RB Islas Negritos
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-7 RB Hitoy Cerere
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-8 RB Lomas de Barbudal
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-9 RB Cerro Las Vueltas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-10 HH De San Vito
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-11 HH Lacustrino Laguna del Paraguas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-12 HH Palustrino Corral de piedra
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-13 HH Lacustrino Bonilla Bonillita
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-14 HH Humedal lacustrino Rio Canas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-Saccopteryx bilineata
-
-
-15 HH Humedal Laguna Madrigal
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-16 HH Marino Playa Blanca
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-17 HH Marino Playa Blanca
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-18 HH Nacional Cariari
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-19 HH Estero Puntarenas y Manglares Asociados
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-20 MN Monumento Nacional Guayabo
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-21 RNA Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-22 RNA Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
-Carollia perspicillata, Diclidurus albus, Artibeus phaeotis, Micronycteris schmidtorum, Trachops cirrhosus, Noctilio leporinus, Pteronotus mesoamericanus, Saccopteryx bilineata, Glossophaga mutica
-
-
-23 RNA Cabo Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-24 RNA Nicolas Wessberg
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-25 PN Arenal
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-Saccopteryx bilineata
-
-
-26 PN Braulio Carrillo
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17
-Carollia perspicillata, Myotis nigricans, Carollia castanea, Centurio senex, Myotis pilosatibialis, Artibeus jamaicensis, Micronycteris megalotis, Lophostoma silvicola, Pteronotus parnellii, Lonchophylla robusta, Carollia brevicaudum, Lonchorhina aurita, Rhynchonycteris naso, Sturnira hondurensis, Glossophaga commissarisi, Glossophaga mutica, Ectophylla alba
-
-
-27 PN Juan Castro Blanco
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
-
-
-
-28 PN Volcan Turrialba
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-Phyllostomus hastatus, Artibeus jamaicensis, Sturnira ludovici, Glossophaga soricina
-
-
-29 PN Volcan Poas
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
-Tadarida brasiliensis, Myotis nigricans, Sturnira ludovici, Lasiurus blossevillii
-
-
-30 PN Barra Honda
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3020286</span><span class="o">/</span><span class="mf">738781266.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;datos/distribucion-murcielagos.gpkg&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">layer</span><span class="o">=</span><span class="s1">&#39;registros-murcielagos&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">registros</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">23</span>                 <span class="k">for</span> <span class="n">registro</span> <span class="ow">in</span> <span class="n">registros</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">24</span>                     <span class="k">if</span> <span class="p">(</span><span class="n">registro</span><span class="p">[</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">):</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span>                         <span class="k">continue</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span> 
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -999,10 +812,10 @@ Tadarida brasiliensis, Myotis nigricans, Sturnira ludovici, Lasiurus blossevilli
             <p class="prev-next-title">Resumen de referencia de Python</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../evaluaciones/tarea-01.html" title="next page">
+    <a class='right-next' id="next-link" href="introduccion-analisis-datos-python.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Tarea 01 - Elaboración de un mapa en QGIS</p>
+        <p class="prev-next-title">Introducción al análisis de datos con Python¶</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
