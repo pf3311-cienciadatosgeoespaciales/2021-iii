@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # geopandas: paquete para agregar capacidades geoespaciales a pandas
+# # GeoPandas: paquete para agregar capacidades geoespaciales a pandas
 
 # [GeoPandas](http://geopandas.org/) es un proyecto de software libre que extiende los tipos de datos de [pandas](http://pandas.pydata.org/) para incorporar objetos geométricos (puntos, líneas, polígonos, etc). GeoPandas se apoya en las bibliotecas [Shapely](https://github.com/Toblerity/Shapely/) para realizar las operaciones geométricas, [Fiona](https://github.com/Toblerity/Fiona/) para acceder a los datos (ej. en archivos) y [Matplotlib](https://matplotlib.org/) para graficación.
 # 
@@ -240,7 +240,7 @@ asp = gpd.read_file(response)
 asp.plot(figsize=(20, 20))
 
 
-# ### 2. Visualización de todas las capas
+# #### 2. Visualización de todas las capas
 
 # In[17]:
 
@@ -253,7 +253,7 @@ ax = murcielagos.plot(ax=base, marker='o', color='black', markersize=8)
 cx.add_basemap(ax, crs=asp.crs)
 
 
-# ### 3. Conteo de especies en cada polígono
+# #### 3. Conteo de especies en cada polígono
 
 # In[18]:
 
