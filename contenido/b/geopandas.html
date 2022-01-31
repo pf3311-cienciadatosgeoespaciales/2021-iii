@@ -1,0 +1,2408 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>geopandas: paquete para agregar capacidades geoespaciales a pandas &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tarea 01 - Elaboración de un mapa en QGIS" href="../evaluaciones/tarea-01.html" />
+    <link rel="prev" title="pandas: paquete para análisis y manipulación de datos" href="pandas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">PF-3311 Ciencia de datos geoespaciales 2021-III</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   PF-3311 Ciencia de datos geoespaciales 2021-III
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Información sobre el curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/descripcion-curso.html">
+   Descripción general, objetivos y metodología
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/requisitos-curso.html">
+   Requisitos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/cronograma-curso.html">
+   Cronograma
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/evaluacion-curso.html">
+   Evaluación
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../informacion-general/bibliografia-curso.html">
+   Bibliografía y otros recursos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  A - Introducción
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/introduccion-ciencia-datos-geoespaciales.html">
+   Introducción a la ciencia de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/fundamentos-geodesia-cartografia.html">
+   Fundamentos de cartografía y geodesia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/sistemas-informacion-geografica.html">
+   Sistemas de información geográfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/qgis-sig-escritorio.html">
+   QGIS: sistema de información geográfica de escritorio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/modelos-estandares-datos-geoespaciales.html">
+   Modelos y estándares de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/software-manejo-datos-geoespaciales.html">
+   Software para manejo de datos geoespaciales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../a/gdal-biblioteca-lectura-escritura-datos-geoespaciales.html">
+   GDAL: biblioteca para lectura y escritura de datos geoespaciales
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  B - Procesamiento de datos geoespaciales con Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduccion-python.html">
+   Introducción al lenguaje de programación Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="resumen-referencia-python.html">
+   Resumen de referencia de Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="fiona-shapely.html">
+   Fiona y Shapely: paquetes para lectura, escritura y análisis de datos vectoriales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="introduccion-analisis-datos-python.html">
+   Introducción al análisis de datos con Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pandas.html">
+   pandas: paquete para análisis y manipulación de datos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   geopandas: paquete para agregar capacidades geoespaciales a pandas
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Evaluaciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../evaluaciones/tarea-01.html">
+   Tarea 01 - Elaboración de un mapa en QGIS
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/contenido/b/geopandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii//issues/new?title=Issue%20on%20page%20%2Fcontenido/b/geopandas.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/pf3311-cienciadatosgeoespaciales/2021-iii/master?urlpath=tree/docs/contenido/b/geopandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instalacion">
+   Instalación
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-una-estacion-de-trabajo">
+     En una estación de trabajo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#en-google-colab">
+     En Google Colab
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carga">
+   Carga
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-basicas">
+   Operaciones básicas
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#read-file-carga-de-datos">
+     read_file() - carga de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#info-informacion-general-sobre-un-conjunto-de-datos">
+     info() - información general sobre un conjunto de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos">
+     head(), tail(), sample() - despliegue de filas de un conjunto de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-de-columnas">
+     Selección de columnas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-de-filas">
+     Selección de filas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seleccion-de-filas-y-columnas-en-la-misma-expresion">
+     Selección de filas y columnas en la misma expresión
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-mapeo">
+     plot() - mapeo
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplos-de-uso">
+   Ejemplos de uso
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#analisis-de-distribucion-de-especies-de-murcielagos-en-costa-rica">
+     Análisis de distribución de especies de murciélagos en Costa Rica
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#obtencion-de-datos">
+       1. Obtención de datos
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#registros-de-presencia-de-murcielagos">
+         Registros de presencia de murciélagos
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#capas-geoespaciales-de-costa-rica">
+         Capas geoespaciales de Costa Rica
+        </a>
+        <ul class="nav section-nav flex-column">
+         <li class="toc-h6 nav-item toc-entry">
+          <a class="reference internal nav-link" href="#areas-silvestres-protegidas-asp">
+           Áreas silvestres protegidas (ASP)
+          </a>
+         </li>
+        </ul>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizacion-de-todas-las-capas">
+     2. Visualización de todas las capas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conteo-de-especies-en-cada-poligono">
+     3. Conteo de especies en cada polígono
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="geopandas-paquete-para-agregar-capacidades-geoespaciales-a-pandas">
+<h1>geopandas: paquete para agregar capacidades geoespaciales a pandas<a class="headerlink" href="#geopandas-paquete-para-agregar-capacidades-geoespaciales-a-pandas" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://geopandas.org/">GeoPandas</a> es un proyecto de software libre que extiende los tipos de datos de <a class="reference external" href="http://pandas.pydata.org/">pandas</a> para incorporar objetos geométricos (puntos, líneas, polígonos, etc). GeoPandas se apoya en las bibliotecas <a class="reference external" href="https://github.com/Toblerity/Shapely/">Shapely</a> para realizar las operaciones geométricas, <a class="reference external" href="https://github.com/Toblerity/Fiona/">Fiona</a> para acceder a los datos (ej. en archivos) y <a class="reference external" href="https://matplotlib.org/">Matplotlib</a> para graficación.</p>
+<p>El objetivo de GeoPandas es facilitar el trabajo con datos geoespaciales en el lenguaje Python, lo que se logra a través de la implementación de nuevas estructuras. Las dos estructuras principales de GeoPandas son:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://geopandas.org/data_structures.html#geoseries">GeoSeries</a>: es un vector en el que cada elemento es un conjunto de una o varias geometrías correspondientes a una observación. Por ejemplo, el polígono (o multipolígono) que representa una provincia.</p></li>
+<li><p><a class="reference external" href="http://geopandas.org/data_structures.html#geodataframe">GeoDataFrame</a>: es una estructura tabular (i.e. con filas y columnas) de datos geométricos y no geométricos (ej. textos, números). El conjunto de geometrías se implementa a través de GeoSeries.</p></li>
+</ul>
+<div class="section" id="instalacion">
+<h2>Instalación<a class="headerlink" href="#instalacion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="en-una-estacion-de-trabajo">
+<h3>En una estación de trabajo<a class="headerlink" href="#en-una-estacion-de-trabajo" title="Permalink to this headline">¶</a></h3>
+<p>geopandas puede instalarse tanto mediante <a class="reference external" href="https://conda.io/">Conda</a> como mediante <a class="reference external" href="https://pypi.org/project/pip/">pip</a>.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instalación mediante Conda</span>
+conda install geopandas
+
+<span class="c1"># Instalación mediante pip</span>
+pip install geopandas
+</pre></div>
+</div>
+</div>
+<div class="section" id="en-google-colab">
+<h3>En Google Colab<a class="headerlink" href="#en-google-colab" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instalación de bibliotecas de GDAL para Python</span>
+!apt install gdal-bin python-gdal python3-gdal
+
+<span class="c1"># Instalación de r-tree</span>
+!apt install python3-rtree
+
+<span class="c1"># Instalación de GeoPandas</span>
+!pip install git+git://github.com/geopandas/geopandas.git
+
+<span class="c1"># Instalación de Descartes</span>
+!pip install descartes
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="carga">
+<h2>Carga<a class="headerlink" href="#carga" title="Permalink to this headline">¶</a></h2>
+<p>Para instalar <a class="reference external" href="https://contextily.readthedocs.io/en/latest/">contextily</a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>!conda install -c conda-forge contextily -y
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">zipfile</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">contextily</span> <span class="k">as</span> <span class="nn">cx</span>
+<span class="kn">from</span> <span class="nn">geojson</span> <span class="kn">import</span> <span class="n">dump</span>
+<span class="kn">from</span> <span class="nn">owslib.wfs</span> <span class="kn">import</span> <span class="n">WebFeatureService</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Versión de geopandas</span>
+<span class="n">gpd</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0.10.2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operaciones-basicas">
+<h2>Operaciones básicas<a class="headerlink" href="#operaciones-basicas" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="read-file-carga-de-datos">
+<h3>read_file() - carga de datos<a class="headerlink" href="#read-file-carga-de-datos" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lectura de datos de países de Natural Earth</span>
+
+<span class="n">paises</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gpd</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth_lowres&#39;</span><span class="p">))</span>
+
+<span class="n">paises</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop_est</th>
+      <th>continent</th>
+      <th>name</th>
+      <th>iso_a3</th>
+      <th>gdp_md_est</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>920938</td>
+      <td>Oceania</td>
+      <td>Fiji</td>
+      <td>FJI</td>
+      <td>8374.0</td>
+      <td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>53950935</td>
+      <td>Africa</td>
+      <td>Tanzania</td>
+      <td>TZA</td>
+      <td>150600.0</td>
+      <td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>603253</td>
+      <td>Africa</td>
+      <td>W. Sahara</td>
+      <td>ESH</td>
+      <td>906.5</td>
+      <td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35623680</td>
+      <td>North America</td>
+      <td>Canada</td>
+      <td>CAN</td>
+      <td>1674000.0</td>
+      <td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>326625791</td>
+      <td>North America</td>
+      <td>United States of America</td>
+      <td>USA</td>
+      <td>18560000.0</td>
+      <td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>7111024</td>
+      <td>Europe</td>
+      <td>Serbia</td>
+      <td>SRB</td>
+      <td>101800.0</td>
+      <td>POLYGON ((18.82982 45.90887, 18.82984 45.90888...</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>642550</td>
+      <td>Europe</td>
+      <td>Montenegro</td>
+      <td>MNE</td>
+      <td>10610.0</td>
+      <td>POLYGON ((20.07070 42.58863, 19.80161 42.50009...</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>1895250</td>
+      <td>Europe</td>
+      <td>Kosovo</td>
+      <td>-99</td>
+      <td>18490.0</td>
+      <td>POLYGON ((20.59025 41.85541, 20.52295 42.21787...</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>1218208</td>
+      <td>North America</td>
+      <td>Trinidad and Tobago</td>
+      <td>TTO</td>
+      <td>43570.0</td>
+      <td>POLYGON ((-61.68000 10.76000, -61.10500 10.890...</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>13026129</td>
+      <td>Africa</td>
+      <td>S. Sudan</td>
+      <td>SSD</td>
+      <td>20880.0</td>
+      <td>POLYGON ((30.83385 3.50917, 29.95350 4.17370, ...</td>
+    </tr>
+  </tbody>
+</table>
+<p>177 rows × 6 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="info-informacion-general-sobre-un-conjunto-de-datos">
+<h3>info() - información general sobre un conjunto de datos<a class="headerlink" href="#info-informacion-general-sobre-un-conjunto-de-datos" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+RangeIndex: 177 entries, 0 to 176
+Data columns (total 6 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   pop_est     177 non-null    int64   
+ 1   continent   177 non-null    object  
+ 2   name        177 non-null    object  
+ 3   iso_a3      177 non-null    object  
+ 4   gdp_md_est  177 non-null    float64 
+ 5   geometry    177 non-null    geometry
+dtypes: float64(1), geometry(1), int64(1), object(3)
+memory usage: 8.4+ KB
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos">
+<h3>head(), tail(), sample() - despliegue de filas de un conjunto de datos<a class="headerlink" href="#head-tail-sample-despliegue-de-filas-de-un-conjunto-de-datos" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Muestra de 10 filas</span>
+<span class="n">paises</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop_est</th>
+      <th>continent</th>
+      <th>name</th>
+      <th>iso_a3</th>
+      <th>gdp_md_est</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>920938</td>
+      <td>Oceania</td>
+      <td>Fiji</td>
+      <td>FJI</td>
+      <td>8374.0</td>
+      <td>MULTIPOLYGON (((180.00000 -16.06713, 180.00000...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>53950935</td>
+      <td>Africa</td>
+      <td>Tanzania</td>
+      <td>TZA</td>
+      <td>150600.0</td>
+      <td>POLYGON ((33.90371 -0.95000, 34.07262 -1.05982...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>603253</td>
+      <td>Africa</td>
+      <td>W. Sahara</td>
+      <td>ESH</td>
+      <td>906.5</td>
+      <td>POLYGON ((-8.66559 27.65643, -8.66512 27.58948...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>35623680</td>
+      <td>North America</td>
+      <td>Canada</td>
+      <td>CAN</td>
+      <td>1674000.0</td>
+      <td>MULTIPOLYGON (((-122.84000 49.00000, -122.9742...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>326625791</td>
+      <td>North America</td>
+      <td>United States of America</td>
+      <td>USA</td>
+      <td>18560000.0</td>
+      <td>MULTIPOLYGON (((-122.84000 49.00000, -120.0000...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>18556698</td>
+      <td>Asia</td>
+      <td>Kazakhstan</td>
+      <td>KAZ</td>
+      <td>460700.0</td>
+      <td>POLYGON ((87.35997 49.21498, 86.59878 48.54918...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>29748859</td>
+      <td>Asia</td>
+      <td>Uzbekistan</td>
+      <td>UZB</td>
+      <td>202300.0</td>
+      <td>POLYGON ((55.96819 41.30864, 55.92892 44.99586...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6909701</td>
+      <td>Oceania</td>
+      <td>Papua New Guinea</td>
+      <td>PNG</td>
+      <td>28020.0</td>
+      <td>MULTIPOLYGON (((141.00021 -2.60015, 142.73525 ...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>260580739</td>
+      <td>Asia</td>
+      <td>Indonesia</td>
+      <td>IDN</td>
+      <td>3028000.0</td>
+      <td>MULTIPOLYGON (((141.00021 -2.60015, 141.01706 ...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>44293293</td>
+      <td>South America</td>
+      <td>Argentina</td>
+      <td>ARG</td>
+      <td>879400.0</td>
+      <td>MULTIPOLYGON (((-68.63401 -52.63637, -68.25000...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="seleccion-de-columnas">
+<h3>Selección de columnas<a class="headerlink" href="#seleccion-de-columnas" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span><span class="p">[[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;pop_est&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>pop_est</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Fiji</td>
+      <td>920938</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tanzania</td>
+      <td>53950935</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>W. Sahara</td>
+      <td>603253</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Canada</td>
+      <td>35623680</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>United States of America</td>
+      <td>326625791</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>172</th>
+      <td>Serbia</td>
+      <td>7111024</td>
+    </tr>
+    <tr>
+      <th>173</th>
+      <td>Montenegro</td>
+      <td>642550</td>
+    </tr>
+    <tr>
+      <th>174</th>
+      <td>Kosovo</td>
+      <td>1895250</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>Trinidad and Tobago</td>
+      <td>1218208</td>
+    </tr>
+    <tr>
+      <th>176</th>
+      <td>S. Sudan</td>
+      <td>13026129</td>
+    </tr>
+  </tbody>
+</table>
+<p>177 rows × 2 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="seleccion-de-filas">
+<h3>Selección de filas<a class="headerlink" href="#seleccion-de-filas" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Países con población estimada mayor o igual a mil millones</span>
+<span class="n">paises</span><span class="p">[</span><span class="n">paises</span><span class="p">[</span><span class="s2">&quot;pop_est&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1000000000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pop_est</th>
+      <th>continent</th>
+      <th>name</th>
+      <th>iso_a3</th>
+      <th>gdp_md_est</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>1281935911</td>
+      <td>Asia</td>
+      <td>India</td>
+      <td>IND</td>
+      <td>8721000.0</td>
+      <td>POLYGON ((97.32711 28.26158, 97.40256 27.88254...</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>1379302771</td>
+      <td>Asia</td>
+      <td>China</td>
+      <td>CHN</td>
+      <td>21140000.0</td>
+      <td>MULTIPOLYGON (((109.47521 18.19770, 108.65521 ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="seleccion-de-filas-y-columnas-en-la-misma-expresion">
+<h3>Selección de filas y columnas en la misma expresión<a class="headerlink" href="#seleccion-de-filas-y-columnas-en-la-misma-expresion" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">paises</span><span class="p">[</span><span class="s2">&quot;pop_est&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">1000000000</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;pop_est&quot;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>name</th>
+      <th>pop_est</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>98</th>
+      <td>India</td>
+      <td>1281935911</td>
+    </tr>
+    <tr>
+      <th>139</th>
+      <td>China</td>
+      <td>1379302771</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plot-mapeo">
+<h3>plot() - mapeo<a class="headerlink" href="#plot-mapeo" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa de coropletas</span>
+
+<span class="n">paises</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s2">&quot;pop_est&quot;</span><span class="p">,</span> 
+            <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;OrRd&#39;</span><span class="p">,</span> 
+            <span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;quantiles&#39;</span><span class="p">,</span>
+            <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/geopandas_25_1.png" src="../../_images/geopandas_25_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa de coropletas con leyenda</span>
+
+<span class="kn">from</span> <span class="nn">mpl_toolkits.axes_grid1</span> <span class="kn">import</span> <span class="n">make_axes_locatable</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">paises</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;pop_est&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/geopandas_26_1.png" src="../../_images/geopandas_26_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa con múltiples capas</span>
+
+<span class="n">ciudades</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">gpd</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">get_path</span><span class="p">(</span><span class="s1">&#39;naturalearth_cities&#39;</span><span class="p">))</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="n">paises</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">ciudades</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">base</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/geopandas_27_1.png" src="../../_images/geopandas_27_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejemplos-de-uso">
+<h2>Ejemplos de uso<a class="headerlink" href="#ejemplos-de-uso" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="analisis-de-distribucion-de-especies-de-murcielagos-en-costa-rica">
+<h3>Análisis de distribución de especies de murciélagos en Costa Rica<a class="headerlink" href="#analisis-de-distribucion-de-especies-de-murcielagos-en-costa-rica" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="obtencion-de-datos">
+<h4>1. Obtención de datos<a class="headerlink" href="#obtencion-de-datos" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="registros-de-presencia-de-murcielagos">
+<h5>Registros de presencia de murciélagos<a class="headerlink" href="#registros-de-presencia-de-murcielagos" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descarga de archivo CSV comprimido en ZIP mediante solicitud tipo GET</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://api.gbif.org/v1/occurrence/download/request/0105729-210914110416597.zip&#39;</span><span class="p">,</span> 
+                        <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">open</span><span class="p">(</span><span class="s1">&#39;datos/murcielagos.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+
+<span class="c1"># Descompresión</span>
+<span class="k">with</span> <span class="n">zipfile</span><span class="o">.</span><span class="n">ZipFile</span><span class="p">(</span><span class="s2">&quot;datos/murcielagos.zip&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">zipfile</span><span class="p">:</span>
+    <span class="n">zipfile</span><span class="o">.</span><span class="n">extractall</span><span class="p">(</span><span class="s2">&quot;datos/&quot;</span><span class="p">)</span>
+    
+<span class="c1"># Cambio de nombre del archivo CSV</span>
+<span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;datos/0105729-210914110416597.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;datos/murcielagos.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Carga de registros de presencia de murciélagos en un dataframe</span>
+
+<span class="n">murcielagos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datos/murcielagos.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">murcielagos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>gbifID</th>
+      <th>datasetKey</th>
+      <th>occurrenceID</th>
+      <th>kingdom</th>
+      <th>phylum</th>
+      <th>class</th>
+      <th>order</th>
+      <th>family</th>
+      <th>genus</th>
+      <th>species</th>
+      <th>...</th>
+      <th>identifiedBy</th>
+      <th>dateIdentified</th>
+      <th>license</th>
+      <th>rightsHolder</th>
+      <th>recordedBy</th>
+      <th>typeStatus</th>
+      <th>establishmentMeans</th>
+      <th>lastInterpreted</th>
+      <th>mediaType</th>
+      <th>issue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3416142999</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/10118...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Vespertilionidae</td>
+      <td>Rhogeessa</td>
+      <td>Rhogeessa io</td>
+      <td>...</td>
+      <td>Yuzefovich Alexander</td>
+      <td>2021-11-15T14:33:49</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>jo22nfrog</td>
+      <td>jo22nfrog</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-08T05:34:32.772Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3416092578</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/10131...</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Uroderma</td>
+      <td>Uroderma bilobatum</td>
+      <td>...</td>
+      <td>Merav Vonshak</td>
+      <td>2021-11-17T06:37:32</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Merav Vonshak</td>
+      <td>Merav Vonshak</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-08T06:09:54.326Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3415771696</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/88766024</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Artibeus</td>
+      <td>Artibeus jamaicensis</td>
+      <td>...</td>
+      <td>Yuzefovich Alexander</td>
+      <td>2021-07-27T06:38:03</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Alex Castelein</td>
+      <td>Alex Castelein</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-08T05:05:13.398Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3415765386</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/36722404</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Uroderma</td>
+      <td>Uroderma bilobatum</td>
+      <td>...</td>
+      <td>Jay</td>
+      <td>2019-12-17T22:12:20</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Jay</td>
+      <td>Jay</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-08T04:59:02.428Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3415753400</td>
+      <td>50c9509d-22c7-4a22-a47d-8c48425ef4a7</td>
+      <td>https://www.inaturalist.org/observations/39440952</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Emballonuridae</td>
+      <td>Rhynchonycteris</td>
+      <td>Rhynchonycteris naso</td>
+      <td>...</td>
+      <td>Jakob Fahr</td>
+      <td>2020-03-02T08:06:42</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>Ben Zerante</td>
+      <td>Ben Zerante</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-08T05:48:47.800Z</td>
+      <td>StillImage</td>
+      <td>COORDINATE_ROUNDED</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>13184</th>
+      <td>45849434</td>
+      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
+      <td>urn:catalog:LSUMZ:Mammals:12726</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Anoura</td>
+      <td>Anoura geoffroyi</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>Gardner, Alfred L.</td>
+      <td>NaN</td>
+      <td>NATIVE</td>
+      <td>2021-12-02T03:54:15.435Z</td>
+      <td>NaN</td>
+      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+    </tr>
+    <tr>
+      <th>13185</th>
+      <td>45849433</td>
+      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
+      <td>urn:catalog:LSUMZ:Mammals:12725</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Anoura</td>
+      <td>Anoura geoffroyi</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>Gardner, Alfred L.</td>
+      <td>NaN</td>
+      <td>NATIVE</td>
+      <td>2021-12-02T03:54:15.435Z</td>
+      <td>NaN</td>
+      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+    </tr>
+    <tr>
+      <th>13186</th>
+      <td>45849432</td>
+      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
+      <td>urn:catalog:LSUMZ:Mammals:12724</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Anoura</td>
+      <td>Anoura geoffroyi</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>Gardner, Alfred L.</td>
+      <td>NaN</td>
+      <td>NATIVE</td>
+      <td>2021-12-02T03:54:15.437Z</td>
+      <td>NaN</td>
+      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+    </tr>
+    <tr>
+      <th>13187</th>
+      <td>45849431</td>
+      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
+      <td>urn:catalog:LSUMZ:Mammals:12723</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Anoura</td>
+      <td>Anoura geoffroyi</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>Gardner, Alfred L.</td>
+      <td>NaN</td>
+      <td>NATIVE</td>
+      <td>2021-12-02T03:54:15.436Z</td>
+      <td>NaN</td>
+      <td>INSTITUTION_COLLECTION_MISMATCH</td>
+    </tr>
+    <tr>
+      <th>13188</th>
+      <td>45849415</td>
+      <td>847e2306-f762-11e1-a439-00145eb45e9a</td>
+      <td>urn:catalog:LSUMZ:Mammals:10637</td>
+      <td>Animalia</td>
+      <td>Chordata</td>
+      <td>Mammalia</td>
+      <td>Chiroptera</td>
+      <td>Phyllostomidae</td>
+      <td>Anoura</td>
+      <td>Anoura geoffroyi</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC0_1_0</td>
+      <td>NaN</td>
+      <td>Arnold, Keith A.</td>
+      <td>NaN</td>
+      <td>NATIVE</td>
+      <td>2021-12-02T03:54:15.457Z</td>
+      <td>NaN</td>
+      <td>COORDINATE_REPROJECTED;INSTITUTION_COLLECTION_...</td>
+    </tr>
+  </tbody>
+</table>
+<p>13189 rows × 50 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">murcielagos</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">murcielagos</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="n">gpd</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">murcielagos</span><span class="o">.</span><span class="n">decimalLongitude</span><span class="p">,</span> <span class="n">murcielagos</span><span class="o">.</span><span class="n">decimalLatitude</span><span class="p">))</span>
+<span class="n">murcielagos</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/geopandas_34_1.png" src="../../_images/geopandas_34_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="capas-geoespaciales-de-costa-rica">
+<h5>Capas geoespaciales de Costa Rica<a class="headerlink" href="#capas-geoespaciales-de-costa-rica" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="areas-silvestres-protegidas-asp">
+<h6>Áreas silvestres protegidas (ASP)<a class="headerlink" href="#areas-silvestres-protegidas-asp" title="Permalink to this headline">¶</a></h6>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wfs</span> <span class="o">=</span> <span class="n">WebFeatureService</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;http://geos1pne.sirefor.go.cr/wfs&#39;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.1.0&#39;</span><span class="p">)</span>
+
+<span class="c1"># Parámetros de la solicitud</span>
+<span class="n">params</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">service</span><span class="o">=</span><span class="s1">&#39;WFS&#39;</span><span class="p">,</span>
+              <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.1.0&#39;</span><span class="p">,</span> 
+              <span class="n">request</span><span class="o">=</span><span class="s1">&#39;GetFeature&#39;</span><span class="p">,</span> 
+              <span class="n">typeName</span><span class="o">=</span><span class="s1">&#39;PNE:areas_silvestres_protegidas&#39;</span><span class="p">,</span>
+              <span class="n">srsName</span><span class="o">=</span><span class="s1">&#39;urn:ogc:def:crs:EPSG::4326&#39;</span><span class="p">,</span>
+              <span class="n">outputFormat</span><span class="o">=</span><span class="s1">&#39;json&#39;</span><span class="p">)</span>
+
+<span class="c1"># Solicitud</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="s2">&quot;http://geos1pne.sirefor.go.cr/wfs&quot;</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">prepare</span><span class="p">()</span><span class="o">.</span><span class="n">url</span>
+<span class="n">response</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;http://geos1pne.sirefor.go.cr/wfs?service=WFS&amp;version=1.1.0&amp;request=GetFeature&amp;typeName=PNE%3Aareas_silvestres_protegidas&amp;srsName=urn%3Aogc%3Adef%3Acrs%3AEPSG%3A%3A4326&amp;outputFormat=json&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Leer datos del URL</span>
+<span class="n">asp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="n">asp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/geopandas_38_1.png" src="../../_images/geopandas_38_1.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualizacion-de-todas-las-capas">
+<h3>2. Visualización de todas las capas<a class="headerlink" href="#visualizacion-de-todas-las-capas" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa con todas las capas</span>
+
+<span class="n">base</span> <span class="o">=</span> <span class="n">asp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">murcielagos</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">base</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+
+<span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">asp</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/geopandas_40_0.png" src="../../_images/geopandas_40_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="conteo-de-especies-en-cada-poligono">
+<h3>3. Conteo de especies en cada polígono<a class="headerlink" href="#conteo-de-especies-en-cada-poligono" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Join espacial de las capas de ASP y registros de presencia de murciélagos</span>
+
+<span class="n">asp_contains_murcielagos</span> <span class="o">=</span> <span class="n">asp</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">murcielagos</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">op</span><span class="o">=</span><span class="s2">&quot;contains&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/mfvargas/miniconda3/envs/pf3311/lib/python3.10/site-packages/IPython/core/interactiveshell.py:3457: FutureWarning: The `op` parameter is deprecated and will be removed in a future release. Please use the `predicate` parameter instead.
+  exec(code_obj, self.user_global_ns, self.user_ns)
+/home/mfvargas/miniconda3/envs/pf3311/lib/python3.10/site-packages/geopandas/geodataframe.py:1938: UserWarning: CRS mismatch between the CRS of left geometries and the CRS of right geometries.
+Use `to_crs()` to reproject one of the input geometries to match the CRS of the other.
+
+Left CRS: EPSG:4326
+Right CRS: None
+
+  return geopandas.sjoin(left_df=self, right_df=df, *args, **kwargs)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">asp_contains_murcielagos</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;geopandas.geodataframe.GeoDataFrame&#39;&gt;
+Int64Index: 2221 entries, 13 to 170
+Data columns (total 67 columns):
+ #   Column                            Non-Null Count  Dtype   
+---  ------                            --------------  -----   
+ 0   id                                2221 non-null   object  
+ 1   codigo                            2221 non-null   object  
+ 2   nombre_asp                        2221 non-null   object  
+ 3   cat_manejo                        2221 non-null   object  
+ 4   estatus                           2221 non-null   object  
+ 5   siglas_cat                        2221 non-null   object  
+ 6   nombre_ac                         2221 non-null   object  
+ 7   siglas_ac                         2221 non-null   object  
+ 8   descripcio                        2221 non-null   object  
+ 9   a_creacion                        2221 non-null   int64   
+ 10  n_creacion                        2221 non-null   object  
+ 11  normativa                         0 non-null      object  
+ 12  area                              2221 non-null   float64 
+ 13  area_km                           2221 non-null   float64 
+ 14  version                           2221 non-null   object  
+ 15  geometry                          2221 non-null   geometry
+ 16  index_right                       2221 non-null   int64   
+ 17  gbifID                            2221 non-null   int64   
+ 18  datasetKey                        2221 non-null   object  
+ 19  occurrenceID                      2170 non-null   object  
+ 20  kingdom                           2221 non-null   object  
+ 21  phylum                            2221 non-null   object  
+ 22  class                             2221 non-null   object  
+ 23  order                             2221 non-null   object  
+ 24  family                            2208 non-null   object  
+ 25  genus                             2206 non-null   object  
+ 26  species                           2145 non-null   object  
+ 27  infraspecificEpithet              327 non-null    object  
+ 28  taxonRank                         2221 non-null   object  
+ 29  scientificName                    2221 non-null   object  
+ 30  verbatimScientificName            2221 non-null   object  
+ 31  verbatimScientificNameAuthorship  766 non-null    object  
+ 32  countryCode                       2221 non-null   object  
+ 33  locality                          1921 non-null   object  
+ 34  stateProvince                     1912 non-null   object  
+ 35  occurrenceStatus                  2221 non-null   object  
+ 36  individualCount                   489 non-null    float64 
+ 37  publishingOrgKey                  2221 non-null   object  
+ 38  decimalLatitude                   2221 non-null   float64 
+ 39  decimalLongitude                  2221 non-null   float64 
+ 40  coordinateUncertaintyInMeters     1417 non-null   float64 
+ 41  coordinatePrecision               12 non-null     float64 
+ 42  elevation                         266 non-null    float64 
+ 43  elevationAccuracy                 236 non-null    float64 
+ 44  depth                             6 non-null      float64 
+ 45  depthAccuracy                     6 non-null      float64 
+ 46  eventDate                         2185 non-null   object  
+ 47  day                               2040 non-null   float64 
+ 48  month                             2184 non-null   float64 
+ 49  year                              2185 non-null   float64 
+ 50  taxonKey                          2221 non-null   int64   
+ 51  speciesKey                        2145 non-null   float64 
+ 52  basisOfRecord                     2221 non-null   object  
+ 53  institutionCode                   1913 non-null   object  
+ 54  collectionCode                    2055 non-null   object  
+ 55  catalogNumber                     2089 non-null   object  
+ 56  recordNumber                      953 non-null    object  
+ 57  identifiedBy                      600 non-null    object  
+ 58  dateIdentified                    556 non-null    object  
+ 59  license                           2221 non-null   object  
+ 60  rightsHolder                      659 non-null    object  
+ 61  recordedBy                        1998 non-null   object  
+ 62  typeStatus                        0 non-null      object  
+ 63  establishmentMeans                968 non-null    object  
+ 64  lastInterpreted                   2221 non-null   object  
+ 65  mediaType                         343 non-null    object  
+ 66  issue                             2137 non-null   object  
+dtypes: float64(15), geometry(1), int64(4), object(47)
+memory usage: 1.2+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">asp_contains_murcielagos</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>codigo</th>
+      <th>nombre_asp</th>
+      <th>cat_manejo</th>
+      <th>estatus</th>
+      <th>siglas_cat</th>
+      <th>nombre_ac</th>
+      <th>siglas_ac</th>
+      <th>descripcio</th>
+      <th>a_creacion</th>
+      <th>...</th>
+      <th>identifiedBy</th>
+      <th>dateIdentified</th>
+      <th>license</th>
+      <th>rightsHolder</th>
+      <th>recordedBy</th>
+      <th>typeStatus</th>
+      <th>establishmentMeans</th>
+      <th>lastInterpreted</th>
+      <th>mediaType</th>
+      <th>issue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>13</th>
+      <td>areas_silvestres_protegidas.14</td>
+      <td>H13</td>
+      <td>Humedal lacustrino Rio Canas</td>
+      <td>Humedal</td>
+      <td>Estatal</td>
+      <td>HH</td>
+      <td>Area de Conservacion Tempisque</td>
+      <td>ACT</td>
+      <td>Area terrestre protegida</td>
+      <td>1994</td>
+      <td>...</td>
+      <td>Kristina Yamamoto, Andrea Caiozzi-Cofre (MVZ)</td>
+      <td>NaN</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>NaN</td>
+      <td>MALAGA-A., A.</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-02T04:04:03.547Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;BASIS_OF_RECORD_I...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>areas_silvestres_protegidas.14</td>
+      <td>H13</td>
+      <td>Humedal lacustrino Rio Canas</td>
+      <td>Humedal</td>
+      <td>Estatal</td>
+      <td>HH</td>
+      <td>Area de Conservacion Tempisque</td>
+      <td>ACT</td>
+      <td>Area terrestre protegida</td>
+      <td>1994</td>
+      <td>...</td>
+      <td>Kristina Yamamoto, Andrea Caiozzi-Cofre (MVZ)</td>
+      <td>NaN</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>NaN</td>
+      <td>MALAGA-A., A.</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-02T04:04:03.549Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;BASIS_OF_RECORD_I...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>areas_silvestres_protegidas.14</td>
+      <td>H13</td>
+      <td>Humedal lacustrino Rio Canas</td>
+      <td>Humedal</td>
+      <td>Estatal</td>
+      <td>HH</td>
+      <td>Area de Conservacion Tempisque</td>
+      <td>ACT</td>
+      <td>Area terrestre protegida</td>
+      <td>1994</td>
+      <td>...</td>
+      <td>Kristina Yamamoto, Andrea Caiozzi-Cofre (MVZ)</td>
+      <td>NaN</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>NaN</td>
+      <td>MALAGA-A., A.</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-02T04:04:03.548Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;BASIS_OF_RECORD_I...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>areas_silvestres_protegidas.14</td>
+      <td>H13</td>
+      <td>Humedal lacustrino Rio Canas</td>
+      <td>Humedal</td>
+      <td>Estatal</td>
+      <td>HH</td>
+      <td>Area de Conservacion Tempisque</td>
+      <td>ACT</td>
+      <td>Area terrestre protegida</td>
+      <td>1994</td>
+      <td>...</td>
+      <td>Kristina Yamamoto, Andrea Caiozzi-Cofre (MVZ)</td>
+      <td>NaN</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>NaN</td>
+      <td>MALAGA-A., A.</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-02T04:04:03.547Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;BASIS_OF_RECORD_I...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>areas_silvestres_protegidas.14</td>
+      <td>H13</td>
+      <td>Humedal lacustrino Rio Canas</td>
+      <td>Humedal</td>
+      <td>Estatal</td>
+      <td>HH</td>
+      <td>Area de Conservacion Tempisque</td>
+      <td>ACT</td>
+      <td>Area terrestre protegida</td>
+      <td>1994</td>
+      <td>...</td>
+      <td>Kristina Yamamoto, Andrea Caiozzi-Cofre (MVZ)</td>
+      <td>NaN</td>
+      <td>CC_BY_NC_4_0</td>
+      <td>NaN</td>
+      <td>MALAGA-A., A.</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-02T04:04:03.548Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84;BASIS_OF_RECORD_I...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>areas_silvestres_protegidas.171</td>
+      <td>P18</td>
+      <td>Internacional La Amistad</td>
+      <td>Parque Nacional</td>
+      <td>Estatal</td>
+      <td>PN</td>
+      <td>Area de Conservacion La Amistad Pacifico</td>
+      <td>ACLAP</td>
+      <td>Area terrestre protegida</td>
+      <td>1982</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>Barcode of Life Datasystems</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-01T17:18:04.335Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>areas_silvestres_protegidas.171</td>
+      <td>P18</td>
+      <td>Internacional La Amistad</td>
+      <td>Parque Nacional</td>
+      <td>Estatal</td>
+      <td>PN</td>
+      <td>Area de Conservacion La Amistad Pacifico</td>
+      <td>ACLAP</td>
+      <td>Area terrestre protegida</td>
+      <td>1982</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>Barcode of Life Datasystems</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-01T17:19:01.362Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>areas_silvestres_protegidas.171</td>
+      <td>P18</td>
+      <td>Internacional La Amistad</td>
+      <td>Parque Nacional</td>
+      <td>Estatal</td>
+      <td>PN</td>
+      <td>Area de Conservacion La Amistad Pacifico</td>
+      <td>ACLAP</td>
+      <td>Area terrestre protegida</td>
+      <td>1982</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>Barcode of Life Datasystems</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-01T17:18:58.795Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>areas_silvestres_protegidas.171</td>
+      <td>P18</td>
+      <td>Internacional La Amistad</td>
+      <td>Parque Nacional</td>
+      <td>Estatal</td>
+      <td>PN</td>
+      <td>Area de Conservacion La Amistad Pacifico</td>
+      <td>ACLAP</td>
+      <td>Area terrestre protegida</td>
+      <td>1982</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>Barcode of Life Datasystems</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-01T17:19:49.491Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>areas_silvestres_protegidas.171</td>
+      <td>P18</td>
+      <td>Internacional La Amistad</td>
+      <td>Parque Nacional</td>
+      <td>Estatal</td>
+      <td>PN</td>
+      <td>Area de Conservacion La Amistad Pacifico</td>
+      <td>ACLAP</td>
+      <td>Area terrestre protegida</td>
+      <td>1982</td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>CC_BY_4_0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2021-12-02T15:35:03.172Z</td>
+      <td>NaN</td>
+      <td>GEODETIC_DATUM_ASSUMED_WGS84</td>
+    </tr>
+  </tbody>
+</table>
+<p>2221 rows × 67 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">asp_contains_murcielagos</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/geopandas_45_1.png" src="../../_images/geopandas_45_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conteo de especies en cada ASP</span>
+<span class="n">asp_count_especies</span> <span class="o">=</span> <span class="n">asp_contains_murcielagos</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">species</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+<span class="n">asp_count_especies</span> <span class="o">=</span> <span class="n">asp_count_especies</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> <span class="c1"># para convertir la serie a dataframe</span>
+
+<span class="n">asp_count_especies</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;species&#39;</span><span class="p">:</span> <span class="s1">&#39;especies_murcielagos&#39;</span><span class="p">},</span> <span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">asp_count_especies</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>especies_murcielagos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>areas_silvestres_protegidas.101</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>areas_silvestres_protegidas.103</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>areas_silvestres_protegidas.107</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>areas_silvestres_protegidas.110</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>areas_silvestres_protegidas.121</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>areas_silvestres_protegidas.124</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>areas_silvestres_protegidas.132</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>areas_silvestres_protegidas.137</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>areas_silvestres_protegidas.139</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>areas_silvestres_protegidas.14</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Join para agregar la columna con el conteo a la capa de ASP</span>
+<span class="n">asp_especies</span> <span class="o">=</span> <span class="n">asp</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">asp_count_especies</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">),</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_b&#39;</span><span class="p">)</span>
+<span class="n">asp_especies</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>codigo</th>
+      <th>nombre_asp</th>
+      <th>cat_manejo</th>
+      <th>estatus</th>
+      <th>siglas_cat</th>
+      <th>nombre_ac</th>
+      <th>siglas_ac</th>
+      <th>descripcio</th>
+      <th>a_creacion</th>
+      <th>n_creacion</th>
+      <th>normativa</th>
+      <th>area</th>
+      <th>area_km</th>
+      <th>version</th>
+      <th>geometry</th>
+      <th>especies_murcielagos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>areas_silvestres_protegidas.1</td>
+      <td>A01</td>
+      <td>Montes Submarinos</td>
+      <td>Area Marina de Manejo</td>
+      <td>Estatal</td>
+      <td>AMM</td>
+      <td>Marina Cocos</td>
+      <td>ACMC</td>
+      <td>Area Marina de Manejo</td>
+      <td>2011</td>
+      <td>DE_36452</td>
+      <td>None</td>
+      <td>9.592623e+09</td>
+      <td>9.592623e+07</td>
+      <td>2019-11-19-001</td>
+      <td>POLYGON ((-87.00000 6.13333, -86.43333 5.73333...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>areas_silvestres_protegidas.2</td>
+      <td>A02</td>
+      <td>Cabo Blanco</td>
+      <td>Area Marina de Manejo</td>
+      <td>Estatal</td>
+      <td>AMM</td>
+      <td>Area de Conservacion Tempisque</td>
+      <td>ACT</td>
+      <td>Area Marina de Manejo</td>
+      <td>1963</td>
+      <td>Ley_10</td>
+      <td>None</td>
+      <td>8.247806e+08</td>
+      <td>8.247806e+06</td>
+      <td>2019-11-19-001</td>
+      <td>POLYGON ((-85.14336 9.59649, -85.14332 9.59643...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>areas_silvestres_protegidas.3</td>
+      <td>B01</td>
+      <td>Alberto Manuel Brenes</td>
+      <td>Reserva Biologica</td>
+      <td>Estatal</td>
+      <td>RB</td>
+      <td>Area de Conservacion Central</td>
+      <td>ACC</td>
+      <td>Area terrestre protegida</td>
+      <td>1993</td>
+      <td>Ley_7354</td>
+      <td>None</td>
+      <td>7.800440e+07</td>
+      <td>7.800440e+05</td>
+      <td>2019-11-19-001</td>
+      <td>POLYGON ((-84.63388 10.18202, -84.64167 10.177...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>areas_silvestres_protegidas.4</td>
+      <td>B03</td>
+      <td>Isla Guayabo</td>
+      <td>Reserva Biologica</td>
+      <td>Estatal</td>
+      <td>RB</td>
+      <td>Area de Conservacion Tempisque</td>
+      <td>ACT</td>
+      <td>Isla</td>
+      <td>1973</td>
+      <td>DE_2858_A</td>
+      <td>None</td>
+      <td>6.268092e+04</td>
+      <td>6.268092e+02</td>
+      <td>2019-11-19-001</td>
+      <td>POLYGON ((-84.87710 9.91109, -84.87737 9.91086...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>areas_silvestres_protegidas.5</td>
+      <td>B04</td>
+      <td>Isla Pajaros</td>
+      <td>Reserva Biologica</td>
+      <td>Estatal</td>
+      <td>RB</td>
+      <td>Area de Conservacion Pacifico Central</td>
+      <td>ACOPAC</td>
+      <td>Isla</td>
+      <td>1976</td>
+      <td>DE_ 5963_A</td>
+      <td>None</td>
+      <td>3.211583e+04</td>
+      <td>3.211583e+02</td>
+      <td>2019-11-19-001</td>
+      <td>POLYGON ((-84.99674 10.09266, -84.99696 10.092...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>167</th>
+      <td>areas_silvestres_protegidas.168</td>
+      <td>Z31</td>
+      <td>Quebrada Rosario</td>
+      <td>Zona Protectora</td>
+      <td>Estatal</td>
+      <td>ZP</td>
+      <td>Area de Conservacion Central</td>
+      <td>ACC</td>
+      <td>Area terrestre protegida</td>
+      <td>1997</td>
+      <td>DE_ 26297_MINAE</td>
+      <td>None</td>
+      <td>4.292695e+05</td>
+      <td>4.292695e+03</td>
+      <td>2019-11-19-001</td>
+      <td>POLYGON ((-84.07619 9.70425, -84.07689 9.70374...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>168</th>
+      <td>areas_silvestres_protegidas.169</td>
+      <td>P10</td>
+      <td>Santa Rosa</td>
+      <td>Parque Nacional</td>
+      <td>Estatal</td>
+      <td>PN</td>
+      <td>Area de Conservacion Guanacaste</td>
+      <td>ACG</td>
+      <td>Isla</td>
+      <td>1966</td>
+      <td>Ley_3694</td>
+      <td>None</td>
+      <td>3.230258e+06</td>
+      <td>3.230258e+04</td>
+      <td>2019-11-19-001</td>
+      <td>MULTIPOLYGON (((-85.87565 10.84304, -85.87571 ...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>169</th>
+      <td>areas_silvestres_protegidas.170</td>
+      <td>V25</td>
+      <td>Bahia Junquillal</td>
+      <td>Refugio Nacional de Vida Silvestre</td>
+      <td>Estatal</td>
+      <td>RVS</td>
+      <td>Area de Conservacion Guanacaste</td>
+      <td>ACG</td>
+      <td>Isla</td>
+      <td>1995</td>
+      <td>DE_ 23867_MIRENEM</td>
+      <td>None</td>
+      <td>1.836792e+05</td>
+      <td>1.836792e+03</td>
+      <td>2021-08-20-001</td>
+      <td>MULTIPOLYGON (((-85.73360 10.95775, -85.73329 ...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>170</th>
+      <td>areas_silvestres_protegidas.171</td>
+      <td>P18</td>
+      <td>Internacional La Amistad</td>
+      <td>Parque Nacional</td>
+      <td>Estatal</td>
+      <td>PN</td>
+      <td>Area de Conservacion La Amistad Pacifico</td>
+      <td>ACLAP</td>
+      <td>Area terrestre protegida</td>
+      <td>1982</td>
+      <td>DE_13324_A</td>
+      <td>None</td>
+      <td>1.982896e+09</td>
+      <td>1.982896e+07</td>
+      <td>2019-11-19-001</td>
+      <td>MULTIPOLYGON (((-82.85282 9.01273, -82.85414 9...</td>
+      <td>11.0</td>
+    </tr>
+    <tr>
+      <th>171</th>
+      <td>areas_silvestres_protegidas.172</td>
+      <td>B09</td>
+      <td>Bicentenario de la República - Pájaro Campana</td>
+      <td>Reserva Biologica</td>
+      <td>Estatal</td>
+      <td>RB</td>
+      <td>Area de Conservacion La Amistad Pacifico</td>
+      <td>ACLAP</td>
+      <td>Area terrestre protegida</td>
+      <td>2021</td>
+      <td>DE_42615_MINAE</td>
+      <td>None</td>
+      <td>5.082743e+07</td>
+      <td>5.082743e+05</td>
+      <td>2021-08-21-001</td>
+      <td>POLYGON ((-82.77351 8.94507, -82.81050 8.95856...</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>172 rows × 17 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapeo</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+
+<span class="n">divider</span> <span class="o">=</span> <span class="n">make_axes_locatable</span><span class="p">(</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">divider</span><span class="o">.</span><span class="n">append_axes</span><span class="p">(</span><span class="s2">&quot;right&quot;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s2">&quot;5%&quot;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+
+<span class="n">asp_especies</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;especies_murcielagos&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">)</span>
+
+<span class="n">cx</span><span class="o">.</span><span class="n">add_basemap</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">crs</span><span class="o">=</span><span class="n">asp_especies</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">cx</span><span class="o">.</span><span class="n">providers</span><span class="o">.</span><span class="n">Stamen</span><span class="o">.</span><span class="n">TonerLite</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/geopandas_48_0.png" src="../../_images/geopandas_48_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./contenido/b"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="pandas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">pandas: paquete para análisis y manipulación de datos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../evaluaciones/tarea-01.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tarea 01 - Elaboración de un mapa en QGIS</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Manuel Vargas<br/>
+        
+            &copy; Copyright CC BY-SA 4.0.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
