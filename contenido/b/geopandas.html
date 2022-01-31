@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>geopandas: paquete para agregar capacidades geoespaciales a pandas &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
+    <title>GeoPandas: paquete para agregar capacidades geoespaciales a pandas &#8212; PF-3311 Ciencia de datos geoespaciales 2021-III</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet">
   <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -203,7 +203,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   geopandas: paquete para agregar capacidades geoespaciales a pandas
+   GeoPandas: paquete para agregar capacidades geoespaciales a pandas
   </a>
  </li>
 </ul>
@@ -420,17 +420,17 @@
        </li>
       </ul>
      </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visualizacion-de-todas-las-capas">
+       2. Visualización de todas las capas
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conteo-de-especies-en-cada-poligono">
+       3. Conteo de especies en cada polígono
+      </a>
+     </li>
     </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visualizacion-de-todas-las-capas">
-     2. Visualización de todas las capas
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conteo-de-especies-en-cada-poligono">
-     3. Conteo de especies en cada polígono
-    </a>
    </li>
   </ul>
  </li>
@@ -446,7 +446,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="geopandas-paquete-para-agregar-capacidades-geoespaciales-a-pandas">
-<h1>geopandas: paquete para agregar capacidades geoespaciales a pandas<a class="headerlink" href="#geopandas-paquete-para-agregar-capacidades-geoespaciales-a-pandas" title="Permalink to this headline">¶</a></h1>
+<h1>GeoPandas: paquete para agregar capacidades geoespaciales a pandas<a class="headerlink" href="#geopandas-paquete-para-agregar-capacidades-geoespaciales-a-pandas" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="http://geopandas.org/">GeoPandas</a> es un proyecto de software libre que extiende los tipos de datos de <a class="reference external" href="http://pandas.pydata.org/">pandas</a> para incorporar objetos geométricos (puntos, líneas, polígonos, etc). GeoPandas se apoya en las bibliotecas <a class="reference external" href="https://github.com/Toblerity/Shapely/">Shapely</a> para realizar las operaciones geométricas, <a class="reference external" href="https://github.com/Toblerity/Fiona/">Fiona</a> para acceder a los datos (ej. en archivos) y <a class="reference external" href="https://matplotlib.org/">Matplotlib</a> para graficación.</p>
 <p>El objetivo de GeoPandas es facilitar el trabajo con datos geoespaciales en el lenguaje Python, lo que se logra a través de la implementación de nuevas estructuras. Las dos estructuras principales de GeoPandas son:</p>
 <ul class="simple">
@@ -1499,9 +1499,8 @@ memory usage: 8.4+ KB
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="visualizacion-de-todas-las-capas">
-<h3>2. Visualización de todas las capas<a class="headerlink" href="#visualizacion-de-todas-las-capas" title="Permalink to this headline">¶</a></h3>
+<h4>2. Visualización de todas las capas<a class="headerlink" href="#visualizacion-de-todas-las-capas" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa con todas las capas</span>
@@ -1519,7 +1518,7 @@ memory usage: 8.4+ KB
 </div>
 </div>
 <div class="section" id="conteo-de-especies-en-cada-poligono">
-<h3>3. Conteo de especies en cada polígono<a class="headerlink" href="#conteo-de-especies-en-cada-poligono" title="Permalink to this headline">¶</a></h3>
+<h4>3. Conteo de especies en cada polígono<a class="headerlink" href="#conteo-de-especies-en-cada-poligono" title="Permalink to this headline">¶</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Join espacial de las capas de ASP y registros de presencia de murciélagos</span>
@@ -2337,6 +2336,7 @@ memory usage: 1.2+ MB
 </div>
 <div class="cell_output docutils container">
 <img alt="../../_images/geopandas_48_0.png" src="../../_images/geopandas_48_0.png" />
+</div>
 </div>
 </div>
 </div>
