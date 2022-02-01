@@ -1,7 +1,7 @@
 # Tarea 02 - Análisis de datos geoespaciales mediante Fiona y Shapely
 
 ## Fecha de entrega
-La fecha y hora límite para la entrega de esta tarea es **martes 8 de febrero de 2022 a las 16:59**.
+La fecha y hora límite para la entrega de esta tarea es **martes 15 de febrero de 2022 a las 16:59**.
 
 ## Desarrollo
 Debe elaborar un [mapa de coropletas](https://es.wikipedia.org/wiki/Mapa_coropl%C3%A9tico) que muestre la densidad de la red vial en los cantones de Costa Rica. Los datos deben procesarse mediante un programa en Python que utilice los paquetes [Fiona](https://github.com/Toblerity/Fiona) y [Shapely](https://github.com/shapely/shapely) para generar un archivo GeoPackage (GPKG) con el resultado. El archivo gráfico del mapa debe generase con [QGIS](https://qgis.org/).
