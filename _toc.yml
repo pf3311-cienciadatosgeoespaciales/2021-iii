@@ -31,3 +31,4 @@ parts:
   - caption: Evaluaciones
     chapters:
     - file: contenido/evaluaciones/tarea-01
+    - file: contenido/evaluaciones/tarea-02
