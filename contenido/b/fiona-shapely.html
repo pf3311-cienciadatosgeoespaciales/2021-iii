@@ -206,6 +206,11 @@
    GeoPandas: paquete para agregar capacidades geoespaciales a pandas
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="folium.html">
+   folium: paquete para desarrollo de mapas web
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -216,6 +221,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../evaluaciones/tarea-01.html">
    Tarea 01 - Elaboración de un mapa en QGIS
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../evaluaciones/tarea-02.html">
+   Tarea 02 - Análisis de datos geoespaciales mediante Fiona y Shapely
   </a>
  </li>
 </ul>
@@ -675,37 +685,26 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_3092256</span><span class="o">/</span><span class="mf">1231377834.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">26</span>                     <span class="s1">&#39;decimalLongitude&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">]</span>
-<span class="g g-Whitespace">     </span><span class="mi">27</span>                 <span class="p">},</span>
-<span class="ne">---&gt; </span><span class="mi">28</span>                 <span class="s1">&#39;geometry&#39;</span><span class="p">:</span><span class="n">mapping</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">29</span>             <span class="p">})</span>                        
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_192694</span><span class="o">/</span><span class="mf">1231377834.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="n">point</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLongitude&#39;</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;decimalLatitude&#39;</span><span class="p">]))</span>
+<span class="ne">---&gt; </span><span class="mi">21</span>             <span class="n">collection</span><span class="o">.</span><span class="n">write</span><span class="p">({</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>                 <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>                     <span class="s1">&#39;gbifID&#39;</span><span class="p">:</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;gbifID&#39;</span><span class="p">],</span>
 
-<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/geo.py</span> in <span class="ni">mapping</span><span class="nt">(ob)</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="s1">&#39;coordinates&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)}</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span>     <span class="s2">&quot;&quot;&quot;</span>
-<span class="ne">--&gt; </span><span class="mi">225</span><span class="s2">     return ob.__geo_interface__</span>
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/fiona/collection.py</span> in <span class="ni">write</span><span class="nt">(self, record)</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span>     <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span>         <span class="sd">&quot;&quot;&quot;Stages a record for writing to disk.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">367</span>         <span class="bp">self</span><span class="o">.</span><span class="n">writerecords</span><span class="p">([</span><span class="n">record</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">368</span> 
+<span class="g g-Whitespace">    </span><span class="mi">369</span>     <span class="k">def</span> <span class="nf">validate_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
 
-<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/geometry/point.py</span> in <span class="ni">__geo_interface__</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">82</span><span class="s2">         return {</span>
-<span class="g g-Whitespace">     </span><span class="mi">83</span><span class="s2">             &#39;type&#39;: &#39;Point&#39;,</span>
-<span class="ne">---&gt; </span><span class="mi">84</span><span class="s2">             &#39;coordinates&#39;: self.coords[0]</span>
-<span class="g g-Whitespace">     </span><span class="mi">85</span><span class="s2">             }</span>
-<span class="g g-Whitespace">     </span><span class="mi">86</span><span class="s2"> </span>
-
-<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/coords.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">     </span><span class="mi">75</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">76</span><span class="s2">     def __getitem__(self, key):</span>
-<span class="ne">---&gt; </span><span class="mi">77</span><span class="s2">         self._update()</span>
-<span class="g g-Whitespace">     </span><span class="mi">78</span><span class="s2">         dx = c_double()</span>
-<span class="g g-Whitespace">     </span><span class="mi">79</span><span class="s2">         dy = c_double()</span>
-
-<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/shapely/coords.py</span> in <span class="ni">_update</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">     </span><span class="mi">47</span><span class="s2">         else:</span>
-<span class="g g-Whitespace">     </span><span class="mi">48</span><span class="s2">             self._ndim = self.__p__._ndim</span>
-<span class="ne">---&gt; </span><span class="mi">49</span><span class="s2">             self._cseq = lgeos.GEOSGeom_getCoordSeq(self.__p__._geom)</span>
-<span class="g g-Whitespace">     </span><span class="mi">50</span><span class="s2"> </span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="s2">     def __len__(self):</span>
+<span class="nn">~/miniconda3/envs/pf3311/lib/python3.10/site-packages/fiona/collection.py</span> in <span class="ni">writerecords</span><span class="nt">(self, records)</span>
+<span class="g g-Whitespace">    </span><span class="mi">359</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">360</span>             <span class="k">raise</span> <span class="ne">IOError</span><span class="p">(</span><span class="s2">&quot;collection not open for writing&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">361</span>         <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">writerecs</span><span class="p">(</span><span class="n">records</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_len</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get_length</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_bounds</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
