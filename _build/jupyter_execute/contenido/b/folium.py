@@ -177,6 +177,8 @@ m
 
 # ## Controles
 
+# folium proporciona un conjunto de controles que le permiten al usuario interactuar con el mapa.
+
 # In[12]:
 
 
@@ -193,7 +195,7 @@ m
 # In[13]:
 
 
-# Mapa con múltiples capas base
+# Control de capas
 
 # Creación de un mapa
 m = folium.Map(
@@ -373,6 +375,50 @@ m = folium.Map(location=[9.6, -84.2], tiles='CartoDB positron', zoom_start=8)
 
 # Mapa de color
 HeatMap(data=felinos[['decimalLatitude', 'decimalLongitude']], radius=10).add_to(m)
+
+# Despliegue del mapa
+m
+
+
+# ## Mapas de coropletas  (“choropleth maps”)
+
+# In[22]:
+
+
+# Cantidades de especies de murciélagos en ASP
+especies_asp = pd.read_csv("https://raw.githubusercontent.com/pf3311-cienciadatosgeoespaciales/2021-iii/main/contenido/b/datos/asp-especies-murcielagos.csv")
+
+especies_asp
+
+
+# In[23]:
+
+
+import geopandas as gpd
+
+# UGM de San Carlos
+asp = gpd.read_file("https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/raw/main/contenido/b/datos/asp.geojson")
+
+asp
+
+
+# In[24]:
+
+
+# Creación del mapa base
+m = folium.Map(location=[9.8, -84], tiles='CartoDB positron', zoom_start=8)
+
+folium.Choropleth(
+    geo_data=asp,
+    data=especies_asp,
+    columns=['id', 'cantidad_especies'],
+    bins=8,
+    key_on='feature.properties.id',
+    fill_color='Reds', 
+    fill_opacity=0.5, 
+    line_opacity=1,
+    legend_name='Cantidad de especies de murciélagos',
+    smooth_factor=0).add_to(m)
 
 # Despliegue del mapa
 m
