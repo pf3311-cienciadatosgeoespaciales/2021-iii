@@ -28,7 +28,8 @@ parts:
     - file: contenido/b/introduccion-analisis-datos-python        
     - file: contenido/b/pandas    
     - file: contenido/b/geopandas        
-    - file: contenido/b/folium        
+    - file: contenido/b/folium
+    - file: contenido/b/ejemplo-analisis
   - caption: Evaluaciones
     chapters:
     - file: contenido/evaluaciones/tarea-01
