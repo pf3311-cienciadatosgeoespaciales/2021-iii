@@ -29,7 +29,7 @@ parts:
     - file: contenido/b/pandas    
     - file: contenido/b/geopandas        
     - file: contenido/b/folium
-    - file: contenido/b/ejemplo-analisis
+    - file: contenido/b/ejemplo-analisis-pandas-geopandas-folium
   - caption: Evaluaciones
     chapters:
     - file: contenido/evaluaciones/tarea-01
