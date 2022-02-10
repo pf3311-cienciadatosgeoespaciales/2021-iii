@@ -43,6 +43,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 get_ipython().run_line_magic('matplotlib', 'inline')
 
+import plotly.express as px
+
 import geopandas as gpd
 
 import folium
@@ -174,18 +176,25 @@ asp_especies[["nombre_asp", "cantidad_especies_murcielagos"]].sort_values("canti
 
 # ### Gráfica
 
+# Se presentan salidas de gráficos estadísticos en [Matplotlib]() y [plotly]().
+
 # In[9]:
 
 
+# Dataframe filtrado para usar en graficación
 asp_especies_grafico = asp_especies[["nombre_asp", "cantidad_especies_murcielagos"]].sort_values("cantidad_especies_murcielagos", ascending=[False]).head(15)
+
+
+# **Matplotlib**
+
+# In[10]:
 
 
 # Graficación
 asp_especies_grafico.plot(x='nombre_asp', 
                           y='cantidad_especies_murcielagos', 
                           kind='bar', 
-                          figsize=(20,10), 
-                          color='red')
+                          figsize=(20,10))
 
 # Título y leyendas en los ejes
 plt.title('Cantidad de especies de murciélagos por ASP', fontsize=20)
@@ -193,9 +202,25 @@ plt.xlabel('ASP', fontsize=16)
 plt.ylabel('Cantidad de especies', fontsize=16)
 
 
+# **plotly**
+
+# In[11]:
+
+
+fig = px.bar(asp_especies_grafico, 
+             x='nombre_asp', 
+             y='cantidad_especies_murcielagos', 
+             labels={'nombre_asp':'ASP', 'cantidad_especies_murcielagos':'Cantidad de especies'},
+             title="Cantidad de especies de murciélagos por ASP")
+
+fig.show()
+
+
+# Para más información sobre plotly, se recomienda ver [Data Visualization as The First and Last Mile of Data Science Plotly Express and Dash | SciPy 2021](https://www.youtube.com/watch?v=FpCgG85g2Hw).
+
 # ### Geoespacial
 
-# In[10]:
+# In[12]:
 
 
 # Creación del mapa base
