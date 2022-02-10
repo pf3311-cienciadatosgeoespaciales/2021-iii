@@ -3,7 +3,15 @@
 
 # # Ejemplo de análisis con pandas, geopandas y folium
 
-# Se presenta un ejemplo de análisis [reproducible](https://es.wikipedia.org/wiki/Reproducibilidad_y_repetibilidad) de datos geoespaciales: la distribución en áreas silvestres protegidas (ASP) de especies de murciélagos.
+# Se presenta un ejemplo de análisis [reproducible](https://es.wikipedia.org/wiki/Reproducibilidad_y_repetibilidad) de datos geoespaciales: la distribución de especies de murciélagos en áreas silvestres protegidas (ASP) de Costa Rica.
+# 
+# Las salidas se presentan en tres formatos:
+# 
+# - Tabular
+# - Gráfica
+# - Geoespacial
+# 
+# El ćodigo fuente de este ejercicio está disponible en [https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb](https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb) y las salidas puede ser visualizadas en [https://nbviewer.org/github/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb](https://nbviewer.org/github/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb).
 
 # ## Entradas
 
