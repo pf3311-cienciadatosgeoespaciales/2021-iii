@@ -11,7 +11,11 @@
 # - Gráfica
 # - Geoespacial
 # 
-# El ćodigo fuente de este ejercicio está disponible en [https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb](https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb) y las salidas puede ser visualizadas en [https://nbviewer.org/github/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb](https://nbviewer.org/github/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb).
+# El ćodigo fuente de este ejercicio está disponible en [https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb](https://github.com/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb). 
+# 
+# Las salidas puede ser visualizadas en [https://nbviewer.org/github/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb](https://nbviewer.org/github/pf3311-cienciadatosgeoespaciales/2021-iii/blob/main/contenido/b/ejemplo-analisis-pandas-geopandas-folium.ipynb).
+# 
+# Para más información sobre investigación reproducible en datos geoespaciales, se recomienda ver [FOSS4G2021 - Open source for open spatial data science](https://www.youtube.com/watch?v=ZjXb53pOor0).
 
 # ## Entradas
 
