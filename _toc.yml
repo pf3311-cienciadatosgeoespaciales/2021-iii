@@ -30,6 +30,9 @@ parts:
     - file: contenido/b/geopandas        
     - file: contenido/b/folium
     - file: contenido/b/ejemplo-analisis-pandas-geopandas-folium
+  - caption: C - Visualización y análisis avanzados
+    chapters:
+    - file: contenido/c/streamlit
   - caption: Evaluaciones
     chapters:
     - file: contenido/evaluaciones/tarea-01
