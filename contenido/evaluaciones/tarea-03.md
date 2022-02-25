@@ -1,7 +1,7 @@
 # Tarea 03 - Análisis de datos geoespaciales mediante pandas, plotly, geopandas y folium
 
 ## Fecha de entrega
-La fecha y hora límite para la entrega de esta tarea es **martes 01 de marzo de 2022 a las 23:59**.
+La fecha y hora límite para la entrega de esta tarea es **sábado 05 de marzo de 2022 a las 23:59**.
 
 ## Desarrollo
 Debe programar un [Jupyter Notebook](https://jupyter.org/) con salidas tabulares, gráficas y geoespaciales sobre la red vial de Costa Rica, generadas con los paquetes [pandas](https://pandas.pydata.org/), [plotly](https://plotly.com/python/), [geopandas](https://geopandas.org/en/stable/) y [folium](https://python-visualization.github.io/folium/) de [Python](https://www.python.org/). El código fuente debe compartirse en [GitHub](https://github.com/) y los resultados (tablas, gráficos, mapas, etc.) deben visualizarse en [NBViewer](https://nbviewer.org/).
